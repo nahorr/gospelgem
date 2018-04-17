@@ -79,15 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Gospel Gem
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://gospelgem.com">Home</a>
+                    <a href="https://gospelgem.com">Competition</a>
+                    <a href="https://gospelgem.com">Mentorship</a>
+                    <a href="https://gospelgem.com">Contact us</a>
+                    <a href="https://github.com/nahorr/gospelgem">GitHub</a>
                 </div>
             </div>
         </div>
