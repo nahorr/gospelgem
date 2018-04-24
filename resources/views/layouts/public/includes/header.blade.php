@@ -32,84 +32,12 @@
             <!-- Navigation -->
             <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
               <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-                <!-- Intro -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="../../index.html" class="nav-link g-py-7 g-px-0">Intro</a>
-                </li>
-                <!-- End Intro -->
-
+               
                 <!-- Home -->
                 <li class="hs-has-mega-menu nav-item active g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut" data-max-width="60%" data-position="left">
-                  <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false">Home
-        <i class="hs-icon hs-icon-arrow-bottom g-font-size-11 g-ml-7"></i></a>
+                  <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false">Home</a>
 
-                  <!-- Mega Menu -->
-                  <div class="w-100 hs-mega-menu u-shadow-v11 font-weight-normal g-brd-top g-brd-primary g-brd-top-2 g-bg-white g-mt-18 g-mt-8--lg--scrolling" aria-labelledby="mega-menu-home">
-                    <div class="row align-items-stretch no-gutters">
-                      <!-- Home (col) -->
-                      <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                          <li class="dropdown-item active">
-                            <a href="../../unify-main/home/home-default.html" class="nav-link">Home Default</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-1.html" class="nav-link">Home 1</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-2.html" class="nav-link">Home 2</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-3.html" class="nav-link">Home 3</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-4.html" class="nav-link">Home 4</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-5.html" class="nav-link">Home 5</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-6.html" class="nav-link">Home 6</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-7.html" class="nav-link">Home 7</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <!-- End Home (col) -->
-
-                      <!-- Home (col) -->
-                      <div class="col-lg-6 g-brd-left--lg g-brd-gray-light-v5">
-                        <ul class="list-unstyled">
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-8.html" class="nav-link">Home 8</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-9.html" class="nav-link">Home 9</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-10.html" class="nav-link">Home 10</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-11.html" class="nav-link">Home 11</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-12.html" class="nav-link">Home 12</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-13.html" class="nav-link">Home 13</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-14.html" class="nav-link">Home 14</a>
-                          </li>
-                          <li class="dropdown-item ">
-                            <a href="../../unify-main/home/home-page-15.html" class="nav-link">Home 15</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <!-- End Home (col) -->
-                    </div>
-                  </div>
-                  <!-- End Mega Menu -->
+                  
                 </li>
                 <!-- End Home -->
 
@@ -939,7 +867,7 @@
             <!-- End Navigation -->
 
             <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
-              <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream" target="_blank">Purchase now</a>
+              <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{ url('/login') }}">Login/Register</a>
             </div>
           </div>
         </nav>

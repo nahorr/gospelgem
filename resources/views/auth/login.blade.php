@@ -1,69 +1,71 @@
-@extends('layouts.app')
+@extends('layouts.public.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+@include('layouts.public.includes.nav-header')
+    <!-- Login -->
+    <section class="g-bg-gray-light-v5">
+      <div class="container g-py-100">
+        <div class="row justify-content-center">
+          <div class="col-sm-8 col-lg-5">
+            <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
+              <header class="text-center mb-4">
+                <h2 class="h2 g-color-black g-font-weight-600">Log in</h2>
+              </header>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+              <!-- Form -->
+              <form class="g-py-15" method="POST" action="{{ route('login') }}">
+                {{ csrf_field() }}
+                <div class="mb-4{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Email:</label>
+                  <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" name="email" value="{{ old('email') }}" required>
+                  @if ($errors->has('email'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                  @endif
                 </div>
+
+                <div class="g-mb-35{{ $errors->has('password') ? ' has-error' : '' }}">
+                  <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Password:</label>
+                  <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15 mb-3" type="password" name="password" required>
+                  @if ($errors->has('password'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('password') }}</strong>
+                      </span>
+                  @endif
+                  <div class="row justify-content-between">
+                    <div class="col align-self-center">
+                      <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-12 g-pl-25 mb-0">
+                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+                          <i class="fa" data-check-icon="&#xf00c"></i>
+                        </div>
+                        Remember Me
+                      </label>
+                    </div>
+                    <div class="col align-self-center text-right">
+                      <a class="g-font-size-12" href="{{ route('password.request') }}">Forgot password?</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">Login</button>
+                </div>
+              </form>
+              <!-- End Form -->
+
+              <footer class="text-center">
+                <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">Don't have an account? <a class="g-font-weight-600" href="{{ url('/register') }}">sign up</a>
+                </p>
+              </footer>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
+    <!-- End Login -->
+
+@include('layouts.public.includes.footer')
 @endsection
