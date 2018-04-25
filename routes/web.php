@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
+//Public Area
+Route::get('/', 'HomePublic\HomeController@index')->name('homepublic');
+
+//Private Area
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Admin Area
+Route::group(['middleware' => 'admin'], function () { 
+
+  Route::get('/admin/home', 'Admin\HomeController@index');
+    
+});

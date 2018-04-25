@@ -8,6 +8,16 @@
       <div class="container g-py-100">
         <div class="row justify-content-center">
           <div class="col-sm-8 col-lg-5">
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+            @if (session('warning'))
+                <div class="alert alert-warning">
+                    {{ session('warning') }}
+                </div>
+            @endif
             <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
               <header class="text-center mb-4">
                 <h2 class="h2 g-color-black g-font-weight-600">Log in</h2>

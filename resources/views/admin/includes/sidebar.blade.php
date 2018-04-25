@@ -753,8 +753,8 @@
               <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
                 <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
                   <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                    <i class="hs-admin-list"></i>
-                  </span>
+          <i class="hs-admin-list"></i>
+        </span>
                   <span class="media-body align-self-center">Sub Level 2</span>
                 </a>
               </li>
@@ -766,16 +766,12 @@
 
           <!-- Packages -->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{ route('logout') }}" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="packages.html">
               <span class="d-flex align-self-center g-font-size-18 g-mr-18">
-                <i class="hs-admin-medall"></i>
-              </span>
-              <span class="media-body align-self-center">Log out</span>
+      <i class="hs-admin-medall"></i>
+    </span>
+              <span class="media-body align-self-center">Packages</span>
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
           </li>
           <!-- End Packages -->
 
