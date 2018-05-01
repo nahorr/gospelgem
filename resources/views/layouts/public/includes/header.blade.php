@@ -2,7 +2,7 @@
     <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall" data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
       <!-- Promo Block - Parallax Video -->
       <div class="dzsparallaxer--target" style="width: 100%; height: 130%;" data-forcewidth_ratio="1.77">
-        <div class="js-bg-video g-pos-abs w-100 h-100" data-hs-bgv-type="youtube" data-hs-bgv-id="wEOFjFzXGK4" data-hs-bgv-loop="1"></div>
+        <div class="js-bg-video g-pos-abs w-100 h-100" data-hs-bgv-type="youtube" data-hs-bgv-id="PZuxWHUdtLo" data-hs-bgv-loop="1"></div>
       </div>
       <!-- End Promo Block - Parallax Video -->
 

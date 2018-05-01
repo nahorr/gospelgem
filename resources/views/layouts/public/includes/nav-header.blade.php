@@ -107,10 +107,27 @@
                 </li>
                 <!-- End Demos -->
 
-                <!-- About -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('videos')}}" aria-haspopup="true" aria-expanded="false">Videos</a>
+                <!-- Demos -->
+                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a id="nav-link-demos" class="nav-link g-py-7 g-px-0" href="{{url('competition')}}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-demos">GALLERY</a>
+
+                  <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-demos" aria-labelledby="nav-link-demos">
+
+                    <!-- Demos - Admin Template -->
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="../../../admin-template/dashboards/dashboard-v1.html" target="_blank">Videos <span class="u-label g-rounded-3 g-font-size-10 g-bg-lightred g-py-3 g-pos-rel g-top-minus-1 g-ml-5">Coming Soon</span></a>
+                    </li>
+                    <!-- End Demos - Admin Template -->
+
+                    <!-- Demos - E-Commerce -->
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="../../../e-commerce/home-page-1.html" target="_blank">Pictures <span class="g-opacity-0_5">(44 Contestants)</span></a>
+                    </li>
+                    <!-- End Demos - E-Commerce -->
+                  </ul>
                 </li>
+                <!-- End Demos -->
+
                 <!-- End About -->
 
                 <!-- About -->

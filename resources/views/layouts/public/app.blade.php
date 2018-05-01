@@ -3,7 +3,7 @@
 
 <head>
   <!-- Title -->
-  <title>Promo Blocks 8 | Unify - Responsive Website Template</title>
+  <title>Gospel Gem | Home </title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
