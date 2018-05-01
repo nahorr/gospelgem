@@ -18,7 +18,7 @@
               <svg width="86px" height="32px" viewBox="0 0 86 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g transform="translate(-78.000000, -19.000000)">
-                    <img id="logo" src="http://gospelgem.com/wp-content/uploads/2018/04/logo-white-1.png" alt="gospelgem">
+                    <img id="logo" src="{{asset('unify/assets/img/logo/gospelgem.png')}}" alt="gospelgem">
                   </g>
                 </g>
               </svg>
@@ -106,6 +106,12 @@
                   </ul>
                 </li>
                 <!-- End Demos -->
+
+                <!-- About -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('videos')}}" aria-haspopup="true" aria-expanded="false">Videos</a>
+                </li>
+                <!-- End About -->
 
                 <!-- About -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
