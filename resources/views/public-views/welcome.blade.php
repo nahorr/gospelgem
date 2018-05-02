@@ -16,7 +16,7 @@
               <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
                   <i class="icon-communication-081 u-line-icon-pro"></i>
                 </span>
-              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Courses</h3>
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Mentoring</h3>
               <p class="mb-0">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
             </div>
             <!-- End Icon Blocks -->
@@ -28,7 +28,7 @@
               <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
                   <i class="icon-finance-086 u-line-icon-pro"></i>
                 </span>
-              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Online Classes</h3>
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Competition</h3>
               <p class="mb-0">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
             </div>
             <!-- End Icon Blocks -->
@@ -40,7 +40,7 @@
               <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
                   <i class="icon-communication-057 u-line-icon-pro"></i>
                 </span>
-              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Mentorship</h3>
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Events</h3>
               <p class="mb-0">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
             </div>
             <!-- End Icon Blocks -->

@@ -15,7 +15,7 @@
           <!-- Footer Content -->
           <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
             <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Latest Posts</h2>
+              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Latest News</h2>
             </div>
 
             <article>
@@ -55,31 +55,31 @@
               <ul class="list-unstyled g-mt-minus-10 mb-0">
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">About Us</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('about')}}">About Us</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Portfolio</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('mentorship')}}">Mentorship</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Our Services</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('competition')}}">Competition</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Latest Jobs</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('gallary')}}">Gallary</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Contact Us</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('contact')}}">Contact Us</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
@@ -94,7 +94,7 @@
               <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Our Contacts</h2>
             </div>
 
-            <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url(../../assets/img/maps/map2.png);">
+            <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url(unify/assets/img/maps/map2.png);">
           <!-- Location -->
           <div class="d-flex g-mb-20">
             <div class="g-mr-10">
@@ -102,7 +102,7 @@
                 <i class="fa fa-map-marker"></i>
               </span>
             </div>
-            <p class="mb-0">795 Folsom Ave, Suite 600, <br> San Francisco, CA 94107 795</p>
+            <p class="mb-0">Lagos, LOS 105102, Nigeria, <br> Calgary, AB T2R0N7, Canada</p>
           </div>
           <!-- End Location -->
 
@@ -113,7 +113,7 @@
                 <i class="fa fa-phone"></i>
               </span>
             </div>
-            <p class="mb-0">(+123) 456 7890 <br> (+123) 456 7891</p>
+            <p class="mb-0">+23414543236 <br> +14034022387</p>
           </div>
           <!-- End Phone -->
 
@@ -125,9 +125,9 @@
               </span>
             </div>
             <p class="mb-0">
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">info@htmlstream.com</a>
+              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">info@gosgem.com</a>
               <br>
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">www.htmlstream.com</a>
+              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">www.gosgem.com</a>
             </p>
           </div>
           <!-- End Email and Website -->
@@ -158,9 +158,6 @@
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>
-                </li>
-                <li class="list-inline-item">
-                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">License</a>
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>

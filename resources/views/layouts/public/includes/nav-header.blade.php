@@ -7,12 +7,12 @@
             
             <div class="col-auto g-px-15">
               <i class="icon-phone g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
-              1 800 4488 56
+              +23414543236
             </div>
 
             <div class="col-auto g-px-15">
               <i class="icon-location-pin g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
-              1010 Avenue of the Moon, New York, NY 10018 US.
+              14 Chijioke Akwukwuma Street Bera Estate, Chevron Drive, Lagos.
             </div>
 
             <div class="col-auto g-px-15">
@@ -23,7 +23,7 @@
 
             <div class="col-auto g-px-15">
               <i class="icon-user g-font-size-24 g-valign-middle g-color-primary g-mr-15"></i>
-              <a href="mailto:#" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login</a>
+              <a href="{{url('login')}}" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login</a>
             </div>
           </div>
         </div>
