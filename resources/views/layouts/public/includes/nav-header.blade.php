@@ -1,5 +1,34 @@
 <!-- Header -->
     <header id="js-header" class="u-header u-header--static">
+      <!-- Top Bar -->
+      <div class="u-header__section u-header__section--hidden u-header__section--dark g-bg-black g-py-18">
+        <div class="container">
+          <div class="row flex-column flex-md-row align-items-center justify-content-between g-color-white">
+            
+            <div class="col-auto g-px-15">
+              <i class="icon-phone g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
+              1 800 4488 56
+            </div>
+
+            <div class="col-auto g-px-15">
+              <i class="icon-location-pin g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
+              1010 Avenue of the Moon, New York, NY 10018 US.
+            </div>
+
+            <div class="col-auto g-px-15">
+              <i class="icon-envelope g-font-size-24 g-valign-middle g-color-primary g-mr-15"></i>
+              <a href="mailto:#" class="g-color-white g-color-primary--hover g-text-underline--none--hover">info@gosgem.com</a>
+            </div>
+
+
+            <div class="col-auto g-px-15">
+              <i class="icon-user g-font-size-24 g-valign-middle g-color-primary g-mr-15"></i>
+              <a href="mailto:#" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Top Bar -->
       <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
         <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
           <div class="container">
@@ -136,10 +165,6 @@
                 </li>
                 <!-- End About -->
 
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{ url('login') }}">Login/Register</a>
-                </li>
-          
               </ul>
             </div>
             <!-- End Navigation -->
