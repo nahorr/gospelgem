@@ -71,7 +71,7 @@
                 <!-- End About -->
                 <!-- Demos -->
                 <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-demos" class="nav-link g-py-7 g-px-0" href="https://courses.gospelgem.com/" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-demos" target="_blank">Mentorship</a>
+                  <a id="nav-link-demos" class="nav-link g-py-7 g-px-0" href="https://courses.gosgem.com/" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-demos" target="_blank">Mentorship</a>
 
                   <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-demos" aria-labelledby="nav-link-demos">
 
@@ -81,15 +81,9 @@
                     </li>
                     <!-- End Demos - Admin Template -->
 
-                    <!-- Demos - E-Commerce -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../e-commerce/home-page-1.html" target="_blank">Contestants <span class="g-opacity-0_5">(44 Contestants)</span></a>
-                    </li>
-                    <!-- End Demos - E-Commerce -->
-
                     <!-- Demos - University -->
                     <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../multipage/education/home-page-1.html" target="_blank">Courses <span class="g-opacity-0_5"></span></a>
+                      <a class="nav-link" href="https://courses.gosgem.com/" target="_blank">Courses <span class="g-opacity-0_5"></span></a>
                     </li>
                     <!-- End Demos - University -->
 
