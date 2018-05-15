@@ -7,7 +7,7 @@
 	    <!-- Promo Block -->
     <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
       <!-- Parallax Image -->
-      <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_4--after" style="height: 140%; background-image: url(../../assets/img-temp/1920x800/img6.jpg);"></div>
+      <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_4--after" style="height: 140%; background-image: url(/unify/assets/img-temp/1920x800/img6.jpg);"></div>
       <!-- End Parallax Image -->
 
       <!-- Promo Block Content -->
@@ -55,7 +55,7 @@
         <div class="col-lg-4 g-mb-60">
           <!-- Google Map -->
           <div id="GMapCustomized-light" class="js-g-map embed-responsive embed-responsive-21by9 g-height-300" data-type="custom" data-lat="40.674" data-lng="-73.946" data-zoom="12" data-title="Agency" data-styles='[["", "", [{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]], ["", "labels", [{"visibility":"on"}]], ["water", "", [{"color":"#bac6cb"}]] ]'
-          data-pin="true" data-pin-icon="../../assets/img/icons/pin/green.png">
+          data-pin="true" data-pin-icon="{{asset('unify/assets/img/icons/pin/green.png')}}">
           </div>
           <!-- End Google Map -->
 
