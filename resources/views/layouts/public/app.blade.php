@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/dzsparallaxer/dzsscroller/scroller.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/dzsparallaxer/advancedscroller/plugin.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/slick-carousel/slick/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/hs-bg-video/hs-bg-video.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/hs-megamenu/src/hs.megamenu.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/hamburgers/hamburgers.min.css')}}">
@@ -83,21 +84,35 @@
   <script src="{{asset('unify/assets/vendor/slick-carousel/slick/slick.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/hs-bg-video/hs-bg-video.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/hs-bg-video/vendor/player.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.min.js')}}"></script>
 
   <!-- JS Unify -->
   <script src="{{asset('unify/assets/js/hs.core.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.header.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.hamburgers.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.tabs.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.carousel.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.progress-bar.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.bg-video.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.onscroll-animation.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.height-calc.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.popup.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.go-to.js')}}"></script>
 
   <!-- JS Plugins Init. -->
   <script>
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
+
+      // initialization of tabs
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+      // initialization of popups
+      $.HSCore.components.HSPopup.init('.js-fancybox');
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
 
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {
