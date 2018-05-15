@@ -8,8 +8,14 @@
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:image" content="{{asset('unify/assets/img/logo/gospelgem.png')}}" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <meta property="og:image" content="http://gosgem.com/unify/assets/img/logo/gospelgem.png" />
+  <meta property="og:image:secure_url" content="https://gosgem.com/unify/assets/img/logo/gospelgem.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:image:alt" content="Gosgem" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{asset('unify/favicon.ico')}}">
