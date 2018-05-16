@@ -1,10 +1,39 @@
 <!-- Header -->
-    <header id="js-header" class="u-header u-header--static u-header--show-hide u-header--change-appearance u-header--has-hidden-element" data-header-fix-moment="500" data-header-fix-effect="slide">
-      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-15" data-header-fix-moment-exclude="g-py-15" data-header-fix-moment-classes="u-shadow-v18 g-py-7">
+    <header id="js-header" class="u-header u-header--static">
+      <!-- Top Bar -->
+      <div class="u-header__section u-header__section--hidden u-header__section--dark g-bg-black g-py-18">
         <div class="container">
-          <div class="d-lg-flex flex-md-row align-items-center g-pos-rel">
+          <div class="row flex-column flex-md-row align-items-center justify-content-between g-color-white">
+            
+            <div class="col-auto g-px-15">
+              <i class="icon-phone g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
+              +23414543236
+            </div>
+
+            <div class="col-auto g-px-15">
+              <i class="icon-location-pin g-font-size-24 g-valign-middle g-color-primary g-mr-10"></i>
+              14 Chijioke Akwukwuma Street Bera Estate, Chevron Drive, Lagos.
+            </div>
+
+            <div class="col-auto g-px-15">
+              <i class="icon-envelope g-font-size-24 g-valign-middle g-color-primary g-mr-15"></i>
+              <a href="mailto:#" class="g-color-white g-color-primary--hover g-text-underline--none--hover">info@gosgem.com</a>
+            </div>
+
+
+            <div class="col-auto g-px-15">
+              <i class="icon-user g-font-size-24 g-valign-middle g-color-primary g-mr-15"></i>
+              <a href="{{url('login')}}" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Top Bar -->
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+          <div class="container">
             <!-- Responsive Toggle Button -->
-            <button class="navbar-toggler navbar-toggler-right btn g-hidden-lg-up g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
               <span class="hamburger hamburger--slider">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
@@ -12,50 +41,22 @@
               </span>
             </button>
             <!-- End Responsive Toggle Button -->
+
             <!-- Logo -->
-            <a href="{{url('/')}}" class="navbar-brand">
-              <img src="{{asset('unify/assets/img/logo/gospelgem.png')}}" alt="Image Description">
+            <a href="{{url('/')}}" class="navbar-brand d-flex">
+              <svg width="86px" height="32px" viewBox="0 0 86 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-78.000000, -19.000000)">
+                    <img id="logo" src="{{asset('unify/assets/img/logo/gospelgem.png')}}" alt="gospelgem">
+                  </g>
+                </g>
+              </svg>
             </a>
             <!-- End Logo -->
 
-            <div class="col g-mt-10 g-mt-0--lg g-px-0">
-              <div class="row flex-row align-items-start align-items-lg-center justify-content-lg-end text-uppercase g-font-weight-600 u-header--hidden-element g-color-gray-dark-v2 g-font-size-13 text-lg-right g-mt-minus-10 g-mb-20">
-                <div class="col-auto g-px-15 g-mt-10">
-                  <i class="fa fa-phone g-font-size-14 g-mr-3"></i>
-                  +23414543236
-                </div>
-                <div class="col-auto g-px-15 g-mt-10">
-                  <i class="fa fa-user g-font-size-14 g-mr-3"></i>
-                  <a href="{{url('login')}}" class="g-color-black g-color-primary--hover g-text-underline--none--hover">Login</a>
-                </div>
-
-
-              
-                <div class="col-auto g-px-15 g-mt-10">
-                  <ul class="list-inline mb-0 g-mx-minus-3">
-                    <li class="list-inline-item g-valign-middle g-mx-3">
-                      <a class="d-block u-icon-v3 u-icon-size--xs u-shadow-v17 g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-primary--hover g-text-underline--none--hover" href="#!">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item g-valign-middle g-mx-3">
-                      <a class="d-block u-icon-v3 u-icon-size--xs u-shadow-v17 g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-primary--hover g-text-underline--none--hover" href="#!">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item g-valign-middle g-mx-3">
-                      <a class="d-block u-icon-v3 u-icon-size--xs u-shadow-v17 g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-primary--hover g-text-underline--none--hover" href="#!">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <nav class="navbar navbar-expand-lg p-0">
-                <!-- Navigation -->
-                <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--sm" id="navBar">
-                  <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
                
                 <!-- Home -->
                 <li class="nav-item active g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut" data-max-width="60%" data-position="left">
@@ -159,14 +160,11 @@
                 <!-- End About -->
 
               </ul>
-                </div>
-                <!-- End Navigation -->
-
-              </nav>
             </div>
+            <!-- End Navigation -->
+
           </div>
-        </div>
+        </nav>
       </div>
     </header>
-    <!-- End Header -->
     <!-- End Header -->
