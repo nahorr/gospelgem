@@ -16,8 +16,15 @@
               <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
                   <i class="icon-communication-081 u-line-icon-pro"></i>
                 </span>
-              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Mentoring</h3>
-              <p class="mb-0">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">August 2018 Program</h3>
+              <p class="mb-0">Register Now for the SINACH Mentorship Session commencing August 2018.</p>
+              <hr>
+              <a href="#!" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
+                <span class="u-btn-skew__inner">
+                  <i class="fa fa-check-circle g-mr-3"></i>
+                  MORE INFORMATION
+                </span>
+              </a>
             </div>
             <!-- End Icon Blocks -->
           </div>
@@ -28,8 +35,15 @@
               <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
                   <i class="icon-finance-086 u-line-icon-pro"></i>
                 </span>
-              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Competition</h3>
-              <p class="mb-0">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Who Needs GosGem</h3>
+              <p class="mb-0">New artists, and all interested in seeing behind the scene operations of successful artists.</p>
+              <hr>
+              <a href="#!" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
+                <span class="u-btn-skew__inner">
+                  <i class="fa fa-check-circle g-mr-3"></i>
+                  READ MORE
+                </span>
+              </a>
             </div>
             <!-- End Icon Blocks -->
           </div>
@@ -40,8 +54,15 @@
               <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
                   <i class="icon-communication-057 u-line-icon-pro"></i>
                 </span>
-              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Events</h3>
-              <p class="mb-0">We strive to embrace and drive change in our industry which allows us to keep our clients relevant.</p>
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">About GosGem</h3>
+              <p class="mb-0">Gosgem is an online platform bridging the gap between a minister and the fanbase.</p>
+              <hr>
+              <a href="#!" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
+                <span class="u-btn-skew__inner">
+                  <i class="fa fa-check-circle g-mr-3"></i>
+                  READ ABOUT GOSGEM
+                </span>
+              </a>
             </div>
             <!-- End Icon Blocks -->
           </div>
@@ -52,7 +73,19 @@
 
     <hr class="g-brd-gray-light-v4 my-0">
 
+    <!-- Call to Action --> 
+    <div class="g-pos-rel"> 
+      <div class="container text-center g-pt-50 g-pb-50">
+       <img class="img-fluid img-thumbnail rounded-circle" src="{{asset('unify/assets/img-temp/demo-square.jpg')}}" alt="Sinach">
+        <!-- Heading -->
+         <div class="g-max-width-645 mx-auto g-mb-40"> 
+          <h2 class="h1 mb-3">SINACH MENTORSHIP CLASS</h2> 
+          <p>From August – September, 2018</p> 
+        </div> 
+        <!-- End Heading --> 
+        <a class="btn u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="page-apply-1.html">Apply Now</a> <!-- SVG Shape --> <svg class="d-inline-block g-width-35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 1" enable-background="new 0 0 37 1" xml:space="preserve"> <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="0" y1="0.5" x2="37" y2="0.5"> <stop offset="0" style="stop-color:#f5f6fa"></stop> <stop offset="1" style="stop-color:#b5b8cb"></stop> </linearGradient> <line fill="none" stroke="url(#SVGID_5_)" stroke-miterlimit="10" x1="37" y1="0.5" x2="0" y2="0.5"></line> </svg> <!-- End SVG Shape --> <span class="align-middle g-color-primary mx-1">or</span> <!-- SVG Shape --> <svg class="d-inline-block g-width-35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 1" enable-background="new 0 0 37 1" xml:space="preserve"> <linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-10" y1="-1.5" x2="27" y2="-1.5" gradientTransform="matrix(-1 0 0 -1 27 -1)"> <stop offset="0" style="stop-color:#f5f6fa"></stop> <stop offset="1" style="stop-color:#b5b8cb"></stop> </linearGradient> <line fill="none" stroke="url(#SVGID_6_)" stroke-miterlimit="10" x1="0" y1="0.5" x2="37" y2="0.5"></line> </svg> <!-- End SVG Shape --> <a class="btn u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="page-contacts-1.html">Contact Us</a> </div> <!-- SVG Background Shape --> <svg class="g-pos-abs g-bottom-0 g-left-0 g-z-index-minus-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 323" enable-background="new 0 0 1920 323" xml:space="preserve"> <polygon fill="#f0f2f8" points="0,323 1920,323 1920,0 "></polygon> <polygon fill="#f5f6fa" points="-0.5,322.5 -0.5,131.5 658.3,212.3 "></polygon> </svg> <!-- End SVG Background Shape --> </div> <!-- End Call to Action -->
 
+  <hr class="g-brd-gray-light-v4 my-0">
 
     <!-- Projects -->
     <section class="container g-py-100">
