@@ -60,7 +60,7 @@
               <svg width="86px" height="32px" viewBox="0 0 86 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g transform="translate(-78.000000, -19.000000)">
-                    <img id="logo" src="{{asset('unify/assets/img/logo/gospelgem.png')}}" alt="gospelgem">
+                    <img id="logo" src="{{asset('unify/assets/img/logo/gosgem_logo.png')}}" alt="gospelgem">
                   </g>
                 </g>
               </svg>
@@ -79,96 +79,25 @@
 
                 <!-- About -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('about')}}" aria-haspopup="true" aria-expanded="false">About</a>
+                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('about')}}" aria-haspopup="true" aria-expanded="false">What is Gosgem</a>
                 </li>
                 <!-- End About -->
-                <!-- Demos -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-demos" class="nav-link g-py-7 g-px-0" href="https://courses.gosgem.com/" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-demos" target="_blank">Mentorship</a>
-
-                  <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-demos" aria-labelledby="nav-link-demos">
-
-                    <!-- Demos - Admin Template -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../admin-template/dashboards/dashboard-v1.html" target="_blank">Register<span class="u-label g-rounded-3 g-font-size-10 g-bg-lightred g-py-3 g-pos-rel g-top-minus-1 g-ml-5"></a>
-                    </li>
-                    <!-- End Demos - Admin Template -->
-
-                    <!-- Demos - University -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="https://courses.gosgem.com/" target="_blank">Courses <span class="g-opacity-0_5"></span></a>
-                    </li>
-                    <!-- End Demos - University -->
-
-                    <!-- Demos - Marketing -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../multipage/marketing/home-page-1.html" target="_blank">Live Classes <span class="g-opacity-0_5">(20 of 50 participants)</span></a>
-                    </li>
-                    <!-- End Demos - Marketing -->
-
-                  </ul>
+                
+                <!-- About -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="https://courses.gosgem.com/" aria-haspopup="true" aria-expanded="false">Mentorship Program</a>
                 </li>
-                <!-- End Demos -->
-                <!-- Demos -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-demos" class="nav-link g-py-7 g-px-0" href="{{url('competition')}}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-demos">Competition</a>
-
-                  <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-demos" aria-labelledby="nav-link-demos">
-
-                    <!-- Demos - Admin Template -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../admin-template/dashboards/dashboard-v1.html" target="_blank">Contestants Registration <span class="u-label g-rounded-3 g-font-size-10 g-bg-lightred g-py-3 g-pos-rel g-top-minus-1 g-ml-5">Coming Soon</span></a>
-                    </li>
-                    <!-- End Demos - Admin Template -->
-
-                    <!-- Demos - E-Commerce -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../e-commerce/home-page-1.html" target="_blank">Contestants <span class="g-opacity-0_5">(44 Contestants)</span></a>
-                    </li>
-                    <!-- End Demos - E-Commerce -->
-
-                    <!-- Demos - University -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../multipage/education/home-page-1.html" target="_blank">Audition <span class="g-opacity-0_5">(2 locations)</span></a>
-                    </li>
-                    <!-- End Demos - University -->
-
-                    <!-- Demos - Marketing -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../multipage/marketing/home-page-1.html" target="_blank">Judges <span class="g-opacity-0_5">(4 Judges)</span></a>
-                    </li>
-                    <!-- End Demos - Marketing -->
-
-                  </ul>
-                </li>
-                <!-- End Demos -->
-
-                <!-- Demos -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-demos" class="nav-link g-py-7 g-px-0" href="{{url('competition')}}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-demos">GALLERY</a>
-
-                  <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-demos" aria-labelledby="nav-link-demos">
-
-                    <!-- Demos - Admin Template -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../admin-template/dashboards/dashboard-v1.html" target="_blank">Videos <span class="u-label g-rounded-3 g-font-size-10 g-bg-lightred g-py-3 g-pos-rel g-top-minus-1 g-ml-5">Coming Soon</span></a>
-                    </li>
-                    <!-- End Demos - Admin Template -->
-
-                    <!-- Demos - E-Commerce -->
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="../../../e-commerce/home-page-1.html" target="_blank">Pictures <span class="g-opacity-0_5">(44 Contestants)</span></a>
-                    </li>
-                    <!-- End Demos - E-Commerce -->
-                  </ul>
-                </li>
-                <!-- End Demos -->
-
-                <!-- End About -->
+                <!-- End About -->            
 
                 <!-- About -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('contact')}}" aria-haspopup="true" aria-expanded="false">Contact</a>
+                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('contact')}}" aria-haspopup="true" aria-expanded="false">Contact Us</a>
+                </li>
+                <!-- End About -->
+
+                 <!-- About -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{url('login')}}">SignUp/Login</a>
                 </li>
                 <!-- End About -->
 
