@@ -11,7 +11,7 @@
                 <span class="g-color-primary">Gos</span>Gem</h2>
               <div data-animation="fadeInUp" data-animation-delay="800" data-animation-duration="1500">
                 <p class="g-color-white-opacity-0_9 g-font-size-20 g-mb-30">Meet, interact and learn from accomplished
-                  <br>music ministers and experienced instructors <br>from the comfort of their homes.
+                  <br>music ministers and experienced instructors <br>from the comfort of your home.
                 </p>
                 <a class="btn btn-xl u-btn-white g-font-weight-600 g-font-size-13 text-uppercase rounded" href="{{url('about')}}">Discover More</a>
                 <a class="btn btn-xl u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase rounded mx-2" href="#!">Join Us</a>
