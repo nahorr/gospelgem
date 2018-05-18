@@ -8,7 +8,7 @@
               <h2 class="u-heading-v2__title h6 text-uppercase mb-0">About Us</h2>
             </div>
 
-            <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
+            <p>Our Purpose at GosGem is to provide students with the opportunity to meet, interact and learn from our accomplished music minister and experienced instructors from the comfort of their homes.</p>
           </div>
           <!-- End Footer Content -->
 
@@ -155,9 +155,6 @@
                 </li>
                 <li class="list-inline-item">
                   <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terms of Use</a>
-                </li>
-                <li class="list-inline-item">
-                  <span>|</span>
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>

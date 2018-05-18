@@ -97,7 +97,7 @@
 
                  <!-- About -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{url('login')}}">SignUp/Login</a>
+                  <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{url('login')}}">Competition</a>
                 </li>
                 <!-- End About -->
 
