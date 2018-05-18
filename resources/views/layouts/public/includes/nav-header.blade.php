@@ -16,13 +16,13 @@
 
             <div class="col-auto g-px-15">
               <i class="fa fa-user g-valign-middle g-mr-5"></i>
-              <a href="https://gosgem.com/login" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login</a>
+              <a href="{{url('login')}}" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login/Register</a>
             </div>
 
             <div class="col-auto g-px-15">
               <ul class="list-inline mb-0 g-mx-minus-3">
                 <li class="list-inline-item g-valign-middle g-mx-3">
-                  <a class="d-block u-icon-v3 u-icon-size--xs g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-gray-dark-v1--hover g-text-underline--none--hover" href="#!">
+                  <a class="d-block u-icon-v3 u-icon-size--xs g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-gray-dark-v1--hover g-text-underline--none--hover" href="https://www.facebook.com/Gosgem-474767262939625/" target="_blank">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -57,13 +57,7 @@
 
             <!-- Logo -->
             <a href="{{url('/')}}" class="navbar-brand d-flex">
-              <svg width="86px" height="32px" viewBox="0 0 86 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g transform="translate(-78.000000, -19.000000)">
-                    <img id="logo" src="{{asset('unify/assets/img/logo/gosgem_logo.png')}}" alt="gospelgem">
-                  </g>
-                </g>
-              </svg>
+              <img id="logo" src="{{asset('unify/assets/img/logo/gosgem_logo.png')}}" alt="gospelgem">
             </a>
             <!-- End Logo -->
 

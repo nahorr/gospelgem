@@ -4,8 +4,7 @@
       <nav class="navbar no-gutters g-pa-0">
         <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12">
           <!-- Logo -->
-          <a href="index.html" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
-
+          <a href="{{url('/home')}}" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
             <svg class="u-header-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g transform="translate(-78.000000, -19.000000)">
@@ -17,9 +16,6 @@
                 </g>
               </g>
             </svg>
-
-
-
           </a>
           <!-- End Logo -->
 
@@ -99,7 +95,7 @@
                 <!-- Top Messages List Item -->
                 <li class="media g-pos-rel u-header-dropdown-item-v1 g-pa-20">
                   <div class="d-flex g-mr-15">
-                    <img class="g-width-40 g-height-40 rounded-circle" src="../assets/img-temp/100x100/img7.jpg" alt="Image Description">
+                    <img class="g-width-40 g-height-40 rounded-circle" src="{{asset('unify/assets/img-temp/100x100/img7.jpg')}}" alt="Image Description">
                   </div>
 
                   <div class="media-body">
@@ -247,10 +243,10 @@
               data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
                 <span class="g-pos-rel">
         <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-lightblue-v5 g-mr-5"></span>
-                <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm" src="assets/img-temp/130x130/img1.jpg" alt="Image description">
+                <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm" src="{{asset('unify/admin-assets/img-temp/130x130/img1.png')}}" alt="Image description">
                 </span>
                 <span class="g-pos-rel g-top-2">
-        <span class="g-hidden-sm-down">Charlie Bailey</span>
+        <span class="g-hidden-sm-down">{{ \Auth::user()->name }}</span>
                 <i class="hs-admin-angle-down g-pos-rel g-top-2 g-ml-10"></i>
                 </span>
               </a>
@@ -307,12 +303,17 @@
                   </a>
                 </li>
                 <li class="mb-0">
-                  <a class="media g-color-lightred-v2--hover g-py-5 g-px-20" href="#!">
+                  <a class="media g-color-lightred-v2--hover g-py-5 g-px-20" href="{{ route('logout') }}" onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
                     <span class="d-flex align-self-center g-mr-12">
-          <i class="hs-admin-shift-right"></i>
-        </span>
+                      <i class="hs-admin-shift-right"></i>
+                    </span>
                     <span class="media-body align-self-center">Sign Out</span>
                   </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+
                 </li>
               </ul>
               <!-- End Top User Menu -->
