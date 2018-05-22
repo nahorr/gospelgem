@@ -18,73 +18,72 @@
       <!-- Promo Block Content -->
     </section>
     <!-- End Promo Block -->
-
     <section class="container g-pt-100 g-pb-50">
-      <div class="row justify-content-center g-mb-60">
-        <div class="col-lg-7">
-          <!-- Heading -->
-          <div class="text-center">
-            <h2 class="h3 g-color-black text-uppercase mb-2">We are Gosgem</h2>
-            <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
-            <p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>
+      <div class="u-heading-v6-2 text-center g-mb-60">
+          <span class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-13 text-uppercase">What is</span>
+          <h2 class="h1 u-heading-v6__title g-brd-black g-color-black g-font-weight-600 mb-0">GosGem</h2>
+        </div>
+      <div class="g-pos-rel">
+      <!-- Info Blocks -->
+        <div class="row align-items-stretch no-gutters">
+          <div class="col-lg-6">
+            <!-- Article -->
+            <article class="h-100 text-left text-lg-right u-block-hover g-flex-middle g-color-white--hover g-bg-gray-dark-v1 g-transition-0_3 g-py-70 g-px-30 g-pr-150--lg">
+              <div class="u-block-hover__additional--fade g-bg-size-cover g-bg-cover g-bg-primary-opacity-0_8--after g-pos-abs" data-bg-img-src="{{asset('unify/assets/img-temp/900x400/img1.jpg')}}">
+              </div>
+              <div class="g-flex-middle-item g-pos-rel g-z-index-1">
+                <h3 class="h5 g-color-white g-font-weight-700 text-uppercase g-mb-12">The Initiative</h3>
+                <p class="g-color-white-opacity-0_7 mb-0"> GosGEM is an initiative to harness the gifts of talented Christian artists around the world, by providing a platform where they can be mentored by very successful Christian singers and also taught by professionals in the music industry today.</p>
+              </div>
+            </article>
+            <!-- End Article -->
           </div>
-          <!-- End Heading -->
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-6 g-mb-50">
-          <img class="img-fluid" src="{{asset('unify/assets/img-temp/600x330/img1.png')}}" alt="Image Description">
-        </div>
-        <div class="col-lg-6">
-          <div class="mb-5">
-            <p class="g-mb-30">As creatives, it's important that we strive to do work outside of obligation. This lets us stay ahead of the curve for our clients and internal projects.</p>
-            <div class="row">
-              <div class="col-sm-6">
-                <ul class="list-unstyled g-font-size-13 mb-0">
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    Jacks of all. Experts in all.
-                  </li>
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    It's good to virtually meet you.
-                  </li>
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    A crew of creative doers.
-                  </li>
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    Let's create something great.
-                  </li>
-                </ul>
+          <div class="col-lg-6">
+            <!-- Article -->
+            <article class="h-100 u-block-hover g-flex-middle g-color-white--hover g-bg-black g-transition-0_3 g-py-70 g-px-30 g-pl-150--lg">
+              <div class="u-block-hover__additional--fade g-bg-size-cover g-bg-cover g-bg-primary-opacity-0_8--after g-pos-abs" data-bg-img-src="{{asset('unify/assets/img-temp/900x400/img2.jpg')}}">
               </div>
-
-              <div class="col-sm-6">
-                <ul class="list-unstyled g-font-size-13 mb-0">
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    We're accepting projects today.
-                  </li>
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    Finding your perfect plan.
-                  </li>
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    Examples of branding projects.
-                  </li>
-                  <li class="d-flex mb-3">
-                    <i class="g-color-primary g-mt-5 g-mr-10 icon-check"></i>
-                    Your brand has a story to tell.
-                  </li>
-                </ul>
+              <div class="g-flex-middle-item g-pos-rel g-z-index-1">
+                <h3 class="h5 g-color-white g-font-weight-700 text-uppercase g-mb-12">Our Purpose</h3>
+                <p class="g-color-white-opacity-0_7 mb-0">Our Purpose at GosGem is to provide students with the opportunity to meet, interact and learn from our accomplished music minister and experienced instructors from the comfort of their homes.</p>
               </div>
-            </div>
+            </article>
+            <!-- End Article -->
           </div>
         </div>
-      </div>
+
+        <div class="row align-items-stretch no-gutters">
+          <div class="col-lg-6">
+            <!-- Article -->
+            <article class="h-100 text-left text-lg-right u-block-hover g-flex-middle g-color-white--hover g-bg-black g-transition-0_3 g-py-70 g-px-30 g-pr-150--lg">
+              <div class="u-block-hover__additional--fade g-bg-size-cover g-bg-cover g-bg-primary-opacity-0_8--after g-pos-abs" data-bg-img-src="{{asset('unify/assets/img-temp/900x400/img3.jpg')}}">
+              </div>
+              <div class="g-flex-middle-item g-pos-rel g-z-index-1">
+                <h3 class="h5 g-color-white g-font-weight-700 text-uppercase g-mb-12">Mentorship Program</h3>
+                <p class="g-color-white-opacity-0_7 mb-0">The Online mentorship program is one of our platform to fulfill our purpose; where we can serve a global audience of Christian artists, who wish to kickstart their musical career through quality mentorship and trainings.</p>
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-lg-6">
+            <!-- Article -->
+            <article class="h-100 u-block-hover g-flex-middle g-color-white--hover g-bg-gray-dark-v1 g-transition-0_3 g-py-70 g-px-30 g-pl-150--lg">
+              <div class="u-block-hover__additional--fade g-bg-size-cover g-bg-cover g-bg-primary-opacity-0_8--after g-pos-abs" data-bg-img-src="{{asset('unify/assets/img-temp/900x400/img4.jpg')}}">
+              </div>
+              <div class="g-flex-middle-item g-pos-rel g-z-index-1">
+                <h3 class="h5 g-color-white g-font-weight-700 text-uppercase g-mb-12">Bridging The Gap</h3>
+                <p class="g-color-white-opacity-0_7 mb-0">GosGem is hereby interested in bridging this gap through a beautifully built, robust and interactive online training platform. </p>
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+        </div>
+
+        <img class="g-hidden-md-down g-width-200 g-height-200 g-absolute-centered" src="{{asset('unify/assets/img-temp/230x230/img1.jpg')}}" alt="Image Description">
+      <!-- End Info Blocks -->
+    </div>
     </section>
 
     <!-- Icon Blocks -->
