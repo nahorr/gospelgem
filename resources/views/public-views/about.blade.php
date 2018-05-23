@@ -12,8 +12,8 @@
 
       <!-- Promo Block Content -->
       <div class="container g-color-white text-center g-py-150">
-        <span class="d-block g-font-weight-300 g-font-size-25 mb-3">Discover more about Gosgem</span>
-        <h3 class="h1 text-uppercase mb-0">Learn From The Best So You can Become The Best</h3>
+        <span class="d-block g-font-weight-300 g-font-size-25 mb-3">We are GosGem!</span>
+        <h3 class="h1 text-uppercase mb-0">Discover more about Gosgem</h3>
       </div>
       <!-- Promo Block Content -->
     </section>
@@ -86,49 +86,98 @@
     </div>
     </section>
 
-    <!-- Icon Blocks -->
-    <section class="g-bg-gray-light-v5">
+        <!-- About Us -->
+    <section class="g-py-100">
       <div class="container">
+        <header class="text-center g-width-60x--md mx-auto g-mb-60">
+          <div class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+            <h2 class="h3 u-heading-v2__title g-color-gray-dark-v2 text-uppercase g-font-weight-600">WHO NEEDS GOSGEM</h2>
+          </div>
+         
+        </header>
+
         <div class="row">
-          <div class="col-lg-4 g-py-100 g-px-40--sm">
-            <!-- Icon Blocks -->
-            <div class="text-center">
-              <span class="u-icon-v2 g-color-white g-bg-primary rounded-circle mb-4">
-                <i class="icon-education-087 u-line-icon-pro"></i>
-              </span>
-              <h3 class="h5 g-color-black text-uppercase mb-3">Creative ideas</h3>
-              <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt.</p>
-            </div>
-            <!-- End Icon Blocks -->
+          <div class="col-lg-6 align-self-center">
+            <img class="img-fluid" src="{{asset('unify/assets/img-temp/600x330/img1.png')}}" alt="Image description">
           </div>
 
-          <div class="col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-py-100 g-px-40--sm">
-            <!-- Icon Blocks -->
-            <div class="text-center">
-              <span class="u-icon-v2 g-color-white g-bg-primary rounded-circle mb-4">
-                <i class="icon-education-035 u-line-icon-pro"></i>
-              </span>
-              <h3 class="h5 g-color-black text-uppercase mb-3">Excellent features</h3>
-              <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt.</p>
-            </div>
-            <!-- End Icon Blocks -->
-          </div>
+          <div class="col-lg-6 align-self-center g-pl-30--lg g-mb-50 g-mb-0--lg">
+            <p class="g-mb-30">Every <strong>gifted</strong> individual whose interest is to:</p>
 
-          <div class="col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-py-100 g-px-40--sm">
-            <!-- Icon Blocks -->
-            <div class="text-center">
-              <span class="u-icon-v2 g-color-white g-bg-primary rounded-circle mb-4">
-                <i class="icon-education-141 u-line-icon-pro"></i>
-              </span>
-              <h3 class="h5 g-color-black text-uppercase mb-3">Fully responsive</h3>
-              <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt.</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <ul class="list-unstyled g-color-gray-dark-v4 g-mb-30 g-mb-0--sm">
+                  <li class="d-flex g-mb-10">
+                    <i class="icon-arrow-right-circle g-color-primary g-mt-5 g-mr-10"></i> gain sharper focus on what is needed to grow professionally in music
+                  </li>
+                  <li class="d-flex g-mb-10">
+                    <i class="icon-arrow-right-circle g-color-primary g-mt-5 g-mr-10"></i> Complement ongoing formal study and development activities
+                  </li>
+                  <li class="d-flex g-mb-10">
+                    <i class="icon-arrow-right-circle g-color-primary g-mt-5 g-mr-10"></i> Get assistance with ideas and honest feedback 
+                  </li>
+                  <li class="d-flex g-mb-10">
+                    <i class="icon-arrow-right-circle g-color-primary g-mt-5 g-mr-10"></i> Improve ability to express expectations, goals, and concerns 
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6">
+                <ul class="list-unstyled g-color-gray-dark-v4">
+                  <li class="d-flex g-mb-10">
+                    <i class="icon-arrow-right-circle g-color-primary g-mt-5 g-mr-10"></i> Gain capacity to translate values and strategies into productive actions 
+                  </li>
+                  <li class="d-flex g-mb-10">
+                    <i class="icon-arrow-right-circle g-color-primary g-mt-5 g-mr-10"></i> Gain career development opportunities
+                  </li>
+                  <li class="d-flex g-mb-10">
+                    <i class="icon-arrow-right-circle g-color-primary g-mt-5 g-mr-10"></i> Increase career networks and receives greater industry exposure 
+                  </li>
+                  
+                </ul>
+              </div>
             </div>
-            <!-- End Icon Blocks -->
           </div>
         </div>
       </div>
     </section>
-    <!-- End Icon Blocks -->
+    <!-- End About Us -->
+
+    <!-- Black Call To Action -->
+    <div class="g-mb-50">
+      <div id="shortcode32">
+        <div class="shortcode-html">
+          <div class="g-bg-img-hero" style="background-image: url(/unify/assets/include/svg/svg-bg3.svg);">
+            <div class="container g-pt-60 g-pb-30">
+              <div class="row justify-content-lg-center align-items-md-center">
+                <div class="col-md-9 col-lg-7 g-mb-30">
+                  <!-- Media -->
+                  <div class="media align-items-center g-pr-15--lg">
+                    <div class="d-flex mr-5">
+                      <span class="u-icon-v3 u-icon-size--lg g-color-primary g-bg-primary-opacity-0_1 rounded-circle">
+                        <i class="material-icons">toys</i>
+                      </span>
+                    </div>
+
+                    <div class="media-body">
+                      <h3 class="h2">Join our mentorship program</h3>
+                      <p>Do you wish to meet, interact and learn from accomplished music ministers and experienced instructors from the comfort of your home? If yes, join our mentorship program now.</p>
+                    </div>
+                  </div>
+                  <!-- End Media -->
+                </div>
+
+                <div class="col-5 col-md-3 col-lg-2 mx-auto g-mx-0--lg g-mb-30">
+                  <button class="btn btn-block u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-25 g-py-13" type="button">Register Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- End Black Call To Action -->
 
     <section class="container g-py-100">
       <div class="row justify-content-center">
@@ -160,79 +209,6 @@
       </div>
     </section>
 
-    <section class="g-bg-gray-light-v5">
-      <div class="container g-pt-100 g-pb-70">
-        <div class="row justify-content-center g-mb-60">
-          <div class="col-lg-7">
-            <!-- Heading -->
-            <div class="text-center">
-              <h2 class="h3 g-color-black text-uppercase mb-2">What we are good at?</h2>
-              <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
-              <p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>
-            </div>
-            <!-- End Heading -->
-          </div>
-        </div>
-
-        <div class="row g-mb-30">
-          <div class="col-lg-6 g-mb-30">
-            <div class="mb-5">
-              <p>As creatives, it's important that we strive to do work outside of obligation. This lets us stay ahead of the curve for our clients and internal projects.</p>
-              <p>At the end of the day, it's important to not let being busy distract us from having fun. Smiling, laughing, and hanging helps us work together to achieve this. It’s important to stay detail oriented with every project we tackle.</p>
-            </div>
-            <a class="btn btn-md u-btn-outline-black g-font-size-default rounded-0 g-py-10 mr-2" href="#!">Explore More</a>
-            <a class="btn btn-md u-btn-primary g-font-size-default rounded-0 g-py-10" href="#!">Purchase Now</a>
-          </div>
-          <div class="col-lg-6">
-            <!-- End Progress Bar -->
-            <div class="mb-4">
-              <div class="d-flex justify-content-between">
-                <h6>Web Design</h6>
-                <span class="ml-auto">88%</span>
-              </div>
-              <div class="js-hr-progress-bar progress g-height-2 rounded-0">
-                <div class="js-hr-progress-bar-indicator progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <!-- Progress Bar -->
-
-            <!-- End Progress Bar -->
-            <div class="mb-4">
-              <div class="d-flex justify-content-between">
-                <h6>PHP/WordPress</h6>
-                <span class="ml-auto">76%</span>
-              </div>
-              <div class="js-hr-progress-bar progress g-height-2 rounded-0">
-                <div class="js-hr-progress-bar-indicator progress-bar" role="progressbar" style="width: 76%;" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <!-- Progress Bar -->
-
-            <!-- End Progress Bar -->
-            <div class="mb-4">
-              <div class="d-flex justify-content-between">
-                <h6>HTML/CSS</h6>
-                <span class="ml-auto">97%</span>
-              </div>
-              <div class="js-hr-progress-bar progress g-height-2 rounded-0">
-                <div class="js-hr-progress-bar-indicator progress-bar" role="progressbar" style="width: 97%;" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <!-- Progress Bar -->
-
-            <!-- End Progress Bar -->
-            <div class="d-flex justify-content-between">
-              <h6>Illustration</h6>
-              <span class="ml-auto">69%</span>
-            </div>
-            <div class="js-hr-progress-bar progress g-height-2 rounded-0">
-              <div class="js-hr-progress-bar-indicator progress-bar" role="progressbar" style="width: 69%;" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <!-- Progress Bar -->
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Team Blocks -->
     <section class="container g-pt-100 g-pb-70">
@@ -447,52 +423,6 @@
       </div>
     </section>
     <!-- End Team Blocks -->
-
-    <!-- Testimonials -->
-    <section class="g-bg-gray-light-v5 g-pt-100 g-pb-50">
-      <div class="container">
-        <div class="row justify-content-center g-mb-60">
-          <div class="col-lg-7">
-            <!-- Heading -->
-            <div class="text-center">
-              <h2 class="h3 g-color-black text-uppercase mb-2">What people say about Unify?</h2>
-              <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
-              <p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>
-            </div>
-            <!-- End Heading -->
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 g-mb-50">
-            <!-- Testimonials -->
-            <blockquote class="lead u-blockquote-v1 rounded g-pl-60 g-pr-30 g-py-30 g-mb-40">Dear Htmlstream team, I just bought the Unify template some weeks ago. The template is really nice and offers quite a large set of options.</blockquote>
-            <div class="media">
-              <img class="d-flex align-self-center rounded-circle g-width-60 g-brd-around g-brd-3 g-brd-white mr-3" src="{{asset('unify/assets/img-temp/100x100/img16.jpg')}}" alt="Image Description">
-              <div class="media-body align-self-center">
-                <h4 class="h6 g-font-weight-700 g-mb-0">Alexandra Pottorf</h4>
-                <em class="g-color-gray-dark-v4 g-font-style-normal">Web Developer</em>
-              </div>
-            </div>
-            <!-- End Testimonials -->
-          </div>
-
-          <div class="col-md-6 g-mb-50">
-            <!-- Testimonials -->
-            <blockquote class="lead u-blockquote-v1 rounded g-pl-60 g-pr-30 g-py-30 g-mb-40">Hi there purchased a couple of days ago and the site looks great, big thanks to the htmlstream guys, they gave me some great help with some fiddly setup issues.</blockquote>
-            <div class="media">
-              <img class="d-flex align-self-center rounded-circle g-width-60 g-brd-around g-brd-3 g-brd-white mr-3" src="{{asset('unify/assets/img-temp/100x100/img14.jpg')}}" alt="Image Description">
-              <div class="media-body align-self-center">
-                <h4 class="h6 g-font-weight-700 g-mb-0">Bastien Rojanawisut</h4>
-                <em class="g-color-gray-dark-v4 g-font-style-normal">UX/UI Designer</em>
-              </div>
-            </div>
-            <!-- End Testimonials -->
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Testimonials -->
 
 	@include('layouts.public.includes.footer')
 

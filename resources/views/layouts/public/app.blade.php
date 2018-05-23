@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/dzsparallaxer/dzsparallaxer.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/dzsparallaxer/dzsscroller/scroller.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/dzsparallaxer/advancedscroller/plugin.css')}}">
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-material/material-icons.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/slick-carousel/slick/slick.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/hs-bg-video/hs-bg-video.css')}}">
@@ -75,6 +76,7 @@
 
   <!-- JS Implementing Plugins -->
   <script src="{{asset('unify/assets/vendor/hs-megamenu/src/hs.megamenu.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/gmaps/gmaps.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/dzsparallaxer.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/dzsscroller/scroller.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/advancedscroller/plugin.js')}}"></script>
@@ -91,6 +93,7 @@
   <script src="{{asset('unify/assets/js/components/hs.header.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.hamburgers.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.tabs.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/gmap/hs.map.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.carousel.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.progress-bar.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.bg-video.js')}}"></script>
@@ -101,6 +104,12 @@
 
   <!-- JS Plugins Init. -->
   <script>
+
+    // initialization of google map
+    function initMap() {
+      $.HSCore.components.HSGMap.init('.js-g-map');
+    }
+
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
@@ -146,6 +155,8 @@
       });
     });
   </script>
+
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async defer></script>
 </body>
 
 </html>

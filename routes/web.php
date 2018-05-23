@@ -19,7 +19,7 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 Route::get('/', 'HomePublic\HomeController@index')->name('homepublic');
 Route::get('/about', 'HomePublic\HomeController@about')->name('about');
 Route::get('/competition', 'HomePublic\HomeController@competition')->name('competition');
-Route::get('/mentorship', 'HomePublic\HomeController@team')->name('mentorship');
+Route::get('/mentorship', 'HomePublic\HomeController@mentorship')->name('mentorship');
 Route::get('/contact', 'HomePublic\HomeController@contact')->name('contact');
 Route::post('/postcontact', 'HomePublic\HomeController@postContact')->name('postcontact');
 
