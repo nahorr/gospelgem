@@ -20,7 +20,7 @@
                 data-saveperformance="off"
                 data-title="A STUDY ON HAPPINESS"
                 data-description="Science says that Women are generally happier">
-              <img class="rev-slidebg" src="{{asset('unify/assets/img/newscarousel1.jpg')}}" alt="Image description"
+              <img class="rev-slidebg" src="{{asset('unify/assets/img/slider_pictures/1.png')}}" alt="Image description"
                    data-bgposition="center center"
                    data-bgfit="cover"
                    data-bgrepeat="no-repeat"
@@ -131,7 +131,7 @@
                 data-saveperformance="off"
                 data-title="THE REAL DEAL"
                 data-description="Every right implies a responsibility.">
-              <img class="rev-slidebg" src="{{asset('unify/assets/img/newscarousel2.jpg')}}" alt="Image description"
+              <img class="rev-slidebg" src="{{asset('unify/assets/img/slider_pictures/2.png')}}" alt="Image description"
                    data-bgposition="center center"
                    data-bgfit="cover"
                    data-bgrepeat="no-repeat"
@@ -237,12 +237,12 @@
                 data-easein="default"
                 data-easeout="default"
                 data-masterspeed="default"
-                data-thumb="assets/img/newscarousel6-100x50.jpg"
+                data-thumb="{{asset('unify/assets/img/newscarousel6-100x50.jpg')}}"
                 data-rotate="0"
                 data-saveperformance="off"
                 data-title="NATURAL BEAUTY"
                 data-description="There was never a night or a problem that could defeat sunrise or hope.">
-              <img class="rev-slidebg" src="assets/img/newscarousel6.jpg" alt="Image description"
+              <img class="rev-slidebg" src="{{asset('unify/assets/img/slider_pictures/3.png')}}" alt="Image description"
                    data-bgposition="center center"
                    data-bgfit="cover"
                    data-bgrepeat="no-repeat"
@@ -348,12 +348,12 @@
                 data-easein="default"
                 data-easeout="default"
                 data-masterspeed="default"
-                data-thumb="assets/img/newscarousel5-100x50.jpg"
+                data-thumb="{{asset('unify/assets/img/newscarousel5-100x50.jpg')}}"
                 data-rotate="0"
                 data-saveperformance="off"
                 data-title="WORDS OF WISDOM"
                 data-description="Walking with a friend in the dark is better than alone in the light.">
-              <img class="rev-slidebg" src="assets/img/newscarousel5.jpg" alt="Image description"
+              <img class="rev-slidebg" src="{{asset('unify/assets/img/slider_pictures/4.png')}}" alt="Image description"
                    data-bgposition="center center"
                    data-bgfit="cover"
                    data-bgrepeat="no-repeat"
@@ -453,6 +453,6 @@
             </li>
           </ul>
 
-          <div class="tp-bannertimer tp-bottom" style="height: 5px; background-color: rgba(166, 216, 236, 1);"></div>
+          <div class="tp-bannertimer tp-bottom" style="height: 5px; background-color: rgba(226, 149, 50, 1);"></div>
         </div>
       </div>
