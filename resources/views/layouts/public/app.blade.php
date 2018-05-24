@@ -51,6 +51,12 @@
   <link rel="stylesheet" href="{{asset('unify/assets/css/unify-components.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/css/unify-globals.css')}}">
 
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/revolution-slider/revolution/css/settings.css')}}">
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/revolution-slider/revolution/css/layers.css')}}">
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/revolution-slider/revolution/css/navigation.css')}}">
+
   <!-- CSS Customization -->
   <link rel="stylesheet" href="{{asset('unify/assets/css/custom.css')}}">
 </head>
@@ -92,6 +98,7 @@
   <script src="{{asset('unify/assets/js/hs.core.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.header.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.hamburgers.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.scroll-nav.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.tabs.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/gmap/hs.map.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.carousel.js')}}"></script>
@@ -101,6 +108,20 @@
   <script src="{{asset('unify/assets/js/helpers/hs.height-calc.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.popup.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.go-to.js')}}"></script>
+
+  <!-- JS Revolution Slider -->
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
+
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -154,6 +175,117 @@
         breakpoint: 991
       });
     });
+
+    var tpj = jQuery;
+
+    var revapi486;
+    tpj(document).ready(function () {
+      if (tpj('#rev_slider_486_1').revolution == undefined) {
+        revslider_showDoubleJqueryError('#rev_slider_486_1');
+      } else {
+        revapi486 = tpj('#rev_slider_486_1').show().revolution({
+          sliderType: 'standard',
+          jsFileLocation: 'revolution/js/',
+          sliderLayout: 'fullwidth',
+          dottedOverlay: 'none',
+          delay: 9000,
+          navigation: {
+            keyboardNavigation: 'on',
+            keyboard_direction: 'horizontal',
+            mouseScrollNavigation: 'off',
+            mouseScrollReverse: 'default',
+            onHoverStop: 'on',
+            touch: {
+              touchenabled: 'on',
+              swipe_threshold: 75,
+              swipe_min_touches: 1,
+              swipe_direction: 'horizontal',
+              drag_block_vertical: false
+            },
+            arrows: {
+              style: 'gyges',
+              enable: true,
+              hide_onmobile: false,
+              hide_over: 778,
+              hide_onleave: false,
+              tmp: '',
+              left: {
+                h_align: 'right',
+                v_align: 'bottom',
+                h_offset: 40,
+                v_offset: 0
+              },
+              right: {
+                h_align: 'right',
+                v_align: 'bottom',
+                h_offset: 0,
+                v_offset: 0
+              }
+            },
+            tabs: {
+              style: 'erinyen',
+              enable: true,
+              width: 250,
+              height: 100,
+              min_width: 250,
+              wrapper_padding: 0,
+              wrapper_color: 'transparent',
+              wrapper_opacity: '0',
+              tmp: '<div class="tp-tab-title">@{{title}}</div>' +
+              '<div class="tp-tab-desc">@{{description}}</div>',
+              visibleAmount: 3,
+              hide_onmobile: true,
+              hide_under: 778,
+              hide_onleave: false,
+              hide_delay: 200,
+              direction: 'vertical',
+              span: false,
+              position: 'inner',
+              space: 10,
+              h_align: 'right',
+              v_align: 'center',
+              h_offset: 30,
+              v_offset: 0
+            }
+          },
+          viewPort: {
+            enable: true,
+            outof: 'pause',
+            visible_area: '80%',
+            presize: false
+          },
+          responsiveLevels: [1240, 1024, 778, 480],
+          visibilityLevels: [1240, 1024, 778, 480],
+          gridwidth: [1240, 1024, 778, 480],
+          gridheight: [500, 450, 400, 350],
+          lazyType: 'none',
+          parallax: {
+            type: 'scroll',
+            origo: 'enterpoint',
+            speed: 400,
+            levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 46, 47, 48, 49, 50, 55]
+          },
+          shadow: 0,
+          spinner: 'off',
+          stopLoop: 'off',
+          stopAfterLoops: -1,
+          stopAtSlide: -1,
+          shuffle: 'off',
+          autoHeight: 'off',
+          hideThumbsOnMobile: 'off',
+          hideSliderAtLimit: 0,
+          hideCaptionAtLimit: 0,
+          hideAllCaptionAtLilmit: 0,
+          debugMode: false,
+          fallbacks: {
+            simplifyAll: 'off',
+            nextSlideOnWindowFocus: 'off',
+            disableFocusListener: false
+          }
+        });
+      }
+    });
+
   </script>
 
   <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async defer></script>

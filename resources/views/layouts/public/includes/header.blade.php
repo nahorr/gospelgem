@@ -1,31 +1,458 @@
-    <!-- Promo Block -->
-    <section class="g-pos-rel">
-      <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
-        <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-bluegray-opacity-0_2--after" style="height: 130%; background-image: url(/unify/assets/img-temp/1920x700/sinach-promo-1.jpg);"></div>
+      <div id="rev_slider_486_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="background-color: #fff; padding: 0; margin: 0 auto;"
+           data-alias="news-gallery36"
+           data-source="gallery">
+        <div id="rev_slider_486_1" class="rev_slider fullwidthabanner" style="display: none;"
+             data-version="5.4.1">
+          <ul>
+            <li data-index="rs-1687"
+                data-transition="parallaxvertical"
+                data-slotamount="default"
+                data-hideafterloop="0"
+                data-hideslideonmobile="off"
+                data-easein="default"
+                data-easeout="default"
+                data-masterspeed="default"
+                data-thumb="{{asset('unify/assets/img/newscarousel1-100x50.jpg')}}"
+                data-rotate="0"
+                data-fstransition="fade"
+                data-fsmasterspeed="1500"
+                data-fsslotamount="7"
+                data-saveperformance="off"
+                data-title="A STUDY ON HAPPINESS"
+                data-description="Science says that Women are generally happier">
+              <img class="rev-slidebg" src="{{asset('unify/assets/img/newscarousel1.jpg')}}" alt="Image description"
+                   data-bgposition="center center"
+                   data-bgfit="cover"
+                   data-bgrepeat="no-repeat"
+                   data-bgparallax="10">
 
-        <div class="container g-bg-cover__inner g-py-100">
-          <div class="row align-items-center">
-            <div class="col-lg-6 g-mb-30 g-mb-0--lg">
-              <h3 class="g-color-white g-font-weight-300 g-font-size-25 g-font-size-45--md text-uppercase g-line-height-1 g-mb-5" data-animation="fadeInUp" data-animation-delay="200" data-animation-duration="1500">Introducing</h3>
-              <h2 class="g-color-white g-font-weight-700 g-font-size-40 g-font-size-60--md text-uppercase g-line-height-1 g-mb-30" data-animation="fadeInUp" data-animation-delay="500" data-animation-duration="1500">
-                <span class="g-color-primary">Gos</span>Gem</h2>
-              <div data-animation="fadeInUp" data-animation-delay="800" data-animation-duration="1500">
-                <p class="g-color-white-opacity-0_9 g-font-size-20 g-mb-30">Meet, interact and learn from accomplished
-                  <br>music ministers and experienced instructors <br>from the comfort of your home.
-                </p>
-                <a class="btn btn-xl u-btn-white g-font-weight-600 g-font-size-13 text-uppercase rounded" href="{{url('about')}}">Discover More</a>
-                <a class="btn btn-xl u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase rounded mx-2" href="#!">Join Us</a>
+              <!-- LAYER NR. 1 -->
+              <div id="slide-1687-layer-3" class="tp-caption tp-shape tp-shapewrapper tp-resizeme" style="z-index: 5; background-color: rgba(0, 0, 0, .35);"
+                   data-x="['center','center','center','center']"
+                   data-y="['middle','middle','middle','middle']"
+                   data-hoffset="['0','0','0','0']"
+                   data-voffset="['0','0','0','0']"
+                   data-width="full"
+                   data-height="full"
+                   data-whitespace="normal"
+                   data-type="shape"
+                   data-basealign="slide"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]"></div>
+
+              <!-- LAYER NR. 2 -->
+              <div id="slide-1687-layer-1" class="tp-caption Newspaper-Title tp-resizeme" style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['165','135','105','130']"
+                   data-fontsize="['50','50','50','30']"
+                   data-lineheight="['55','55','55','35']"
+                   data-width="['600','600','600','420']"
+                   data-height="none"
+                   data-whitespace="normal"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[10,10,10,10]"
+                   data-paddingleft="[0,0,0,0]">Science says that Women are generally happier
               </div>
-            </div>
-            <div class="col-lg-6">
-              <!-- Vimeo Example -->
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="//player.vimeo.com/video/47911018" width="530" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+              <!-- LAYER NR. 3 -->
+              <div id="slide-1687-layer-2" class="tp-caption Newspaper-Subtitle tp-resizeme" style="z-index: 7; white-space: nowrap; text-transform: uppercase;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['140','110','80','100']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]">A study on happiness
               </div>
-              <!-- End Vimeo Example -->
-            </div>
-          </div>
+
+              <!-- LAYER NR. 4 -->
+              <div id="slide-1687-layer-5" class="tp-caption Newspaper-Button rev-btn" style="z-index: 8; white-space: nowrap; text-transform: uppercase; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['53','53','53','30']"
+                   data-voffset="['361','331','301','245']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="button"
+                   data-responsive_offset="on"
+                   data-responsive="off"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},
+                     {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[12,12,12,12]"
+                   data-paddingright="[35,35,35,35]"
+                   data-paddingbottom="[12,12,12,12]"
+                   data-paddingleft="[35,35,35,35]">Read more
+              </div>
+            </li>
+            <li data-index="rs-1688"
+                data-transition="parallaxvertical"
+                data-slotamount="default"
+                data-hideafterloop="0"
+                data-hideslideonmobile="off"
+                data-easein="default"
+                data-easeout="default"
+                data-masterspeed="default"
+                data-thumb="{{asset('unify/assets/img/newscarousel2-100x50.jpg')}}"
+                data-rotate="0"
+                data-saveperformance="off"
+                data-title="THE REAL DEAL"
+                data-description="Every right implies a responsibility.">
+              <img class="rev-slidebg" src="{{asset('unify/assets/img/newscarousel2.jpg')}}" alt="Image description"
+                   data-bgposition="center center"
+                   data-bgfit="cover"
+                   data-bgrepeat="no-repeat"
+                   data-bgparallax="10">
+
+              <!-- LAYER NR. 5 -->
+              <div id="slide-1688-layer-3" class="tp-caption tp-shape tp-shapewrapper tp-resizeme" style="z-index: 9; background-color: rgba(0, 0, 0, .35);"
+                   data-x="['center','center','center','center']"
+                   data-y="['middle','middle','middle','middle']"
+                   data-hoffset="['0','0','0','0']"
+                   data-voffset="['0','0','0','0']"
+                   data-width="full"
+                   data-height="full"
+                   data-whitespace="normal"
+                   data-type="shape"
+                   data-basealign="slide"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]"></div>
+
+              <!-- LAYER NR. 6 -->
+              <div id="slide-1688-layer-1" class="tp-caption Newspaper-Title tp-resizeme" style="z-index: 10; min-width: 600px; max-width: 600px; white-space: normal;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['165','135','105','130']"
+                   data-fontsize="['50','50','50','30']"
+                   data-lineheight="['55','55','55','35']"
+                   data-width="['600','600','600','420']"
+                   data-height="none"
+                   data-whitespace="normal"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[10,10,10,10]"
+                   data-paddingleft="[0,0,0,0]">Every right implies a responsibility.
+              </div>
+
+              <!-- LAYER NR. 7 -->
+              <div id="slide-1688-layer-2" class="tp-caption Newspaper-Subtitle tp-resizeme" style="z-index: 11; white-space: nowrap; text-transform: uppercase;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['140','110','80','100']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]">The real deal
+              </div>
+
+              <!-- LAYER NR. 8 -->
+              <div id="slide-1688-layer-5" class="tp-caption Newspaper-Button rev-btn" style="z-index: 12; white-space: nowrap; text-transform: uppercase; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['53','53','53','30']"
+                   data-voffset="['361','331','301','245']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="button"
+                   data-responsive_offset="on"
+                   data-responsive="off"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},
+                     {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[12,12,12,12]"
+                   data-paddingright="[35,35,35,35]"
+                   data-paddingbottom="[12,12,12,12]"
+                   data-paddingleft="[35,35,35,35]">Read more
+              </div>
+            </li>
+            <li data-index="rs-1689"
+                data-transition="parallaxvertical"
+                data-slotamount="default"
+                data-hideafterloop="0"
+                data-hideslideonmobile="off"
+                data-easein="default"
+                data-easeout="default"
+                data-masterspeed="default"
+                data-thumb="assets/img/newscarousel6-100x50.jpg"
+                data-rotate="0"
+                data-saveperformance="off"
+                data-title="NATURAL BEAUTY"
+                data-description="There was never a night or a problem that could defeat sunrise or hope.">
+              <img class="rev-slidebg" src="assets/img/newscarousel6.jpg" alt="Image description"
+                   data-bgposition="center center"
+                   data-bgfit="cover"
+                   data-bgrepeat="no-repeat"
+                   data-bgparallax="10">
+
+              <!-- LAYER NR. 9 -->
+              <div id="slide-1689-layer-3" class="tp-caption tp-shape tp-shapewrapper tp-resizeme" style="z-index: 13; background-color: rgba(0, 0, 0, .35);"
+                   data-x="['center','center','center','center']"
+                   data-y="['middle','middle','middle','middle']"
+                   data-hoffset="['0','0','0','0']"
+                   data-voffset="['0','0','0','0']"
+                   data-width="full"
+                   data-height="full"
+                   data-whitespace="normal"
+                   data-type="shape"
+                   data-basealign="slide"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]"></div>
+
+              <!-- LAYER NR. 10 -->
+              <div id="slide-1689-layer-1" class="tp-caption Newspaper-Title tp-resizeme" style="z-index: 14; min-width: 600px; max-width: 600px; white-space: normal;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['165','135','105','130']"
+                   data-fontsize="['50','50','50','30']"
+                   data-lineheight="['55','55','55','35']"
+                   data-width="['600','600','600','420']"
+                   data-height="none"
+                   data-whitespace="normal"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[10,10,10,10]"
+                   data-paddingleft="[0,0,0,0]">There was never a night or a problem that could defeat sunrise or hope.
+              </div>
+
+              <!-- LAYER NR. 11 -->
+              <div id="slide-1689-layer-2" class="tp-caption Newspaper-Subtitle tp-resizeme" style="z-index: 15; white-space: nowrap; text-transform: uppercase;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['140','110','80','100']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]">Natural beauty
+              </div>
+
+              <!-- LAYER NR. 12 -->
+              <div id="slide-1689-layer-5" class="tp-caption Newspaper-Button rev-btn" style="z-index: 16; white-space: nowrap; text-transform: uppercase; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['53','53','53','30']"
+                   data-voffset="['361','331','301','245']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="button"
+                   data-responsive_offset="on"
+                   data-responsive="off"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},
+                     {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[12,12,12,12]"
+                   data-paddingright="[35,35,35,35]"
+                   data-paddingbottom="[12,12,12,12]"
+                   data-paddingleft="[35,35,35,35]">Read more
+              </div>
+            </li>
+            <li data-index="rs-1690"
+                data-transition="parallaxvertical"
+                data-slotamount="default"
+                data-hideafterloop="0"
+                data-hideslideonmobile="off"
+                data-easein="default"
+                data-easeout="default"
+                data-masterspeed="default"
+                data-thumb="assets/img/newscarousel5-100x50.jpg"
+                data-rotate="0"
+                data-saveperformance="off"
+                data-title="WORDS OF WISDOM"
+                data-description="Walking with a friend in the dark is better than alone in the light.">
+              <img class="rev-slidebg" src="assets/img/newscarousel5.jpg" alt="Image description"
+                   data-bgposition="center center"
+                   data-bgfit="cover"
+                   data-bgrepeat="no-repeat"
+                   data-bgparallax="10">
+
+              <!-- LAYER NR. 13 -->
+              <div id="slide-1690-layer-3" class="tp-caption tp-shape tp-shapewrapper tp-resizeme" style="z-index: 17; background-color: rgba(0, 0, 0, .35);"
+                   data-x="['center','center','center','center']"
+                   data-y="['middle','middle','middle','middle']"
+                   data-hoffset="['0','0','0','0']"
+                   data-voffset="['0','0','0','0']"
+                   data-width="full"
+                   data-height="full"
+                   data-whitespace="normal"
+                   data-type="shape"
+                   data-basealign="slide"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]"></div>
+
+              <!-- LAYER NR. 14 -->
+              <div id="slide-1690-layer-1" class="tp-caption Newspaper-Title tp-resizeme" style="z-index: 18; min-width: 600px; max-width: 600px; white-space: normal;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['165','135','105','130']"
+                   data-fontsize="['50','50','50','30']"
+                   data-lineheight="['55','55','55','35']"
+                   data-width="['600','600','600','420']"
+                   data-height="none"
+                   data-whitespace="normal"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[10,10,10,10]"
+                   data-paddingleft="[0,0,0,0]">Walking with a friend in the dark is better than alone in the light.
+              </div>
+
+              <!-- LAYER NR. 15 -->
+              <div id="slide-1690-layer-2" class="tp-caption Newspaper-Subtitle tp-resizeme" style="z-index: 19; white-space: nowrap; text-transform: uppercase;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['50','50','50','30']"
+                   data-voffset="['140','110','80','100']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="text"
+                   data-responsive_offset="on"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[0,0,0,0]"
+                   data-paddingright="[0,0,0,0]"
+                   data-paddingbottom="[0,0,0,0]"
+                   data-paddingleft="[0,0,0,0]">Words of wisdom
+              </div>
+
+              <!-- LAYER NR. 16 -->
+              <div id="slide-1690-layer-5" class="tp-caption Newspaper-Button rev-btn" style="z-index: 20; white-space: nowrap; text-transform: uppercase; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer;"
+                   data-x="['left','left','left','left']"
+                   data-y="['top','top','top','top']"
+                   data-hoffset="['53','53','53','30']"
+                   data-voffset="['361','331','301','245']"
+                   data-width="none"
+                   data-height="none"
+                   data-whitespace="nowrap"
+                   data-type="button"
+                   data-responsive_offset="on"
+                   data-responsive="off"
+                   data-frames='[
+                     {"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                     {"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"},
+                     {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}
+                   ]'
+                   data-textAlign="['left','left','left','left']"
+                   data-paddingtop="[12,12,12,12]"
+                   data-paddingright="[35,35,35,35]"
+                   data-paddingbottom="[12,12,12,12]"
+                   data-paddingleft="[35,35,35,35]">Read more
+              </div>
+            </li>
+          </ul>
+
+          <div class="tp-bannertimer tp-bottom" style="height: 5px; background-color: rgba(166, 216, 236, 1);"></div>
         </div>
       </div>
-    </section>
-    <!-- End Promo Block -->
