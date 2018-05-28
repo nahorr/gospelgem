@@ -123,9 +123,9 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-purple--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/VOCAL.png')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Mockups</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Vocals</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/vocals.png')}}" alt="vocals">
+            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Vocal</span>
+            <h3 class="h4 g-font-weight-600 mb-0">Training</h3>
 
             <a class="u-link-v2" href="#!"></a>
           </div>
@@ -135,9 +135,9 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-cyan--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img-temp/425x250/img2.png')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Others</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Brochure</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/brand_dev.png')}}" alt="Image Description">
+            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Brand</span>
+            <h3 class="h4 g-font-weight-600 mb-0">Development</h3>
 
             <a class="u-link-v2" href="#!"></a>
           </div>
@@ -147,9 +147,9 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-teal--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img-temp/425x250/img3.png')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Hi-Tech</span>
-            <h3 class="h4 g-font-weight-600 mb-0">MacBook Pro</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/musıc_prod.jpg')}}" alt="Image Description">
+            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Music</span>
+            <h3 class="h4 g-font-weight-600 mb-0">Production</h3>
 
             <a class="u-link-v2" href="#!"></a>
           </div>
@@ -159,9 +159,9 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-lightred--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img-temp/425x250/img4.png')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Hi-tech</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Latest VR product</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/services.jpg')}}" alt="Image Description">
+            <!--<span class="g-font-weight-600 g-font-size-12 text-uppercase">Hi-tech</span>-->
+            <h3 class="h4 g-font-weight-600 mb-0">Services</h3>
 
             <a class="u-link-v2" href="#!"></a>
           </div>
@@ -171,7 +171,7 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-primary--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img-temp/425x250/img5.png')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/vocals.png')}}" alt="Image Description">
             <span class="g-font-weight-600 g-font-size-12 text-uppercase">Others</span>
             <h3 class="h4 g-font-weight-600 mb-0">Brochure</h3>
 
@@ -183,7 +183,7 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-pink--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img-temp/425x250/img6.png')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/vocals.png')}}" alt="Image Description">
             <span class="g-font-weight-600 g-font-size-12 text-uppercase">Cosmetics</span>
             <h3 class="h4 g-font-weight-600 mb-0">Spa Cosmetics</h3>
 

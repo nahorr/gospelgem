@@ -57,7 +57,7 @@
 
             <!-- Logo -->
             <a href="{{url('/')}}" class="navbar-brand d-flex">
-              <img id="logo" src="{{asset('unify/assets/img/logo/gosgem_logo.png')}}" alt="gospelgem">
+              <img id="logo" src="{{asset('unify/assets/img/logo/gosgem_logo.jpg')}}" alt="gospelgem">
             </a>
             <!-- End Logo -->
 
