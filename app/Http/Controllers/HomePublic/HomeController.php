@@ -27,4 +27,9 @@ class HomeController extends Controller
     {
     	return view('public-views.contact');
     }
+
+    public function comingSoon()
+    {
+        return view('public-views.coming-soon');
+    }
 }

@@ -87,6 +87,7 @@
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/dzsscroller/scroller.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/advancedscroller/plugin.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/appear.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/jquery.countdown.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/masonry/dist/masonry.pkgd.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/slick-carousel/slick/slick.js')}}"></script>
@@ -96,6 +97,7 @@
 
   <!-- JS Unify -->
   <script src="{{asset('unify/assets/js/hs.core.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.countdown.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.header.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.hamburgers.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.scroll-nav.js')}}"></script>
@@ -285,6 +287,18 @@
         });
       }
     });
+
+    $(document).on('ready', function () {
+        // initialization of countdowns
+        var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
+          yearsElSelector: '.js-cd-years',
+          monthElSelector: '.js-cd-month',
+          daysElSelector: '.js-cd-days',
+          hoursElSelector: '.js-cd-hours',
+          minutesElSelector: '.js-cd-minutes',
+          secondsElSelector: '.js-cd-seconds'
+        });
+      });
 
   </script>
 

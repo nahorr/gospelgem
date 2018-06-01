@@ -19,7 +19,7 @@
               <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">August 2018 Program</h3>
               <p class="mb-0">Register Now for the SINACH Mentorship Session commencing August 2018.</p>
               <hr>
-              <a href="#!" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
+              <a href="{{url('mentorship')}}" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
                 <span class="u-btn-skew__inner">
                   <i class="fa fa-check-circle g-mr-3"></i>
                   MORE INFORMATION
@@ -36,9 +36,9 @@
                   <i class="icon-finance-086 u-line-icon-pro"></i>
                 </span>
               <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Who Needs GosGem</h3>
-              <p class="mb-0">New artists, and all interested in seeing behind the scene operations of successful artists.</p>
+              <p class="mb-0">New artists, and all interested in learning about behind the scene operations.</p>
               <hr>
-              <a href="#!" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
+              <a href="{{url('about')}}" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
                 <span class="u-btn-skew__inner">
                   <i class="fa fa-check-circle g-mr-3"></i>
                   READ MORE
@@ -57,7 +57,7 @@
               <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">About GosGem</h3>
               <p class="mb-0">Gosgem is an online platform bridging the gap between a minister and the fanbase.</p>
               <hr>
-              <a href="#!" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
+              <a href="{{url('about')}}" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
                 <span class="u-btn-skew__inner">
                   <i class="fa fa-check-circle g-mr-3"></i>
                   READ ABOUT GOSGEM
@@ -78,14 +78,14 @@
     <!-- Call to Action --> 
     <div class="g-pos-rel"> 
       <div class="container text-center g-pt-50 g-pb-50">
-       <img class="img-fluid img-thumbnail rounded-circle" src="{{asset('unify/assets/img-temp/demo-square.jpg')}}" alt="Sinach">
+       <img class="img-fluid img-thumbnail rounded-circle" src="{{asset('unify/assets/img/sinach_mic.jpg')}}" alt="Sinach">
         <!-- Heading -->
          <div class="g-max-width-645 mx-auto g-mb-40"> 
-          <h2 class="h1 mb-3">SINACH MENTORSHIP CLASS</h2> 
-          <p>From August – September, 2018</p> 
+          <h2 class="h1 mb-3">SINACH MENTORS, LIVE!</h2> 
+          <p>Sinach Mentors, Live! Is an online mentorship program holding this August, 2018 by Sinach, and hosted by Gospel Music start up mentorship platform, GosGEM, where for the first time arranged in an organized curricula, Sinach will opening the digital doors to release vital trainings, and information to spark up Gospel Music Talents to make and break records in the music industry.</p> 
         </div> 
         <!-- End Heading --> 
-        <a class="btn u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="page-apply-1.html">Apply Now</a> 
+        <a class="btn u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="{{url('register')}}">Register Now</a> 
         <!-- SVG Shape --> 
         <svg class="d-inline-block g-width-35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 1" enable-background="new 0 0 37 1" xml:space="preserve"> 
           <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="0" y1="0.5" x2="37" y2="0.5"> 
@@ -102,7 +102,7 @@
           </linearGradient> 
           <line fill="none" stroke="url(#SVGID_6_)" stroke-miterlimit="10" x1="0" y1="0.5" x2="37" y2="0.5"></line> 
         </svg> <!-- End SVG Shape --> 
-        <a class="btn u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="page-contacts-1.html">Contact Us</a> 
+        <a class="btn u-shadow-v32 g-color-primary g-color-white--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="{{url('contact')}}">Contact Us</a> 
       </div> 
       <!-- SVG Background Shape --> 
       <svg class="g-pos-abs g-bottom-0 g-left-0 g-z-index-minus-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 323" enable-background="new 0 0 1920 323" xml:space="preserve"> 
@@ -115,19 +115,19 @@
     <!-- Projects -->
     <section class="container g-py-100">
       <div class="text-center g-mb-50">
-        <h2 class="h1 g-color-black g-font-weight-600">Featured Courses</h2>
-        <p class="lead">This is where we begin to visualize your napkin sketches and make them into pixels.</p>
+        <h2 class="h1 g-color-black g-font-weight-600">What We Do</h2>
+        <p class="lead">We provide six core services:</p>
       </div>
 
       <div class="row no-gutters g-mx-minus-10">
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-purple--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/vocals.png')}}" alt="vocals">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Vocal</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Training</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/vocals.png')}}" alt="vocals">
+            <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
+            <h3 class="h4 g-font-weight-600 mb-0">Mentoring</h3>
 
-            <a class="u-link-v2" href="#!"></a>
+            <a class="u-link-v2" href="{{url('mentorship')}}"></a>
           </div>
           <!-- End Projects -->
         </div>
@@ -135,11 +135,11 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-cyan--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/brand_dev.png')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Brand</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Development</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/musıc_production.jpg')}}" alt="Image Description">
+            <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
+            <h3 class="h4 g-font-weight-600 mb-0">Music Production</h3>
 
-            <a class="u-link-v2" href="#!"></a>
+            <a class="u-link-v2" href="{{url('coming-soon')}}"></a>
           </div>
           <!-- End Projects -->
         </div>
@@ -147,11 +147,11 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-teal--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/musıc_prod.jpg')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Music</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Production</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/musıc_prod.jpg')}}" alt="Image Description">
+            <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
+            <h3 class="h4 g-font-weight-600 mb-0">Gosgem Music Competition</h3>
 
-            <a class="u-link-v2" href="#!"></a>
+            <a class="u-link-v2" href="{{url('coming-soon')}}"></a>
           </div>
           <!-- End Projects -->
         </div>
@@ -159,11 +159,11 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-lightred--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/services.jpg')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/services.jpg')}}" alt="Image Description">
             <!--<span class="g-font-weight-600 g-font-size-12 text-uppercase">Hi-tech</span>-->
-            <h3 class="h4 g-font-weight-600 mb-0">Services</h3>
+            <h3 class="h4 g-font-weight-600 mb-0">Gosbusiness</h3>
 
-            <a class="u-link-v2" href="#!"></a>
+            <a class="u-link-v2" href="{{url('coming-soon')}}"></a>
           </div>
           <!-- End Projects -->
         </div>
@@ -171,11 +171,11 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-primary--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/vocals.png')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Others</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Brochure</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/vocals.png')}}" alt="Image Description">
+            <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
+            <h3 class="h4 g-font-weight-600 mb-0">Gosgem award</h3>
 
-            <a class="u-link-v2" href="#!"></a>
+            <a class="u-link-v2" href="{{url('coming-soon')}}"></a>
           </div>
           <!-- End Projects -->
         </div>
@@ -183,11 +183,10 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-pink--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/featured_courses/vocals.png')}}" alt="Image Description">
-            <span class="g-font-weight-600 g-font-size-12 text-uppercase">Cosmetics</span>
-            <h3 class="h4 g-font-weight-600 mb-0">Spa Cosmetics</h3>
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/brand_dev.png')}}" alt="Image Description">
+            <h3 class="h5 g-font-weight-600 mb-0">Gosgem Products and Services/Brand Development</h3>
 
-            <a class="u-link-v2" href="#!"></a>
+            <a class="u-link-v2" href="{{url('coming-soon')}}"></a>
           </div>
           <!-- End Projects -->
         </div>
@@ -195,43 +194,15 @@
     </section>
     <!-- End Projects -->
 
-    <!-- Counters -->
-    <section class="g-brd-top g-brd-bottom g-brd-gray-light-v4 g-pt-50">
-      <div class="container">
-        <div class="row text-center text-uppercase">
-          <div class="col-lg-3 col-sm-6 g-brd-right g-brd-gray-light-v4 g-mb-50">
-            <div class="js-counter g-color-gray-dark-v2 g-font-size-35 g-font-weight-300 g-mb-7">52147</div>
-            <h4 class="h6 g-color-gray-dark-v5">Code Lines</h4>
-          </div>
-
-          <div class="col-lg-3 col-sm-6 g-brd-right--lg g-brd-gray-light-v4 g-mb-50">
-            <div class="js-counter g-color-gray-dark-v2 g-font-size-35 g-font-weight-300 g-mb-7">24583</div>
-            <h4 class="h6 g-color-gray-dark-v5">Projects</h4>
-          </div>
-
-          <div class="col-lg-3 col-sm-6 g-brd-right g-brd-gray-light-v4 g-mb-50">
-            <div class="js-counter g-color-gray-dark-v2 g-font-size-35 g-font-weight-300 g-mb-7">7348</div>
-            <h4 class="h6 g-color-gray-dark-v5">Working Hours</h4>
-          </div>
-
-          <div class="col-lg-3 col-sm-6 g-mb-50">
-            <div class="js-counter g-color-gray-dark-v2 g-font-size-35 g-font-weight-300 g-mb-7">87904</div>
-            <h4 class="h6 g-color-gray-dark-v5">Job Offers</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Counters -->
-
 
     <!-- Call To Action -->
     <section class="g-bg-primary g-color-white g-pa-30" style="background-image: url(/unify/assets/img/bg/pattern5.png);">
       <div class="d-md-flex justify-content-md-center text-center">
         <div class="align-self-md-center">
-          <p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md">These courses will inspire you to become your best.</p>
+          <p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md">Learn from the best and become the best. Join our mentorship program</p>
         </div>
         <div class="align-self-md-center">
-          <a class="btn btn-lg u-btn-white text-uppercase g-font-weight-600 g-font-size-12" target="_blank" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream">Register Now</a>
+          <a class="btn btn-lg u-btn-white text-uppercase g-font-weight-600 g-font-size-12" target="_blank" href="{{url('mentorship')}}">More Information</a>
         </div>
       </div>
     </section>

@@ -22,6 +22,7 @@ Route::get('/competition', 'HomePublic\HomeController@competition')->name('compe
 Route::get('/mentorship', 'HomePublic\HomeController@mentorship')->name('mentorship');
 Route::get('/contact', 'HomePublic\HomeController@contact')->name('contact');
 Route::post('/postcontact', 'HomePublic\HomeController@postContact')->name('postcontact');
+Route::get('/coming-soon', 'HomePublic\HomeController@comingSoon')->name('comingsoon');
 
 
 //Private Area
