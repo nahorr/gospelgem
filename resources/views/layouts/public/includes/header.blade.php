@@ -91,7 +91,7 @@
                    data-paddingtop="[0,0,0,0]"
                    data-paddingright="[0,0,0,0]"
                    data-paddingbottom="[0,0,0,0]"
-                   data-paddingleft="[0,0,0,0]">GosGem Montorship Program
+                   data-paddingleft="[0,0,0,0]">GosGem Mentorship Program
               </div>
 
               <!-- LAYER NR. 4 -->
