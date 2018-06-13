@@ -18,7 +18,7 @@
                 data-fsmasterspeed="1500"
                 data-fsslotamount="7"
                 data-saveperformance="off"
-                data-title="GosGem Montorship Program"
+                data-title="GosGem Mentorship Program"
                 data-description="Be Mentored By Your Favorite Music Star.">
               <img class="rev-slidebg" src="{{asset('unify/assets/img/slider_pictures/1.png')}}" alt="Image description"
                    data-bgposition="center center"

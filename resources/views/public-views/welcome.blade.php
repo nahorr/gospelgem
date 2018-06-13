@@ -81,7 +81,7 @@
        <img class="img-fluid img-thumbnail rounded-circle" src="{{asset('unify/assets/img/sinach_mic.jpg')}}" alt="Sinach">
         <!-- Heading -->
          <div class="g-max-width-645 mx-auto g-mb-40"> 
-          <h2 class="h1 mb-3">SINACH MENTORS, LIVE!</h2> 
+          <h2 class="h1 mb-3">SINACH MENTORS LIVE!</h2> 
           <p>Sinach Mentors, Live! Is an online mentorship program holding this August, 2018 by Sinach, and hosted by Gospel Music start up mentorship platform, GosGEM, where for the first time arranged in an organized curricula, Sinach will opening the digital doors to release vital trainings, and information to spark up Gospel Music Talents to make and break records in the music industry.</p> 
         </div> 
         <!-- End Heading --> 
