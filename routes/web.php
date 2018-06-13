@@ -24,6 +24,10 @@ Route::get('/contact', 'HomePublic\HomeController@contact')->name('contact');
 Route::post('/postcontact', 'HomePublic\HomeController@postContact')->name('postcontact');
 Route::get('/coming-soon', 'HomePublic\HomeController@comingSoon')->name('comingsoon');
 
+//Social login
+Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+
 
 //Private Area
 Route::get('/home', 'HomeController@index')->name('home');

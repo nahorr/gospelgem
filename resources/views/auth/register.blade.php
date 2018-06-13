@@ -17,9 +17,34 @@
               <!-- Form -->
               <form class="g-py-15" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
+                <div class="form-group">
+
+                           <label for="name" class="col-md-4 control-label">Register With</label>
+
+                           <div class="col-md-6">
+
+                               <a href="{{ url('login/facebook') }}" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+
+                               <a href="{{ url('login/twitter') }}" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+
+                               <a href="{{ url('login/google') }}" class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+
+                               <a href="{{ url('login/linkedin') }}" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+
+                               <a href="{{ url('login/github') }}" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+
+                               <a href="{{ url('login/bitbucket') }}" class="btn btn-social-icon btn-bitbucket"><i class="fa fa-bitbucket"></i></a>
+
+                           </div>
+
+                       </div>
                   <div class="mb-4{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Full Name:</label>
+                    @if(!empty($name))
+                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" name="name" value="{{ $name }}" required>
+                    @else
                     <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" name="name" value="{{ old('name') }}" required>
+                    @endif
                     @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('name') }}</strong>
@@ -29,7 +54,11 @@
 
                 <div class="mb-4{{ $errors->has('email') ? ' has-error' : '' }}">
                   <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Email:</label>
+                  @if(!empty($email))
+                  <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" name="email" value="{{ $email }}" required>
+                  @else
                   <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" name="email" value="{{ old('email') }}" required>
+                  @endif
                   @if ($errors->has('email'))
                       <span class="help-block">
                           <strong>{{ $errors->first('email') }}</strong>
