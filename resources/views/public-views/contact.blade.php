@@ -13,32 +13,42 @@
   <section class="container g-pt-100 g-pb-40">
     <div class="row justify-content-between">
       <div class="col-md-7 g-mb-60">
-        <!-- Contact Form -->
-        <form>
+        @include('flash::message')
+
+        <h2 class="h2">Contact us</h2>
+        <p class="g-color-gray-dark-v3 g-font-size-16">Gosgem is happy to provide you with more information, answer any questions you may have. </p>
+
+        <hr class="g-my-40">
+        <form action="{{url('/postcontact/')}}" method="POST">
+          {{ csrf_field() }}
           <div class="row">
             <div class="col-md-6 form-group g-mb-20">
-              <label class="g-color-gray-dark-v2 g-font-size-13">Name:</label>
-              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text">
+              <label class="g-color-gray-dark-v2 g-font-size-13">Full Name:</label>
+              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" name="full_name" type="text">
             </div>
 
             <div class="col-md-6 form-group g-mb-20">
               <label class="g-color-gray-dark-v2 g-font-size-13">Email:</label>
-              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="email">
+              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" name="email" type="email">
             </div>
 
             <div class="col-md-6 form-group g-mb-20">
               <label class="g-color-gray-dark-v2 g-font-size-13">Subject:</label>
-              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text">
+              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" name="message_subject" type="text">
             </div>
 
             <div class="col-md-6 form-group g-mb-20">
               <label class="g-color-gray-dark-v2 g-font-size-13">Phone:</label>
-              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="tel">
+              <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" name="phone" type="text">
             </div>
 
             <div class="col-md-12 form-group g-mb-40">
-              <label class="g-color-gray-dark-v2 g-font-size-13">Message:</label>
-              <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15" rows="7"></textarea>
+              <label class="g-color-gray-dark-v2 g-font-size-13">Your Message:</label>
+              <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15" rows="7" name="message" ></textarea>
+            </div>
+
+            <div class="col-md-12 form-group g-mb-40">
+              <div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}"></div>
             </div>
           </div>
 
