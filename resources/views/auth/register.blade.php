@@ -17,6 +17,7 @@
               <!-- Form -->
               <form class="g-py-15" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
+                <!--
                 <div class="form-group">
 
                            <label for="name" class="col-md-4 control-label">Register With</label>
@@ -38,6 +39,7 @@
                            </div>
 
                        </div>
+                -->
                   <div class="mb-4{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Full Name:</label>
                     @if(!empty($name))

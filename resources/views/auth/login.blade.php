@@ -26,9 +26,10 @@
               <!-- Form -->
               <form class="g-py-15" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
-                <div class="form-group">
+                <!--
+                          <div class="form-group">
 
-                     <label for="name" class="col-md-4 control-label">Login With</label>
+                           <label for="name" class="col-md-4 control-label">Login With</label>
 
                            <div class="row">
                               <div class="col-md-2">
@@ -43,7 +44,8 @@
 
                            </div>
 
-                       </div>   
+                           </div>  
+                --> 
                 <div class="mb-4{{ $errors->has('email') ? ' has-error' : '' }}">
                   <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Email:</label>
                   @if(!empty($email))
