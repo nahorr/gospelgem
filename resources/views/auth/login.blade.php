@@ -26,26 +26,14 @@
               <!-- Form -->
               <form class="g-py-15" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
-                <!--
-                          <div class="form-group">
 
-                           <label for="name" class="col-md-4 control-label">Login With</label>
+                <div class="form-group text-center">
+                  <label for="name" class="col-md-4 control-label">Login With</label>
+                  <div class="col-md-6 offset-md-3">
+                    <a href="{{ url('login/facebook') }}" class="btn btn-md u-btn-inset u-btn-blue g-mr-10 g-mb-15"><i class="fa fa-facebook">Facebook</i></a>
+                  </div>
+                </div>
 
-                           <div class="row">
-                              <div class="col-md-2">
-                                 <a href="{{ url('login/facebook') }}" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-                              </div>
-                              <div class="col-md-2">
-                                 <a href="{{ url('login/google') }}" class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
-                              </div>
-                              <div class="col-md-2">
-                                <a href="{{ url('login/twitter') }}" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                              </div>
-
-                           </div>
-
-                           </div>  
-                --> 
                 <div class="mb-4{{ $errors->has('email') ? ' has-error' : '' }}">
                   <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Email:</label>
                   @if(!empty($email))

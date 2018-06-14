@@ -59,7 +59,7 @@
 
   <!-- CSS Customization -->
   <link rel="stylesheet" href="{{asset('unify/assets/css/custom.css')}}">
-  <link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet">
+  <!--<link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet">-->
   <!-- for google reCaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>

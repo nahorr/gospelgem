@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => env('FB_CLIENT_ID'),  
         'client_secret' => env('FB_CLIENT_SECRET'), 
-        'redirect' => 'https://gosgem.com/login/facebook/callback',
+        'redirect' => env('FB_REDIRECT'),
     ], 
 
 ];
