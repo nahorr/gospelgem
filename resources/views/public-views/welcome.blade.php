@@ -13,17 +13,15 @@
           <div class="col-lg-4 g-px-40 g-mb-50 g-mb-0--lg">
             <!-- Icon Blocks -->
             <div class="text-center">
-              <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
-                  <i class="icon-communication-081 u-line-icon-pro"></i>
-                </span>
+              <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/welcome/august_2018_program.png')}}" alt="gosgem Live Classes">
               <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">August 2018 Program</h3>
               <p class="mb-0">Register Now for the SINACH Mentorship Session commencing August 2018.</p>
               <hr>
-              <a href="{{url('mentorship')}}" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
-                <span class="u-btn-skew__inner">
+              <a href="{{url('mentorship')}}" class="btn btn-md u-btn-inset u-btn-deeporange g-mr-10 g-mb-15">
+               
                   <i class="fa fa-check-circle g-mr-3"></i>
                   MORE INFORMATION
-                </span>
+              
               </a>
             </div>
             <!-- End Icon Blocks -->
@@ -32,17 +30,15 @@
           <div class="col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40 g-mb-50 g-mb-0--lg">
             <!-- Icon Blocks -->
             <div class="text-center">
-              <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
-                  <i class="icon-finance-086 u-line-icon-pro"></i>
-                </span>
+              <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/welcome/who_needs_gosgem.png')}}" alt="gosgem Live Classes">
               <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Who Needs GosGem</h3>
               <p class="mb-0">New artists, and all interested in learning about behind the scene operations.</p>
               <hr>
-              <a href="{{url('about')}}" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
-                <span class="u-btn-skew__inner">
+              <a href="{{url('about')}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15">
+                
                   <i class="fa fa-check-circle g-mr-3"></i>
                   READ MORE
-                </span>
+                
               </a>
             </div>
             <!-- End Icon Blocks -->
@@ -51,17 +47,15 @@
           <div class="col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40">
             <!-- Icon Blocks -->
             <div class="text-center">
-              <span class="d-inline-block u-icon-v3 u-icon-size--xl g-bg-primary g-color-white rounded-circle g-mb-30">
-                  <i class="icon-communication-057 u-line-icon-pro"></i>
-                </span>
+              <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/welcome/about_gosgem.png')}}" alt="gosgem Live Classes">
               <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">About GosGem</h3>
               <p class="mb-0">Gosgem is an online platform bridging the gap between a minister and the fanbase.</p>
               <hr>
-              <a href="{{url('about')}}" class="btn btn-md u-btn-skew u-btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
-                <span class="u-btn-skew__inner">
+              <a href="{{url('about')}}" class="btn btn-md u-btn-inset u-btn-darkpurple g-mr-10 g-mb-15">
+                
                   <i class="fa fa-check-circle g-mr-3"></i>
                   READ ABOUT GOSGEM
-                </span>
+               
               </a>
             </div>
             <!-- End Icon Blocks -->

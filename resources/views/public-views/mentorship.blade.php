@@ -51,6 +51,7 @@
                 </div>
                 <div class="media-body">
                   <h3 class="h5 g-color-black mb-20">Live Classes</h3>
+                  <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/mentorship/gosgem_live_classes.jpg')}}" alt="gosgem Live Classes">
                   <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
                   <p class="g-color-gray-dark-v4 g-mb-0">Enrolled for live classes </p>
                 </div>
@@ -70,6 +71,7 @@
                 </div>
                 <div class="media-body">
                   <h3 class="h5 g-color-black mb-20">Interaction with Mentors</h3>
+                  <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/mentorship/gosgem_interact_with_mentors.jpg')}}" alt="gosgem Live Classes">
                   <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
                   <p class="g-color-gray-dark-v4 g-mb-0">Have the opportunity for live interaction with the Mentor</p>
                 </div>
@@ -93,6 +95,7 @@
                 </div>
                 <div class="media-body">
                   <h3 class="h5 g-color-black mb-20">Live Q and A</h3>
+                  <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/mentorship/gosgem_live_Q_and_A.jpg')}}" alt="gosgem Live Classes">
                   <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
                   <p class="g-color-gray-dark-v4 g-mb-0">You can ask questions live, and receive answers</p>
                 </div>
@@ -112,6 +115,7 @@
                 </div>
                 <div class="media-body">
                   <h3 class="h5 g-color-black mb-20">Assignments</h3>
+                  <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/mentorship/gosgem_assignments.jpg')}}" alt="gosgem Live Classes">
                   <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
                   <p class="g-color-gray-dark-v4 g-mb-0">You are given assignments</p>
                 </div>
@@ -135,6 +139,7 @@
                 </div>
                 <div class="media-body">
                   <h3 class="h5 g-color-black mb-20">Collaboration</h3>
+                  <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/mentorship/gosgem_collab.jpg')}}" alt="gosgem Live Classes">
                   <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
                   <p class="g-color-gray-dark-v4 g-mb-0">Collaboration with our students in teams and groups</p>
                 </div>
@@ -154,6 +159,7 @@
                 </div>
                 <div class="media-body">
                   <h3 class="h5 g-color-black mb-20">Certificates</h3>
+                  <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/mentorship/gosgem_certificates.jpg')}}" alt="gosgem Live Classes">
                   <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
                   <p class="g-color-gray-dark-v4 g-mb-0">Given certificates of Participation upon completion of the program</p>
                 </div>
