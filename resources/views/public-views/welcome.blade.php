@@ -119,7 +119,7 @@
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-purple--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
             <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/vocals.png')}}" alt="vocals">
             <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
-            <h3 class="h4 g-font-weight-600 mb-0">Mentoring</h3>
+            <h3 class="h4 g-font-weight-600 mb-0">Vocals</h3>
 
             <a class="u-link-v2" href="{{url('mentorship')}}"></a>
           </div>
@@ -129,7 +129,7 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-cyan--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/musıc_production.jpg')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/music_production.png')}}" alt="Image Description">
             <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
             <h3 class="h4 g-font-weight-600 mb-0">Music Production</h3>
 
@@ -141,7 +141,7 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-teal--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/musıc_prod.jpg')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/goscompetition.png')}}" alt="Image Description">
             <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
             <h3 class="h4 g-font-weight-600 mb-0">Gosgem Music Competition</h3>
 
@@ -153,7 +153,7 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-lightred--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/services.jpg')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/GOSBUSINESS.png')}}" alt="Image Description">
             <!--<span class="g-font-weight-600 g-font-size-12 text-uppercase">Hi-tech</span>-->
             <h3 class="h4 g-font-weight-600 mb-0">Gosbusiness</h3>
 
@@ -165,9 +165,9 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-primary--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/vocals.png')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/gos_mentoring.png')}}" alt="Image Description">
             <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
-            <h3 class="h4 g-font-weight-600 mb-0">Gosgem award</h3>
+            <h3 class="h4 g-font-weight-600 mb-0">Gosgem Mentoring</h3>
 
             <a class="u-link-v2" href="{{url('coming-soon')}}"></a>
           </div>
@@ -177,7 +177,7 @@
         <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
           <!-- Projects -->
           <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-pink--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
-            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/brand_dev.png')}}" alt="Image Description">
+            <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/what-we-do/GOSBRANDING.png')}}" alt="Image Description">
             <h3 class="h5 g-font-weight-600 mb-0">Gosgem Products and Services/Brand Development</h3>
 
             <a class="u-link-v2" href="{{url('coming-soon')}}"></a>
