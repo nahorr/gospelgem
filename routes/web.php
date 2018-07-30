@@ -30,7 +30,21 @@ Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallba
 
 
 //Private Area
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+
+	Route::get('home', 'HomeController@index')->name('home');
+
+		//Users Controller
+    	Route::get('users/profile', 'Users\ProfileController@profile');
+    	Route::post('users/profile', 'Users\ProfileController@updateAvatar');
+        
+    
+	
+});
+
+
+//Route::get('home', 'HomeController@index')->name('home');
+//Route::get('private-views.user.profile', 'User\ProfileController@profile');
 
 //Admin Area
 Route::group(['middleware' => 'admin'], function () { 

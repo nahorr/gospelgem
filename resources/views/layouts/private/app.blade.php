@@ -7,7 +7,7 @@
 
 <head>
   <!-- Title -->
-  <title>Dashboard v.1 | Unify - Responsive Website Template</title>
+  <title> GosGem | User Dashboard</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
