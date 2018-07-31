@@ -7,7 +7,7 @@
 
 <head>
   <!-- Title -->
-  <title>Dashboard v.1 | Unify - Responsive Website Template</title>
+  <title>Gosgem Admin | Dashboard </title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -85,6 +85,7 @@
   <script src="{{asset('unify/admin-assets/vendor/chartist-js/chartist.min.js')}}"></script>
   <script src="{{asset('unify/admin-assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js')}}"></script>
   <script src="{{asset('unify/admin-assets/vendor/fancybox/jquery.fancybox.min.js')}}"></script>
+  <script src="{{asset('unify/admin-assets/vendor/table-edits/build/table-edits.min.js')}}"></script>
 
   <!-- JS Unify -->
   <script src="{{asset('unify/assets/js/hs.core.js')}}"></script>
