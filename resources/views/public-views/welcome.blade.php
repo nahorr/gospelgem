@@ -65,6 +65,32 @@
     </section>
     <!-- End Icon Blocks -->
 
+    <section class="container g-py-100">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <!-- Heading -->
+          <div class="text-center g-mb-60">
+            <h2 class="h3 g-color-black text-uppercase mb-2">GOSGEM MENTORING INTRO</h2>
+            <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
+            <!--<p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>-->
+          </div>
+          <!-- End Heading -->
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <!-- Article -->
+          <article class="u-shadow-v21 g-bg-size-cover g-bg-pos-bottom-center text-center">
+            
+              <iframe width="100%" height="500" src="https://www.youtube.com/embed/rcebP75T_EA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           
+          </article>
+          <!-- End Article -->
+        </div>
+      </div>
+    </section>
+
     <hr class="g-brd-gray-light-v4 my-0">
 
 

@@ -16,16 +16,18 @@
 
                 <div class="row">
                               <div class="col-md-3 g-mb-30 g-mb-0--md">
-                                <div class="h-30 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+                                <div class="h-20 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
                                   <!-- User Information -->
                                   <section class="text-center g-mb-30 g-mb-50--md">
                                     <div class="d-inline-block g-pos-rel g-mb-20">
+                                      <h3 class="g-font-weight-300 g-font-size-20 g-color-black mb-0">{{$user->name}}</h3>
+                                      <hr>
                                       <img class="img-fluid rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}} profile picture">
                                     </div>
 
-                                    <h3 class="g-font-weight-300 g-font-size-20 g-color-black mb-0">{{$user->name}}</h3>
+                                    <hr>
                                     <form enctype="multipart/form-data" action="/users/profile" method="POST">
-                                       
+                                       <label>Update Profile Picture</label>
                                         <input type="file" name="avatar">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <button type="submit" class="btn btn-danger">Submit</button>

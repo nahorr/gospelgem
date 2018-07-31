@@ -179,36 +179,6 @@
     </div>
     <!-- End Black Call To Action -->
 
-    <section class="container g-py-100">
-      <div class="row justify-content-center">
-        <div class="col-lg-7">
-          <!-- Heading -->
-          <div class="text-center g-mb-60">
-            <h2 class="h3 g-color-black text-uppercase mb-2">Video intro</h2>
-            <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
-            <p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>
-          </div>
-          <!-- End Heading -->
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <!-- Article -->
-          <article class="u-shadow-v21 g-bg-size-cover g-bg-pos-bottom-center text-center" style="background-image: url(/unify/assets/img-temp/900x600/img7.jpg);">
-            <div class="g-pos-rel g-z-index-1 g-px-50 g-py-200">
-              <a class="js-fancybox d-block" href="javascript:;" data-src="//www.youtube.com/embed/BNpiwOkKIJ8?autoplay=1" data-speed="350" data-caption="Single Image">
-                <span class="u-icon-v3 u-icon-size--lg u-block-hover--scale g-bg-white g-color-black g-color-primary--hover g-font-size-18 g-rounded-50x g-cursor-pointer">
-                    <i class="g-pos-rel g-left-2 fa fa-play"></i>
-                  </span>
-              </a>
-            </div>
-          </article>
-          <!-- End Article -->
-        </div>
-      </div>
-    </section>
-
 
     <!-- Team Blocks -->
     <section class="container g-pt-100 g-pb-70">
