@@ -13,17 +13,27 @@
           </li>
           <!-- End Dashboard -->
 
-          <!-- User Profile-->
+          <!-- Business Units-->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('users/profile')}}">
               <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                <i class="hs-admin-user"></i>
+                <i class="hs-admin-view-list-alt"></i>
               </span>
               <span class="media-body align-self-center">Business Units</span>
             </a>
           </li>
-          <!-- End User Profile -->
+          <!-- End Business Units -->
 
+          <!-- Contact Form-->
+          <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/contactform/submissions')}}">
+              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                <i class="hs-admin-email"></i>
+              </span>
+              <span class="media-body align-self-center">Contact Form</span>
+            </a>
+          </li>
+          <!-- End Contact Form -->
 
           <!-- Logout -->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">

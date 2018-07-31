@@ -49,6 +49,8 @@ Route::group(['middleware' => 'auth'], function () {
 //Admin Area
 Route::group(['middleware' => 'admin'], function () { 
 
-  Route::get('/admin/home', 'Admin\HomeController@index');
+  Route::get('admin/home', 'Admin\HomeController@index');
+  Route::get('admin/contactform/submissions', 'Admin\ContactController@contactFormSubmissions')->name('submissions');
+  Route::get('admin/business/units', 'Admin\BusinessController@businessUnits')->name('businessUnits');
     
 });
