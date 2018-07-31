@@ -58,11 +58,11 @@
       </div>
 
       <div class="col-md-4">
-        <h1 class="g-font-weight-300 mb-5">GosGem Ltd.</h1>
+        <h1 class="g-font-weight-300 mb-5">Gosgem Concepts.</h1>
 
         <div class="mb-4">
           <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Address:</h2>
-          <p class="g-color-gray-dark-v4 g-font-size-16">14 Chijioke Akwukwuma Street 
+          <p class="g-color-gray-dark-v4 g-font-size-16">Ansodan Court 
             <br>Bera Estate, Chevron Drive
             <br>Lagos State</p>
         </div>
