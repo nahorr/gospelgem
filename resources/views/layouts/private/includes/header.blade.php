@@ -5,7 +5,7 @@
         <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12">
           <!-- Logo -->
           <a href="{{url('/home')}}" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
-            <img id="logo" src="{{asset('unify/assets/img/logo/dashboard_gosgem_logo.jpg')}}" alt="gospelgem">
+            <img id="logo" src="{{asset('unify/assets/img/logo/dashboard_gosgem_logo.png')}}" alt="gospelgem">
           </a>
           <!-- End Logo -->
 

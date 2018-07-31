@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$users = User::get();
+    	$users = User::orderBy('created_at', 'desc')->get();
 
     	return view('admin.home', compact('users'));
     }
