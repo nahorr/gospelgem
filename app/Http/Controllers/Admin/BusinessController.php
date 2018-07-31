@@ -9,8 +9,8 @@ class BusinessController extends Controller
 {
     public function businessUnits()
     {
-    	$business_units = BusinessUnits::get();
-    	
-    	return view('admin.business.units', compact('business_units'))
+    	//$business_units = BusinessUnits::get();
+
+    	return view('admin.business.units');
     }
 }
