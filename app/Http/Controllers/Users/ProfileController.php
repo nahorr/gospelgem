@@ -27,7 +27,7 @@ class ProfileController extends Controller
         		$filename = time() . '.' . $avatar->getClientOriginalExtension();
         		// Delete current image before uploading new image
         		if (Auth::user()->avatar !== 'default.jpg') {
-        		     $file = public_path('uploads/avatars/' . Auth::user()->avatar);
+        		     $file = public_path('/uploads/avatars/' . Auth::user()->avatar);
 
         		    if (File::exists($file)) {
         		        unlink($file);
@@ -35,7 +35,7 @@ class ProfileController extends Controller
 
         		}
 
-        		Image::make($avatar)->resize(200, 200)->save( public_path('uploads/avatars/' . $filename ) );
+        		Image::make($avatar)->resize(200, 200)->save( public_path('/uploads/avatars/' . $filename ) );
 
         		$user = Auth::user();
         		$user->avatar = $filename;
