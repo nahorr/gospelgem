@@ -14,9 +14,13 @@
             <div class="media-body align-self-center">
               <div class="d-flex align-items-center g-mb-5">
                 <span class="g-font-size-24 g-line-height-1 g-color-black">
-                  @if($today == $user_details->dob)
+                  @if(@$user_details->dob != null && $today == @$user_details->dob)
 
-                    We wish You The Best!
+                    <span style="color: darkgreen">We wish You The Best!</span>
+
+                  @elseif(@$user_details->dob == null)
+
+                    <span style="color: darkred">Profile Incomplete!</span>
 
                   @else
 
@@ -27,9 +31,13 @@
               </div>
 
               <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">
-                @if($today == $user_details->dob)
+                @if(@$user_details->dob != null && $today == @$user_details->dob)
 
                   Have A Happy Birth Day!
+
+                @elseif(@$user_details->dob == null)
+
+                  Please Update Your Profile
 
                 @else
 
