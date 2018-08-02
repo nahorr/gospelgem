@@ -36,8 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 		//Users Controller
     	Route::get('users/profile', 'Users\ProfileController@profile');
-    	Route::post('users/profile', 'Users\ProfileController@updateAvatar');
-        Route::post('users/profile', 'Users\ProfileController@updateProfile');
+    	Route::post('users/profile/updateavatar', 'Users\ProfileController@updateAvatar');
+        Route::post('users/profile/updateprofile', 'Users\ProfileController@updateProfile');
     
 	
 });

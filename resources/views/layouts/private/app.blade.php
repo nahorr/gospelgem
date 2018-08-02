@@ -108,6 +108,14 @@
     $(document).on('ready', function () {
       // initialization of custom select
       $('.js-select').selectpicker();
+
+      $('.js-select').on('shown.bs.select', function (e) {
+        $(this).addClass('opened');
+      });
+  
+      $('.js-select').on('hidden.bs.select', function (e) {
+        $(this).removeClass('opened');
+      });
   
       // initialization of hamburger
       $.HSCore.helpers.HSHamburgers.init('.hamburger');
@@ -136,21 +144,7 @@
       });
   
       // initialization of range datepicker
-      $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
-  
-      // initialization of datepicker
-      $.HSCore.components.HSDatepicker.init('#datepicker', {
-        dayNamesMin: [
-          'SU',
-          'MO',
-          'TU',
-          'WE',
-          'TH',
-          'FR',
-          'SA'
-        ]
-      });
-  
+      $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
       // initialization of HSDropdown component
       $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
   

@@ -10,8 +10,8 @@ class ContactController extends Controller
 {
     public function contactFormSubmissions()
     {
-    	$contactFormSubmissions = ContactUs::orderBy('created_at', 'desc')->get();
+    	
 
-    	return view('admin.contactform.submissions', compact('contactFormSubmissions'));
+    	return view('admin.contactform.submissions');
     }
 }

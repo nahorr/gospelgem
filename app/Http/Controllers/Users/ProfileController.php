@@ -16,11 +16,8 @@ class ProfileController extends Controller
     public function profile()
     {
 
-    	$user = Auth::user();
-
-        $user_details = UserDetail::where('user_id', $user->id)->first();
-
-    	return view('private-views.users.profile', compact('user', 'user_details'));
+    	
+    	return view('private-views.users.profile');
     }
 
     public function updateAvatar(Request $request)
@@ -54,40 +51,37 @@ class ProfileController extends Controller
      public function updateProfile(Request $r)
          {
 
-             
-             $this->validate(request(), [
+            if (UserDetail::where('user_id', Auth::user()->id)->first() == null) {
+                
+                UserDetail::insert([
 
-                 'student_number' => 'required|unique:students',
-                 'registration_code' => 'required|unique:students',
-                 'first_name' => 'required',
-                 'last_name' => 'required',
-                 'gender' => 'required',
-                 'dob' => 'required',
-                 'email' => 'required',
-                 ]);
-
-             Person::insert([
-
-                 'student_number'=>$r->student_number,
-                 'registration_code'=>$r->registration_code,
-                 'first_name'=>$r->first_name,
-                 'last_name'=>$r->last_name,
+                 'user_id'=>Auth::user()->id,
                  'gender'=>$r->gender,
                  'dob'=>$r->dob,
-                 'date_enrolled'=>$r->date_enrolled,
-                 'date_graduated'=>$r->date_graduated,
-                 'date_unenrolled'=>$r->date_unenrolled,
-                 'nationality'=>$r->nationality,
-                 'national_card_number'=>$r->national_card_number,
-                 'passport_number'=>$r->passport_number,
+                 'city'=>$r->city,
+                 'country'=>$r->country,
                  'phone'=>$r->phone,
-                 'email'=>$r->email,
-                 'state'=>$r->state,
-                 'current_address'=>$r->current_address,
+                 'about_me'=>$r->about_me,
                  'created_at' => date('Y-m-d H:i:s'),
                  'updated_at' => date('Y-m-d H:i:s'),
       
              ]);
+
+            }else{
+
+                $user_details = UserDetail::where('user_id', Auth::user()->id)->first();
+
+                $user_details->gender = $r->gender;
+                $user_details->dob = $r->dob;
+                $user_details->city = $r->city;
+                $user_details->country = $r->country;
+                $user_details->phone = $r->phone;
+                $user_details->about_me = $r->about_me;
+                $user_details->updated_at = date('Y-m-d H:i:s');
+
+                $user_details->save();
+            }
+             
 
             
              flash('Your profile was updated Successfully')->success();

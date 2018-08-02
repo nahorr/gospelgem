@@ -20,17 +20,17 @@
                                   <!-- User Information -->
                                   <section class="text-center g-mb-30 g-mb-50--md">
                                     <div class="d-inline-block g-pos-rel g-mb-20">
-                                      <h3 class="g-font-weight-300 g-font-size-20 g-color-black mb-0">{{$user->name}}</h3>
+                                      <h3 class="g-font-weight-300 g-font-size-20 g-color-black mb-0">{{Auth::user()->name}}</h3>
                                       <hr>
-                                      <img class="img-fluid rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}} profile picture">
+                                      <img class="img-fluid rounded-circle" src="{{asset('uploads/avatars/'.Auth::user()->avatar)}}" alt="{{Auth::user()->name}} profile picture">
                                     </div>
 
                                     <hr>
-                                    <form enctype="multipart/form-data" action="/users/profile" method="POST">
+                                    <form enctype="multipart/form-data" action="{{url('/users/profile/updateavatar')}}" method="POST">
                                        <label>Update Profile Picture</label>
                                         <input type="file" name="avatar">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
+                                        <button type="submit" vrole="button" class="btn btn-danger">Submit</button>
                                     </form>
                                   </section>
                                   <!-- User Information -->
@@ -41,7 +41,8 @@
 
                               <div class="col-md-9">
                                 <div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-                                  <form class="js-validate">
+                                  <form class="js-validate" action="{{url('/users/profile/updateprofile')}}" method="POST">
+                                    {{ csrf_field() }}
                                     <header>
                                       <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">General information</h2>
                                       <div class="col align-self-center g-hidden-md-down g-px-10">
@@ -100,28 +101,20 @@
                                         <label class="mb-0">Birthdate</label>
                                       </div>
 
-                                      <div class="col-md-9 align-self-center">
+                                      <div class="col-md-6 align-self-center">
                                         <div class="row g-mx-minus-10">
                                           <div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
                                             <div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                                              <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-                                              <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-                                            </span>
-                                              <select class="js-select u-select--v2-select w-100" required="required" style="display: none;">
-                                                <option>January</option>
-                                                <option>February</option>
-                                                <option>March</option>
-                                                <option selected="selected">April</option>
-                                                <option>May</option>
-                                                <option>June</option>
-                                                <option>July</option>
-                                                <option>August</option>
-                                                <option>September</option>
-                                                <option>October</option>
-                                                <option>November</option>
-                                                <option>December</option>
-                                              </select>
-                                              <i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+                                              <div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
+                                                @if(@$user_details->dob != null)
+                                                  <input class="form-control" name="dob" type="date" value="{{ @$user_details->dob->format('Y-m-d') }}" id="dob">
+                                                @else
+                                                  <input class="form-control" name="dob" type="date" placeholder="eg 2017-07-25 id="dob">
+                                                @endif
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                  
+                                                </div>
+                                              </div>
                                             </div>
                                           </div>
 
@@ -139,7 +132,7 @@
                                           <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                                           <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
                                         </span>
-                                          <input id="email" name="email" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="email" value="{{$user->email}}" disabled="">
+                                          <input id="email" name="email" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="email" value="{{Auth::user()->email}}" disabled="">
                                         </div>
                                       </div>
                                     </div>
@@ -154,7 +147,7 @@
                                           <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                                           <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
                                         </span>
-                                          <input id="city" name="city" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="email" value="{{@$user_details->city}}">
+                                          <input id="city" name="city" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="{{@$user_details->city}}">
                                         </div>
                                       </div>
                                     </div>
@@ -169,7 +162,7 @@
                                           <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
                                           <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
                                         </span>
-                                          <input id="location" name="location" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="{{@$user_details->country}}">
+                                          <input id="location" name="country" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="{{@$user_details->country}}">
                                         </div>
                                       </div>
                                     </div>
@@ -194,20 +187,38 @@
                                         </div>
                                       </div>
                                     </div>
+
+                                    <div class="row g-mb-20">
+                                      <div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+                                        <label class="mb-0" for="#about_me">About Me</label>
+                                      </div>
+
+                                      <div class="col-md-9 align-self-center">
+                                        <div class="form-group g-pos-rel mb-0">
+                                          <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                          <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+                                        </span>
+                                          <textarea class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" rows="7" name="about_me" >{{@$user_details->about_me}}</textarea>
+                                        </div>
+                                      </div>
+                                    </div>
+
                                     <hr>
                                     <div>
-                                      <button class="btn btn-md btn-xl--md u-btn-lightblue-v3 g-width-160--md g-font-size-12 g-font-size-default--md g-mb-10" type="submit">Save Changes</button>
+                                      <button class="btn btn-md btn-xl--md u-btn-lightblue-v3 g-width-160--md g-font-size-12 g-font-size-default--md g-mb-10" type="submit">Update Profile</button>
                                       <button class="btn btn-md btn-xl--md u-btn-outline-gray-dark-v6 g-font-size-12 g-font-size-default--md g-mr-10 g-mb-10" type="reset">Cancel</button>
                                     </div>
                                   </form>
                                 </div>
                               </div>
                             </div>
-
+                            <div class="col-md-9 offset-md-3">
+                              <hr>
+                            </div>
                             <div class="row">
                               <div class="col-md-9 offset-md-3">
                                 <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-                                    <form class="js-validate">
+                                    <form class="js-validate" action="{{url('/users/profile/updatepassword')}}" method="POST">
                                     <header>
                                       <h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">Change password</h2>
                                     </header>
@@ -229,9 +240,6 @@
                                             data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
                                           </div>
 
-                                          <a class="form-text g-color-lightblue-v3" href="#!">
-                                            <small class="g-font-size-default g-mt-8">Forgot Your Password?</small>
-                                          </a>
                                         </div>
                                       </div>
                                     </div>

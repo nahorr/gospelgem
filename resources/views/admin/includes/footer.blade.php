@@ -52,7 +52,7 @@
 
             <!-- Footer Copyrights -->
             <div class="col-md-4 text-center text-md-right">
-              <small class="d-block g-font-size-default">&copy; 2018 Htmlstream. All Rights Reserved.</small>
+              <small class="d-block g-font-size-default">&copy; 2018 Gosgem Concepts. All Rights Reserved.</small>
             </div>
             <!-- End Footer Copyrights -->
           </div>

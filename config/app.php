@@ -179,6 +179,8 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        App\Providers\UserComposerServiceProvider::class,
+        App\Providers\AdminComposerServiceProvider::class,
 
     ],
 

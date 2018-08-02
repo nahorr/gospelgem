@@ -47,15 +47,18 @@
                     <div class="card g-brd-gray-light-v7 g-pa-15 g-pa-25-30--md g-mb-30">
                       <section class="g-mb-20">
                         <h3 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">About me</h3>
-
+                        
                         <div class="g-font-weight-300 g-color-gray-dark-v6 g-mb-20">
-                          <span class="g-font-size-40 g-color-black">9.8</span>
-                          <span class="g-font-size-18 g-mr-6">/ 10.0</span>
-                          Overall Rating
+                          @if(@$user_details->about_me == null)
+                          <span class="g-font-size-20 g-color-black">Hi {{Auth::user()->name}}!</span>
+                          <br>
+                          
+                            Please write something awesome about yourself.
+                          @endif
+
                         </div>
 
-                        <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">A Pocket PC is a handheld computer, which features many of the same capabilities as a modern PC. These handy little devices allow individuals to retrieve and store e-mail messages, create a contact file, appointments, surf the internet,
-                          exchange text messages and more. Every product that is labeled as a Pocket PC must be accompanied with specific software to operate the unit and must feature a touchscreen.</p>
+                        <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">{{ @$user_details->about_me}}</p>
                       </section>
 
                       <section class="row">
