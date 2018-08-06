@@ -23,7 +23,6 @@ class CreatePostsTable extends Migration
             $table->boolean('show_profile_picture')->default(false);
             $table->integer('post_views')->default(0);
             $table->integer('post_likes')->default(0);
-            $table->string('post_images')->default('default_post_images.jpg');
             $table->timestamps();
         });
     }

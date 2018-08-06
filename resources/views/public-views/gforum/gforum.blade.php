@@ -218,38 +218,44 @@
     <div class="container">
       <a href="{{url('gforum/addpost')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
     <div class="table-responsive">
-      <table class="table table-bordered u-table--v2">
+      <table class="table table-bordered u-table--v2 container">
         <thead class="text-uppercase g-letter-spacing-1">
           <tr>
             <th class="g-font-weight-300 g-color-black">Posted By</th>
-            <th class="g-font-weight-300 g-color-black g-min-width-200">Post Title</th>
-            <th class="g-font-weight-300 g-color-black">Stats</th>
+            <th class="g-font-weight-300 g-color-black g-min-width-200 text-center">Post Title</th>
+            <th class="g-font-weight-300 g-color-black text-center">Stats</th>
             
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td class="align-middle text-nowrap">
-              <div class="media">
-                <img class="d-flex g-width-40 g-height-40 rounded-circle g-mr-10" src="../../assets/img-temp/100x100/img7.jpg" alt="Image Description">
-                <div class="media-body align-self-center">
-                  <h5 class="h6 align-self-center g-font-weight-600 g-color-purple mb-0">John Doe</h5>
-                  <span class="g-font-size-12">Marketing</span>
-                </div>
-              </div>
-            </td>
-            <td class="align-middle">Nulla ipsum dolor sit amet, consectetur adipiscing elitut eleifend nisl.</td>
-            <td class="align-middle text-center">
-              <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                  <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments
-                </span>
-              <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                  <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
-              </span>
-            </td>
-     
-          </tr>
+          @foreach($posts as $key => $post)
+            @foreach($users as $user)
+             @if($post->user_id == $user->id)
+                <tr>
+                  <td class="align-middle text-nowrap">
+                    <div class="media">
+                      <img class="d-flex g-width-40 g-height-40 rounded-circle g-mr-10" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}">
+                      <div class="media-body align-self-center">
+                        <h5 class="h6 align-self-center g-font-weight-600 g-color-purple mb-0">{{$user->name}}</h5>
+                        <span class="g-font-size-12">{{$user->role}}</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="align-middle text-center">{{$post->post_title}}</td>
+                  <td class="align-middle text-center">
+                    <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
+                        <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments
+                      </span>
+                    <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
+                        <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
+                    </span>
+                  </td>
+           
+                </tr>
+              @endif
+            @endforeach
+          @endforeach
 
         </tbody>
       </table>
@@ -258,7 +264,8 @@
   </section>
     <!--End Basic Table-->
 
-
+  
+  </script>
   @include('layouts.public.includes.footer')
 
   @endsection

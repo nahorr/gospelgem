@@ -3,13 +3,20 @@
 namespace App\Http\Controllers\GForum;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UploadRequest;
 use App\Http\Controllers\Controller;
+use App\PostsImage;
+use App\Post;
 
 class GForumController extends Controller
 {
     public function viewPosts()
     {
-    	return view('private-views.gforum.viewposts');
+    	$posts = Post::orderBy('created_at', 'desc')->get();
+
+    	$posts_images = PostsImage::get();
+
+    	return view('private-views.gforum.viewposts', compact('posts', 'posts_images'));
     }
 
     public function addPost()
@@ -17,39 +24,20 @@ class GForumController extends Controller
     	return view('private-views.gforum.addpost');
     }
 
-    public function storeAddPost(request $request) {
-
-    	$this->validate(request(), [
-
-            'post_title' => 'required',
-            'post_body' => 'required',
-            'post_images' => 'mimes:jpg,jpeg,bmp,png|max:10000',
-            
-        ]);
+    public function storeAddPost(UploadRequest $request) {
 
 
-	    $input=$request->all();
-	    $images=array();
-	    if($files=$request->file('post_images')){
-	        foreach($files as $file){
-	            $name=$file->getClientOriginalName();
-	            $file->move('image',$name);
-	            $images[]=$name;
-	        }
-	    }
-	    /*Insert your data*/
+        $post = Post::create($request->all());
 
-	    Post::insert([
+        foreach ($request->photos as $photo) {
 
-            'post_title'=>$request->tip_title,
-            'post_body'=>$tip_body,
-            'post_images'=>implode("|",$images),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
+            $filename = $photo->store('photos');
 
-
-	   	flash('Post Added Successfully')->success();
+            PostsImage::create([
+                'post_id' => $post->id,
+                'filename' => $filename
+            ]);
+        }
 
         return redirect()->route('viewPosts');
 	}

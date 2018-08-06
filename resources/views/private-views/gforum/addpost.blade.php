@@ -19,7 +19,11 @@
                     <div class="col-md-8">
                   
                       <!-- General Controls -->
-                      <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="/gforum/postaddpost">
+                      <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="/gforum/storeaddpost">
+                        {{ csrf_field() }}
+
+                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
+
                         <div class="form-group g-mb-25">
                           <label for="post_title">Post Tile</label>
                           <input type="text" class="form-control rounded-0 form-control-md" id="post_title" name="post_title" aria-describedby="postTitle" placeholder="Enter Your Post Title Here">
@@ -32,21 +36,30 @@
                         </div>
 
                         <div class="form-group g-mb-25">
-                          <label for="exampleInputFile">Upload pictures</label>
-                          <input required type="file" class="form-control" name="post_images[]" placeholder="Add images" multiple>
-                          <small id="fileHelp" class="form-text text-muted">You can add more than one image</small>
+                          <label for="exampleInputFile">Upload pictures(Hold down the control key to select multiple files)</label>
+                          <input type="file" class="form-control" name="photos[]" placeholder="Add images" multiple="true">
+                          <small id="fileHelp" class="form-text text-muted">You can add more than one image(less tha or equal to 2MB each)</small>
                         </div>
-
 
                         <div class="form-check">
                           <label class="form-check-label g-mb-20">
-                            <input type="checkbox" class="form-check-input mr-1">Include my profile picture with this post
+                            <input type="hidden" name="show_profile_picture" value="0"><input type="checkbox" name="show_profile_picture" value="1" />Include my profile picture with this post
                           </label>
                         </div>
-                        <button type="submit" class="btn btn-md u-btn-primary rounded-0">Submit</button>
+                        <input type="submit" value="Upload" />
                       </form>
                       <!-- End General Controls -->
-
+                     
+                      @if (count($errors) > 0)
+                       <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                        </div>
+                      @endif
+                    
                   </div>
                  </div>             
                 </div>

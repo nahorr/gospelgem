@@ -29,33 +29,50 @@
                             <thead>
                               <tr>
                                 <th>#</th>
-                                <th>Post Title</th>
-                                <th>Date Posted</th>
-                                <th><i class="hs-admin-check-box"></i> Status</th>
+                                <th><i class="hs-admin-comments-smiley"> Post Title</th>
+                                <th><i class="hs-admin-calendar"> Date Posted</th>
+                                <th><i class="hs-admin-link"> Image Link</th>
+                                <th><i class="hs-admin-check-box"></i> Approval Status</th>
                                 <th><i class="hs-admin-bar-chart"></i> Stats</th>
-                                <th>Actions</th>
+                                <th><i class="hs-admin-pencil-alt"> Actions</th>
                               </tr>
                             </thead>
 
                             <tbody>
+                              @foreach($posts as $key => $post)
                               <tr>
-                                <td>1</td>
-                                <td>Lola Sutton</td>
-                                <td>Apple Inc.</td>
+                                <td> {{$key+1}} </td>
+                                <td> {{$post->post_title}}</td>
+                                <td> {{$post->created_at->toFormattedDateString() }}.</td>
                                 <td>
-                                  <span class="u-tags-v1 text-center g-width-110 g-brd-around g-brd-teal-v2 g-bg-teal-v2 g-font-weight-400 g-color-white g-rounded-50 g-py-4 g-px-15">Online</span>
+                                    @foreach($posts_images as $images) 
+                                      @if($images->post_id == $post->id)
+
+                                          {{  str_limit($images->filename, $limit = 20, $end = '...') }}<br>
+
+                                      @endif
+                                    @endforeach
                                 </td>
                                 <td>
-					              <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!">
-					                <i class="hs-admin-eye"></i>Views
-					              </a>
-					              <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
-					                <i class="hs-admin-heart"></i>Likes
-					              </a>
-					              <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
-					                <i class="hs-admin-comments"></i>comments
-					              </a>
-					            </td>
+                                  @if($post->approved == 1)
+                                    <span class="u-tags-v1 text-center g-width-110 g-brd-around g-brd-teal-v2 g-bg-teal-v2 g-font-weight-400 g-color-white g-rounded-50 g-py-4 g-px-15">    Approved
+                                    </span>
+                                  @else
+                                    <span class="u-tags-v1 text-center g-width-110 g-brd-around g-brd-teal-v2 g-bg-teal-v2 g-font-weight-400 g-color-red g-rounded-50 g-py-4 g-px-15">    Pending...
+                                    </span>
+                                  @endif
+                                </td>
+                                <td>
+          					              <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!">
+          					                <i class="hs-admin-eye"></i>Views
+          					              </a>
+          					              <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
+          					                <i class="hs-admin-heart"></i>Likes
+          					              </a>
+          					              <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
+          					                <i class="hs-admin-comments"></i>comments
+          					              </a>
+          					            </td>
                                 <td>
                                   <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!">
                                     <i class="hs-admin-pencil"></i>
@@ -65,7 +82,7 @@
                                   </a>
                                 </td>
                               </tr>
-                
+                              @endforeach
                             </tbody>
                           </table>
                         </div>
