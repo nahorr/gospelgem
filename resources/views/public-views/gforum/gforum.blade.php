@@ -31,6 +31,8 @@
                 <tr>
                   <td class="align-middle"> {{$key+1}} </td>
                   <td class="align-middle text-nowrap">
+
+                    <a href="{{url('gforum/addpost')}}">
                     <div class="media">
                       <img class="d-flex g-width-40 g-height-40 rounded-circle g-mr-10" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}">
                       <div class="media-body align-self-center">
@@ -41,6 +43,8 @@
                         <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
                         </div>
                     </div>
+                    </a>
+                    
                   </td>
                   
                   <!--
