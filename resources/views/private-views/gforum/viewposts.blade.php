@@ -39,7 +39,7 @@
                             </thead>
 
                             <tbody>
-                              @foreach($posts as $key => $post)
+                              @foreach($posts->where('user_id', Auth::user()->id) as $key => $post)
                               <tr>
                                 <td> {{$key+1}} </td>
                                 <td> {{$post->post_title}}</td>
