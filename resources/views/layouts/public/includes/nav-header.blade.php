@@ -89,11 +89,17 @@
                 </li>
                 <!-- End About -->
 
-                 <!-- About -->
+                <!-- GForum -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a class="btn btn-md u-btn-outline-indigo g-mr-10 g-mb-15" href="{{url('gforum')}}">GForum</a>
+                </li>
+                <!-- End GForum -->
+
+                <!-- Gosgem Live -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
                   <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="https://live.gosgem.com/" target="_blank">Gosgem Live</a>
                 </li>
-                <!-- End About -->
+                <!-- End Gosgem live -->
 
               </ul>
             </div>

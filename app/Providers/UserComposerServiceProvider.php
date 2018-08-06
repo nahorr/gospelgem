@@ -21,6 +21,8 @@ class UserComposerServiceProvider extends ServiceProvider
             'layouts.private.includes.metrics',
             'home',
             'private-views.users.profile',
+            'private-views.gforum.viewposts',
+            'private-views.gforum.addpost',
 
             ], 
             
