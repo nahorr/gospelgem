@@ -16,8 +16,8 @@
       <table class="table table-bordered u-table--v2">
         <thead class="text-uppercase g-letter-spacing-1">
           <tr>
-            <th class="g-font-weight-300 g-color-black">#</th>
-            <th class="g-font-weight-300 g-color-black">Post Details</th>
+            <!--<th class="g-font-weight-300 g-color-black">#</th>-->
+            <th class="g-font-weight-300 g-color-black text-center">Most Recent Posts</th>
             <!--<th class="g-font-weight-300 g-color-black g-min-width-200">Post Title and Information</th>-->
             <!--<th class="g-font-weight-300 g-color-black text-center">Stats</th>-->
             
@@ -29,19 +29,20 @@
             @foreach($users as $user)
              @if($post->user_id == $user->id)
                 <tr>
-                  <td class="align-middle"> {{$key+1}} </td>
-                  <td class="align-middle text-nowrap">
+                  <!--<td class="align-middle"> {{$key+1}} </td>-->
+                  <td class="align-middle text-center">
 
                     <a href="{{url('gforum/addpost')}}">
                     <div class="media">
-                      <img class="d-flex g-width-40 g-height-40 rounded-circle g-mr-10" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}">
+                      
                       <div class="media-body align-self-center">
-                        <h5 class="h6 align-self-center g-font-weight-600 g-color-purple mb-0">{{$user->name}}</h5>
-                        {{$post->post_title}} -  
-                        <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-003 u-line-icon-pro"></i> {{$post->created_at->toFormattedDateString()}};
+                        
+                        
+                        <span style="color: red;">{{$post->post_title}}</span> - by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
+                        <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-003 u-line-icon-pro"></i> {{$post->created_at->toFormattedDateString()}} at {{$post->created_at->format('H:i')}} hours
                         <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments; 
                         <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
-                        </div>
+                      </div>
                     </div>
                     </a>
                     
