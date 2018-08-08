@@ -17,7 +17,7 @@ class CreatePostsImagesTable extends Migration
             $table->increments('id');
             $table->integer('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->string('filename')->default('default_post_images.jpg')->nullable();
+            $table->string('filename')->nullable();
             $table->timestamps();
         });
     }

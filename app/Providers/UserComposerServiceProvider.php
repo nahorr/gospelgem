@@ -23,6 +23,7 @@ class UserComposerServiceProvider extends ServiceProvider
             'private-views.users.profile',
             'private-views.gforum.viewposts',
             'private-views.gforum.addpost',
+            'private-views.gforum.editpost',
 
             ], 
             

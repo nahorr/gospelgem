@@ -26,6 +26,7 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 	//GForum
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');
+	Route::get('gforum/viewpost/{post}/{user}', 'HomePublic\GForum\GForumController@viewPost');
 
 //Social login
 Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
@@ -46,6 +47,9 @@ Route::group(['middleware' => 'auth'], function () {
     	Route::get('gforum/viewposts', 'GForum\GForumController@viewPosts')->name('viewPosts');
 		Route::get('gforum/addpost', 'GForum\GForumController@addPost')->name('addPost');
 		Route::post('gforum/storeaddpost', 'GForum\GForumController@storeAddPost');
+		Route::get('gforum/editpost/{post}', 'GForum\GForumController@editPost')->name('editPost');
+		Route::post('gforum/storeeditpost/{post}', 'GForum\GForumController@storeEditPost')->name('editPost');
+		Route::get('gforum/deletepost/{post}', 'GForum\GForumController@deletePost');
 });
 
 

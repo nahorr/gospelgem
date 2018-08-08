@@ -17,7 +17,7 @@
         <thead class="text-uppercase g-letter-spacing-1">
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
-            <th class="g-font-weight-300 g-color-black text-center">Most Recent Posts</th>
+            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #6635b7;"><strong>Most Recent Posts</strong></span></th>
             <!--<th class="g-font-weight-300 g-color-black g-min-width-200">Post Title and Information</th>-->
             <!--<th class="g-font-weight-300 g-color-black text-center">Stats</th>-->
             
@@ -32,16 +32,19 @@
                   <!--<td class="align-middle"> {{$key+1}} </td>-->
                   <td class="align-middle text-center">
 
-                    <a href="{{url('gforum/addpost')}}">
+                    <a href="{{url('gforum/viewpost/'.$post->id)}}/{{$user->id}}">
                     <div class="media">
                       
                       <div class="media-body align-self-center">
                         
                         
-                        <span style="color: red;">{{$post->post_title}}</span> - by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
-                        <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-003 u-line-icon-pro"></i> {{$post->created_at->toFormattedDateString()}} at {{$post->created_at->format('H:i')}} hours
-                        <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments; 
-                        <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
+                        <span style="color: #6635b7;"><strong>{{$post->post_title}}</strong></span> 
+                        <span style="color: #6635b7;">
+                          - by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
+                          <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-003 u-line-icon-pro"></i> {{$post->created_at->toFormattedDateString()}} at {{$post->created_at->format('H:i')}} hours
+                          <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments; 
+                          <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
+                        </span>
                       </div>
                     </div>
                     </a>
@@ -70,8 +73,7 @@
   </section>
     <!--End Basic Table-->
 
-  
-  </script>
+
   @include('layouts.public.includes.footer')
 
   @endsection

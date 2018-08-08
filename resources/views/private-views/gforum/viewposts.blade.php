@@ -74,10 +74,10 @@
           					              </a>
           					            </td>
                                 <td>
-                                  <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!">
+                                  <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="{{url('gforum/editpost/'.$post->id)}}">
                                     <i class="hs-admin-pencil"></i>
                                   </a>
-                                  <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
+                                  <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="{{url('gforum/deletepost/'.$post->id)}}" onclick="return confirm('Are you sure you want to Delete this record?')">
                                     <i class="hs-admin-trash"></i>
                                   </a>
                                 </td>

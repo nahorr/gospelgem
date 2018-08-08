@@ -26,7 +26,7 @@
 
                         <div class="form-group g-mb-25">
                           <label for="post_title">Post Tile</label>
-                          <input type="text" class="form-control rounded-0 form-control-md" id="post_title" name="post_title" aria-describedby="postTitle" placeholder="Enter Your Post Title Here">
+                          <input type="text" class="form-control rounded-0 form-control-md" id="post_title" name="post_title" aria-describedby="postTitle" value="{{$post->post_title}}">
                         </div>
 
 
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="form-group g-mb-25">
-                          <label for="exampleInputFile">Upload a cover picture for your post <span style="color: darkred;">(this will be the default picture)</span></label>
+                          <label for="exampleInputFile">Upload a new cover picture for your post <span style="color: darkred;">(this will be the default picture)</span></label>
                           <input type="file" class="form-control" id="photos" name="photos[]" multiple="" />
                           
                           <small id="fileHelp" class="form-text text-muted"><span style="color: darkred;">Image size less than or equal to 2MB</span></small>
