@@ -24,23 +24,32 @@
 
                          <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
 
+                         <div class="form-group g-mb-25">
+                          <label for="post_title"><strong>Select a category</strong></label><br>
+                          
+                            <select class="form-control form-control-md form-control-lg rounded-0 g-mb-25" name="category_id" id="category_id">
+                                <option selected disabled>Please select one category</option>
+                                      @foreach($categories as $key => $category)
+
+                                          <option value="{{ $category->id }}" >
+                                              {{ $category->category_name }}
+                                          </option>
+
+                                      @endforeach
+                              </select>
+                             
+                          </div>
+
                         <div class="form-group g-mb-25">
-                          <label for="post_title">Post Tile</label>
+                          <label for="post_title"><strong>Post Tile</strong></label>
                           <input type="text" class="form-control rounded-0 form-control-md" id="post_title" name="post_title" aria-describedby="postTitle" placeholder="Enter Your Post Title Here">
                         </div>
 
 
                         <div class="form-group g-mb-25">
-                          <label for="exampleTextarea">Post Body <span style="color: darkred;">(you can add pictures and/or videos to your post)</span></label>
+                          <label for="exampleTextarea"><strong>Post Body</strong> <span style="color: darkred;">(you can add pictures and/or videos to your post)</span></label>
                           <textarea class=" summernote autosize-transition form-control" id="postBody" name="post_body" placeholder="Inspire people with this post"></textarea>
 
-                        </div>
-
-                        <div class="form-group g-mb-25">
-                          <label for="exampleInputFile">Upload a cover picture for your post <span style="color: darkred;">(this will be the default picture)</span></label>
-                          <input type="file" class="form-control" id="photos" name="photos[]" multiple="" />
-                          
-                          <small id="fileHelp" class="form-text text-muted"><span style="color: darkred;">Image size less than or equal to 2MB</span></small>
                         </div>
 
                         <div class="form-group g-mb-25">

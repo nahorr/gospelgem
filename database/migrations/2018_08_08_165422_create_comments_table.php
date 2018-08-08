@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,17 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->string('post_title');
-            $table->longText('post_body');
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->longText('post_comment');
             $table->boolean('approved')->default(false);
             $table->boolean('show_profile_picture')->default(false);
-            $table->integer('post_views')->default(0);
-            $table->integer('post_likes')->default(0);
-            $table->integer('post_dislikes')->default(0);
-            $table->integer('post_comments')->default(0);
+            $table->integer('comment_likes')->default(0);
+            $table->integer('comment_dislikes')->default(0);
             $table->timestamps();
         });
     }
@@ -38,6 +35,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('comments');
     }
 }

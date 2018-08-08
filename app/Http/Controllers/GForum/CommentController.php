@@ -3,49 +3,43 @@
 namespace App\Http\Controllers\GForum;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UploadRequest;
 use App\Http\Controllers\Controller;
-use App\Category;
+use App\Comment;
 use App\Post;
-use Image;
+use Auth;
+use App\User;
 
-class GForumController extends Controller
+class CommentController extends Controller
 {
-    public function viewPosts()
+    public function viewComments()
     {
-    	$posts = Post::orderBy('created_at', 'desc')->get();
-
-
-    	return view('private-views.gforum.viewposts', compact('posts'));
+    	
+    	return view('private-views.gforum.comments.viewcomments');
     }
 
-    public function addPost()
+    public function leaveComment(Post $post, User $user)
     {
-    	$categories = Category::get();
 
-        return view('private-views.gforum.addpost', compact('categories'));
+        return view('private-views.gforum.comments.leavecomment', compact('post', 'user'));
     }
 
-    public function storeAddPost(Request $request) 
+    public function storeLeaveComment(Request $request, Post $post) 
     {
         $this->validate(request(), [
 
-            'category_id' => 'required',
-            'post_title' => 'required',
-            'post_body' => 'required',
+            'post_comment' => 'required',
         ]);
 
 
-        $post_body=$request->input('post_body');
+        $post_comment=$request->input('post_comment');
         $dom = new \DomDocument();
-        $dom->loadHtml($post_body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $post_body = $dom->saveHTML();
+        $dom->loadHtml($post_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $post_comment = $dom->saveHTML();
 
-        Post::insert([
-                    'user_id'=>$request->user_id,
-                    'category_id'=>$request->category_id,
-                    'post_title'=>$request->post_title,
-                    'post_body'=>$post_body,
+        Comment::insert([
+                    'user_id'=>Auth::user()->id,
+                    'post_id'=>$post->id,
+                    'post_comment'=>$post_comment,
                     'show_profile_picture' => $request->show_profile_picture,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -53,7 +47,7 @@ class GForumController extends Controller
        
         
 
-        return redirect()->route('viewPosts');
+        return redirect()->route('viewcomments');
 	}
 
     public function editPost(Post $post)

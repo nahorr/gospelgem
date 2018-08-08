@@ -17,10 +17,10 @@
                
                      
                       <div class="g-pa-20">
-                        <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-30">My Posts
-                        	<div class="pull-right">
-                        		<a href="{{url('gforum/addpost')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">New Post</a>
-                        	</div>
+                        <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-30">Comments I posted
+                          <div class="pull-right">
+                            <a href="{{url('gforum')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Back to GForum</a>
+                          </div>
                         </h1>
 
                        
@@ -29,7 +29,7 @@
                             <thead>
                               <tr>
                                 <th>#</th>
-                                <th><i class="hs-admin-comments-smiley"> Post Title</th>
+                                <th><i class="hs-admin-comments-smiley"> Reply to Post Titled</th>
                                 <th><i class="hs-admin-calendar"> Date Posted</th>
                                 <th><i class="hs-admin-check-box"></i> Approval Status</th>
                                 <th><i class="hs-admin-bar-chart"></i> Stats</th>
@@ -38,13 +38,13 @@
                             </thead>
 
                             <tbody>
-                              @foreach($posts->where('user_id', Auth::user()->id) as $key => $post)
+                              @foreach($comments->where('user_id', Auth::user()->id) as $key => $comment)
                               <tr>
                                 <td> {{$key+1}} </td>
-                                <td> {{$post->post_title}}</td>
-                                <td> {{$post->created_at->toFormattedDateString() }}</td>
+                                <td> {{ $comment->post->post_title }}</td>
+                                <td> {{$comment->created_at->toFormattedDateString() }}</td>
                                 <td>
-                                  @if($post->approved == 1)
+                                  @if($comment->approved == 1)
                                     <span class="u-tags-v1 text-center g-width-110 g-brd-around g-brd-teal-v2 g-bg-teal-v2 g-font-weight-400 g-color-white g-rounded-50 g-py-4 g-px-15">    Approved
                                     </span>
                                   @else
@@ -53,21 +53,21 @@
                                   @endif
                                 </td>
                                 <td>
-          					              <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!">
-          					                <i class="hs-admin-eye"></i>Views
-          					              </a>
-          					              <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
-          					                <i class="hs-admin-heart"></i>Likes
-          					              </a>
-          					              <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
-          					                <i class="hs-admin-comments"></i>comments
-          					              </a>
-          					            </td>
+                                  <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!">
+                                    <i class="hs-admin-eye"></i>Views
+                                  </a>
+                                  <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
+                                    <i class="hs-admin-heart"></i>Likes
+                                  </a>
+                                  <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="#!">
+                                    <i class="hs-admin-comments"></i>comments
+                                  </a>
+                                </td>
                                 <td>
-                                  <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="{{url('gforum/editpost/'.$post->id)}}">
+                                  <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="{{url('gforum/comments/editcomment'.$comment->id)}}">
                                     <i class="hs-admin-pencil"></i>
                                   </a>
-                                  <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="{{url('gforum/deletepost/'.$post->id)}}" onclick="return confirm('Are you sure you want to Delete this record?')">
+                                  <a class="u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover g-text-underline--none--hover g-ml-12" href="{{url('gforum/comment/deletecomment/'.$comment->id)}}" onclick="return confirm('Are you sure you want to Delete this record?')">
                                     <i class="hs-admin-trash"></i>
                                   </a>
                                 </td>
@@ -95,5 +95,6 @@
 
 
 </main>
+
 
 @endsection

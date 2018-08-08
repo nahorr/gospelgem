@@ -31,24 +31,47 @@
                 <tr>
                   <!--<td class="align-middle"> {{$key+1}} </td>-->
                   <td class="align-middle text-center">
+                    <form class="form-group" action="{{ url('/gforum/countpostviews', [$post->id])}}" method="POST" id="post_views">
+                      {{ csrf_field() }}
+                        <input id="post_views" name="post_views" type="hidden" value="{{$post->post_views + 1}}">
 
-                    <a href="{{url('gforum/viewpost/'.$post->id)}}/{{$user->id}}">
-                    <div class="media">
-                      
-                      <div class="media-body align-self-center">
+                        <!--<input type="submit" value="{{ $post->post_title }}">-->
+                                      
+                        <a href="javascript:{{url('gforum/viewpost', $post->id)}}" onclick="document.getElementById('post_views').submit(); return false;">
                         
-                        
-                        <span style="color: #6635b7;"><strong>{{$post->post_title}}</strong></span> 
-                        <span style="color: #6635b7;">
-                          - by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
-                          <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-003 u-line-icon-pro"></i> {{$post->created_at->toFormattedDateString()}} at {{$post->created_at->format('H:i')}} hours
-                          <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments; 
-                          <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
-                        </span>
-                      </div>
-                    </div>
-                    </a>
-                    
+                        <div class="media">
+                          
+                          <div class="media-body align-self-center">
+                            
+                            
+                            <span style="color: #6635b7;"><strong>{{$post->post_title}}</strong></span> 
+                            <span style="color: #6635b7;">
+                              - by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
+                              <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-003 u-line-icon-pro"></i> {{$post->created_at->toFormattedDateString()}} at {{$post->created_at->format('H:i')}} hours
+                              <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments; 
+                              <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
+                            </span>
+                          </div>
+                        </div>
+
+                        </a>
+                    </form>
+                    <script type="text/javascript">
+                       $(document).on("click","#signUpBig",function(){
+                          if (canSubmit()) {
+                              $('form').submit(function(evt){
+                                  evt.preventDefault();
+                                  var url = $('form').attr("action");
+                                  var formData = $('form').serialize();
+                                  $.post(url, formData, function(response){
+                                      console.log(response);
+                                  });//end post
+                              });//end submit
+                          } else {
+                              console.log("the forms info is not valid");
+                          }
+                      });
+                    </script>
                   </td>
                   
                   <!--

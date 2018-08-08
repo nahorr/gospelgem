@@ -26,7 +26,10 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 	//GForum
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');
-	Route::get('gforum/viewpost/{post}/{user}', 'HomePublic\GForum\GForumController@viewPost');
+	Route::post('gforum/countpostviews/{post}', 'HomePublic\GForum\GForumController@countPostViews');
+	Route::get('gforum/viewpost/{post}', 'HomePublic\GForum\GForumController@viewPost')->name('viewpostpublic');
+
+
 
 //Social login
 Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
@@ -45,11 +48,18 @@ Route::group(['middleware' => 'auth'], function () {
     	
     	//GForum
     	Route::get('gforum/viewposts', 'GForum\GForumController@viewPosts')->name('viewPosts');
+
 		Route::get('gforum/addpost', 'GForum\GForumController@addPost')->name('addPost');
 		Route::post('gforum/storeaddpost', 'GForum\GForumController@storeAddPost');
 		Route::get('gforum/editpost/{post}', 'GForum\GForumController@editPost')->name('editPost');
 		Route::post('gforum/storeeditpost/{post}', 'GForum\GForumController@storeEditPost')->name('editPost');
 		Route::get('gforum/deletepost/{post}', 'GForum\GForumController@deletePost');
+
+
+		//GForum -Comments
+		Route::get('gforum/comments/viewcomments', 'GForum\CommentController@viewComments')->name('viewcomments');
+		Route::get('gforum/comments/leavecomment/{post}', 'GForum\CommentController@leaveComment');
+		Route::post('gforum/comments/storeleavecomment/{post}', 'GForum\CommentController@storeLeaveComment');
 });
 
 
