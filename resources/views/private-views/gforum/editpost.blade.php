@@ -16,10 +16,10 @@
                 <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-28">Add a new post</h1>
                   <div class="row">
                               
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                   
                       <!-- General Controls -->
-                      <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="/gforum/storeaddpost">
+                      <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="{{ url('/gforum/storeeditpost', [$post->id]) }}">
                         {{ csrf_field() }}
 
                          <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
@@ -32,7 +32,7 @@
 
                         <div class="form-group g-mb-25">
                           <label for="exampleTextarea">Post Body <span style="color: darkred;">(you can add pictures and/or videos to your post)</span></label>
-                          <textarea class=" summernote autosize-transition form-control" id="postBody" name="post_body" placeholder="Inspire people with this post"></textarea>
+                          <textarea class=" summernote autosize-transition form-control" id="postBody" name="post_body"></textarea>
 
                         </div>
 
@@ -78,5 +78,19 @@
 
 
 </main>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+        //initialize summernote
+        $('.summernote').summernote();
+
+        //assign the variable passed from controller to a JavaScript variable.
+        var content = {!! json_encode($post->post_body) !!};
+
+        //set the content to summernote using `code` attribute.
+        $('.summernote').summernote('code', content);
+    });
+
+</script>
 
 @endsection

@@ -11,8 +11,9 @@
               <div class="g-pl-20--lg">
                 <!-- Blog Minimal Blocks -->
                 <article class="g-mb-100">
-                  @if(!empty($post_image->filename))
-                  <img class="img-fluid w-100 g-rounded-5 g-mb-25" src="{{ asset('posts/images/'.$post_image->filename) }}" alt="gosgem blog photo">
+                  @if(!empty($post_image->filename) && $post_image->filename != 'default_post_image.jpg')
+                    <img class="img-fluid w-100 g-rounded-5 g-mb-25" src="{{ asset('posts/images/'.$post_image->filename) }}" alt="gosgem blog photo">
+                
                   @endif
                   <div class="px-4">
                     <ul class="d-flex justify-content-start align-items-end list-inline g-color-gray-dark-v5 g-font-size-13 g-mt-minus-45 g-mb-25">

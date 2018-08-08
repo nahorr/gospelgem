@@ -75,7 +75,7 @@ class GForumController extends Controller
 
     public function editPost(Post $post)
     {
-        return view('private-views.gforum.editpost');
+        return view('private-views.gforum.editpost', compact('post'));
     }
 
     public function storeEditPost(UploadRequest $request, Post $post)
@@ -125,7 +125,7 @@ class GForumController extends Controller
 
     }
 
-    public function deletePost(Post $post)
+    public function deletePost($post)
     {
         Post::destroy($post);
 
