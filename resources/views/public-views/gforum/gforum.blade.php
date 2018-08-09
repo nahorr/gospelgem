@@ -46,32 +46,16 @@
                             
                             <span style="color: #6635b7;"><strong>{{$post->post_title}}</strong></span> 
                             <span style="color: #6635b7;">
-                              - by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
-                              <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-003 u-line-icon-pro"></i> {{$post->created_at->toFormattedDateString()}} at {{$post->created_at->format('H:i')}} hours
-                              <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments; 
-                              <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
+                              - posted by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
+                              on {{$post->created_at->toFormattedDateString()}} - 
+                                {{ $post->post_views }} views
                             </span>
                           </div>
                         </div>
 
                         </a>
                     </form>
-                    <script type="text/javascript">
-                       $(document).on("click","#signUpBig",function(){
-                          if (canSubmit()) {
-                              $('form').submit(function(evt){
-                                  evt.preventDefault();
-                                  var url = $('form').attr("action");
-                                  var formData = $('form').serialize();
-                                  $.post(url, formData, function(response){
-                                      console.log(response);
-                                  });//end post
-                              });//end submit
-                          } else {
-                              console.log("the forms info is not valid");
-                          }
-                      });
-                    </script>
+                    
                   </td>
                   
                   <!--
@@ -91,6 +75,9 @@
 
         </tbody>
       </table>
+      
+      <div class="pagination">{{ $posts->links() }}</div> 
+
     </div>
   </div>
   </section>

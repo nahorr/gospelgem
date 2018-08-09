@@ -28,8 +28,10 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');
 	Route::post('gforum/countpostviews/{post}', 'HomePublic\GForum\GForumController@countPostViews');
 	Route::get('gforum/viewpost/{post}', 'HomePublic\GForum\GForumController@viewPost')->name('viewpostpublic');
-
-
+	Route::post('gforum/countpostlikes/{post}', 'HomePublic\GForum\GForumController@countPostLikes');
+	Route::post('gforum/countpostdislikes/{post}', 'HomePublic\GForum\GForumController@countPostDislikes');
+	Route::post('gforum/countcommentlikes/{comment}', 'HomePublic\GForum\GForumController@countCommentLikes');
+	Route::post('gforum/countcommentdislikes/{comment}', 'HomePublic\GForum\GForumController@countCommentDislikes');
 
 //Social login
 Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
@@ -60,6 +62,10 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('gforum/comments/viewcomments', 'GForum\CommentController@viewComments')->name('viewcomments');
 		Route::get('gforum/comments/leavecomment/{post}', 'GForum\CommentController@leaveComment');
 		Route::post('gforum/comments/storeleavecomment/{post}', 'GForum\CommentController@storeLeaveComment');
+
+		//GForum -Comment Replies
+		Route::get('gforum/comments/replycomment/{comment}', 'GForum\CommentReplyController@replyComment');
+		Route::post('gforum/comments/storereplycomment/{comment}', 'GForum\CommentReplyController@storeReplyComment');
 });
 
 

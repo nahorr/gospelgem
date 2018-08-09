@@ -26,6 +26,7 @@ class UserComposerServiceProvider extends ServiceProvider
             'private-views.gforum.editpost',
             'private-views.gforum.comments.viewcomments',
             'private-views.gforum.comments.leavecomment',
+            'private-views.gforum.comments.replycomment'
 
             ], 
             
