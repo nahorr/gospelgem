@@ -31,13 +31,13 @@
                 <tr>
                   <!--<td class="align-middle"> {{$key+1}} </td>-->
                   <td class="align-middle text-center">
-                    <form class="form-group" action="{{ url('/gforum/countpostviews', [$post->id])}}" method="POST" id="post_views">
+                    <form class="form-group" action="{{ url('/gforum/countpostviews', [$post->id])}}" method="POST" id="{{$post->id}}">
                       {{ csrf_field() }}
-                        <input id="post_views" name="post_views" type="hidden" value="{{$post->post_views + 1}}">
+                        <input name="post_views" type="hidden" value="{{$post->post_views + 1}}">
 
                         <!--<input type="submit" value="{{ $post->post_title }}">-->
                                       
-                        <a href="javascript:{{url('gforum/viewpost', $post->id)}}" onclick="document.getElementById('post_views').submit(); return false;">
+                        <a href="javascript:{{url('gforum/viewpost'.$post->id)}}" onclick="document.getElementById( {{$post->id}} ).submit(); return false;">
                         
                         <div class="media">
                           
