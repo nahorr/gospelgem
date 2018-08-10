@@ -14,6 +14,9 @@
             <div class="g-pa-20">
                 @include('layouts.private.includes.metrics')
                 <h4 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-28">Leave a comment for the post <mark>{{ $post->post_title }}</mark></h4>
+                <p><mark>Posted By: {{$post->user->name}} on: {{$post->created_at->toFormattedDateString()}}</mark></p>
+
+                <p>Post:<br>{!! $post->post_body !!}</p>
                 
                   <div class="row">
                               
