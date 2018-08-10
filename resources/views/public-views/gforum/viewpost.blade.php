@@ -14,6 +14,7 @@
       box-shadow: 0 2px 5px rgba(51, 51, 51, 1.00);
   }
   </style>
+       
 
         <!-- Blog Minimal Blocks -->
         <div class="container g-pt-100 g-pb-20">
@@ -26,12 +27,19 @@
                 <!-- Blog Minimal Blocks -->
                 <article class="g-mb-100">
                   <div class="g-mb-30">
+                     @include('flash::message')
   
                     <h2 class="h4 g-color-black g-font-weight-600 mb-3">
                       <a class="u-link-v5 g-color-black g-color-primary--hover">{{$post->post_title}}</a>
-                      <a href="{{ url('gforum') }}" class="pull-right"><button type="button" class="btn btn-primary">Back to Forum</button></a>
+                      <a href="{{ url('gforum') }}" class="btn btn-md u-btn-primary g-mr-10 g-mb-15 pull-right">Back to Forum</a>
+                      @if(Auth::check())
+                        <a href="{{url('home')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right">User Dashboard</a>
+                      @endif
+                      @if(Auth::check() && $post->user_id == Auth::user()->id)
+                        <a href="{{url('gforum/editpost/'. $post->id)}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right">Edit Post</a>
+                      @endif
                     </h2>
-
+                    
                      
 
                     @include('layouts.public.includes.viewpost-stats')
@@ -94,6 +102,14 @@
                                   Reply
                                 </a>
                               </li>
+                              @if(Auth::check() && $comment->user_id == Auth::user()->id)
+                                <li class="list-inline-item ml-auto">
+                                  <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="{{url('/gforum/comments/editcomment', [$comment->id])}}">
+                                    <i class="icon-note g-pos-rel g-top-1 g-mr-3"></i>
+                                    Edit Comment
+                                  </a>
+                                </li>
+                              @endif
                             </ul>
 
                             @foreach($comment_replies as $reply)
@@ -128,6 +144,14 @@
                   
                                             </form>
                                           </li>
+                                          @if(Auth::check() && $reply->user_id == Auth::user()->id)
+                                            <li class="list-inline-item ml-auto">
+                                              <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="{{url('/gforum/comments/editcommentreply', [$reply->id])}}">
+                                                <i class="icon-note g-pos-rel g-top-1 g-mr-3"></i>
+                                                Edit Reply
+                                              </a>
+                                            </li>
+                                          @endif
                                           
                                         </ul>
                                       </div>
@@ -175,6 +199,14 @@
                                   Reply
                                 </a>
                               </li>
+                              @if(Auth::check() && $comment->user_id == Auth::user()->id)
+                                <li class="list-inline-item ml-auto">
+                                  <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="{{url('/gforum/comments/editcomment', [$comment->id])}}">
+                                    <i class="icon-note g-pos-rel g-top-1 g-mr-3"></i>
+                                    Edit Comment
+                                  </a>
+                                </li>
+                              @endif
                             </ul>
 
                             @foreach($comment_replies as $reply)
@@ -209,6 +241,14 @@
                             
                                             </form>
                                           </li>
+                                          @if(Auth::check() && $reply->user_id == Auth::user()->id)
+                                            <li class="list-inline-item ml-auto">
+                                              <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="{{url('/gforum/comments/editcommentreply', [$reply->id])}}">
+                                                <i class="icon-note g-pos-rel g-top-1 g-mr-3"></i>
+                                                Edit Reply
+                                              </a>
+                                            </li>
+                                          @endif
                                           
                                         </ul>
                                       </div>

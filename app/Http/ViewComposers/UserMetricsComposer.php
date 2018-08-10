@@ -12,6 +12,8 @@ use App\UserDetail;
 use App\Comment;
 use App\Category;
 use App\User;
+use App\Post;
+use App\CommentReply;
 use Auth;
 	
 Class UserMetricsComposer {	
@@ -31,6 +33,10 @@ Class UserMetricsComposer {
             $categories = Category::get();
 
             $comments = Comment::orderBy('created_at', 'desc')->get();
+
+            $user_posts = Post::where('user_id', Auth::user()->id)->get();
+            $user_comments = Comment::where('user_id', Auth::user()->id)->get();
+            $user_replies = CommentReply::where('user_id', Auth::user()->id)->get();
             
             //put variables in views
             $view
@@ -38,7 +44,10 @@ Class UserMetricsComposer {
             ->with('today', $today )
             ->with('user_details', $user_details)
             ->with('categories', $categories)
-            ->with('comments', $comments);
+            ->with('comments', $comments)
+            ->with('user_posts', $user_posts)
+            ->with('user_comments', $user_comments)
+            ->with('user_replies', $user_replies);
 
             
 

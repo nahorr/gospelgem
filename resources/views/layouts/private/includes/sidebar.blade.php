@@ -19,7 +19,7 @@
               <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                 <i class="hs-admin-list"></i>
               </span>
-              <span class="media-body align-self-center">My Posts</span>
+              <span class="media-body align-self-center">Add Posts</span>
             </a>
           </li>
           <!-- End Posts -->

@@ -63,35 +63,18 @@ class GForumController extends Controller
 
     public function storeEditPost(UploadRequest $request, Post $post)
     {
-        
+        $this->validate(request(), [
+
+            'post_title' => 'required',
+            'post_body' => 'required',
+        ]);
               
         $post_body=$request->input('post_body');
         $dom = new \DomDocument();
         $dom->loadHtml($post_body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $post_body = $dom->saveHTML();
 
-        if($request->photos != null){   
-
-            foreach ($request->photos as $photo) {
-
-                                       
-                $filename = time() . '.' . $photo->getClientOriginalExtension();
-                Image::make($photo)->crop(740, 380)->save( public_path('/posts/images/' . $filename ) );
-
-
-                PostsImage::create([
-                    'post_id' => $post->id,
-                    'filename' => $filename
-                ]);
-            }
-        }else{
-
-            PostsImage::create([
-                    'post_id' => $post->id,
-                    'filename' => 'default_post_image.jpg'
-                ]);
-
-        } 
+        
 
         $post_edit = Post::where('id', '=', $post->id)->first();
         

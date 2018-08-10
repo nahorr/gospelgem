@@ -12,6 +12,9 @@
           <p class="lead">GForum is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
         </header>
       <a href="{{url('gforum/addpost')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
+      @if(Auth::check())
+        <a href="{{url('home')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15">User Dashboard</a>
+      @endif
     <div class="table-responsive">
       <table class="table table-bordered u-table--v2">
         <thead class="text-uppercase g-letter-spacing-1">
