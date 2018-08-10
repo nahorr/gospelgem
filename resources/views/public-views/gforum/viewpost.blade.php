@@ -5,9 +5,7 @@
   @include('layouts.public.includes.nav-header')
 
   <style>
-    img {
-    vertical-align: middle;
-    border-style: none;
+    img, iframe {
     max-width: 100%;
   }
   </style>
