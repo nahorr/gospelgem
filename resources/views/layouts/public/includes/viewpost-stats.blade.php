@@ -25,10 +25,16 @@
                         
                       </li>
                       <li class="list-inline-item g-color-gray-dark-v4">
-                        <a class="d-inline-block g-color-gray-dark-v4 g-color-white--hover g-bg-gray-dark-v2--hover rounded g-transition-0_3 g-text-underline--none--hover g-px-15 g-py-5" href="#!">
-                          <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i>
-                          {{$post->post_likes}} Likes
-                        </a>
+                
+                        <form class="form-group" action="{{ url('/gforum/countpostlikes', [$post->id])}}" method="POST" id="{{$post->id}}">
+                          {{ csrf_field() }}
+                            <input name="post_likes" type="hidden" value="{{$post->post_likes + 1}}">
+                            
+                            <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="javascript:{}" onclick="document.getElementById( {{$post->id}} ).submit(); return false;">
+                              <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i>
+                              {{ $post->post_likes }} Likes
+                            </a>
+                        </form>
                       </li>
                       <li class="list-inline-item g-color-gray-dark-v4">
                         <a class="d-inline-block g-color-gray-dark-v4 g-color-white--hover g-bg-gray-dark-v2--hover rounded g-transition-0_3 g-text-underline--none--hover g-px-15 g-py-5" href="{{url('gforum/comments/leavecomment/'.$post->id)}}">

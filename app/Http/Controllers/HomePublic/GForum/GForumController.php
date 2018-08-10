@@ -15,7 +15,7 @@ class GForumController extends Controller
     public function index()
     {
 
-    	$posts = Post::orderBy('created_at', 'desc')->paginate(3);
+    	$posts = Post::orderBy('created_at', 'desc')->paginate(30);
 
     	$users = User::get();
 
@@ -58,6 +58,20 @@ class GForumController extends Controller
         
     }
 
+    public function countPostLikes(Request $request, Post $post)
+    {
+ 
+         $post = Post::where('id', '=', $post->id)->first();
+         
+         $post->post_likes = $request->post_likes;
+            
+         $post->save();
+
+         return back();
+
+        
+    }
+
     public function countCommentLikes(Request $request, Comment $comment)
     {
  
@@ -74,16 +88,15 @@ class GForumController extends Controller
         
     }
 
-     public function countCommentDislikes(Request $request, Comment $comment)
+     public function countCommentReplyLikes(Request $request, CommentReply $reply)
     {
  
-         //$post = Post::where('id', '=', $post->id)->first();
+         $reply = CommentReply::where('id', '=', $reply->id)->first();
 
-         $commentDisLike = Comment::where('id', '=', $comment->id)->first();
-         
-         $commentDisLike->comment_dislikes = $request->comment_dislikes;
+                 
+         $reply->comment_reply_likes = $request->comment_reply_likes;
             
-         $commentDisLike->save();
+         $reply->save();
 
          return back();
 

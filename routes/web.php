@@ -29,9 +29,9 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 	Route::post('gforum/countpostviews/{post}', 'HomePublic\GForum\GForumController@countPostViews');
 	Route::get('gforum/viewpost/{post}', 'HomePublic\GForum\GForumController@viewPost')->name('viewpostpublic');
 	Route::post('gforum/countpostlikes/{post}', 'HomePublic\GForum\GForumController@countPostLikes');
-	Route::post('gforum/countpostdislikes/{post}', 'HomePublic\GForum\GForumController@countPostDislikes');
+	//Route::post('gforum/countpostdislikes/{post}', 'HomePublic\GForum\GForumController@countPostDislikes');
 	Route::post('gforum/countcommentlikes/{comment}', 'HomePublic\GForum\GForumController@countCommentLikes');
-	Route::post('gforum/countcommentdislikes/{comment}', 'HomePublic\GForum\GForumController@countCommentDislikes');
+	Route::post('gforum/countcommentreplylikes/{reply}', 'HomePublic\GForum\GForumController@countCommentReplyLikes');
 
 //Social login
 Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
