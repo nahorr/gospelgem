@@ -53,7 +53,7 @@ class GForumController extends Controller
        
         
 
-        return redirect()->route('viewPosts');
+        return redirect()->route('gforum');
 	}
 
     public function editPost(Post $post)
@@ -104,7 +104,7 @@ class GForumController extends Controller
         
         flash('Post Updated Successfully')->success();
 
-        return redirect()->route('viewPosts');
+        return redirect()->route('viewpostpublic', [$post->id]);
 
     }
 

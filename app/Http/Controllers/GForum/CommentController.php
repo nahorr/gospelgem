@@ -47,7 +47,7 @@ class CommentController extends Controller
        
         
 
-        return redirect()->route('viewcomments');
+        return redirect()->route('viewpostpublic', [$post->id]);
 	}
 
     public function editPost(Post $post)
