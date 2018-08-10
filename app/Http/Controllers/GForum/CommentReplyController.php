@@ -42,6 +42,6 @@ class CommentReplyController extends Controller
        
         
 
-        return redirect()->route('viewcomments');
+        return redirect()->route('viewpostpublic', [$comment->post_id]);
 	}
 }
