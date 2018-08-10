@@ -43,9 +43,10 @@
                 </article>
                 <!-- End Blog Minimal Blocks -->
 
-                 <a class="d-inline-block g-color-gray-dark-v4 g-color-white--hover g-bg-gray-dark-v2--hover rounded g-transition-0_3 g-text-underline--none--hover g-px-15 g-py-5" href="{{url('gforum/comments/leavecomment/'.$post->id)}}">
-                  <button type="button" class="btn btn-primary">Leave a  Comment</button>
-                 </a>
+                 <a class="btn btn-danger" href="{{url('gforum/comments/leavecomment/'.$post->id)}}" role="button">
+                    <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-002 u-line-icon-pro"></i>
+                    Leave a Comment
+                  </a>
 
                     <hr>
                     
