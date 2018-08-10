@@ -30,7 +30,7 @@
                           {{ csrf_field() }}
                             <input name="post_likes" type="hidden" value="{{$post->post_likes + 1}}">
                             
-                            <button class="btn" type="submit">
+                            <button class="btn btn-basic" type="submit">
                               <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i>
                               {{ $post->post_likes }} Likes
                             </button>
@@ -38,7 +38,7 @@
                       </li>
                       <li class="list-inline-item g-color-gray-dark-v4">
                         
-                        <a class="btn btn-danger" href="{{url('gforum/comments/leavecomment/'.$post->id)}}" role="button">
+                        <a class="btn btn-basic" role="button" href="{{url('gforum/comments/leavecomment/'.$post->id)}}" role="button">
                           <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-002 u-line-icon-pro"></i>
                           Leave a Comment
                         </a>
