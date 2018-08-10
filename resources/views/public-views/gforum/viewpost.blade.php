@@ -7,7 +7,7 @@
   <style>
     img, iframe {
     max-width: 100%;
-    max-height: 150px;
+    
   }
   </style>
 
