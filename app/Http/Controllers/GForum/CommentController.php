@@ -98,7 +98,7 @@ class CommentController extends Controller
         
         flash('Post Updated Successfully')->success();
 
-        return redirect()->route('viewPosts');
+        return redirect()->route('viewpostpublic', [$post->id]);
 
     }
 
