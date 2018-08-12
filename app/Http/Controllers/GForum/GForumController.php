@@ -39,6 +39,30 @@ class GForumController extends Controller
         $post_body=$request->input('post_body');
         $dom = new \DomDocument();
         $dom->loadHtml($post_body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img){
+
+            $data = $img->getAttribute('src');
+
+            list($type, $data) = explode(';', $data);
+
+            list(, $data)      = explode(',', $data);
+
+            $data = base64_decode($data);
+
+            $image_name= "/posts/images/" . time().$k.'.png';
+
+            $path = public_path() . $image_name;
+
+            file_put_contents($path, $data);
+
+            $img->removeAttribute('src');
+
+            $img->setAttribute('src', $image_name);
+
+        }
+
         $post_body = $dom->saveHTML();
 
         Post::insert([
