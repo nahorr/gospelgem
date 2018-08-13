@@ -20,7 +20,7 @@ class CommentController extends Controller
     public function leaveComment(Post $post, User $user)
     {
 
-        return view('private-views.gforum.comments.leavecomment', compact('post', 'user'));
+        return view('private-views.gforum.comments.leaveCommentModal', compact('post', 'user'));
     }
 
     public function storeLeaveComment(Request $request, Post $post) 

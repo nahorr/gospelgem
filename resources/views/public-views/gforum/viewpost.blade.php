@@ -49,17 +49,20 @@
 
                     
                   </div>
+                  <br>
+                    <button type="button" class="btn btn-info" id="leaveCommentModal">Leave a Comment</button>
+                    
+                    @include('private-views.gforum.comments.leaveCommentModal')
 
+                    <script type="text/javascript">
+                      $('#leaveCommentModal').on('click', function(){
+                        $('#postCommentModal').modal('show');
+                      })
+                    </script>
+                  
                   
                 </article>
                 <!-- End Blog Minimal Blocks -->
-
-                 <a class="btn btn-danger" href="{{url('gforum/comments/leavecomment/'.$post->id)}}" role="button">
-                    <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-002 u-line-icon-pro"></i>
-                    Leave a Comment
-                  </a>
-
-                    <hr>
                     
                     <!-- Comments Starts-->
                     @foreach($comments as $comment)

@@ -61,6 +61,7 @@ Route::group(['middleware' => 'auth'], function () {
 		//GForum -Comments
 		Route::get('gforum/comments/viewcomments', 'GForum\CommentController@viewComments')->name('viewcomments');
 		Route::get('gforum/comments/leavecomment/{post}', 'GForum\CommentController@leaveComment');
+		Route::get('gforum/comments/leaveCommentModal/{post}', 'GForum\CommentController@leaveComment');
 		Route::post('gforum/comments/storeleavecomment/{post}', 'GForum\CommentController@storeLeaveComment');
 
 		//GForum -Comment Replies
