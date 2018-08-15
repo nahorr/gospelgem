@@ -91,12 +91,12 @@ class GForumController extends Controller
 
     }
 
-    public function deletePost($post)
+    public function deletePost(Post $post)
     {
-        Post::destroy($post);
+        Post::where('id', $post->id)->delete();
 
         flash('Post has been deleted')->error();
 
-        return back();
+        return redirect()->route('gforum');
     }
 }

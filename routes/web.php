@@ -63,10 +63,16 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('gforum/comments/leavecomment/{post}', 'GForum\CommentController@leaveComment');
 		Route::get('gforum/comments/leaveCommentModal/{post}', 'GForum\CommentController@leaveComment');
 		Route::post('gforum/comments/storeleavecomment/{post}', 'GForum\CommentController@storeLeaveComment');
+		Route::get('gforum/comments/editcomment/{comment}', 'GForum\CommentController@editComment');
+		Route::post('gforum/comments/storeeditcomment/{comment}', 'GForum\CommentController@storeEditComment');
+		Route::get('gforum/comments/deletecomment/{comment}', 'GForum\CommentController@deleteComment');
 
 		//GForum -Comment Replies
 		Route::get('gforum/comments/replycomment/{comment}', 'GForum\CommentReplyController@replyComment');
 		Route::post('gforum/comments/storereplycomment/{comment}', 'GForum\CommentReplyController@storeReplyComment');
+		Route::get('gforum/comments/editreplycomment/{reply}', 'GForum\CommentReplyController@editReplyComment');
+		Route::post('gforum/comments/storeeditreplycomment/{reply}', 'GForum\CommentReplyController@storeEditReplyComment');
+		Route::get('gforum/comments/deletereplycomment/{reply}', 'GForum\CommentReplyController@deleteReplyComment');
 });
 
 

@@ -65,8 +65,17 @@
 
    <!--for modal-->
    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!--use these scripts to get summernot to show-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+  <!--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />-->
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <!-- include summernote css/js-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
 </head>
 
 <body>
@@ -82,8 +91,10 @@
 
 
  <!-- JS Global Compulsory -->
+ <!--
   <script src="{{asset('unify/assets/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/jquery-migrate/jquery-migrate.min.js')}}"></script>
+-->
   <script src="{{asset('unify/assets/vendor/popper.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
 
@@ -135,6 +146,14 @@
 
   <!-- JS Plugins Init. -->
   <script>
+
+    //summernote editor
+      $(document).ready(function() {
+       $('.summernote').summernote({
+             height: 300,
+             width: 650,
+        });
+     });
 
     // initialization of google map
     function initMap() {

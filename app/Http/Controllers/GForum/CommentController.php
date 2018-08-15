@@ -50,63 +50,39 @@ class CommentController extends Controller
         return redirect()->route('viewpostpublic', [$post->id]);
 	}
 
-    public function editPost(Post $post)
+    public function editComment(Comment $comment)
     {
-        return view('private-views.gforum.editpost', compact('post'));
+        return view('private-views.gforum.comments.editcomment', compact('comment'));
     }
 
-    public function storeEditPost(UploadRequest $request, Post $post)
+    public function storeEditComment(Request $request, Comment $comment)
     {
         
               
-        $post_body=$request->input('post_body');
+        $post_comment=$request->input('post_comment');
         $dom = new \DomDocument();
-        $dom->loadHtml($post_body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $post_body = $dom->saveHTML();
-
-        if($request->photos != null){   
-
-            foreach ($request->photos as $photo) {
-
-                                       
-                $filename = time() . '.' . $photo->getClientOriginalExtension();
-                Image::make($photo)->crop(740, 380)->save( public_path('/posts/images/' . $filename ) );
-
-
-                PostsImage::create([
-                    'post_id' => $post->id,
-                    'filename' => $filename
-                ]);
-            }
-        }else{
-
-            PostsImage::create([
-                    'post_id' => $post->id,
-                    'filename' => 'default_post_image.jpg'
-                ]);
-
-        } 
-
-        $post_edit = Post::where('id', '=', $post->id)->first();
-        
-        $post_edit->post_title= $request->post_title;
-        $post_edit->post_body= $post_body;
-        $post_edit->show_profile_picture= $request->show_profile_picture;
-        $post_edit->updated_at= date('Y-m-d H:i:s');
-        $post_edit->save();
+        $dom->loadHtml($post_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $post_comment = $dom->saveHTML();
 
         
-        flash('Post Updated Successfully')->success();
+        $comment_edit = Comment::where('id', '=', $comment->id)->first();
+    
+        $comment_edit->post_comment= $post_comment;
+        $comment_edit->updated_at= date('Y-m-d H:i:s');
+        $comment_edit->save();
 
-        return redirect()->route('viewpostpublic', [$post->id]);
+        
+        flash('Comment Updated Successfully')->success();
+
+        return redirect()->route('viewpostpublic', [$comment->post_id]);
 
     }
 
-    public function deletePost($post)
+    public function deleteComment(Comment $comment)
     {
-        Post::destroy($post);
+        Comment::where('id', $comment->id)->delete();
 
-        flash('Post has been deleted')->error();
+        flash('Comment has been deleted')->error();
 
         return back();
     }

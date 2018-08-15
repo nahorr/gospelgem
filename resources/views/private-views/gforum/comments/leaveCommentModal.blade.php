@@ -1,4 +1,5 @@
-<div class="modal fade" id="postCommentModal" role="dialog">
+
+<div class="modal fade" id="postCommentModal-{{$post->id}}" role="dialog">
   <div class="modal-dialog modal-lg">
   
     <!-- Modal content-->
@@ -11,14 +12,14 @@
 
         <div class="row">
                     
-          <div class="col-md-8">
+          <div class="col-md-12">
         
             <!-- General Controls -->
             <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="{{ url('gforum/comments/storeleavecomment', [$post->id]) }}">
               {{ csrf_field() }}
 
               <input type="hidden" name="post_id" value="{{ $post->id }}" >
-
+              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
                
 
               <div class="form-group g-mb-25">

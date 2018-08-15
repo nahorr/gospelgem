@@ -38,10 +38,18 @@
                       </li>
                       <li class="list-inline-item g-color-gray-dark-v4">
                         
-                        <a class="btn btn-basic" role="button" href="{{url('gforum/comments/leavecomment/'.$post->id)}}" role="button">
-                          <i class="align-middle g-font-size-default mr-1 icon-hotel-restaurant-002 u-line-icon-pro"></i>
-                          Leave a Comment
-                        </a>
+                        @if(Auth::check() )
+                        <button type="button" class="btn btn-info" id="leaveCommentModal-{{$post->id}}">Leave a Comment</button>
+                        @include('private-views.gforum.comments.leaveCommentModal')
+                        <script type="text/javascript">
+                          $('#leaveCommentModal-{{$post->id}}').on('click', function(e){
+                             e.preventDefault();
+                            $('#postCommentModal-{{$post->id}}').modal('show');
+                          })
+                        </script>
+                      @else
+                        <a href="{{url('login')}}" class="btn btn-secondary" role="button">Please login to add a Comment</a>
+                      @endif
                      
                       </li>
                       

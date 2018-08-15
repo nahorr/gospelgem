@@ -1,19 +1,14 @@
-@extends('layouts.private.app')
+      <div class="modal fade" id="postEditPostModal-{{$post->id}}" role="dialog">
+        <div class="modal-dialog modal-lg">
+  
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Editing your Post</h4>
+              </div>
+                <div class="modal-body">
 
-@section('content')
-
-@include('layouts.private.includes.header')
-
-
-<main class="container-fluid px-0 g-pt-65">
-    <div class="row no-gutters g-pos-rel g-overflow-x-hidden">
-
-        @include('layouts.private.includes.sidebar')
-
-        <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
-            <div class="g-pa-20">
-                @include('layouts.private.includes.metrics')
-                <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-28">Edit thisPost</h1>
                   <div class="row">
                               
                     <div class="col-md-8">
@@ -32,7 +27,7 @@
 
                         <div class="form-group g-mb-25">
                           <label for="exampleTextarea">Post Body <span style="color: darkred;">(you can add pictures and/or videos to your post)</span></label>
-                          <textarea class=" summernote autosize-transition form-control" id="postBody" name="post_body"></textarea>
+                          <textarea class=" summernote autosize-transition form-control" id="postBody" name="post_body">{!! $post->post_body !!}</textarea>
 
                         </div>
 
@@ -56,35 +51,14 @@
                         </div>
                       @endif
                     
+                    </div>
                   </div>
-                 </div>             
+
                 </div>
             </div>
-
-
-
-            @include('layouts.private.includes.footer')
-            
+          </div>
         </div>
 
 
-    </div>
 
-
-</main>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-        //initialize summernote
-        $('.summernote').summernote();
-
-        //assign the variable passed from controller to a JavaScript variable.
-        var content = {!! json_encode($post->post_body) !!};
-
-        //set the content to summernote using `code` attribute.
-        $('.summernote').summernote('code', content);
-    });
-
-</script>
-
-@endsection
+           

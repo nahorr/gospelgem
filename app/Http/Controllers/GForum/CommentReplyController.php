@@ -44,4 +44,41 @@ class CommentReplyController extends Controller
 
         return redirect()->route('viewpostpublic', [$comment->post_id]);
 	}
+
+     public function editReplyComment(CommentReply $reply)
+    {
+        return view('private-views.gforum.comments.editreplycomment', compact('reply'));
+    }
+
+    public function storeEditReplyComment(Request $request, CommentReply $reply)
+    {
+        
+              
+        $comment_reply=$request->input('comment_reply');
+        $dom = new \DomDocument();
+        $dom->loadHtml($comment_reply, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $comment_reply = $dom->saveHTML();
+
+        
+        $reply_edit = CommentReply::where('id', '=', $reply->id)->first();
+    
+        $reply_edit->comment_reply= $comment_reply;
+        $reply_edit->updated_at= date('Y-m-d H:i:s');
+        $reply_edit->save();
+
+        
+        flash('Reply Updated Successfully')->success();
+
+        return redirect()->route('viewpostpublic', [$reply->comment->post_id]);
+
+    }
+
+    public function deleteReplyComment(CommentReply $reply)
+    {
+        CommentReply::where('id', $reply->id)->delete();
+
+        flash('Reply has been deleted')->error();
+
+        return back();
+    }
 }
