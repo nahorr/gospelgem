@@ -11,15 +11,18 @@
           <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Introducing GForum</h2>
           <p class="lead">GForum is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
         </header>
-      
-      <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal">Add a Post</button>
-      @include('private-views.gforum.addpost')
-      <script type="text/javascript">
-        $('#addPostModal').on('click', function(e){
-           e.preventDefault();
-          $('#addNewPostModal').modal('show');
-        })
-      </script>
+       @if(Auth::check() )
+        <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal">Add a Post</button>
+        @include('private-views.gforum.addpost')
+        <script type="text/javascript">
+          $('#addPostModal').on('click', function(e){
+             e.preventDefault();
+            $('#addNewPostModal').modal('show');
+          })
+        </script>
+        @else
+          <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
+        @endif
 
       @if(Auth::check())
         <a href="{{url('home')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15">User Dashboard</a>

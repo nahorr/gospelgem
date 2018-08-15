@@ -287,7 +287,9 @@
                     
                     <div class="input-group">
                       <span class="input-group-btn">
-                          <button type="button" class="btn btn-info" id="addPostModal">New Post</button>
+
+                          @if(Auth::check() )
+                          <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal">Add a Post</button>
                           @include('private-views.gforum.addpost')
                           <script type="text/javascript">
                             $('#addPostModal').on('click', function(e){
@@ -295,7 +297,10 @@
                               $('#addNewPostModal').modal('show');
                             })
                           </script>
-                          <a class="btn btn-danger" href="{{url('gforum/deletepost/'.$post->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this Post? This action will also delete all the comments and replies associated with this post.')">Delete Post</a>
+                          @else
+                            <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
+                          @endif
+                          <a class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15" href="{{url('gforum/deletepost/'.$post->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this Post? This action will also delete all the comments and replies associated with this post.')">Delete Post</a>
                       </span>
                       
                     </div>
