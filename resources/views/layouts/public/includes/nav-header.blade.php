@@ -17,7 +17,7 @@
             <div class="col-auto g-px-15">
               
               @if(Auth::check())
-              <i class="fa fa-user g-valign-middle g-mr-5"></i> It's a Beautiful Day. Welcome - {{\Auth::user()->name}}
+                <i class="fa fa-user g-valign-middle g-mr-5"></i> It's a Beautiful Day. Welcome - {{\Auth::user()->name}}
                 <a href="{{url('home')}}" class="btn btn-sm u-btn-deeporange">Dashboard</a>
               @else
                 <i class="fa fa-user g-valign-middle g-mr-5">
