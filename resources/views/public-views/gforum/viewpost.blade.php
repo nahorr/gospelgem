@@ -54,13 +54,14 @@
                     @include('layouts.public.includes.viewpost-stats')
                     
                     <p class="g-color-gray-dark-v4 g-line-height-1_8">{!! $post->post_body !!}</p>
-
-
-                    
                   </div>
-                  <br>
+
+                    <div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-40">
+                      <i class="fa fa-comments-o u-divider__icon u-divider__icon--indented g-bg-gray-light-v4 g-color-gray-light-v1 rounded-circle"></i>
+                    </div>
+                  
                   @if(Auth::check() )
-                    <button type="button" class="btn btn-sm u-btn-deeporange" id="leaveCommentModal2-{{$post->id}}">Leave a Comment</button>
+                    <button type="button" class="btn btn-sm u-btn-deeporange" id="leaveCommentModal2-{{$post->id}}">Leave a Comment</button> <i class="fa fa-comments-o"></i> {{$comments->count()}}
                     @include('private-views.gforum.comments.leaveCommentModal2')
                     <script type="text/javascript">
                       $('#leaveCommentModal2-{{$post->id}}').on('click', function(e){
@@ -69,16 +70,12 @@
                       })
                     </script>
                   @else
-                    <a href="{{url('login')}}" class="btn btn-secondary" role="button">Leave a Comment</a>
+                    <a href="{{url('login')}}" class="btn btn-secondary" role="button">Leave a Comment</a> <i class="fa fa-comments-o"></i> {{$comments->count()}}
                   @endif
-                    
-                    
+              </article>
 
-                    
-                  
-                  
-                </article>
-                <!-- End Blog Minimal Blocks -->
+             
+                <!-- End Blog Minimal Blocks --o
                     
                     <!-- Comments Starts-->
                     @foreach($comments as $comment)
