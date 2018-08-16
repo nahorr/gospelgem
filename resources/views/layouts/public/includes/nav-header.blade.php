@@ -15,13 +15,12 @@
             </div>
 
             <div class="col-auto g-px-15">
-              
+              <i class="fa fa-user g-valign-middle g-mr-5"></i>
               @if(Auth::check())
-                <i class="fa fa-user g-valign-middle g-mr-5"></i> It's a Beautiful Day. Welcome - {{\Auth::user()->name}}
+                 It's a Beautiful Day. Welcome - {{\Auth::user()->name}}
                 <a href="{{url('home')}}" class="btn btn-sm u-btn-deeporange">Dashboard</a>
               @else
-                <i class="fa fa-user g-valign-middle g-mr-5">
-                <a href="{{url('login')}}" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login/Register</a>
+                <a href="{{url('login')}}" class="btn btn-sm u-btn-orange">Login/Register</a>
               @endif
               
             </div>
