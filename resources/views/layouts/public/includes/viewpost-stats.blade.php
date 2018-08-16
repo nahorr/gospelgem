@@ -30,7 +30,7 @@
                           {{ csrf_field() }}
                             <input name="post_likes" type="hidden" value="{{$post->post_likes + 1}}">
                             
-                            <button class="btn btn-basic" type="submit">
+                            <button class="btn btn-sm btn-light" type="submit">
                               <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i>
                               {{ $post->post_likes }} Likes
                             </button>

@@ -84,13 +84,15 @@
                     @foreach($comments as $comment)
                  
 
-                        <div class="media g-ml-40 g-mb-30">
-                          <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-20" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
+                        <div class="media g-mb-30">
+                          
                           <div class="media-body u-shadow-v22 g-bg-secondary g-pa-30">
                             <div class="g-mb-15">
+                              
                               <h5 class="d-flex justify-content-between align-items-center h5 g-color-gray-dark-v1 mb-0">
                                 <span class="d-block g-mr-10">
-                                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15" href="#!">Comment by: {{$comment->user->name}}</a> 
+                                  <img class="u-tags-v1 g-width-30 g-height-30 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
+                                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15" href="#!">Comment By: {{$comment->user->name}}</a> 
                                 </span>
                                 <span class="g-color-gray-dark-v4 g-font-size-12">{{$comment->created_at->toFormattedDateString()}} at {{$comment->created_at->format('g:i A')}}</span>
                               </h5>
@@ -107,7 +109,7 @@
                                   {{ csrf_field() }}
                                     <input name="comment_likes" type="hidden" value="{{$comment->comment_likes + 1}}">
                                     
-                                    <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">
+                                    <button class="btn btn-sm btn-light" type="submit">
                                       <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i>
                                       {{ $comment->comment_likes }}
                                     </button>
@@ -115,9 +117,9 @@
                                 
                               </li>
                               <li class="list-inline-item ml-auto">
-
+                                
                                 @if(Auth::check() )
-                                  <button type="button" class="btn btn-info" id="replyCommentModal-{{$comment->id}}">Reply</button>
+                                <button type="button" class="btn btn-sm btn-light" id="replyCommentModal-{{$comment->id}}"><i class="fa fa-edit"></i> Reply</button>
                                   @include('private-views.gforum.comments.replycomment')
 
                                   <script type="text/javascript">
@@ -127,14 +129,14 @@
                                     })
                                   </script>
                                 @else
-                                  <a href="{{url('login')}}" class="btn btn-secondary" role="button">Reply</a>
+                                  <a href="{{url('login')}}" class="btn btn-sm btn-light" role="button"><i class="fa fa-edit"></i> Reply</a>
                                 @endif
                                   
                               </li>
                               <li class="list-inline-item ml-auto">
                                 @if(Auth::check() && $comment->user_id == Auth::user()->id)
 
-                                  <button type="button" class="btn btn-warning" id="editCommentModal-{{$comment->id}}">Edit</button>
+                                  <button type="button" class="btn btn-sm btn-light" id="editCommentModal-{{$comment->id}}"><i class="fa fa-edit"></i> Edit</button>
                                   @include('private-views.gforum.comments.editcomment')
 
                                   <script type="text/javascript">
@@ -143,10 +145,15 @@
                                       $('#postEditCommentModal-{{$comment->id}}').modal('show');
                                     })
                                   </script>
-                                  <a class="btn btn-danger" href="{{url('gforum/comments/deletecomment/'.$comment->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this comment? This action will also delete all the replies associated with this comment')">Delete</a>
+                                  <a class="btn btn-sm btn-light" href="{{url('gforum/comments/deletecomment/'.$comment->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this comment? This action will also delete all the replies associated with this comment')"><i class="fa fa-trash" style="color: red;"></i> Delete</a>
                                 @endif
                               </li>
                               </ul>
+
+                              <div class="u-divider u-divider-solid u-divider-center g-brd-primary g-my-40">
+                                 
+                                <i class="u-divider__icon g-bg-primary g-color-white rounded-circle">{{$comment_replies->where('comment_id', $comment->id)->count()}}</i>
+                              </div>
 
                             @foreach($comment_replies as $reply)
 
@@ -154,11 +161,12 @@
 
                                 <div class="media g-ml-60 g-mb-30">
                                   <div class="media-body">
-                                    <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-20" src="{{asset('uploads/avatars/'.$reply->user->avatar)}}" alt="Image Description">
-                                      <div class="media-body u-shadow-v22 g-bg-danger g-bg-primary--hover g-pa-30" style="box-shadow: 0 2px 5px #999;">
+                                   
+                                      <div class="media-body u-shadow-v22 g-bg-danger g-bg-white--hover g-pa-30" style="box-shadow: 0 2px 5px #999;">
                                         <div class="g-mb-15">
                                           <h5 class="d-flex justify-content-between align-items-center h5 g-color-gray-dark-v1 mb-0">
                                             <span class="d-block g-mr-10">
+                                              <img class="u-tags-v1 g-width-30 g-height-30 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
                                               <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15" href="#!">{{$reply->user->name}} replied to {{$comment->user->name}}'s comment</a> 
                                             </span>
                                             <span class="g-color-gray-dark-v4 g-font-size-12">{{$reply->created_at->toFormattedDateString()}} at {{$reply->created_at->format('g:i A')}}</span>
@@ -173,7 +181,7 @@
                                               {{ csrf_field() }}
                                                 <input name="comment_reply_likes" type="hidden" value="{{$reply->comment_reply_likes + 1}}">
                                                 
-                                                <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">
+                                                <button class="btn btn-sm btn-light" type="submit">
                                                   <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i>
                                                   {{ $reply->comment_reply_likes }}
                                                 </button>
@@ -184,7 +192,7 @@
                                             @if(Auth::check() && $reply->user_id == Auth::user()->id)
                                             
 
-                                              <button type="button" class="btn btn-warning" id="editReplyCommentModal-{{$reply->id}}">Edit</button>
+                                              <button type="button" class="btn btn-sm btn-light" id="editReplyCommentModal-{{$reply->id}}"><i class="fa fa-edit"></i> Edit</button>
                                               @include('private-views.gforum.comments.editreplycomment')
 
                                               <script type="text/javascript">
@@ -193,7 +201,7 @@
                                                   $('#postEditReplyCommentModal-{{$reply->id}}').modal('show');
                                                 })
                                               </script>
-                                              <a class="btn btn-danger" href="{{url('gforum/comments/deletereplycomment/'.$reply->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this reply? This action will also delete all other replies associated with this reply')">Delete</a>
+                                              <a class="btn btn-sm btn-light" href="{{url('gforum/comments/deletereplycomment/'.$reply->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this reply? This action will also delete all other replies associated with this reply')"><i class="fa fa-trash" style="color: red;"></i> Delete</a>
                                             
                                             @endif
                                           </li>
@@ -244,7 +252,7 @@
                           {{ csrf_field() }}
                             <input name="post_likes" type="hidden" value="{{$post->post_likes + 1}}">
                             
-                            <button class="btn btn-basic" type="submit">
+                            <button class="btn btn-sm btn-light" type="submit">
                               <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i>
                               {{ $post->post_likes }} Likes
                             </button>
