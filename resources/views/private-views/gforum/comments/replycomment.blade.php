@@ -12,7 +12,7 @@
         
           <div class="row">
                       
-            <div class="col-md-8">
+            <div class="col-md-12">
           
               <!-- General Controls -->
               <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="{{ url('gforum/comments/storereplycomment', [$comment->id]) }}">
