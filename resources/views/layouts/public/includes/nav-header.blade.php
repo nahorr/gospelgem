@@ -16,7 +16,12 @@
 
             <div class="col-auto g-px-15">
               <i class="fa fa-user g-valign-middle g-mr-5"></i>
-              <a href="{{url('login')}}" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login/Register</a>
+              @if(Auth::check())
+                <a href="{{url('home')}}" class="btn btn-sm u-btn-deeporange">Dashboard</a>
+              @else
+                <a href="{{url('login')}}" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login/Register</a>
+              @endif
+              
             </div>
 
             <div class="col-auto g-px-15">

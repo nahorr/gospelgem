@@ -31,14 +31,12 @@
   
                     <h2 class="h4 g-color-black g-font-weight-600 mb-3">
                       <a class="u-link-v5 g-color-black g-color-primary--hover">{{$post->post_title}}</a>
-                      <a href="{{ url('gforum') }}" class="btn btn-md u-btn-primary g-mr-10 g-mb-15 pull-right">Back to Forum</a>
-                      @if(Auth::check())
-                        <a href="{{url('home')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right">User Dashboard</a>
-                      @endif
+                      <!--<a href="{{ url('gforum') }}" class="btn btn-md u-btn-primary g-mr-10 g-mb-15 pull-right">GForum</a>-->
+                      
                       @if(Auth::check() )
 
                         @if($post->user_id == Auth::user()->id)
-                        <button type="button" class="btn btn-info" id="editPostModal-{{$post->id}}">Edit Post</button>
+                        <button type="button" class="btn btn-sm btn-info" id="editPostModal-{{$post->id}}">Edit Post</button>
                         @include('private-views.gforum.editpost')
                         <script type="text/javascript">
                           $('#editPostModal-{{$post->id}}').on('click', function(e){
@@ -62,17 +60,17 @@
                   </div>
                   <br>
                   @if(Auth::check() )
-                    <button type="button" class="btn btn-info" id="leaveCommentModal">Leave a Comment</button>
-                    @include('private-views.gforum.comments.leaveCommentModal')
-                    <script type="text/javascript">
-                      $('#leaveCommentModal').on('click', function(e){
-                         e.preventDefault();
-                        $('#postCommentModal').modal('show');
-                      })
-                    </script>
-                  @else
-                    <a href="{{url('login')}}" class="btn btn-secondary" role="button">Please login to add a Comment</a>
-                  @endif
+                        <button type="button" class="btn btn-sm u-btn-deeporange" id="leaveCommentModal-{{$post->id}}">Leave a Comment</button>
+                        @include('private-views.gforum.comments.leaveCommentModal')
+                        <script type="text/javascript">
+                          $('#leaveCommentModal-{{$post->id}}').on('click', function(e){
+                             e.preventDefault();
+                            $('#postCommentModal-{{$post->id}}').modal('show');
+                          })
+                        </script>
+                      @else
+                        <a href="{{url('login')}}" class="btn btn-secondary" role="button">Leave a Comment</a>
+                      @endif
                     
                     
 
@@ -119,7 +117,7 @@
                               <li class="list-inline-item ml-auto">
 
                                 @if(Auth::check() )
-                                  <button type="button" class="btn btn-info" id="replyCommentModal-{{$comment->id}}">Reply to this Comment</button>
+                                  <button type="button" class="btn btn-info" id="replyCommentModal-{{$comment->id}}">Reply</button>
                                   @include('private-views.gforum.comments.replycomment')
 
                                   <script type="text/javascript">
@@ -129,14 +127,14 @@
                                     })
                                   </script>
                                 @else
-                                  <a href="{{url('login')}}" class="btn btn-secondary" role="button">Please login to reply</a>
+                                  <a href="{{url('login')}}" class="btn btn-secondary" role="button">Reply</a>
                                 @endif
                                   
                               </li>
                               <li class="list-inline-item ml-auto">
                                 @if(Auth::check() && $comment->user_id == Auth::user()->id)
 
-                                  <button type="button" class="btn btn-warning" id="editCommentModal-{{$comment->id}}">edit</button>
+                                  <button type="button" class="btn btn-warning" id="editCommentModal-{{$comment->id}}">Edit</button>
                                   @include('private-views.gforum.comments.editcomment')
 
                                   <script type="text/javascript">
@@ -186,7 +184,7 @@
                                             @if(Auth::check() && $reply->user_id == Auth::user()->id)
                                             
 
-                                              <button type="button" class="btn btn-warning" id="editReplyCommentModal-{{$reply->id}}">edit</button>
+                                              <button type="button" class="btn btn-warning" id="editReplyCommentModal-{{$reply->id}}">Edit</button>
                                               @include('private-views.gforum.comments.editreplycomment')
 
                                               <script type="text/javascript">
@@ -300,7 +298,12 @@
                           @else
                             <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
                           @endif
-                          <a class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15" href="{{url('gforum/deletepost/'.$post->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this Post? This action will also delete all the comments and replies associated with this post.')">Delete Post</a>
+                          @if(Auth::check() )
+
+                            @if($post->user_id == Auth::user()->id)
+                              <a class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15" href="{{url('gforum/deletepost/'.$post->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this Post? This action will also delete all the comments and replies associated with this post.')">Delete Post</a>
+                            @endif
+                          @endif
                       </span>
                       
                     </div>

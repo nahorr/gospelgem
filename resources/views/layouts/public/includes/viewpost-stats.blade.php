@@ -39,7 +39,7 @@
                       <li class="list-inline-item g-color-gray-dark-v4">
                         
                         @if(Auth::check() )
-                        <button type="button" class="btn btn-info" id="leaveCommentModal-{{$post->id}}">Leave a Comment</button>
+                        <button type="button" class="btn btn-sm u-btn-orange" id="leaveCommentModal-{{$post->id}}">Leave a Comment</button>
                         @include('private-views.gforum.comments.leaveCommentModal')
                         <script type="text/javascript">
                           $('#leaveCommentModal-{{$post->id}}').on('click', function(e){
@@ -48,7 +48,7 @@
                           })
                         </script>
                       @else
-                        <a href="{{url('login')}}" class="btn btn-secondary" role="button">Please login to add a Comment</a>
+                        <a href="{{url('login')}}" class="btn btn-secondary" role="button">Leave a Comment</a>
                       @endif
                      
                       </li>

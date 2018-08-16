@@ -23,10 +23,7 @@
         @else
           <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
         @endif
-
-      @if(Auth::check())
-        <a href="{{url('home')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15">User Dashboard</a>
-      @endif
+        
     <div class="table-responsive">
       <table class="table table-bordered u-table--v2">
         <thead class="text-uppercase g-letter-spacing-1">
