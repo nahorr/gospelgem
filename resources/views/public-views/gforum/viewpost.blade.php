@@ -60,17 +60,17 @@
                   </div>
                   <br>
                   @if(Auth::check() )
-                        <button type="button" class="btn btn-sm u-btn-deeporange" id="leaveCommentModal-{{$post->id}}">Leave a Comment</button>
-                        @include('private-views.gforum.comments.leaveCommentModal')
-                        <script type="text/javascript">
-                          $('#leaveCommentModal-{{$post->id}}').on('click', function(e){
-                             e.preventDefault();
-                            $('#postCommentModal-{{$post->id}}').modal('show');
-                          })
-                        </script>
-                      @else
-                        <a href="{{url('login')}}" class="btn btn-secondary" role="button">Leave a Comment</a>
-                      @endif
+                    <button type="button" class="btn btn-sm u-btn-deeporange" id="leaveCommentModal2-{{$post->id}}">Leave a Comment</button>
+                    @include('private-views.gforum.comments.leaveCommentModal2')
+                    <script type="text/javascript">
+                      $('#leaveCommentModal2-{{$post->id}}').on('click', function(e){
+                         e.preventDefault();
+                        $('#postCommentModal2-{{$post->id}}').modal('show');
+                      })
+                    </script>
+                  @else
+                    <a href="{{url('login')}}" class="btn btn-secondary" role="button">Leave a Comment</a>
+                  @endif
                     
                     
 
