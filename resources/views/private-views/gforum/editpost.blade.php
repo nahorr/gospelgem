@@ -11,7 +11,7 @@
 
                   <div class="row">
                               
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                   
                       <!-- General Controls -->
                       <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="{{ url('/gforum/storeeditpost', [$post->id]) }}">
@@ -37,7 +37,7 @@
                             <input type="hidden" name="show_profile_picture" value="0"><input type="checkbox" name="show_profile_picture" value="1" /><span style="color: darkred;">Include my profile picture with this post</span>
                           </label>
                         </div>
-                        <button type="submit" class="btn btn-danger">Edit Post</button>
+                        <button type="submit" class="btn btn-danger">Submit Changes</button>
                       </form>
                       <!-- End General Controls -->
                      

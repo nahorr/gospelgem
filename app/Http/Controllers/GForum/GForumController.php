@@ -36,16 +36,13 @@ class GForumController extends Controller
         ]);
 
 
-        $post_body=$request->input('post_body');
-        $dom = new \DomDocument();
-        $dom->loadHtml($post_body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $post_body = $dom->saveHTML();
+       
 
         Post::insert([
                     'user_id'=>$request->user_id,
                     'category_id'=>$request->category_id,
                     'post_title'=>$request->post_title,
-                    'post_body'=>$post_body,
+                    'post_body'=>$request->post_body,
                     'show_profile_picture' => $request->show_profile_picture,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
