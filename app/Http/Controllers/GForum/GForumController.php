@@ -35,9 +35,6 @@ class GForumController extends Controller
             'post_body' => 'required',
         ]);
 
-
-       
-
         Post::insert([
                     'user_id'=>$request->user_id,
                     'category_id'=>$request->category_id,
@@ -49,7 +46,6 @@ class GForumController extends Controller
                 ]);
        
         
-
         return redirect()->route('gforum');
 	}
 
