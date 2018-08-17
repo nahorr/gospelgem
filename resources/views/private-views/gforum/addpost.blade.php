@@ -42,7 +42,7 @@
 
                         <div class="form-group g-mb-25">
                           <label for="exampleTextarea"><strong>Post Body</strong> <span style="color: darkred;">(you can add pictures and/or videos to your post)</span></label>
-                          <textarea class=" summernote" id="postBody" name="post_body" placeholder="Inspire people with this post"></textarea>
+                          <textarea class="summernote" id="postBody" name="post_body" id="summernote"></textarea>
 
                         </div>
 

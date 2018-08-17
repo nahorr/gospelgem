@@ -152,11 +152,18 @@
       $(document).ready(function() {
        $('.summernote').summernote({
             dialogsInBody: true,
-             height: 300,
-            
-        });
-     });
+            height: 300,
+            maximumImageFileSize: 500*1024, // 500 KB
 
+            callbacks:{ 
+
+              onImageUploadError: function(msg){ 
+                alert("pls select an image less then 500kb.");
+              }}
+          });
+        });
+
+      
       $(document).on("show.bs.modal", '.modal', function (event) {
           console.log("Global show.bs.modal fire");
           var zIndex = 100000 + (10 * $(".modal:visible").length);
