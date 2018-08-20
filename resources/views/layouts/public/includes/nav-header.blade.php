@@ -5,13 +5,13 @@
         <div class="container">
           <div class="row flex-column flex-md-row align-items-center justify-content-md-end text-uppercase g-font-weight-600 g-color-white g-font-size-13">
             <div class="col-auto mr-md-auto g-px-15">
-              <i class="icon icon-communication-005 g-font-size-20 g-valign-middle g-mr-10"></i>
-              info@gosgem.com
+              <i class="icon-communication-057 u-line-icon-pro g-font-size-20 g-valign-middle g-mr-1"></i>
+              <a href="{{url('gforum')}}">GForum</a>
             </div>
 
             <div class="col-auto g-px-15">
-              <i class="fa fa-phone g-valign-middle g-mr-5"></i>
-              +23414543236
+              <i class="icon-communication-165 u-line-icon-pro g-font-size-20 g-valign-middle g-mr-1"></i>
+                <a href="https://live.gosgem.com/" target="_blank">Gosgem Live</a>
             </div>
 
             <div class="col-auto g-px-15">
