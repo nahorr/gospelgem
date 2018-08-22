@@ -70,16 +70,6 @@
                     
                   </td>
                   
-                  <!--
-                  <td class="align-middle text-center">
-                    <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                        <i class="align-middle g-font-size-default mr-1 icon-finance-206 u-line-icon-pro"></i> 10 comments
-                      </span>
-                    <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                        <i class="align-middle g-font-size-default mr-1 icon-medical-022 u-line-icon-pro"></i> 20 likes
-                    </span>
-                  </td>
-                  -->
                 </tr>
               @endif
             @endforeach
@@ -88,7 +78,7 @@
         </tbody>
       </table>
       
-      <div class="pagination">{{ $posts->links() }}</div> 
+      <div class="pagination">{{ $posts->links("pagination::bootstrap-4") }}</div> 
 
     </div>
   </div>

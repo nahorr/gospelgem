@@ -31,15 +31,15 @@ class CommentController extends Controller
         ]);
 
 
-        $post_comment=$request->input('post_comment');
-        $dom = new \DomDocument();
-        $dom->loadHtml($post_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $post_comment = $dom->saveHTML();
+        //$post_comment=$request->input('post_comment');
+        //$dom = new \DomDocument();
+        //$dom->loadHtml($post_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        //$post_comment = $dom->saveHTML();
 
         Comment::insert([
                     'user_id'=>Auth::user()->id,
                     'post_id'=>$post->id,
-                    'post_comment'=>$post_comment,
+                    'post_comment'=>$request->post_comment,
                     'show_profile_picture' => $request->show_profile_picture,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -59,15 +59,15 @@ class CommentController extends Controller
     {
         
               
-        $post_comment=$request->input('post_comment');
-        $dom = new \DomDocument();
-        $dom->loadHtml($post_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $post_comment = $dom->saveHTML();
+        //$post_comment=$request->input('post_comment');
+        //$dom = new \DomDocument();
+        //$dom->loadHtml($post_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        //$post_comment = $dom->saveHTML();
 
         
         $comment_edit = Comment::where('id', '=', $comment->id)->first();
     
-        $comment_edit->post_comment= $post_comment;
+        $comment_edit->post_comment= $request->post_comment;
         $comment_edit->updated_at= date('Y-m-d H:i:s');
         $comment_edit->save();
 

@@ -26,15 +26,15 @@ class CommentReplyController extends Controller
         ]);
 
 
-        $reply_comment=$request->input('comment_reply');
-        $dom = new \DomDocument();
-        $dom->loadHtml($reply_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $reply_comment = $dom->saveHTML();
+        //$reply_comment=$request->input('comment_reply');
+        //$dom = new \DomDocument();
+        //$dom->loadHtml($reply_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        //$reply_comment = $dom->saveHTML();
 
         CommentReply::insert([
                     'user_id'=>Auth::user()->id,
                     'comment_id'=>$comment->id,
-                    'comment_reply'=>$reply_comment,
+                    'comment_reply'=>$request->comment_reply,
                     'show_profile_picture' => $request->show_profile_picture,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -54,15 +54,15 @@ class CommentReplyController extends Controller
     {
         
               
-        $comment_reply=$request->input('comment_reply');
-        $dom = new \DomDocument();
-        $dom->loadHtml($comment_reply, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $comment_reply = $dom->saveHTML();
+        //$comment_reply=$request->input('comment_reply');
+        //$dom = new \DomDocument();
+        //$dom->loadHtml($comment_reply, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        //$comment_reply = $dom->saveHTML();
 
         
         $reply_edit = CommentReply::where('id', '=', $reply->id)->first();
     
-        $reply_edit->comment_reply= $comment_reply;
+        $reply_edit->comment_reply= $request->comment_reply;
         $reply_edit->updated_at= date('Y-m-d H:i:s');
         $reply_edit->save();
 
