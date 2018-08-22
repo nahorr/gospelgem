@@ -1,7 +1,4 @@
 <!-- set bodyTheme = "u-card-v1" -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +16,7 @@
   <!-- Google Fonts -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
   <!-- CSS Global Compulsory -->
-  <link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}">
+  
   <!-- CSS Global Icons -->
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-awesome/css/font-awesome.min.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-line/css/simple-line-icons.css')}}">
@@ -49,6 +46,7 @@
 
   <!--use these scripts to get summernot to show-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+  <!--<link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}">-->
   <!--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />-->
   <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
@@ -121,10 +119,22 @@
     //summernote editor
       $(document).ready(function() {
        $('.summernote').summernote({
-             height: 200,
+            dialogsInBody: true,
+            height: 300,
+            maximumImageFileSize: 500*1024, // 500 KB
+
+            callbacks:{ 
+
+              onImageUploadError: function(msg){ 
+                alert("Your Image is way too big. pls select an image less then 500kb.");
+              }}
+
+          });
+
 
         });
-     });
+
+     
 
     $(document).on('ready', function () {
       // initialization of custom select

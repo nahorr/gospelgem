@@ -151,8 +151,9 @@
     //summernote editor
       $(document).ready(function() {
        $('.summernote').summernote({
-            dialogsInBody: true,
             height: 300,
+            dialogsInBody: true,
+            
             maximumImageFileSize: 500*1024, // 500 KB
 
             callbacks:{ 
@@ -164,7 +165,7 @@
         });
 
       
-      $(document).on("show.bs.modal", '.modal', function (event) {
+      /*$(document).on("show.bs.modal", '.modal', function (event) {
           console.log("Global show.bs.modal fire");
           var zIndex = 100000 + (10 * $(".modal:visible").length);
           $(this).css("z-index", zIndex);
@@ -186,7 +187,7 @@
           var zIndex = 100000 + (10 * $(".modal:visible").length);
           var popoverId = $(event.target).attr("aria-describedby");
           $("#" + popoverId).css("z-index", zIndex);
-      });
+      });*/
 
     // initialization of google map
     function initMap() {

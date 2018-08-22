@@ -34,7 +34,7 @@ Class UserMetricsComposer {
 
             $comments = Comment::orderBy('created_at', 'desc')->get();
 
-            $user_posts = Post::where('user_id', Auth::user()->id)->get();
+            $user_posts = Post::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
             $user_comments = Comment::where('user_id', Auth::user()->id)->get();
             $user_replies = CommentReply::where('user_id', Auth::user()->id)->get();
             
