@@ -29,7 +29,17 @@
         <thead class="text-uppercase g-letter-spacing-1">
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
-            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #6635b7;"><strong>Most Recent Posts</strong></span></th>
+            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #6635b7;"><strong>Most Recent Posts -
+              @foreach($categories as $category)
+                
+                @if($loop->last)
+                   <span>{{$category->category_name}}.</span>
+                @else
+                   <span>{{$category->category_name}},</span>
+               @endif
+                
+              @endforeach
+            </strong></span></th>
             <!--<th class="g-font-weight-300 g-color-black g-min-width-200">Post Title and Information</th>-->
             <!--<th class="g-font-weight-300 g-color-black text-center">Stats</th>-->
             

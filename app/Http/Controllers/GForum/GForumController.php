@@ -15,8 +15,9 @@ class GForumController extends Controller
     {
     	$posts = Post::orderBy('created_at', 'desc')->get();
 
+        $categories = Category::get();
 
-    	return view('private-views.gforum.viewposts', compact('posts'));
+    	return view('private-views.gforum.viewposts', compact('posts', 'categories'));
     }
 
     public function addPost()
