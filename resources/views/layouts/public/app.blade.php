@@ -22,7 +22,16 @@
   <!-- Google Fonts -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
   <!-- CSS Global Compulsory -->
-  <link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}">
+
+   <!--for modal and summernote-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}"><!--for unify also-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- include summernote css/js-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+
   <!-- CSS Global Icons -->
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-awesome/css/font-awesome.min.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-line/css/simple-line-icons.css')}}">
@@ -60,22 +69,10 @@
   <!-- CSS Customization -->
   <link rel="stylesheet" href="{{asset('unify/assets/css/custom.css')}}">
   <!--<link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet">-->
+
   <!-- for google reCaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
 
-   <!--for modal-->
-   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-
-  <!--use these scripts to get summernot to show-->
-  <!--<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
-  <!--<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />-->
-  <!--<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
-
-  <!-- include summernote css/js-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
   
 </head>
 
@@ -150,8 +147,11 @@
 
     //summernote editor
       $(document).ready(function() {
+
+        
        $('.summernote').summernote({
             height: 300,
+                                                        
             dialogsInBody: true,
             
             maximumImageFileSize: 500*1024, // 500 KB
@@ -161,33 +161,14 @@
               onImageUploadError: function(msg){ 
                 alert("Your Image is way too big. pls select an image less then 500kb.");
               }}
+
+
           });
+
+
         });
 
       
-      /*$(document).on("show.bs.modal", '.modal', function (event) {
-          console.log("Global show.bs.modal fire");
-          var zIndex = 100000 + (10 * $(".modal:visible").length);
-          $(this).css("z-index", zIndex);
-          setTimeout(function () {
-              $(".modal-backdrop").not(".modal-stack").first().css("z-index", zIndex - 1).addClass("modal-stack");
-          }, 0);
-      }).on("hidden.bs.modal", '.modal', function (event) {
-          console.log("Global hidden.bs.modal fire");
-          $(".modal:visible").length && $("body").addClass("modal-open");
-      });
-      $(document).on('inserted.bs.tooltip', function (event) {
-          console.log("Global show.bs.tooltip fire");
-          var zIndex = 100000 + (10 * $(".modal:visible").length);
-          var tooltipId = $(event.target).attr("aria-describedby");
-          $("#" + tooltipId).css("z-index", zIndex);
-      });
-      $(document).on('inserted.bs.popover', function (event) {
-          console.log("Global inserted.bs.popover fire");
-          var zIndex = 100000 + (10 * $(".modal:visible").length);
-          var popoverId = $(event.target).attr("aria-describedby");
-          $("#" + popoverId).css("z-index", zIndex);
-      });*/
 
     // initialization of google map
     function initMap() {

@@ -14,7 +14,7 @@
                 <a href="https://live.gosgem.com/" target="_blank">Gosgem Live</a>
             </div>
 
-            <div class="col-auto g-px-15">
+            <div class="col-auto g-px-15 text-center">
               <i class="fa fa-user g-valign-middle g-mr-5"></i>
               @if(Auth::check())
                  It's a Beautiful Day. Welcome - {{\Auth::user()->name}}

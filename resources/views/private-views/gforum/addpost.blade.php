@@ -1,3 +1,5 @@
+       
+
           <div class="modal fade" id="addNewPostModal" role="dialog">
             <div class="modal-dialog modal-lg">
             
@@ -70,5 +72,5 @@
             </div>
           </div>
         </div>
-      </div>            
+      </div>           
                 
