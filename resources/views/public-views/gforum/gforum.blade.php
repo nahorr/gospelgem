@@ -88,7 +88,7 @@
         </tbody>
       </table>
       
-      <div class="pagination">{{ $posts->links() }}</div> 
+      <div class="pagination">{{$posts->links("pagination::bootstrap-4")}}</div> 
 
     </div>
   </div>
