@@ -61,6 +61,7 @@
                           <br>
                           
                             Please write something awesome about yourself.
+                            <a href="{{url('users/profile')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Update Your Profile</a>
                           @endif
 
                         </div>

@@ -56,7 +56,7 @@
                           <div class="media-body align-self-center">
                             
                             
-                            <span style="color: #6635b7;"><strong>{{$post->post_title}}</strong></span> 
+                            <span style="color: #6635b7;"><strong>{{$post->post_title}} - <span style="color: #b78f18;">{{ str_limit(strip_tags ( $post->post_body), $limit = 300, $end = '...') }}</span></strong></span> 
                             <span style="color: #6635b7;">
                               - posted by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> {{$user->name}} 
                               on {{$post->created_at->toFormattedDateString()}} - 
