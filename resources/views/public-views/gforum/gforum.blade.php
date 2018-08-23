@@ -33,9 +33,9 @@
               @foreach($categories as $category)
                 
                 @if($loop->last)
-                   <span>{{$category->category_name}}.</span>
+                   <span style="color: #b78f18;">{{$category->category_name}}.</span>
                 @else
-                   <span>{{$category->category_name}},</span>
+                   <span style="color: #b78f18;">{{$category->category_name}},</span>
                @endif
                 
               @endforeach
