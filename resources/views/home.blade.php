@@ -129,14 +129,7 @@
                                 </td>
                                 <td class="text-left g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
                                 
-                                  <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="editPostModal-{{$post->id}}">Edit Post</button>
-                                   @include('private-views.gforum.editpost')
-                                   <script type="text/javascript">
-                                     $('#editPostModal-{{$post->id}}').on('click', function(e){
-                                        e.preventDefault();
-                                       $('#postEditPostModal-{{$post->id}}').modal('show');
-                                     })
-                                   </script>
+                                  <a href="{{url('/gforum/viewpost/'. $post->id)}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">View/Edit Post</a>
 
                                   <a href="{{url('/gforum/deletepost/'. $post->id)}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
                                 </td>
