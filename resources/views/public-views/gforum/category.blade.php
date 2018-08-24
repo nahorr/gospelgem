@@ -29,7 +29,7 @@
         <thead class="thead-dark text-uppercase g-letter-spacing-1">
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
-            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Your are viewing Posts in {{$category->category_name}} Category<small>({{$posts_category->count()}} posts)</small><br>
+            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Your are viewing Posts in {{$category->category_name}} Category<small>({{$posts_category->total()}} posts)</small><br>
               (<a href="{{url('gforum')}}""><span style="color: #b78f18;">Recent,</span></a>
               @foreach($categories as $category)
                 
