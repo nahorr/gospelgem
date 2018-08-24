@@ -88,7 +88,7 @@
                               
                               <h5 class="d-flex justify-content-between align-items-center h5 g-color-gray-dark-v1 mb-0">
                                 <span class="d-block g-mr-10">
-                                  <img class="u-tags-v1 g-width-30 g-height-30 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
+                                  <img class="u-tags-v1 g-width-50 g-height-50 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
                                   <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15" href="#!">Comment By: {{$comment->user->name}}</a> 
                                 </span>
                                 <span class="g-color-gray-dark-v4 g-font-size-12">{{$comment->created_at->toFormattedDateString()}} at {{$comment->created_at->format('g:i A')}}</span>
@@ -163,7 +163,7 @@
                                         <div class="g-mb-15">
                                           <h5 class="d-flex justify-content-between align-items-center h5 g-color-gray-dark-v1 mb-0">
                                             <span class="d-block g-mr-10">
-                                              <img class="u-tags-v1 g-width-30 g-height-30 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
+                                              <img class="u-tags-v1 g-width-50 g-height-50 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
                                               <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15" href="#!">{{$reply->user->name}} replied to {{$comment->user->name}}'s comment</a> 
                                             </span>
                                             <span class="g-color-gray-dark-v4 g-font-size-12">{{$reply->created_at->toFormattedDateString()}} at {{$reply->created_at->format('g:i A')}}</span>
@@ -222,7 +222,7 @@
                         By:
                         <span class="d-inline-block g-color-gray-dark-v4">
                          
-                            <img class="g-g-width-20 g-height-20 rounded-circle mr-2" src="{{asset('uploads/avatars/'.$post->user->avatar)}}" alt="Image Description">
+                            <img class="g-g-width-50 g-height-50 rounded-circle mr-2" src="{{asset('uploads/avatars/'.$post->user->avatar)}}" alt="Image Description">
                             {{$post->user->name}}
                           </span>
                       </li>

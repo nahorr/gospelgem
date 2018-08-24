@@ -3,7 +3,7 @@
                         By:
                         <span class="d-inline-block g-color-gray-dark-v4">
                          
-                            <img class="g-g-width-20 g-height-20 rounded-circle mr-2" src="{{asset('uploads/avatars/'.$post->user->avatar)}}" alt="Image Description">
+                            <img class="g-g-width-50 g-height-50 rounded-circle mr-2" src="{{asset('uploads/avatars/'.$post->user->avatar)}}" alt="Image Description">
                             {{$post->user->name}}
                           </span>
                       </li>
