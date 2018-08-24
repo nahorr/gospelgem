@@ -8,7 +8,7 @@
   <section class="g-py-100">
     <div class="container">
       <header class="text-center g-width-60x--md mx-auto g-mb-50">
-          <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Introducing GForum</h2>
+          <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Viewing Posts by {{$user->name}}</h2>
           <p class="lead">GForum is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
         </header>
        @if(Auth::check() )
@@ -29,7 +29,8 @@
         <thead class="thead-dark text-uppercase g-letter-spacing-1">
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
-            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Most Recent Posts<small>({{$posts->total()}} posts)</small> -
+            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Your are viewing Posts by {{$user->name}}<small>({{$user_posts->total()}} posts)</small><br>
+              (<a href="{{url('gforum')}}""><span style="color: #b78f18;">Recent,</span></a>
               @foreach($categories as $category)
                 
                 @if($loop->last)
@@ -39,6 +40,7 @@
                @endif
                 
               @endforeach
+              )
             </strong></span></th>
             <!--<th class="g-font-weight-300 g-color-black g-min-width-200">Post Title and Information</th>-->
             <!--<th class="g-font-weight-300 g-color-black text-center">Stats</th>-->
@@ -47,7 +49,7 @@
         </thead>
 
         <tbody>
-          @foreach($posts as $key => $post)
+          @foreach($user_posts as $key => $post)
             @foreach($users as $user)
              @if($post->user_id == $user->id)
                 <tr>
@@ -91,7 +93,7 @@
         </tbody>
       </table>
       
-      <div class="pagination">{{$posts->links("pagination::bootstrap-4")}}</div> 
+      <div class="pagination">{{$user_posts->links("pagination::bootstrap-4")}}</div> 
 
     </div>
   </div>

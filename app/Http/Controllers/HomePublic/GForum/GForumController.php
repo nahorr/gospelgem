@@ -40,6 +40,19 @@ class GForumController extends Controller
         return view('public-views.gforum.category', compact('posts', 'users', 'comments', 'categories','category', 'posts_category'));
     }
 
+    public function userPosts(User $user)
+    {
+        $users = User::get();
+
+        $comments = Comment::get();
+
+        $categories = Category::get();
+
+        $user_posts = Post::where('user_id', $user->id)->paginate(20);
+
+        return view('public-views.gforum.userposts', compact('user', 'posts', 'users', 'comments', 'categories','category', 'user_posts'));
+    }
+
     public function viewPost(Post $post)
     {
 

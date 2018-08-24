@@ -34,9 +34,9 @@
               @foreach($categories as $category)
                 
                 @if($loop->last)
-                   <a href="{{url('gforum/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}.</span></a>
+                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}.</span></a>
                 @else
-                   <a href="{{url('gforum/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}},</span></a>
+                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}},</span></a>
                @endif
                 
               @endforeach
@@ -78,7 +78,7 @@
 
                         </a>
                         
-                           <a href=""> by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> <span style="color: #b78f18;">{{$user->name}}</span>
+                           <a href="{{ url('gforum/user/'.$user->id)}}"> by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> <span style="color: #b78f18;">{{$user->name}}</span>
                            </a>
                         
                     </form>

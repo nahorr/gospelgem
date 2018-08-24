@@ -26,8 +26,9 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 	//GForum
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');
-	Route::get('gforum/{category}', 'HomePublic\GForum\GForumController@category')->name('category');
-	
+	Route::get('gforum/category/{category}', 'HomePublic\GForum\GForumController@category')->name('category');
+	Route::get('gforum/user/{user}', 'HomePublic\GForum\GForumController@userPosts')->name('userPosts');
+
 	Route::post('gforum/countpostviews/{post}', 'HomePublic\GForum\GForumController@countPostViews');
 	Route::get('gforum/viewpost/{post}', 'HomePublic\GForum\GForumController@viewPost')->name('viewpostpublic');
 	Route::post('gforum/countpostlikes/{post}', 'HomePublic\GForum\GForumController@countPostLikes');
