@@ -35,7 +35,7 @@ class GForumController extends Controller
 
         $categories = Category::get();
 
-        $posts_category = Post::where('category_id', $category->id)->paginate(20);
+        $posts_category = Post::where('category_id', $category->id)->orderBy('created_at', 'desc')->paginate(20);
 
         return view('public-views.gforum.category', compact('posts', 'users', 'comments', 'categories','category', 'posts_category'));
     }
@@ -48,7 +48,7 @@ class GForumController extends Controller
 
         $categories = Category::get();
 
-        $user_posts = Post::where('user_id', $user->id)->paginate(20);
+        $user_posts = Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(20);
 
         return view('public-views.gforum.userposts', compact('user', 'posts', 'users', 'comments', 'categories','category', 'user_posts'));
     }
