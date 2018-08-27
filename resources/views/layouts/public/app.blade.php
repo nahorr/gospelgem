@@ -156,10 +156,8 @@
 
       $(document).ready(function() {      
        $('.summernote').summernote({
-            height: 300,
-            width: "90%",                 // set editor height
-            minHeight: null,             // set minimum height of editor
-            maxHeight: null,                                          
+            height: 150,
+                                              
             dialogsInBody: true,
             
             maximumImageFileSize: 500*1024, // 500 KB

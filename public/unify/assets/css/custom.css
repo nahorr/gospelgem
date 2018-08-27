@@ -7,3 +7,6 @@
     height: 300px;
 }
 
+.modal {
+  overflow-y:auto;
+}
