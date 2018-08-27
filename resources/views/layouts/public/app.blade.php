@@ -21,16 +21,22 @@
   <link rel="shortcut icon" href="{{asset('unify/favicon.png')}}">
   <!-- Google Fonts -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
-  <!-- CSS Global Compulsory -->
+  
 
-   <!--for modal and summernote-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- CSS Global Compulsory --><!--for Bootstrap and modal and summernote-->
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}"><!--for unify also-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
   
   <!-- include summernote css/js-->
+  <!--
+  <link rel="stylesheet" href="{{asset('summernote/dist/summernote.css')}}">
+  <script src="{{asset('summernote/dist/summernote.js')}}"></script>
+  -->
+  
   <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+  
 
   <!-- CSS Global Icons -->
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-awesome/css/font-awesome.min.css')}}">
@@ -74,6 +80,8 @@
   <script src='https://www.google.com/recaptcha/api.js'></script>
 
   
+
+  
 </head>
 
 <body>
@@ -89,13 +97,12 @@
 
 
  <!-- JS Global Compulsory -->
- <!--
-  <script src="{{asset('unify/assets/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('unify/assets/vendor/jquery-migrate/jquery-migrate.min.js')}}"></script>
--->
+ 
+  <!--<script src="{{asset('unify/assets/vendor/jquery/jquery.min.js')}}"></script>-->
+  <!--<script src="{{asset('unify/assets/vendor/jquery-migrate/jquery-migrate.min.js')}}"></script>-->
   <script src="{{asset('unify/assets/vendor/popper.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
-
+  
 
   <!-- JS Implementing Plugins -->
   <script src="{{asset('unify/assets/vendor/hs-megamenu/src/hs.megamenu.js')}}"></script>
@@ -146,12 +153,13 @@
   <script>
 
     //summernote editor
-      $(document).ready(function() {
 
-        
+      $(document).ready(function() {      
        $('.summernote').summernote({
             height: 300,
-                                                        
+            width: "90%",                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,                                          
             dialogsInBody: true,
             
             maximumImageFileSize: 500*1024, // 500 KB
@@ -168,7 +176,29 @@
 
         });
 
-      
+      /*$(document).on("show.bs.modal", '.modal', function (event) {
+          console.log("Global show.bs.modal fire");
+          var zIndex = 100000 + (10 * $(".modal:visible").length);
+          $(this).css("z-index", zIndex);
+          setTimeout(function () {
+              $(".modal-backdrop").not(".modal-stack").first().css("z-index", zIndex - 1).addClass("modal-stack");
+          }, 0);
+      }).on("hidden.bs.modal", '.modal', function (event) {
+          console.log("Global hidden.bs.modal fire");
+          $(".modal:visible").length && $("body").addClass("modal-open");
+      });
+      $(document).on('inserted.bs.tooltip', function (event) {
+          console.log("Global show.bs.tooltip fire");
+          var zIndex = 100000 + (10 * $(".modal:visible").length);
+          var tooltipId = $(event.target).attr("aria-describedby");
+          $("#" + tooltipId).css("z-index", zIndex);
+      });
+      $(document).on('inserted.bs.popover', function (event) {
+          console.log("Global inserted.bs.popover fire");
+          var zIndex = 100000 + (10 * $(".modal:visible").length);
+          var popoverId = $(event.target).attr("aria-describedby");
+          $("#" + popoverId).css("z-index", zIndex);
+      });*/
 
     // initialization of google map
     function initMap() {
@@ -229,7 +259,7 @@
       } else {
         revapi486 = tpj('#rev_slider_486_1').show().revolution({
           sliderType: 'standard',
-          jsFileLocation: 'revolution/js/',
+          jsFileLocation: "{{ asset('unify/assets/vendor/revolution-slider/revolution/js') }}",
           sliderLayout: 'fullwidth',
           dottedOverlay: 'none',
           delay: 9000,
