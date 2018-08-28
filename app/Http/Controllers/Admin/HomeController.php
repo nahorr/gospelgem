@@ -14,4 +14,12 @@ class HomeController extends Controller
 
     	return view('admin.home');
     }
+
+    public function deleteUser(User $user)
+
+    {
+    	User::where('id', $user->id)->delete();
+
+    	return back();
+    }
 }

@@ -62,7 +62,7 @@
                          <td class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">
-                               <img class="g-width-36 g-height-36 rounded-circle g-mr-15" src="{{asset('uploads/avatars/'.Auth::user()->avatar)}}" alt="{{$user->name}} picture">
+                               <img class="g-width-36 g-height-36 rounded-circle g-mr-15" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}} picture">
                              </div>
 
                              <div class="media-body align-self-center text-left">{{$user->name}}</div>
@@ -99,7 +99,7 @@
                            </div>
                          </td>
                          <td class="g-px-30">
-                           <button type="button" class="btn btn-danger">Delete {{$user->name}}</button>
+                           <button type="button" class="btn btn-danger">Delete</button>
                          </td>
                        </tr>
                       @endforeach

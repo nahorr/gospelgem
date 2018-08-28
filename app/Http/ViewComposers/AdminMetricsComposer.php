@@ -10,6 +10,7 @@ use App\UserDetail;
 use Carbon\Carbon;
 use App\ContactUs;
 use App\User;
+use App\Post;
 use Auth;
 	
 Class AdminMetricsComposer {	
@@ -25,6 +26,7 @@ Class AdminMetricsComposer {
             $today = Carbon::today();
 
             $users = User::orderBy('created_at', 'desc')->get();
+            $posts = Post::orderBy('created_at', 'desc')->get();
 
             $contactFormSubmissions = ContactUs::orderBy('created_at', 'desc')->get();
             
@@ -33,6 +35,7 @@ Class AdminMetricsComposer {
             ->with('number_init', $number_init )
             ->with('today', $today )
             ->with('users', $users)
+            ->with('posts', $posts)
             ->with('contactFormSubmissions', $contactFormSubmissions);
 
             
