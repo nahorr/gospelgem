@@ -53,7 +53,10 @@ class CommentReplyController extends Controller
     public function storeEditReplyComment(Request $request, CommentReply $reply)
     {
         
-              
+        $this->validate(request(), [
+
+            'comment_reply' => 'required',
+        ]);   
         //$comment_reply=$request->input('comment_reply');
         //$dom = new \DomDocument();
         //$dom->loadHtml($comment_reply, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);

@@ -40,10 +40,33 @@
                         <button type="submit" class="btn btn-danger" id="editSubmit">Submit Changes</button>
                       </form>
                       <!-- End General Controls -->
-
-                        
                      
+                        @if (count($errors) > 0)
                         
+                          <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                          </div>
+
+                          <script>
+                            $( document ).ready(function() {
+                              $('#editSubmit').click(function(){
+                                
+                                $('this').modal('show');
+                                
+                              });
+                                
+
+                                
+                            
+                                
+                            });
+                        </script>
+
+                      @endif
                     
                     </div>
                   </div>

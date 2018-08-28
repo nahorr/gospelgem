@@ -29,17 +29,6 @@
                 <article class="g-mb-100">
                   <div class="g-mb-30">
                      @include('flash::message')
-
-                     @if (count($errors) > 0)
-                     
-                       <div class="alert alert-danger">
-                         <ul>
-                             @foreach ($errors->all() as $error)
-                                 <li>{{ $error }}</li>
-                             @endforeach
-                         </ul>
-                       </div>
-                     @endif
   
                     <h2 class="h4 g-color-black g-font-weight-600 mb-3">
                       <a class="u-link-v5 g-color-black g-color-primary--hover">{{$post->post_title}}</a>
@@ -304,15 +293,14 @@
                       <span class="input-group-btn">
 
                           @if(Auth::check() )
-                          <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal2">Add a Post</button>
-                          @include('private-views.gforum.addpost2')
+                          <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal">Add a Post</button>
+                          @include('private-views.gforum.addpost')
                           <script type="text/javascript">
-                            $('#addPostModal2').on('click', function(e){
+                            $('#addPostModal').on('click', function(e){
                                e.preventDefault();
-                              $('#addNewPostModal2').modal('show');
+                              $('#addNewPostModal').modal('show');
                             })
                           </script>
-
                           @else
                             <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
                           @endif
@@ -337,7 +325,7 @@
         <!-- End Blog Minimal Blocks -->
 
 
-          
+
  
   @include('layouts.public.includes.footer')
 

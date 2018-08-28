@@ -58,7 +58,10 @@ class CommentController extends Controller
     public function storeEditComment(Request $request, Comment $comment)
     {
         
-              
+        $this->validate(request(), [
+
+            'post_comment' => 'required',
+        ]);    
         //$post_comment=$request->input('post_comment');
         //$dom = new \DomDocument();
         //$dom->loadHtml($post_comment, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);

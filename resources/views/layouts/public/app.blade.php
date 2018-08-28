@@ -26,17 +26,21 @@
   <!-- CSS Global Compulsory --><!--for Bootstrap and modal and summernote-->
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}"><!--for unify also-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
+
   
   <!-- include summernote css/js-->
   <!--
   <link rel="stylesheet" href="{{asset('summernote/dist/summernote.css')}}">
   <script src="{{asset('summernote/dist/summernote.js')}}"></script>
   -->
+  <!--
+  <link rel="stylesheet" href="{{asset('summernote/dist/summernote-bs4.css')}}">
+  <script src="{{asset('summernote/dist/summernote-bs4.js')}}"></script>
+  -->
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
-  
+
 
   <!-- CSS Global Icons -->
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-awesome/css/font-awesome.min.css')}}">
@@ -156,7 +160,7 @@
 
       $(document).ready(function() {      
        $('.summernote').summernote({
-            height: 150,
+            height: 500,
                                               
             dialogsInBody: true,
             

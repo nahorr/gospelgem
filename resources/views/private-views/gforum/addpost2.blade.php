@@ -1,6 +1,6 @@
        
 
-          <div class="modal fade" id="addNewPostModal" role="dialog">
+          <div class="modal fade" id="addNewPostModal2" role="dialog">
             <div class="modal-dialog modal-lg">
             
               <!-- Modal content-->
@@ -55,7 +55,6 @@
                         </div>
                         <button type="submit" class="btn btn-success">Add Post</button>
                       </form>
-                      <!-- End General Controls -->
                       
                     </div>
                  </div>

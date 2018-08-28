@@ -23,7 +23,19 @@
         @else
           <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
         @endif
-        
+
+      @if (count($errors) > 0)
+      
+        <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+        </div>
+
+    @endif
+    
     <div class="table-responsive">
       <table class="table table-bordered u-table--v2">
         <thead class="thead-dark text-uppercase g-letter-spacing-1">

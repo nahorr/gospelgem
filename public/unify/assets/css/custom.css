@@ -10,3 +10,9 @@
 .modal {
   overflow-y:auto;
 }
+
+.note-toolbar>.btn-group {
+   
+    display: inline-flex;
+}
+
