@@ -47,6 +47,13 @@
                          </th>
                          <th class="g-px-30">
                             <div class="media">
+                             <div class="d-flex align-self-center">Delete</div>
+
+                           
+                           </div>
+                         </th>
+                         <th class="g-px-30">
+                            <div class="media">
                              <div class="d-flex align-self-center">Action</div>
 
                            
@@ -58,6 +65,7 @@
                      <tbody>
 
                       @foreach($users as $key => $user)
+                      @if($user->id > 1)
                        <tr>
                          <td class="g-px-30">
                            <div class="media">
@@ -99,9 +107,53 @@
                            </div>
                          </td>
                          <td class="g-px-30">
-                           <button type="button" class="btn btn-danger">Delete</button>
+                          <div class="row">
+                            
+                                <div class="col-md-3">
+                                  <a href="{{url('admin/home/delete/'. $user->id)}}" class="btn btn-sm u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
+                                </div>
+                            
+                          </div>
+
+                         </td>
+                         <td class="g-px-30">
+                        
+                          <div class="row">
+                            
+                            @if($user->is_admin == 0 )
+                              <div class="row">
+                                
+                                
+                                <div class="col-md-3">
+                                  <form class="form-group" action="{{ url('/admin/home/makeAdmin', [$user->id])}}" method="POST">
+                                    {{ csrf_field() }}
+                                      <input name="is_admin" type="hidden" value="1">
+                                      
+                                      <button class="btn btn-sm u-btn-darkpurple g-mr-10" onclick="return confirm('Are you sure you want to make this user admin?')">Make Admin
+                                      </button>
+                                  </form>
+                                </div>
+                                
+                              </div>
+                              @else
+                              <div class="row">
+                                
+                                <div class="col-md-3">
+                                  <form class="form-group" action="{{ url('/admin/home/makeUser', [$user->id])}}" method="POST">
+                                    {{ csrf_field() }}
+                                      <input name="is_admin" type="hidden" value="0">
+                                      
+                                      <button class="btn btn-sm u-btn-deeporange g-mr-10" onclick="return confirm('Are you sure you want to remove this user from admin list?')">Make User
+                                      </button>
+                                  </form>
+                                </div>
+                              </div>
+                              
+                              @endif
+                            </div>
                          </td>
                        </tr>
+                       @endif
                       @endforeach
                      </tbody>
                    </table>

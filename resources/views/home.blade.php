@@ -62,11 +62,16 @@
                           
                             Please write something awesome about yourself.
                             <a href="{{url('users/profile')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Update Your Profile</a>
+                          @else
+                          <hr>
+                            <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">{{ @$user_details->about_me}}</p>
+                            <hr>
+                            <a href="{{url('users/profile')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Edit Your Profile</a>
                           @endif
 
                         </div>
 
-                        <p class="g-font-weight-300 g-color-gray-dark-v6 mb-0">{{ @$user_details->about_me}}</p>
+                        
                       </section>
 
                     </div>

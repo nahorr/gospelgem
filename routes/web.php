@@ -87,6 +87,8 @@ Route::group(['middleware' => 'admin'], function () {
 
   Route::get('admin/home', 'Admin\HomeController@index');
   Route::get('admin/home/delete/{user}', 'Admin\HomeController@deleteUser')->name('deleteuser');
+  Route::post('admin/home/makeAdmin/{user}', 'Admin\HomeController@makeAdmin');
+  Route::post('admin/home/makeUser/{user}', 'Admin\HomeController@makeUser');
 
   Route::get('admin/contactform/submissions', 'Admin\ContactController@contactFormSubmissions')->name('submissions');
   Route::get('admin/business/units', 'Admin\BusinessController@businessUnits')->name('businessUnits');
