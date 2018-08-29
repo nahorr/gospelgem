@@ -158,10 +158,7 @@
                      </tbody>
                    </table>
                  </div>
-
-
-
-            </div>
+               </div>
 
             @include('admin.includes.footer')
             

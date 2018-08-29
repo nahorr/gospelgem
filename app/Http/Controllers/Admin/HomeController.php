@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\UserDetail;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,32 @@ class HomeController extends Controller
     {
 
     	return view('admin.home');
+    }
+
+    public function categories()
+    {
+
+    	return view('admin.categories');
+    }
+
+    public function storeAddCategory(Request $request){
+
+	   	$category = new Category();
+
+	   	$category->category_name = $request->category_name;
+	   	
+	   	$category->save();
+
+   		return back();
+   }
+
+
+   public function deleteCategory(Category $category)
+
+    {
+    	Category::where('id', $category->id)->delete();
+
+    	return back();
     }
 
     public function deleteUser(User $user)

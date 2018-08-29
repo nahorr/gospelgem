@@ -20,6 +20,7 @@ class AdminComposerServiceProvider extends ServiceProvider
 
             'admin.include.metrics',
             'admin.home',
+            'admin.categories',
             'admin.contactform.submissions',
             'admin.business.units',
 
