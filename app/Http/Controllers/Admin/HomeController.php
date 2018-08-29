@@ -33,6 +33,17 @@ class HomeController extends Controller
    		return back();
    }
 
+   public function storeEditCategory(Request $request, Category $category){
+
+	   	$category = Category::where('id', $category->id)->first();
+
+	   	$category->category_name = $request->category_name;
+	   	
+	   	$category->save();
+
+   		return back();
+   }
+
 
    public function deleteCategory(Category $category)
 

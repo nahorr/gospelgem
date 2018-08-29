@@ -27,7 +27,7 @@
                  </h2>
                  </header>
                  <!-- Add Category -->
-                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeAddCategory') }}" id="ajaxFormAddCategory">
+                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeAddCategory') }}" id="ajaxFormAddCategory" style="display: none;">
                    {{ csrf_field() }}
 
                    <div class="form-group g-mb-25 col-md-3">
@@ -35,7 +35,8 @@
                      <input type="text" class="form-control rounded-0 form-control-md" id="category" name="category_name">
                    </div>
                    <div class="form-group g-mb-25 col-md-3">
-                    <button type="submit" class="btn btn-danger" id="ajaxSubmitaddCategory">Add Category</button>
+                    <button type="submit" class="btn btn-success" id="ajaxSubmitaddCategory">Add Category</button>
+                    <button type="button" class="btn btn-danger" id="ajaxCloseaddCategory">Close</button>
                   </div>
                  </form>
                  <!-- End General Controls -->
@@ -51,6 +52,10 @@
 
                       $("#addCategory").click(function(){
                          $("#ajaxFormAddCategory").show(1000);
+                      });
+
+                      $("#ajaxCloseaddCategory").click(function(){
+                         $("#ajaxFormAddCategory").hide(1000);
                       });
                    });
 
@@ -129,15 +134,16 @@
                     
                                   <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editCategory-{{$category->id}}">Edit Category</button>
                                 </div>
-                                <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeEditCategory',[$category->id]) }}" id="ajaxFormEditCategory-{{$category->id}}">
+                                <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeEditCategory',[$category->id]) }}" id="ajaxFormEditCategory-{{$category->id}}" style="display: none;">
                                   {{ csrf_field() }}
 
                                   <div class="form-group g-mb-25">
                                     <label for="post_title">Category Name</label>
                                     <input type="text" class="form-control rounded-0 form-control-md" id="category_name" name="category_name" value="{{$category->category_name}}">
                                   </div>
-                                  <div class="form-group g-mb-25 col-md-3">
-                                   <button type="submit" class="btn btn-danger" id="ajaxSubmitEditCategory-{{$category->id}}">Add Category</button>
+                                  <div class="form-group g-mb-25">
+                                   <button type="submit" class="btn btn-success" id="ajaxSubmitEditCategory-{{$category->id}}">Update</button>
+                                   <button type="button" class="btn btn-danger" id="ajaxCloseEditCategory-{{$category->id}}">Close</button>
                                  </div>
                                 </form>
                                 <!-- End General Controls -->
@@ -153,6 +159,10 @@
 
                                      $("#editCategory-{{$category->id}}").click(function(){
                                         $("#ajaxFormEditCategory-{{$category->id}}").show(1000);
+                                     });
+
+                                     $("#ajaxCloseEditCategory-{{$category->id}}").click(function(){
+                                        $("#ajaxFormEditCategory-{{$category->id}}").hide(1000);
                                      });
                                   });
 

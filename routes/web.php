@@ -91,11 +91,11 @@ Route::group(['middleware' => 'admin'], function () {
   Route::post('admin/home/makeUser/{user}', 'Admin\HomeController@makeUser');
 
   Route::get('admin/categories', 'Admin\HomeController@categories');
-  Route::get('admin/addcategory', 'Admin\HomeController@addcategory');
+  //Route::get('admin/addcategory', 'Admin\HomeController@addcategory');
   Route::post('admin/storeAddCategory', 'Admin\HomeController@storeAddCategory')->name('addcategory');
 
-  Route::get('admin/editCategory/{category}', 'Admin\HomeController@editCategory');
-  Route::post('admin/storeEditCategory/{category}', 'Admin\HomeController@storeEditCategory')->name('editcategory');
+  //Route::get('admin/editCategory/{category}', 'Admin\HomeController@editCategory');
+  Route::post('admin/storeEditCategory/{category}', 'Admin\HomeController@storeEditCategory');
   Route::get('admin/deleteCategory/{category}', 'Admin\HomeController@deleteCategory');
 
   Route::get('admin/contactform/submissions', 'Admin\ContactController@contactFormSubmissions')->name('submissions');

@@ -1,12 +1,6 @@
   @extends('layouts.public.app')
 
   @section('content')
-  <style type="text/css">
-    .error {
-      color: red;
-      background-color: #acf;
-   }
-  </style>
 
   @include('layouts.public.includes.nav-header')
 
@@ -18,57 +12,19 @@
           <p class="lead">GForum is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
         </header>
        @if(Auth::check() )
-        <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostButton">Add a Post</button>
-        
-        <!-- General Controls -->
-        <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="/gforum/storeaddpost" id="addPostForm" style="display: none;">
-          {{ csrf_field() }}
-
-           <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
-
-           <div class="row">
-             <div class="form-group col-md-6 g-mb-25">
-              <label for="post_title"><strong>Select a category</strong></label><br>
-              
-                <select class="form-control form-control-md form-control-lg rounded-0 g-mb-25" name="category_id" id="category_id">
-                    <option selected disabled>Please select one category</option>
-                          @foreach($categories as $key => $category)
-
-                              <option value="{{ $category->id }}" >
-                                  {{ $category->category_name }}
-                              </option>
-
-                          @endforeach
-                  </select>
-                 
-              </div>
-              <div class="form-group col-md-6 g-mb-25">
-                <label for="post_title"><strong>Post Tile</strong></label>
-                <input type="text" class="form-control rounded-0 form-control-md" id="post_title" name="post_title" aria-describedby="postTitle" placeholder="Enter Your Post Title Here">
-              </div>
-            </div>
-
-          <div class="form-group g-mb-25">
-            <label for="exampleTextarea"><strong>Post Body</strong> <span style="color: darkred;">(you can add pictures and/or videos to your post)</span></label>
-            <textarea class="summernote" id="postBody" name="post_body" id="summernote"></textarea>
-
-          </div>
-
-          <div class="form-group g-mb-25">
-            <label class="form-check-label g-mb-20">
-              <input type="hidden" name="show_profile_picture" value="0"><input type="checkbox" name="show_profile_picture" value="1" /><span style="color: darkred;">Include my profile picture with this post</span>
-            </label>
-          </div>
-          <button type="submit" class="btn btn-success" id="submitPostFormButton">Add Post</button>
-          <button type="button" class="btn btn-danger" id="closePostFormButton">Close</button>
-        </form>
-       
+        <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal">Add a Post</button>
+        @include('private-views.gforum.addpost')
+        <script type="text/javascript">
+          $('#addPostModal').on('click', function(e){
+             e.preventDefault();
+            $('#addNewPostModal').modal('show');
+          })
+        </script>
         @else
           <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
         @endif
 
-      <!-- End General Controls -->
-        @if (count($errors) > 0)
+      @if (count($errors) > 0)
       
         <div class="alert alert-danger">
           <ul>
@@ -78,7 +34,7 @@
           </ul>
         </div>
 
-      @endif
+    @endif
     
     <div class="table-responsive">
       <table class="table table-bordered u-table--v2">
@@ -156,52 +112,5 @@
 
 
   @include('layouts.public.includes.footer')
-  <script>
-     jQuery(document).ready(function(){
-
-                     
-       $("#submitPostFormButton").click(function(){
-
-          $("#addPostForm").hide(1000);
-       });
-
-       $("#addPostButton").click(function(){
-          $("#addPostForm").show(1000);
-       });
-
-       $("#closePostFormButton").click(function(){
-          $("#addPostForm").hide(1000);
-       });
-
-    });
-
-
-
-     $(function () {
-         $('#addPostForm').submit(function (e) {
-             e.preventDefault()  // prevent the form from 'submitting'
-
-             var url = e.target.action  // get the target
-             var formData = $(this).serialize() // get form data
-             $.post(url, formData, function (response) { 
-             // send; response.data will be what is returned
-                 location.reload();
-                 //console.log(data.responseJSON;);
-             })
-
-
-             .fail(function(response) {
-              var err = JSON.parse(response.responseText);
-                  alert(err.message  
-                    + "\n" + "\t"+ "\t"+ err.errors.category_id
-                    + "\n" + "\t"+ "\t"+ err.errors.post_title
-                    + "\n" + "\t"+ "\t"+ err.errors.post_body
-                    );
-
-              })
-         })
-     })
-
-     </script>
 
   @endsection
