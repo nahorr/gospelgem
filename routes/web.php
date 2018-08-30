@@ -98,6 +98,13 @@ Route::group(['middleware' => 'admin'], function () {
   Route::post('admin/storeEditCategory/{category}', 'Admin\HomeController@storeEditCategory');
   Route::get('admin/deleteCategory/{category}', 'Admin\HomeController@deleteCategory');
 
+  Route::get('admin/posts', 'Admin\HomeController@posts')->name('post');
+  Route::post('admin/approvePost/{post}', 'Admin\HomeController@approvePost');
+  Route::post('admin/rejectPost/{post}', 'Admin\HomeController@rejectPost');
+  Route::get('admin/deletePost/{post}', 'Admin\HomeController@deletePost');
+
+  Route::get('admin/comments', 'Admin\HomeController@comments')->name('comments');
+
   Route::get('admin/contactform/submissions', 'Admin\ContactController@contactFormSubmissions')->name('submissions');
   Route::get('admin/business/units', 'Admin\BusinessController@businessUnits')->name('businessUnits');
     

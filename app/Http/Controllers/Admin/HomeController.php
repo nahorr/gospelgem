@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\UserDetail;
 use App\Category;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -44,6 +45,7 @@ class HomeController extends Controller
    		return back();
    }
 
+   
 
    public function deleteCategory(Category $category)
 
@@ -52,6 +54,43 @@ class HomeController extends Controller
 
     	return back();
     }
+
+    public function posts()
+    {
+
+        return view('admin.posts');
+    }
+
+    public function approvePost(Request $request, Post $post)
+    {
+        $approve_post = Post::where('id', $post->id)->first();
+
+        $approve_post->approved = $request->approved;
+
+        $approve_post->save();
+
+        return back();
+    }
+
+    public function rejectPost(Request $request, Post $post)
+    {
+        $reject_post = Post::where('id', $post->id)->first();
+
+        $reject_post->approved = $request->approved;
+
+        $reject_post->save();
+
+        return back();
+    }
+
+    public function deletePost(Post $post)
+
+    {
+        Post::where('id', $post->id)->delete();
+
+        return back();
+    }
+
 
     public function deleteUser(User $user)
 

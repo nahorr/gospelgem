@@ -186,16 +186,15 @@
              $.post(url, formData, function (response) { 
              // send; response.data will be what is returned
                  location.reload();
-                 //console.log(data.responseJSON;);
              })
 
 
              .fail(function(response) {
               var err = JSON.parse(response.responseText);
-                  alert(err.message  
-                    + "\n" + "\t"+ "\t"+ err.errors.category_id
-                    + "\n" + "\t"+ "\t"+ err.errors.post_title
-                    + "\n" + "\t"+ "\t"+ err.errors.post_body
+                  alert(err.message+"\n"+err.errors.category_id
+                    +"\n"+err.errors.post_title
+                    +"\n"+err.errors.post_body
+                    
                     );
 
               })

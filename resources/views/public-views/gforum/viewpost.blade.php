@@ -318,7 +318,7 @@
                           @endif
                           @if(Auth::check() )
 
-                            @if($post->user_id == Auth::user()->id)
+                            @if($post->user_id == Auth::user()->id || Auth::user()->is_admin == 1)
                               <a class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15" href="{{url('gforum/deletepost/'.$post->id)}}" role="button" onclick="return confirm('Are you sure you want to Delete this Post? This action will also delete all the comments and replies associated with this post.')">Delete Post</a>
                             @endif
                           @endif
