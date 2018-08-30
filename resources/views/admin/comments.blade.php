@@ -21,7 +21,7 @@
                  @include('admin.includes.metrics')
 
                  <header class="g-mb-20">
-                   <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0"><strong>Post Table</strong></button></h2>
+                   <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0"><strong>Comments</strong></button></h2>
                  </header>
                 
                  <div class="table-responsive g-mb-40">
@@ -34,7 +34,11 @@
                         </th>
                          <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Post Title</div></div>
+                             <div class="d-flex align-self-center">By User</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">For Post</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
@@ -45,7 +49,7 @@
                          </th>
                          <th class="g-px-30">
                             <div class="media">
-                             <div class="d-flex align-self-center">View Post</div>
+                             <div class="d-flex align-self-center">View Comment</div>
 
                            
                            </div>
@@ -68,7 +72,7 @@
 
                      <tbody>
 
-                      @foreach($posts as $key => $post)
+                      @foreach($comments as $key => $comment)
                       
                        <tr>
                         <td class="g-px-30">
@@ -78,21 +82,27 @@
                          </td>
                          <td class="g-px-30">
                            <div class="media">
-                             <div class="media-body align-self-center text-left">{{ str_limit($post->post_title, $limit = 30, $end = '...') }}</div>
+                             <div class="media-body align-self-center text-left">{{$comment->user->name}}</div>
+                           </div>
+                         </td>
+                      
+                         <td class="g-px-30">
+                           <div class="media">
+                             <div class="media-body align-self-center text-left">{{ str_limit($comment->post->post_title, $limit = 30, $end = '...') }}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
-                           {{$post->created_at->toFormattedDateString()}}
+                           {{$comment->created_at->toFormattedDateString()}}
                          </td>
                          <td class="g-px-30">
-                           <a type="button" class="btn btn-md u-btn-darkpurple g-mr-10" href="{{url('gforum/viewpost/'. $post->id)}}">View Post</a>
+                           <button class="btn btn-md u-btn-darkpurple g-mr-10" id="viewCommentModal" }}">View Post</button>
                          </td>
                          <td class="g-px-30">
                           <div class="row">
                             
                                 <div class="col-md-3">
-                                  @if($post->approved == 0)
-                                    <form class="form-group" action="{{ url('/admin/approvePost', [$post->id])}}" method="POST">
+                                  @if($comment->approved == 0)
+                                    <form class="form-group" action="{{ url('/admin/approveComment', [$comment->id])}}" method="POST">
                                       {{ csrf_field() }}
                                         <input name="approved" type="hidden" value="1">
                                         
@@ -103,7 +113,7 @@
           
                                     </form>
                                   @else
-                                    <form class="form-group" action="{{ url('/admin/rejectPost', [$post->id])}}" method="POST">
+                                    <form class="form-group" action="{{ url('/admin/rejectComment', [$comment->id])}}" method="POST">
                                       {{ csrf_field() }}
                                         <input name="approved" type="hidden" value="0">
                                         
@@ -124,7 +134,7 @@
                           <div class="row">
                             
                                 <div class="col-md-3">
-                                  <a href="{{url('admin/deletePost/'. $post->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this post?')">Delete</a>
+                                  <a href="{{url('admin/deleteComment/'. $comment->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this post?')">Delete</a>
                                 </div>
                             
                           </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\UserDetail;
 use App\Category;
+use App\Comment;
 use App\Post;
 
 class HomeController extends Controller
@@ -91,6 +92,11 @@ class HomeController extends Controller
         return back();
     }
 
+     public function comments()
+    {
+
+        return view('admin.comments');
+    }
 
     public function deleteUser(User $user)
 
