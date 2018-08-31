@@ -20,8 +20,8 @@ class CreateCommentsTable extends Migration
             $table->integer('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->longText('post_comment');
-            $table->boolean('approved')->default(false);
-            $table->boolean('show_profile_picture')->default(false);
+            $table->boolean('approved')->default(true);
+            $table->boolean('show_profile_picture')->default(true);
             $table->integer('comment_likes')->default(0);
             $table->integer('comment_dislikes')->default(0);
             $table->timestamps();

@@ -20,8 +20,8 @@ class CreateCommentRepliesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->longText('comment_reply');
-            $table->boolean('approved')->default(false);
-            $table->boolean('show_profile_picture')->default(false);
+            $table->boolean('approved')->default(true);
+            $table->boolean('show_profile_picture')->default(true);
             $table->integer('comment_reply_likes')->default(0);
             $table->integer('comment_reply_dislikes')->default(0);
             $table->timestamps();

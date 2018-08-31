@@ -108,7 +108,7 @@
                               
                             </div>
 
-                            <p>{!! $comment->post_comment !!}</p>
+                            <p><a name="comment-{{$comment->id}}">{!! $comment->post_comment !!}</a></p>
 
                             <ul class="list-inline d-sm-flex my-0">
 
@@ -143,7 +143,7 @@
                                   
                               </li>
                               <li class="list-inline-item ml-auto">
-                                @if(Auth::check() && $comment->user_id == Auth::user()->id)
+                                @if(Auth::check() && $comment->user_id == Auth::user()->id || Auth::check() && Auth::user()->is_admin == 1)
 
                                   <button type="button" class="btn btn-sm btn-light" id="editCommentModal-{{$comment->id}}"><i class="fa fa-edit"></i> Edit</button>
                                   @include('private-views.gforum.comments.editcomment')
@@ -182,7 +182,7 @@
                                           </h5>
                                         </div>
 
-                                        <p>{!! $reply->comment_reply !!}</p>
+                                        <p><a name="reply-{{$reply->id}}">{!! $reply->comment_reply !!}</a></p>
 
                                         <ul class="list-inline d-sm-flex my-0">
                                           <li class="list-inline-item g-mr-20">
@@ -198,7 +198,7 @@
                                             </form>
                                           </li>
                                           <li class="list-inline-item g-mr-20">
-                                            @if(Auth::check() && $reply->user_id == Auth::user()->id)
+                                            @if(Auth::check() && $reply->user_id == Auth::user()->id || Auth::check() && Auth::user()->is_admin == 1)
                                             
 
                                               <button type="button" class="btn btn-sm btn-light" id="editReplyCommentModal-{{$reply->id}}"><i class="fa fa-edit"></i> Edit</button>

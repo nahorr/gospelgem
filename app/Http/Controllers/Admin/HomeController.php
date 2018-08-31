@@ -92,11 +92,7 @@ class HomeController extends Controller
         return back();
     }
 
-     public function comments()
-    {
-
-        return view('admin.comments');
-    }
+     
 
     public function deleteUser(User $user)
 

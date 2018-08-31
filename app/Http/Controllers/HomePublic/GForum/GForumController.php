@@ -15,7 +15,7 @@ class GForumController extends Controller
     public function index()
     {
 
-    	$posts = Post::orderBy('created_at', 'desc')->paginate(20);
+    	$posts = Post::where('approved', 1)->orderBy('created_at', 'desc')->paginate(20);
 
     	$users = User::get();
 
@@ -61,11 +61,11 @@ class GForumController extends Controller
 
     	$users = User::get();
 
-        $comments = Comment::where('post_id', $post->id)->get();
+        $comments = Comment::where('post_id', $post->id)->where('approved', 1)->get();
 
         $categories = Category::get();
 
-        $comment_replies = CommentReply::get();
+        $comment_replies = CommentReply::where('approved', 1)->get();
 
 
     	return view('public-views.gforum.viewpost', compact('post', 'posts', 'users', 'comments', 'categories', 'comment_replies'));

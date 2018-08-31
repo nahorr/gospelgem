@@ -21,8 +21,8 @@ class CreatePostsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('post_title');
             $table->longText('post_body');
-            $table->boolean('approved')->default(false);
-            $table->boolean('show_profile_picture')->default(false);
+            $table->boolean('approved')->default(true);
+            $table->boolean('show_profile_picture')->default(true);
             $table->integer('post_views')->default(0);
             $table->integer('post_likes')->default(0);
             $table->integer('post_dislikes')->default(0);

@@ -103,7 +103,15 @@ Route::group(['middleware' => 'admin'], function () {
   Route::post('admin/rejectPost/{post}', 'Admin\HomeController@rejectPost');
   Route::get('admin/deletePost/{post}', 'Admin\HomeController@deletePost');
 
-  Route::get('admin/comments', 'Admin\HomeController@comments')->name('comments');
+  Route::get('admin/comments', 'Admin\CommentController@comments')->name('comments');
+  Route::post('admin/approveComment/{comment}', 'Admin\CommentController@approveComment');
+  Route::post('admin/rejectComment/{comment}', 'Admin\CommentController@rejectComment');
+  Route::get('admin/deleteComment/{comment}', 'Admin\CommentController@deleteComment');
+
+  Route::get('admin/replies', 'Admin\ReplyController@replies')->name('replies');
+  Route::post('admin/approveReply/{reply}', 'Admin\ReplyController@approveReply');
+  Route::post('admin/rejectReply/{reply}', 'Admin\ReplyController@rejectReply');
+  Route::get('admin/deleteReply/{reply}', 'Admin\ReplyController@deleteReply');
 
   Route::get('admin/contactform/submissions', 'Admin\ContactController@contactFormSubmissions')->name('submissions');
   Route::get('admin/business/units', 'Admin\BusinessController@businessUnits')->name('businessUnits');
