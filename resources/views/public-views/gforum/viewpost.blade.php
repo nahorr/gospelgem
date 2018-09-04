@@ -28,7 +28,8 @@
                 <!-- Blog Minimal Blocks -->
                 <article class="g-mb-100">
                   <div class="g-mb-30">
-                     @include('flash::message')
+                    
+                    @include('flash::message')
 
                      @if (count($errors) > 0)
                      

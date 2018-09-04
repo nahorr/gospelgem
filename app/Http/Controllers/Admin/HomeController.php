@@ -29,8 +29,11 @@ class HomeController extends Controller
 	   	$category = new Category();
 
 	   	$category->category_name = $request->category_name;
+        $category->category_description = $request->category_description;
 	   	
 	   	$category->save();
+
+        flash('Category Added successfully!')->success();
 
    		return back();
    }
@@ -40,8 +43,11 @@ class HomeController extends Controller
 	   	$category = Category::where('id', $category->id)->first();
 
 	   	$category->category_name = $request->category_name;
+        $category->category_description = $request->category_description;
 	   	
 	   	$category->save();
+
+        flash('Category Edited successfully!')->success();
 
    		return back();
    }
@@ -52,6 +58,8 @@ class HomeController extends Controller
 
     {
     	Category::where('id', $category->id)->delete();
+
+        flash('Category deleted!')->warning();
 
     	return back();
     }

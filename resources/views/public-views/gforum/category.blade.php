@@ -9,7 +9,7 @@
     <div class="container">
       <header class="text-center g-width-60x--md mx-auto g-mb-50">
           <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Viewing Posts in {{$category->category_name}} Category</h2>
-          <p class="lead">GForum is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
+          <p class="lead">{{$category->category_description}} </p>
         </header>
        @if(Auth::check() )
         <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal">Add a Post</button>
