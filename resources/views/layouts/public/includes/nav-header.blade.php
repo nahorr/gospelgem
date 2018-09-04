@@ -11,7 +11,7 @@
 
             <div class="col-auto g-px-15">
               <i class="icon-communication-165 u-line-icon-pro g-font-size-20 g-valign-middle g-mr-1"></i>
-                <a href="https://live.gosgem.com/" target="_blank">Gosgem Live</a>
+                <a href="https://courses.gosgem.com/" target="_blank">Gosgem Live</a>
             </div>
 
             <div class="col-auto g-px-15 text-center">
