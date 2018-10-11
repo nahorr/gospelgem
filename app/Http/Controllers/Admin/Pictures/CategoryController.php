@@ -51,5 +51,11 @@ class CategoryController extends Controller
 
     	return back();
     }
+
+    public function categoryPictures(PictureCategory $category_pics)
+    {
+    	
+    	return view('admin/pictures/showpictures', compact('category_pics'));
+    }
    
 }

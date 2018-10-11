@@ -100,7 +100,7 @@
                 <!-- Icons -->
                 @foreach($pic_categories as $pic_category)
                   <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{ url('admin/pictures/'.$pic_category->id) }}">
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                         <i class="hs-admin-layout-sidebar-2"></i>
                       </span>
@@ -109,7 +109,7 @@
                   </li>
                 @endforeach
                   <li>
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{ url('admin/pictures/categories') }}">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{ url('admin/pictures/categories') }}" >
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                         <i class="hs-admin-camera"></i>
                       </span>
