@@ -31,6 +31,7 @@ Class AdminMetricsComposer {
 
             $users = User::orderBy('created_at', 'desc')->get();
             $categories = Category::orderBy('created_at', 'desc')->get();
+            $pic_categories = PictureCategory::get();
             $posts = Post::orderBy('created_at', 'desc')->get();
             $comments = Comment::orderBy('created_at', 'desc')->get();
             $replies = CommentReply::orderBy('created_at', 'desc')->get();
@@ -43,6 +44,7 @@ Class AdminMetricsComposer {
             ->with('today', $today )
             ->with('users', $users)
             ->with('categories', $categories)
+            ->with('pic_categories', $pic_categories)
             ->with('posts', $posts)
             ->with('comments', $comments)
             ->with('replies', $replies)

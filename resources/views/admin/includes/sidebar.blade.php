@@ -98,21 +98,24 @@
               <!-- UI Components: Submenu -->
               <ul id="subMenu5" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: block;">
                 <!-- Icons -->
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
-                  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="">
-                    <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                      <i class="hs-admin-layout-sidebar-2"></i>
-                    </span>
-                    <span class="media-body align-self-center">Icons</span>
-                  </a>
-
-                  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{ url('admin/pictures/categories') }}">
-                    <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                      <i class="hs-admin-camera"></i>
-                    </span>
-                    <span class="media-body align-self-center">New Category</span>
-                  </a>
-                </li>
+                @foreach($pic_categories as $pic_category)
+                  <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="">
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-layout-sidebar-2"></i>
+                      </span>
+                      <span class="media-body align-self-center">{{$pic_category->pic_category_name}}</span>
+                    </a>
+                  </li>
+                @endforeach
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{ url('admin/pictures/categories') }}">
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-camera"></i>
+                      </span>
+                      <span class="media-body align-self-center">New Category</span>
+                    </a>
+                  </li>
                 <!-- End Icons -->
 
               </ul>

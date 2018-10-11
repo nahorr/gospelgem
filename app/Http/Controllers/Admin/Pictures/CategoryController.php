@@ -10,8 +10,7 @@ class CategoryController extends Controller
 {
     public function categories()
     {
-    	$pic_categories = PictureCategory::get();
-
+    	
     	return view('admin/pictures/categories', compact('pic_categories'));
     }
 
