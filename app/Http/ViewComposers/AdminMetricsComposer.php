@@ -15,6 +15,7 @@ use App\Comment;
 use App\User;
 use App\Post;
 use Auth;
+use App\PictureCategory;
 	
 Class AdminMetricsComposer {	
 

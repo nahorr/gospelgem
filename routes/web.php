@@ -115,5 +115,12 @@ Route::group(['middleware' => 'admin'], function () {
 
   Route::get('admin/contactform/submissions', 'Admin\ContactController@contactFormSubmissions')->name('submissions');
   Route::get('admin/business/units', 'Admin\BusinessController@businessUnits')->name('businessUnits');
+
+  //manage pictures
+  	//Categories
+    Route::get('admin/pictures/categories', 'Admin\Pictures\CategoryController@categories');
+    Route::post('admin/storeNewPicCategory', 'Admin\Pictures\CategoryController@storeNewPicCategory')->name('addnewpiccategory');
+    Route::post('admin/storeEditPicCategory/{category}', 'Admin\Pictures\CategoryController@storeEditPicCategory');
+  	Route::get('admin/deletePicCategory/{category}', 'Admin\Pictures\CategoryController@deletePicCategory');
     
 });
