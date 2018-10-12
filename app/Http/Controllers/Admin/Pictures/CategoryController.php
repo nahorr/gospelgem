@@ -123,20 +123,37 @@ class CategoryController extends Controller
      public function storeEditPicture(Request $request, ManagePicture $picture)
     {
         
-        $this->validate($request, [
-            'picture_category_id' => 'required',
-            'picture_name' => 'required',
-            //'picture_description' => 'required',
-            'picture' => 'required|mimes:jpeg,jpg,png|max:10000',
-        ]);
+        if ($picture->picture_category->pic_category_name == 'Slider') {
+
+            $this->validate($request, [
+                'picture_category_id' => 'required',
+                'picture_name' => 'required',
+                'picture_title_left' => 'required',
+                'picture_title_right' => 'required',
+                'picture_description_left' => 'required',
+                'picture_description_right' => 'required',
+                'picture' => 'required|mimes:jpeg,jpg,png|max:10000',
+            ]);
+
+        } else {
+           $this->validate($request, [
+                'picture_category_id' => 'required',
+                'picture_name' => 'required',
+                'picture_title' => 'required',
+                'picture_description' => 'required',
+                'picture_link' => 'required',
+                'picture' => 'required|mimes:jpeg,jpg,png|max:10000',
+            ]);
+        }
+         
 
         if($request->hasFile('picture')){
             $site_picture = $request->file('picture');
             $filename = $request->picture_name . '.' . $site_picture->getClientOriginalExtension();
-            $destinationPath = public_path().'/unify/assets/img/slider_pictures/' ;
+            $destinationPath = public_path().'/unify/assets/img/pictures/' ;
 
             // Delete current image before uploading new image
-            $file = public_path('/unify/assets/img/slider_pictures/'.$filename);
+            $file = public_path('/unify/assets/img/pictures/'.$filename);
             if (File::exists($file)) {
                     unlink($file);
                 }
@@ -152,7 +169,13 @@ class CategoryController extends Controller
 
         $edit_picture->picture_category_id = $request->picture_category_id;
         $edit_picture->picture_name = $request->picture_name;
-        $edit_picture->picture_description;
+        $edit_picture->picture_title = $request->picture_title;
+        $edit_picture->picture_description = $request->picture_description;
+        $edit_picture->picture_title_left = $request->picture_title_left;
+        $edit_picture->picture_title_right = $request->picture_title_right;
+        $edit_picture->picture_description_left = $request->picture_description_left;
+        $edit_picture->picture_description_right = $request->picture_description_right;
+        $edit_picture->picture_link = $request->picture_link;
         $edit_picture->picture = $filename;
 
         $edit_picture->save();

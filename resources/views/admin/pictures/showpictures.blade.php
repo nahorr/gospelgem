@@ -246,7 +246,7 @@
                            </td>
 
                         @endif
-                        
+
                          <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{ $picture->created_at->toFormattedDateString() }}</div>
@@ -265,10 +265,51 @@
                                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeEditPicture',[$picture->id]) }}" id="ajaxFormEditPicture-{{$picture->id}}" enctype="multipart/form-data" style="display: none;">
                                   {{ csrf_field() }}
 
-                                   <input type="hidden" id="picture_category_id" name="picture_category_id" value="{{$picture->picture_category_id}}" required="">
-                                   <input type="hidden" id="picture_name" name="picture_name" value="{{$picture->picture_name}}" required="">
+                                  <input type="hidden" id="picture_category_id" name="picture_category_id" value="{{$picture->picture_category_id}}" required="">
+                                  <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Name(<span style="color: red"> No spaces: eg slider_1</span>)</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_name" name="picture_name" value="{{$picture->picture_name}}" required="">
+                                   </div>
+                                    
+
+                                 @if($picture_category->pic_category_name == 'Slider')
+
+                                  <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Title Left</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_title_left" name="picture_title_left" value="{{$picture->picture_title_left}}" required="">
+                                   </div>
+                                   <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Title Right</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_title_right" name="picture_title_right" value="{{$picture->picture_title_right}}" required="">
+                                   </div>
+                                   <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Description Left</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_description_left" name="picture_description_left" value="{{$picture->picture_description_left}}" required="">
+                                   </div>
+                                   <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Description Right</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_description_right" name="picture_description_right" value="{{$picture->picture_description_right}}" required="">
+                                   </div>
+                                  
+
+                                  @else
+                                   
+                                   <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Title</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_title" name="picture_title" value="{{$picture->picture_title}}" required="">
+                                   </div>
+                                   <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Description</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_description" name="picture_description" value="{{$picture->picture_description}}" required="">
+                                   </div>
+                                   <div class="form-group g-mb-25 col-md-12">
+                                     <label for="post_title">Picture Link/URL(<span style="color: red"> url redirected to when the picture/button is clicked</span>)</label>
+                                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_link" name="picture_link" value="{{$picture->picture_link}}" required="">
+                                   </div>
+
+                                 @endif
                                                                      
-                                  <div class="form-group g-mb-25 col-md-6">
+                                  <div class="form-group g-mb-25 col-md-12">
                                      <input type="file" name="picture" required="">
                                   </div>
                                   <div class="form-group g-mb-25">
