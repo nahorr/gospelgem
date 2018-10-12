@@ -181,6 +181,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\UserComposerServiceProvider::class,
         App\Providers\AdminComposerServiceProvider::class,
+        App\Providers\PublicComposerServiceProvider::class,
 
     ],
 

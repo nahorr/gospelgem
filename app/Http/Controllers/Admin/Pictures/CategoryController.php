@@ -57,8 +57,8 @@ class CategoryController extends Controller
 
     public function categoryPictures(PictureCategory $picture_category)
     {
-    	$site_pictures = ManagePicture::where('id', $picture_category->id)->get();
-
+    	$site_pictures = ManagePicture::where('picture_category_id', $picture_category->id)->get();
+        
     	return view('admin/pictures/showpictures', compact('picture_category', 'site_pictures'));
     }
 
@@ -71,10 +71,11 @@ class CategoryController extends Controller
             'picture' => 'required|mimes:jpeg,jpg,png|max:10000',
         ]);
 
-        if($r->hasFile('picture')){
-            $site_picture = $r->file('picture');
-            $filename = time() . '.' . $site_picture->getClientOriginalExtension();
-            $destinationPath = public_path().'/uploads/sitepictures/' ;
+        if($request->hasFile('picture')){
+            $site_picture = $request->file('picture');
+            //$filename = time() . '.' . $site_picture->getClientOriginalExtension();
+            $filename = $request->picture_name . '.' . $site_picture->getClientOriginalExtension();
+            $destinationPath = public_path().'/unify/assets/img/slider_pictures/' ;
 
             $site_picture->move($destinationPath,$filename);
             
@@ -93,6 +94,16 @@ class CategoryController extends Controller
         return back();
 
      }
+
+    public function deletePicture(ManagePicture $picture)
+
+    {
+        ManagePicture::where('id', $picture->id)->delete();
+
+        flash('Picture deleted!')->warning();
+
+        return back();
+    }
 
         
 }

@@ -20,7 +20,7 @@
                 data-saveperformance="off"
                 data-title="GosGem Mentorship Program"
                 data-description="Be Mentored By Your Favorite Music Star.">
-              <img class="rev-slidebg" src="{{asset('unify/assets/img/slider_pictures/1.png')}}" alt="Image description"
+              <img class="rev-slidebg" src="{{asset('unify/assets/img/slider_pictures/'.$slider1->picture)}}" alt="Image description"
                    data-bgposition="center center"
                    data-bgfit="cover"
                    data-bgrepeat="no-repeat"

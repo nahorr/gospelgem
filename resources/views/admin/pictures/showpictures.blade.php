@@ -21,6 +21,17 @@
                  @include('admin.includes.metrics')
 
                  @include('flash::message')
+                  @if (count($errors) > 0)
+      
+                    <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                    </div>
+
+                  @endif
 
                  <header class="g-mb-20">
                    <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
@@ -36,11 +47,11 @@
 
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Picture Name(<span style="color: red"> No spaces: eg slider_1</span>)</label>
-                     <input type="text" class="form-control rounded-0 form-control-md" id="pic_category_name" name="pic_category_name" required="">
+                     <input type="text" class="form-control rounded-0 form-control-md" id="picture_name" name="picture_name" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Please description this picture</label>
-                    <textarea class="form-control rounded-0 form-control-md"  id="pic_category_description" name="pic_category_description" placeholder="Say something like - This Category is for index pictures..." required=""></textarea>
+                    <textarea class="form-control rounded-0 form-control-md"  id="picture_description" name="picture_description" placeholder="Say something like - This Category is for index pictures..." required=""></textarea>
                   </div>
                   <!-- File Input -->
                     <div class="form-group g-mb-25 col-md-6">
@@ -59,14 +70,8 @@
                  <script>
                     jQuery(document).ready(function(){
 
-                      $("#ajaxFormNewPicture").addClass("noDisplay");
+                      //$("#ajaxFormNewPicture").addClass("noDisplay");
                       
-                      $("#ajaxSubmitaddPicture").click(function(){
-        
-                         $("#ajaxFormNewPicture").hide(1000);
-                        
-                      });
-
                       $("#addPicture").click(function(){
                          $("#ajaxFormNewPicture").show(1000);
                       });
@@ -105,6 +110,13 @@
                          
                          <th class="g-px-30">
                             <div class="media">
+                             <div class="d-flex align-self-center">Preview</div>
+
+                           
+                           </div>
+                         </th>
+                         <th class="g-px-30">
+                            <div class="media">
                              <div class="d-flex align-self-center">Edit</div>
 
                            
@@ -113,13 +125,6 @@
                          <th class="g-px-30">
                             <div class="media">
                              <div class="d-flex align-self-center">Delete</div>
-
-                           
-                           </div>
-                         </th>
-                         <th class="g-px-30">
-                            <div class="media">
-                             <div class="d-flex align-self-center">Preview</div>
 
                            
                            </div>
@@ -153,29 +158,29 @@
                            </div>
                          </td>
                          <td class="g-px-30">
-                           {{ $category->created_at->toFormattedDateString() }}
+                           <button type="button" class="btn btn-md u-btn-orange g-mr-10 g-mb-15" id="editPicCategory-{{$picture->id}}">Preview</button>
                          </td>
                          <td class="g-px-30">
                           <div class="row">
                             
                                 <div class="col-md-12">
                     
-                                <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editPicCategory-{{$category->id}}">Edit Category</button>
+                                <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editPicCategory-{{$picture->id}}">Edit Picture</button>
                                 
-                                <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeEditPicCategory',[$category->id]) }}" id="ajaxFormEditPicCategory-{{$category->id}}" style="display: none;">
+                                <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeEditPicture',[$picture->id]) }}" id="ajaxFormEditPicCategory-{{$picture->id}}" style="display: none;">
                                   {{ csrf_field() }}
 
                                   <div class="form-group g-mb-25" >
-                                    <label for="post_title">Category Name</label>
-                                    <input type="text" class="form-control rounded-0 form-control-md" id="pic_ategory_name" name="pic_category_name" value="{{$category->pic_category_name}}" required="">
+                                    <label for="post_title">Picture Name</label>
+                                    <input type="text" class="form-control rounded-0 form-control-md" id="pic_ategory_name" name="pic_category_name" value="{{$picture->picture_name}}" required="">
                                   </div>
                                   <div class="form-group g-mb-25">
                                   <label for="exampleTextarea">Please description this category</label>
-                                  <textarea class="form-control rounded-0 form-control-md"  id="pic_category_description" name="pic_category_description" required="">{{$category->pic_category_description}}</textarea>
+                                  <textarea class="form-control rounded-0 form-control-md"  id="pic_category_description" name="pic_category_description" required="">{{$picture->picture_description}}</textarea>
                                 </div>
                                   <div class="form-group g-mb-25">
-                                   <button type="submit" class="btn btn-success" id="ajaxSubmitEditPicCategory-{{$category->id}}">Update</button>
-                                   <button type="button" class="btn btn-danger" id="ajaxCloseEditPicCategory-{{$category->id}}">Close</button>
+                                   <button type="submit" class="btn btn-success" id="ajaxSubmitEditPicCategory-{{$picture->id}}">Update</button>
+                                   <button type="button" class="btn btn-danger" id="ajaxCloseEditPicCategory-{{$picture->id}}">Close</button>
                                  </div>
                                 </form>
                                 <!-- End General Controls -->
@@ -183,23 +188,23 @@
                                 <script>
                                    jQuery(document).ready(function(){
 
-                                     $("#ajaxFormEditPicCategory-{{$category->id}}").addClass("noDisplay");
+                                     $("#ajaxFormEditPicCategory-{{$picture->id}}").addClass("noDisplay");
                                      
-                                     $("#ajaxSubmitEditPicCategory-{{$category->id}}").click(function(){
-                                        $("#ajaxFormEditPicCategory-{{$category->id}}").hide(1000);
+                                     $("#ajaxSubmitEditPicCategory-{{$picture->id}}").click(function(){
+                                        $("#ajaxFormEditPicCategory-{{$picture->id}}").hide(1000);
                                      });
 
-                                     $("#editPicCategory-{{$category->id}}").click(function(){
-                                        $("#ajaxFormEditPicCategory-{{$category->id}}").show(1000);
+                                     $("#editPicCategory-{{$picture->id}}").click(function(){
+                                        $("#ajaxFormEditPicCategory-{{$picture->id}}").show(1000);
                                      });
 
-                                     $("#ajaxCloseEditPicCategory-{{$category->id}}").click(function(){
-                                        $("#ajaxFormEditPicCategory-{{$category->id}}").hide(1000);
+                                     $("#ajaxCloseEditPicCategory-{{$picture->id}}").click(function(){
+                                        $("#ajaxFormEditPicCategory-{{$picture->id}}").hide(1000);
                                      });
                                   });
 
                                        $(function () {
-                                           $('#ajaxFormEditPicCategory-{{$category->id}}').submit(function (e) {
+                                           $('#ajaxFormEditPicCategory-{{$picture->id}}').submit(function (e) {
                                                e.preventDefault()  // prevent the form from 'submitting'
 
                                                var url = e.target.action  // get the target
@@ -219,7 +224,7 @@
                           <div class="row">
                             
                                 <div class="col-md-3">
-                                  <a href="{{url('admin/deletePicCategory/'. $category->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
+                                  <a href="{{url('admin/deletepicture/'. $picture->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
                                 </div>
                             
                           </div>

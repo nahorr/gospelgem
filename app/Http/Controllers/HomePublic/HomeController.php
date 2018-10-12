@@ -10,6 +10,7 @@ use App\ContactUs;
 use Notification;
 use App\Notifications\ContactFormSubmitted;
 use App\User;
+use App\ManagePicture;
 
 class HomeController extends Controller
 {
