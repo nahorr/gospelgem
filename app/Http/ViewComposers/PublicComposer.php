@@ -20,12 +20,13 @@ Class PublicComposer {
         {
             
         	//initialize number for irregular table numbering
-            $number_init = 1;
+            $number_init = 1686;
 
             //get current date
             $today = Carbon::today();
 
-            $slider1= ManagePicture::where('picture_name', 'slider_1')->first();
+            $site_pictures = ManagePicture::get();
+            
             //dd($slider1);
 
             
@@ -33,7 +34,7 @@ Class PublicComposer {
             $view
             ->with('number_init', $number_init )
             ->with('today', $today)
-            ->with('slider1', $slider1);
+            ->with('site_pictures', $site_pictures);
 
             
 

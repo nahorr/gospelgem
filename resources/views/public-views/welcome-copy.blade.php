@@ -10,24 +10,56 @@
     <section class="g-py-100">
       <div class="container">
         <div class="row no-gutters">
-         @foreach($site_pictures as $picture)
-            @if($picture->picture_category->pic_category_name == 'Info Block - Home')
-              <div class="col-lg-4 g-px-40 g-mb-50 g-mb-0--lg">
-                <!-- Icon Blocks -->
-                <div class="text-center">
+          <div class="col-lg-4 g-px-40 g-mb-50 g-mb-0--lg">
+            <!-- Icon Blocks -->
+            <div class="text-center">
+              <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/welcome/august_2018_program.png')}}" alt="gosgem Live Classes">
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">August 2018 Program</h3>
+              <p class="mb-0">Register Now for the SINACH Mentorship Session commencing August 2018.</p>
+              <hr>
+              <a href="{{url('mentorship')}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15">
+               
+                  <i class="fa fa-check-circle g-mr-3"></i>
+                  MORE INFORMATION
+              
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
 
-                  <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/pictures/'.$picture->picture)}}" alt="gosgem Live Classes">
-                  <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">{{$picture->picture_title}}</h3>
-                  <p class="mb-0">{{$picture->picture_description}}</p>
-                  <hr>
-                  <a href="{{url('/'.$picture->picture_link)}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15"><i class="fa fa-check-circle g-mr-3"></i>MORE INFORMATION</a>
-                </div>
-                <!-- End Icon Blocks -->
-              </div>
-          @endif
-        @endforeach
+          <div class="col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40 g-mb-50 g-mb-0--lg">
+            <!-- Icon Blocks -->
+            <div class="text-center">
+              <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/welcome/who_needs_gosgem.png')}}" alt="gosgem Live Classes">
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">Who Needs GosGem</h3>
+              <p class="mb-0">New artists, and all interested in learning about behind the scene operations.</p>
+              <hr>
+              <a href="{{url('about')}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15">
+                
+                  <i class="fa fa-check-circle g-mr-3"></i>
+                  READ MORE
+                
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
 
-
+          <div class="col-lg-4 g-brd-left--lg g-brd-gray-light-v4 g-px-40">
+            <!-- Icon Blocks -->
+            <div class="text-center">
+              <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/welcome/about_gosgem.png')}}" alt="gosgem Live Classes">
+              <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">About GosGem</h3>
+              <p class="mb-0">Gosgem is an online platform bridging the gap between a minister and the fanbase.</p>
+              <hr>
+              <a href="{{url('about')}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15">
+                
+                  <i class="fa fa-check-circle g-mr-3"></i>
+                  READ ABOUT GOSGEM
+               
+              </a>
+            </div>
+            <!-- End Icon Blocks -->
+          </div>
         </div>
       </div>
     </section>
