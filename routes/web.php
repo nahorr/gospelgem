@@ -124,5 +124,6 @@ Route::group(['middleware' => 'admin'], function () {
   	Route::get('admin/deletePicCategory/{category}', 'Admin\Pictures\CategoryController@deletePicCategory');
     
     //Pictures
-    Route::get('admin/pictures/{category_pics}', 'Admin\Pictures\CategoryController@categoryPictures')->name('categorypictures');
+    Route::get('admin/pictures/{picture_category}', 'Admin\Pictures\CategoryController@categoryPictures')->name('categorypictures');
+    Route::post('admin/storenewpicture/{picture_category}', 'Admin\Pictures\CategoryController@storeNewPicture')->name('storenewpicture');
 });

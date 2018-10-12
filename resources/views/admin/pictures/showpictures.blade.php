@@ -24,24 +24,30 @@
 
                  <header class="g-mb-20">
                    <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
-                    <strong>{{ $category_pics->pic_category_name}} Picture Table</strong>
-                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addPicture">New {{ $category_pics->pic_category_name}} Picture</button>
+                    <strong>{{ $picture_category->pic_category_name}} Picture Table</strong>
+                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addPicture">New {{ $picture_category->pic_category_name}} Picture</button>
                  </h2>
                  </header>
                  <!-- Add Category -->
-                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storeNewPicture') }}" id="ajaxFormNewPicture" style="display: none;">
+                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/storenewpicture', [$picture_category->id]) }}" id="ajaxFormNewPicture" enctype="multipart/form-data" style="display: none;">
                    {{ csrf_field() }}
 
-                   <input type="hidden" id="picture_category_id" name="picture_category_id" value="{{$category_pics->id}}" required="">
+                   <input type="hidden" id="picture_category_id" name="picture_category_id" value="{{$picture_category->id}}" required="">
 
                    <div class="form-group g-mb-25 col-md-3">
-                     <label for="post_title">Picture Name(<no spaces: eg slider_1)</label>
+                     <label for="post_title">Picture Name(<span style="color: red"> No spaces: eg slider_1</span>)</label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="pic_category_name" name="pic_category_name" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Please description this picture</label>
                     <textarea class="form-control rounded-0 form-control-md"  id="pic_category_description" name="pic_category_description" placeholder="Say something like - This Category is for index pictures..." required=""></textarea>
                   </div>
+                  <!-- File Input -->
+                    <div class="form-group g-mb-25 col-md-6">
+                       <input type="file" name="picture" required="">
+                    </div>
+                  
+                  <!-- End File Input -->
                    <div class="form-group g-mb-25 col-md-6">
                     <button type="submit" class="btn btn-success" id="ajaxSubmitaddPicture">Add Picture Category</button>
                     <button type="button" class="btn btn-danger" id="ajaxCloseAddPicture">Close</button>
@@ -70,17 +76,7 @@
                       });
                    });
 
-                        $(function () {
-                            $('#ajaxFormNewPicture').submit(function (e) {
-                                e.preventDefault()  // prevent the form from 'submitting'
-
-                                var url = e.target.action  // get the target
-                                var formData = $(this).serialize() // get form data
-                                $.post(url, formData, function (response) { // send; response.data will be what is returned
-                                    location.reload();
-                                })
-                            })
-                        })
+                      
                     </script>
 
                  <div class="table-responsive g-mb-40">
@@ -106,13 +102,7 @@
                              
                            </div>
                          </th>
-                         <th class="g-px-30">
-                            <div class="media">
-                             <div class="d-flex align-self-center">Preview</div>
-
-                           
-                           </div>
-                         </th>
+                         
                          <th class="g-px-30">
                             <div class="media">
                              <div class="d-flex align-self-center">Edit</div>
@@ -127,12 +117,19 @@
                            
                            </div>
                          </th>
+                         <th class="g-px-30">
+                            <div class="media">
+                             <div class="d-flex align-self-center">Preview</div>
+
+                           
+                           </div>
+                         </th>
                        </tr>
                      </thead>
 
                      <tbody>
 
-                      @foreach($pic_categories as $key => $category)
+                      @foreach($site_pictures as $key => $picture)
                       
                        <tr>
                         <td class="g-px-30">
@@ -142,16 +139,21 @@
                          </td>
                          <td class="g-px-30">
                            <div class="media">
-                             <div class="media-body align-self-center text-left">{{$category->pic_category_name}}</div>
+                             <div class="media-body align-self-center text-left">{{$picture->picture_name}}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
                            <div class="media">
-                             <div class="media-body align-self-center text-left">{{$category->pic_category_description}}</div>
+                             <div class="media-body align-self-center text-left">{{$picture->picture_description}}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
-                           {{$category->created_at->toFormattedDateString()}}
+                           <div class="media">
+                             <div class="media-body align-self-center text-left">{{ $picture->created_at->toFormattedDateString() }}</div>
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           {{ $category->created_at->toFormattedDateString() }}
                          </td>
                          <td class="g-px-30">
                           <div class="row">
