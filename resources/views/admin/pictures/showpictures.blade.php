@@ -303,13 +303,18 @@
                                      <input type="text" class="form-control rounded-0 form-control-md" id="picture_description" name="picture_description" value="{{$picture->picture_description}}" required="">
                                    </div>
                                    <div class="form-group g-mb-25 col-md-12">
-                                     <label for="post_title">Picture Link/URL(<span style="color: red"> Enter full URL</span>)</label>
+                                     <label for="post_title">Picture Link/URL(<span style="color: red"> Enter full URL. Must start will https or http (eg: https://www.totalgrades.org)</span>)</label>
                                      <input type="text" class="form-control rounded-0 form-control-md" id="picture_link" name="picture_link" value="{{$picture->picture_link}}" required="">
                                    </div>
 
                                  @endif
                                                                      
                                   <div class="form-group g-mb-25 col-md-12">
+                                    <label for="post_title">
+                                      <span style="color: red"> You do not have to select a new picture when editing. Only upload a new picture if you wish to change the existing picture</span>
+                                      <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{asset('unify/assets/img/pictures/'.$picture->picture)}}" alt="{{$picture->picture_title}}">
+                                    </label>
+                                    
                                      <input type="file" name="picture">
                                   </div>
                                   <div class="form-group g-mb-25">
