@@ -81,7 +81,7 @@
                        <input type="text" class="form-control rounded-0 form-control-md" id="picture_description" name="picture_description" required="">
                      </div>
                      <div class="form-group g-mb-25 col-md-3">
-                       <label for="post_title">Picture Link/URL(<span style="color: red"> url redirected to when the picture/button is clicked</span>)</label>
+                       <label for="post_title">Picture Link/URL(<span style="color: red"> Enter Full URL</span>)</label>
                        <input type="text" class="form-control rounded-0 form-control-md" id="picture_link" name="picture_link" required="">
                      </div>
 
@@ -303,14 +303,14 @@
                                      <input type="text" class="form-control rounded-0 form-control-md" id="picture_description" name="picture_description" value="{{$picture->picture_description}}" required="">
                                    </div>
                                    <div class="form-group g-mb-25 col-md-12">
-                                     <label for="post_title">Picture Link/URL(<span style="color: red"> url redirected to when the picture/button is clicked</span>)</label>
+                                     <label for="post_title">Picture Link/URL(<span style="color: red"> Enter full URL</span>)</label>
                                      <input type="text" class="form-control rounded-0 form-control-md" id="picture_link" name="picture_link" value="{{$picture->picture_link}}" required="">
                                    </div>
 
                                  @endif
                                                                      
                                   <div class="form-group g-mb-25 col-md-12">
-                                     <input type="file" name="picture" required="">
+                                     <input type="file" name="picture">
                                   </div>
                                   <div class="form-group g-mb-25">
                                    <button type="submit" class="btn btn-success" id="ajaxSubmitEditPicture-{{$picture->id}}">Update</button>

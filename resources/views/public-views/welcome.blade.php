@@ -20,7 +20,7 @@
                   <h3 class="h5 g-color-gray-dark-v2 g-font-weight-600 text-uppercase mb-3">{{$picture->picture_title}}</h3>
                   <p class="mb-0">{{$picture->picture_description}}</p>
                   <hr>
-                  <a href="{{url('/'.$picture->picture_link)}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15"><i class="fa fa-check-circle g-mr-3"></i>MORE INFORMATION</a>
+                  <a href="{{ $picture->picture_link }}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15"><i class="fa fa-check-circle g-mr-3"></i>MORE INFORMATION</a>
                 </div>
                 <!-- End Icon Blocks -->
               </div>
@@ -126,7 +126,7 @@
               <span class="g-font-weight-600 g-font-size-12 text-uppercase"></span>
               <h3 class="h4 g-font-weight-600 mb-0">{{$picture->picture_title}}</h3>
 
-              <a class="u-link-v2" href="{{url('/'.$picture->picture_link)}}"></a>
+              <a class="u-link-v2" href="{{ $picture->picture_link }}"></a>
             </div>
             <!-- End Projects -->
           </div>
