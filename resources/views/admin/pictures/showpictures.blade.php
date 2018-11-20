@@ -344,6 +344,10 @@
 
                          </td>
 
+                         <td class="g-px-30">
+                            <a href="{{url('admin/deletepicture/'. $picture->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
+                         </td>
+
                          <!-- <td class="g-px-30">
                           <div class="row">
                             
