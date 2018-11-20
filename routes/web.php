@@ -128,4 +128,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/storenewpicture/{picture_category}', 'Admin\Pictures\CategoryController@storeNewPicture')->name('storenewpicture');
     Route::post('admin/storeEditPicture/{picture}', 'Admin\Pictures\CategoryController@storeEditPicture');
     Route::get('admin/deletepicture/{picture}', 'Admin\Pictures\CategoryController@deletePicture');
+
+    //Manage Courses and Course categories
 });
