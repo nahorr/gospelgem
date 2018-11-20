@@ -13,62 +13,7 @@
           </li>
           <!-- End Dashboard -->
 
-          <!--manage forum posts and categories-->
-          <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-closed">
-              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu5">
-                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                  <i class="hs-admin-camera"></i>
-                </span>
-                  <span class="media-body align-self-center">Manage gForum</span>
-                  <span class="d-flex align-self-center u-side-nav--control-icon">
-                    <i class="hs-admin-angle-right"></i>
-                  </span>
-                <span class="u-side-nav--has-sub-menu__indicator"></span>
-              </a>
-
-              <!-- UI Components: Submenu -->
-              <ul id="subMenu5" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: none;">
-                
-                  <li>
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/categories')}}" >
-                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                        <i class="hs-admin-package"></i>
-                      </span>
-                      <span class="media-body align-self-center">Forum Categories</span>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/posts')}}" >
-                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                        <i class="hs-admin-check-box"></i>
-                      </span>
-                      <span class="media-body align-self-center">Posts</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/comments')}}" >
-                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                        <i class="hs-admin-comment-alt"></i>
-                      </span>
-                      <span class="media-body align-self-center">Comments</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/replies')}}" >
-                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                        <i class="hs-admin-comments"></i>
-                      </span>
-                      <span class="media-body align-self-center">Replies</span>
-                    </a>
-                  </li>
-
-              </ul>
-              <!-- End UI Components: Submenu -->
-          </li>
-            <!--End manage forum posts and categories-->
+          
 
           <!-- Category-->
           <!-- <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
@@ -138,6 +83,63 @@
           </li>
           <!-- End Contact Form -->
 
+          <!--manage forum posts and categories-->
+          <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-closed">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu5">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                  <i class="hs-admin-comments"></i>
+                </span>
+                  <span class="media-body align-self-center">Manage gForum</span>
+                  <span class="d-flex align-self-center u-side-nav--control-icon">
+                    <i class="hs-admin-angle-right"></i>
+                  </span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+
+              <!-- UI Components: Submenu -->
+              <ul id="subMenu5" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: none;">
+                
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/categories')}}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-package"></i>
+                      </span>
+                      <span class="media-body align-self-center">Forum Categories</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/posts')}}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-check-box"></i>
+                      </span>
+                      <span class="media-body align-self-center">Posts</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/comments')}}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-comment-alt"></i>
+                      </span>
+                      <span class="media-body align-self-center">Comments</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/replies')}}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-comments"></i>
+                      </span>
+                      <span class="media-body align-self-center">Replies</span>
+                    </a>
+                  </li>
+
+              </ul>
+              <!-- End UI Components: Submenu -->
+          </li>
+            <!--End manage forum posts and categories-->
+
            <!-- Manage Pictures-->
           
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-closed">
@@ -175,6 +177,47 @@
                   </li>
                 <!-- End Icons -->
 
+              </ul>
+              <!-- End UI Components: Submenu -->
+            </li>
+
+          <!-- Manage pictures -->
+
+          <!-- Manage Courses-->
+          
+          <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-closed">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                  <i class="hs-admin-book"></i>
+                </span>
+                  <span class="media-body align-self-center">Manage Courses</span>
+                  <span class="d-flex align-self-center u-side-nav--control-icon">
+                    <i class="hs-admin-angle-right"></i>
+                  </span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+
+              <!-- UI Components: Submenu -->
+              <ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: none;">
+                
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/categories')}}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-package"></i>
+                      </span>
+                      <span class="media-body align-self-center">Course Categories</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/categories')}}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-package"></i>
+                      </span>
+                      <span class="media-body align-self-center">Courses</span>
+                    </a>
+                  </li>
+                  
+                  
               </ul>
               <!-- End UI Components: Submenu -->
             </li>
