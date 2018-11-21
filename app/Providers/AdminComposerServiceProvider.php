@@ -28,6 +28,7 @@ class AdminComposerServiceProvider extends ServiceProvider
             'admin.business.units',
             'admin.pictures.categories',
             'admin.pictures.showpictures',
+            'admin.courses.categories',
 
             ], 
             

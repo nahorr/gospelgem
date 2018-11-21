@@ -22,6 +22,7 @@ class CreateCoursesTable extends Migration
             $table->string('course_picture');
             $table->string('course_description');
             $table->string('course_moodle_link')->nullable();
+            $table->string('course_mentor')->nullable();
             $table->timestamps();
         });
     }

@@ -201,7 +201,7 @@
               <ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: none;">
                 
                   <li>
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/categories')}}" >
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/courses/categories')}}" >
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                         <i class="hs-admin-package"></i>
                       </span>
@@ -209,7 +209,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/categories')}}" >
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/courses/showcourses')}}" >
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                         <i class="hs-admin-package"></i>
                       </span>

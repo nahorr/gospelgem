@@ -130,4 +130,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/deletepicture/{picture}', 'Admin\Pictures\CategoryController@deletePicture');
 
     //Manage Courses and Course categories
+    Route::get('admin/courses/categories', 'Admin\Courses\CategoryController@courseCategories');
+    Route::post('admin/courses/storeAddCourseCategory', 'Admin\Courses\CategoryController@storeAddCourseCategory');
+    Route::post('admin/storeEditCourseCategory/{coursecategory}', 'Admin\Courses\CategoryController@storeEditCourseCategory');
+    Route::get('admin/deleteCategory/{coursecategory}', 'Admin\Courses\CategoryController@deleteCourseCategory');
+
 });
