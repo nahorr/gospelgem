@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Admin\Courses;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\CourseCategory;
+use App\Course;
 
 class CategoryController extends Controller
 {
     public function courseCategories(){
 
     	$coursecategories = CourseCategory::get();
+    	$courses = Course::get();
 
-    	return view('admin.courses.categories', compact('coursecategories'));
+    	return view('admin.courses.categories', compact('coursecategories', 'courses'));
     }
 
     public function storeAddCourseCategory(Request $request){

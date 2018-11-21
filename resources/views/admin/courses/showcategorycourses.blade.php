@@ -26,17 +26,17 @@
 
                  <header class="g-mb-20">
                    <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
-                    <strong>Course Category Table</strong>
-                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourseCategory">New Course Category</button>
+                    <strong>{{$coursecategory->course_category_name}} Course Table</strong>
+                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourseCategory">New Course</button>
                  </h2>
                  </header>
                  <!-- Add Category -->
-                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourseCategory') }}" id="ajaxFormAddCourseCategory" style="display: none;">
+                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" style="display: none;">
                    {{ csrf_field() }}
 
                    <div class="form-group g-mb-25 col-md-3">
-                     <label for="post_title">Course Category Name</label>
-                     <input type="text" class="form-control rounded-0 form-control-md" id="course_category" name="course_category_name" required="">
+                     <label for="post_title">Course Name</label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="course_name" name="course_name" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Please description this category</label>
