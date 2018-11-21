@@ -22,7 +22,7 @@
 
                  @include('flash::message')
 
-                 @include('error')
+                 @include('errors.form_error')
 
                  <header class="g-mb-20">
                    <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
@@ -40,7 +40,7 @@
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Please description this category</label>
-                    <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="category_description" placeholder="Say something like - This Category is about..." required=""></textarea>
+                    <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" placeholder="Say something like - This Category is about..." required=""></textarea>
                   </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <button type="submit" class="btn btn-success" id="ajaxSubmitAddCourseCategory">Add Category</button>
@@ -70,17 +70,6 @@
                       });
                    });
 
-                        $(function () {
-                            $('#ajaxFormAddCourseCategory').submit(function (e) {
-                                e.preventDefault()  // prevent the form from 'submitting'
-
-                                var url = e.target.action  // get the target
-                                var formData = $(this).serialize() // get form data
-                                $.post(url, formData, function (response) { // send; response.data will be what is returned
-                                    location.reload();
-                                })
-                            })
-                        })
                     </script>
 
                  <div class="table-responsive g-mb-40">
@@ -190,18 +179,8 @@
                                      });
                                   });
 
-                                       $(function () {
-                                           $('#ajaxFormEditCourseCategory-{{$category->id}}').submit(function (e) {
-                                               e.preventDefault()  // prevent the form from 'submitting'
-
-                                               var url = e.target.action  // get the target
-                                               var formData = $(this).serialize() // get form data
-                                               $.post(url, formData, function (response) { // send; response.data will be what is returned
-                                                   location.reload();
-                                               })
-                                           })
-                                       })
-                                   </script>
+                                       
+                              </script>
                             
                           </div>
 

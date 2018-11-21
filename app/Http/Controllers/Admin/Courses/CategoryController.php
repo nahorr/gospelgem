@@ -36,14 +36,14 @@ class CategoryController extends Controller
 
    public function storeEditCourseCategory(Request $request, CourseCategory $coursecategory){
 
-	   	$coursecategory = CourseCategory::where('id', $coursecategory->id)->first();
+	   	$editcoursecategory = CourseCategory::where('id', $coursecategory->id)->first();
 
-	   	$coursecategory->course_category_name = $request->course_category_name;
-        $coursecategory->course_category_description = $request->course_category_description;
+	   	$editcoursecategory->course_category_name = $request->course_category_name;
+        $editcoursecategory->course_category_description = $request->course_category_description;
 	   	
-	   	$category->save();
+	   	$editcoursecategory->save();
 
-        flash('Course Category Edited successfully!')->success();
+        flash('Course Category updated successfully!')->success();
 
    		return back();
    }
