@@ -19,10 +19,12 @@ class CreateCoursesTable extends Migration
             $table->foreign('course_category_id')->references('id')->on('course_categories')->onDelete('cascade');
             $table->string('course_code');
             $table->string('course_name');
-            $table->string('course_picture');
+            $table->longText('course_picture');
             $table->string('course_description');
             $table->string('course_moodle_link')->nullable();
             $table->string('course_mentor')->nullable();
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
         });
     }

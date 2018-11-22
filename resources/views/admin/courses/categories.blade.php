@@ -127,7 +127,7 @@
                            <div class="media">
                              <div class="media-body align-self-center text-left"> {{$category->course_category_name}} 
 
-                              <a class="btn btn-sm btn-outline-success" href="{{url('admin/courses/showcourses/'. $category->id)}}" role="button"> {{$courses->where('course_category_id', $category->id)->count()}} Courses</a>
+                              <a class="btn btn-sm btn-outline-success" href="{{url('admin/courses/showcategorycourses/'. $category->id)}}" role="button"> {{$courses->where('course_category_id', $category->id)->count()}} Courses</a>
                             </div>
                            </div>
                          </td>

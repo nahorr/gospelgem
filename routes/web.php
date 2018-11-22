@@ -137,5 +137,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/courses/deleteCourseCategory/{coursecategory}', 'Admin\Courses\CategoryController@deleteCourseCategory');
     //courses
     Route::get('admin/courses/showcategorycourses/{coursecategory}', 'Admin\Courses\CourseController@showCourseCategory');
+    Route::post('admin/courses/storeAddCourse', 'Admin\Courses\CourseController@storeAddCourse');
 
 });
