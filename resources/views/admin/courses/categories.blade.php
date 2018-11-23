@@ -40,7 +40,7 @@
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Please description this category</label>
-                    <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" placeholder="Say something like - This Category is about..." required=""></textarea>
+                    <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" required=""></textarea>
                   </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <button type="submit" class="btn btn-success" id="ajaxSubmitAddCourseCategory">Add Category</button>

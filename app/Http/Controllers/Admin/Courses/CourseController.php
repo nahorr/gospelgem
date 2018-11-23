@@ -79,7 +79,7 @@ class CourseController extends Controller
         $edit_course = Course::where('id', $course->id)->first();
 
         $edit_course->course_category_id = $request->course_category_id;
-        $edit_course->course_code = $request->course_code;
+        //$edit_course->course_code = $request->course_code;
         $edit_course->course_name = $request->course_name;
         $edit_course->course_description = $request->course_description;
         $edit_course->course_moodle_link = $request->course_moodle_link;
@@ -110,7 +110,7 @@ class CourseController extends Controller
 
      }
 
-     public function deletePicture(Course $course)
+     public function deleteCourse(Course $course)
 
     {
         Course::where('id', $course->id)->delete();

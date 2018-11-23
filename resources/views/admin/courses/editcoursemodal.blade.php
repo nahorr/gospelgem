@@ -19,7 +19,7 @@
 
             <div class="form-group g-mb-25 col-md-6">
               <label for="post_title">Course Code</label>
-              <input type="text" class="form-control rounded-0 form-control-md" id="course_code" name="course_code" value="{{$course->course_code}}">
+              <input type="text" class="form-control rounded-0 form-control-md" id="course_code" name="course_code" value="{{$course->course_code}}" disabled="">
             </div>
             <div class="form-group g-mb-25 col-md-6">
               <label for="post_title">Course Name</label>
