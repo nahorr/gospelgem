@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-	//protected $fillable = ['course_picture'];
+	protected $dates = ['start_date', 'end_date'];
 
     public function course_category()
     {

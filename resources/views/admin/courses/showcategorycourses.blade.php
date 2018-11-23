@@ -111,9 +111,13 @@
                           <div class="media">
                             <div class="d-flex align-self-center">#</div></div>
                         </th>
+                        <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Course Code</div></div>
+                         </th>
                          <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Category Name</div></div>
+                             <div class="d-flex align-self-center">Course Name</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
@@ -121,9 +125,23 @@
                          </th>
                          <th class="g-px-30">
                            <div class="media">
+                             <div class="d-flex align-self-center">Moodle Link</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Course Picture</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Start Date</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">End Date</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
                              <div class="d-flex align-self-center">Date Added</div>
-
-                             
                            </div>
                          </th>
                          
@@ -166,6 +184,27 @@
                            </div>
                          </td>
                          <td class="g-px-30">
+                           <div class="media">
+                             <div class="media-body align-self-center text-left">{{$course->course_description}}</div>
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           <div class="media">
+                             <div class="media-body align-self-center text-left">{{$course->course_moodle_link}}</div>
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           <div class="media">
+                             <img src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}" class="img-thumbnail" style="max-height: 100px; max-width: 100px">
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           {{$course->start_date->toFormattedDateString()}}
+                         </td>
+                         <td class="g-px-30">
+                           {{$course->end_date->toFormattedDateString()}}
+                         </td>
+                         <td class="g-px-30">
                            {{$course->created_at->toFormattedDateString()}}
                          </td>
                          <td class="g-px-30">
@@ -173,7 +212,7 @@
                             
                                 <div class="col-md-12">
                     
-                                  <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editCourseCategory-{{$course->id}}">Edit Category</button>
+                                  <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editCourseCategory-{{$course->id}}">Edit</button>
                                 
                                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeEditCourseCategory',[$course->id]) }}" id="ajaxFormEditCourseCategory-{{$course->id}}" style="display: none;">
                                   {{ csrf_field() }}
