@@ -56,10 +56,11 @@
                      <label for="post_title">Course Mentor</label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="">
                    </div>
+
                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-20 g-mb-30">
                     <div class="form-group mb-0 g-max-width-400">
                       <div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
-                        <input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Start Date" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y">
+                        <input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Select Start Date" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y" name="course_start_date">
                         <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
                           <i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
                           <i class="hs-admin-angle-down"></i>
@@ -67,6 +68,26 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-20 g-mb-30">
+                    <div class="form-group mb-0 g-max-width-400">
+                      <div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
+                        <input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Select End Date" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y" name="course_end_date">
+                        <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                          <i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
+                          <i class="hs-admin-angle-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- File Input -->
+                    <div class="form-group g-mb-25 col-md-6">
+                       <input type="file" name="picture" required="">
+                    </div>
+                  
+                  <!-- End File Input -->
+
                    <div class="form-group g-mb-25 col-md-6">
                     <button type="submit" class="btn btn-success" id="ajaxSubmitAddCourse">Add Category</button>
                     <button type="button" class="btn btn-danger" id="ajaxCloseAddCourse">Close</button>
