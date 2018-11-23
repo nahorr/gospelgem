@@ -34,7 +34,7 @@
 
   <link rel="stylesheet" href="{{asset('unify/admin-assets/vendor/flatpickr/dist/css/flatpickr.min.css')}}">
   <link rel="stylesheet" href="{{asset('unify/admin-assets/vendor/bootstrap-select/css/bootstrap-select.min.css')}}">
-
+  <link rel="stylesheet" href="{{asset('unify/admin-assets/vendor/flatpickr/dist/css/flatpickr.min.css')}}">
   <link rel="stylesheet" href="{{asset('unify/admin-assets/vendor/chartist-js/chartist.min.css')}}">
   <link rel="stylesheet" href="{{asset('unify/admin-assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.min.css')}}">
@@ -137,20 +137,8 @@
       });
   
       // initialization of range datepicker
-      $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
+      $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
   
-      // initialization of datepicker
-      $.HSCore.components.HSDatepicker.init('#datepicker', {
-        dayNamesMin: [
-          'SU',
-          'MO',
-          'TU',
-          'WE',
-          'TH',
-          'FR',
-          'SA'
-        ]
-      });
   
       // initialization of HSDropdown component
       $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});

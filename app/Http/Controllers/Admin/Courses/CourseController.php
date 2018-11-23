@@ -21,7 +21,7 @@ class CourseController extends Controller
     	$this->validate(request(), [
 
             'course_category_id' => 'required',
-            'course_code' => 'required',
+            'course_code' => 'required|unique:courses',
             'course_name' => 'required',
             'course_picture' => 'required',
             'course_description' => 'required',

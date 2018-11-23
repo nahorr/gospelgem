@@ -26,25 +26,50 @@
 
                  <header class="g-mb-20">
                    <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
-                    <strong>{{$coursecategory->course_category_name}} Course Table</strong>
-                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourseCategory">New Course</button>
+                    <strong>Mentor {{$coursecategory->course_category_name}} Courses</strong>
+                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourse">New Course</button>
                  </h2>
                  </header>
                  <!-- Add Category -->
                  <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" style="display: none;">
                    {{ csrf_field() }}
 
+                   <input type="hidden" name="course_category_id" required="">
+
+                   <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Course Code</label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="course_code" name="course_code" required="">
+                   </div>
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Name</label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_name" name="course_name" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Please description this category</label>
-                    <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" placeholder="Say something like - This Category is about..." required=""></textarea>
+                    <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" required=""></textarea>
+                  </div>
+                  <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Course Moodle Link</label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link" required="">
+                   </div>
+                   <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Course Mentor</label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="">
+                   </div>
+                   <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-20 g-mb-30">
+                    <div class="form-group mb-0 g-max-width-400">
+                      <div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
+                        <input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Start Date" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y">
+                        <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                          <i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
+                          <i class="hs-admin-angle-down"></i>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                    <div class="form-group g-mb-25 col-md-6">
-                    <button type="submit" class="btn btn-success" id="ajaxSubmitAddCourseCategory">Add Category</button>
-                    <button type="button" class="btn btn-danger" id="ajaxCloseAddCourseCategory">Close</button>
+                    <button type="submit" class="btn btn-success" id="ajaxSubmitAddCourse">Add Category</button>
+                    <button type="button" class="btn btn-danger" id="ajaxCloseAddCourse">Close</button>
                   </div>
 
                  </form>
@@ -53,20 +78,20 @@
                  <script>
                     jQuery(document).ready(function(){
 
-                      $("#ajaxFormAddCourseCategory").addClass("noDisplay");
+                      $("#ajaxFormAddCourse").addClass("noDisplay");
                       
-                      $("#ajaxSubmitAddCourseCategory").click(function(){
+                      $("#ajaxSubmitAddCourse").click(function(){
         
-                         $("#ajaxFormAddCourseCategory").hide(1000);
+                         $("#ajaxFormAddCourse").hide(1000);
                         
                       });
 
-                      $("#addCourseCategory").click(function(){
-                         $("#ajaxFormAddCourseCategory").show(1000);
+                      $("#addCourse").click(function(){
+                         $("#ajaxFormAddCourse").show(1000);
                       });
 
-                      $("#ajaxCloseAddCourseCategory").click(function(){
-                         $("#ajaxFormAddCourseCategory").hide(1000);
+                      $("#ajaxCloseAddCourse").click(function(){
+                         $("#ajaxFormAddCourse").hide(1000);
                       });
                    });
 
@@ -115,7 +140,7 @@
 
                      <tbody>
 
-                      @foreach($coursecategories as $key => $category)
+                      @foreach($categorycourses as $key => $course)
                       
                        <tr>
                         <td class="g-px-30">
@@ -125,41 +150,39 @@
                          </td>
                          <td class="g-px-30">
                            <div class="media">
-                             <div class="media-body align-self-center text-left"> {{$category->course_category_name}} 
-
-                              <a class="btn btn-sm btn-outline-success" href="{{url('admin/courses/showcourses/'. $category->id)}}" role="button"> {{$courses->where('course_category_id', $category->id)->count()}} Courses</a>
+                             <div class="media-body align-self-center text-left"> {{$course->course_code}} 
                             </div>
                            </div>
                          </td>
                          <td class="g-px-30">
                            <div class="media">
-                             <div class="media-body align-self-center text-left">{{$category->course_category_description}}</div>
+                             <div class="media-body align-self-center text-left">{{$course->course_name}}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
-                           {{$category->created_at->toFormattedDateString()}}
+                           {{$course->created_at->toFormattedDateString()}}
                          </td>
                          <td class="g-px-30">
                           <div class="row">
                             
                                 <div class="col-md-12">
                     
-                                  <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editCourseCategory-{{$category->id}}">Edit Category</button>
+                                  <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editCourseCategory-{{$course->id}}">Edit Category</button>
                                 
-                                <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeEditCourseCategory',[$category->id]) }}" id="ajaxFormEditCourseCategory-{{$category->id}}" style="display: none;">
+                                <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeEditCourseCategory',[$course->id]) }}" id="ajaxFormEditCourseCategory-{{$course->id}}" style="display: none;">
                                   {{ csrf_field() }}
 
                                   <div class="form-group g-mb-25" >
                                     <label for="post_title">Category Name</label>
-                                    <input type="text" class="form-control rounded-0 form-control-md" id="category_name" name="course_category_name" value="{{$category->course_category_name}}" required="">
+                                    <input type="text" class="form-control rounded-0 form-control-md" id="category_name" name="course_category_name" value="{{$course->course_name}}" required="">
                                   </div>
                                   <div class="form-group g-mb-25">
                                   <label for="exampleTextarea">Please description this category</label>
-                                  <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" required="">{{$category->course_category_description}}</textarea>
+                                  <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" required="">{{$course->course_description}}</textarea>
                                 </div>
                                   <div class="form-group g-mb-25">
-                                   <button type="submit" class="btn btn-success" id="ajaxSubmitEditCourseCategory-{{$category->id}}">Update</button>
-                                   <button type="button" class="btn btn-danger" id="ajaxCloseEditCourseCategory-{{$category->id}}">Close</button>
+                                   <button type="submit" class="btn btn-success" id="ajaxSubmitEditCourseCategory-{{$course->id}}">Update</button>
+                                   <button type="button" class="btn btn-danger" id="ajaxCloseEditCourseCategory-{{$course->id}}">Close</button>
                                  </div>
                                 </form>
                                 <!-- End General Controls -->
@@ -167,18 +190,18 @@
                                 <script>
                                    jQuery(document).ready(function(){
 
-                                     $("#ajaxFormEditCourseCategory-{{$category->id}}").addClass("noDisplay");
+                                     $("#ajaxFormEditCourseCategory-{{$course->id}}").addClass("noDisplay");
                                      
-                                     $("#ajaxSubmitEditCourseCategory-{{$category->id}}").click(function(){
-                                        $("#ajaxFormEditCourseCategory-{{$category->id}}").hide(1000);
+                                     $("#ajaxSubmitEditCourseCategory-{{$course->id}}").click(function(){
+                                        $("#ajaxFormEditCourseCategory-{{$course->id}}").hide(1000);
                                      });
 
-                                     $("#editCourseCategory-{{$category->id}}").click(function(){
-                                        $("#ajaxFormEditCourseCategory-{{$category->id}}").show(1000);
+                                     $("#editCourseCategory-{{$course->id}}").click(function(){
+                                        $("#ajaxFormEditCourseCategory-{{$course->id}}").show(1000);
                                      });
 
-                                     $("#ajaxCloseEditCourseCategory-{{$category->id}}").click(function(){
-                                        $("#ajaxFormEditCourseCategory-{{$category->id}}").hide(1000);
+                                     $("#ajaxCloseEditCourseCategory-{{$course->id}}").click(function(){
+                                        $("#ajaxFormEditCourseCategory-{{$course->id}}").hide(1000);
                                      });
                                   });
 
@@ -193,7 +216,7 @@
                           <div class="row">
                             
                                 <div class="col-md-3">
-                                  <a href="{{url('admin/courses/deleteCourseCategory/'. $category->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
+                                  <a href="{{url('admin/courses/deleteCourseCategory/'. $course->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
                                 </div>
                             
                           </div>
