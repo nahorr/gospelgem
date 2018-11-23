@@ -27,8 +27,8 @@ class CourseController extends Controller
             'course_description' => 'required',
             'course_moodle_link' => 'required',
             'course_mentor' => 'required',
-            'course_start_date' => 'required',
-            'course_end_date' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
         ]);
 
         if($request->hasFile('course_picture')){
@@ -50,8 +50,8 @@ class CourseController extends Controller
             'course_description' => $request->course_description,
             'course_moodle_link' => $request->course_moodle_link,
             'course_mentor' => $request->course_mentor,
-            'course_start_date' => $request->course_start_date,
-            'course_end_date' => $request->course_end_date,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

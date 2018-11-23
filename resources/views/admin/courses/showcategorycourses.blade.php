@@ -31,10 +31,10 @@
                  </h2>
                  </header>
                  <!-- Add Category -->
-                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" style="display: none;">
+                 <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" enctype="multipart/form-data" style="display: none;">
                    {{ csrf_field() }}
 
-                   <input type="hidden" name="course_category_id" required="">
+                   <input type="hidden" name="course_category_id" value="{{$coursecategory->id}}" required="">
 
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Code</label>
@@ -45,8 +45,8 @@
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_name" name="course_name" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
-                    <label for="exampleTextarea">Please description this category</label>
-                    <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" required=""></textarea>
+                    <label for="exampleTextarea">Course Description</label>
+                    <textarea class="form-control rounded-0 form-control-md"  id="course_description" name="course_description" required=""></textarea>
                   </div>
                   <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Moodle Link</label>
@@ -57,33 +57,18 @@
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="">
                    </div>
 
-                   <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-20 g-mb-30">
-                    <div class="form-group mb-0 g-max-width-400">
-                      <div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
-                        <input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Select Start Date" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y" name="course_start_date">
-                        <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-                          <i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-                          <i class="hs-admin-angle-down"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                   <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Course Start Date</label>
+                     <input class="form-control" type="date" value="2011-08-19" name="start_date">
+                   </div>
 
-                  <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-20 g-mb-30">
-                    <div class="form-group mb-0 g-max-width-400">
-                      <div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
-                        <input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Select End Date" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y" name="course_end_date">
-                        <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-                          <i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-                          <i class="hs-admin-angle-down"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
+                   <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Course End Date</label>
+                     <input class="form-control" type="date" value="2011-08-19" name="end_date">
+                   </div>
                   <!-- File Input -->
                     <div class="form-group g-mb-25 col-md-6">
-                       <input type="file" name="picture" required="">
+                       <input type="file" name="course_picture" required="">
                     </div>
                   
                   <!-- End File Input -->
