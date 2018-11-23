@@ -89,7 +89,7 @@
                   <!-- End File Input -->
 
                    <div class="form-group g-mb-25 col-md-6">
-                    <button type="submit" class="btn btn-success" id="ajaxSubmitAddCourse">Add Category</button>
+                    <button type="submit" class="btn btn-success" id="ajaxSubmitAddCourse">Add Course</button>
                     <button type="button" class="btn btn-danger" id="ajaxCloseAddCourse">Close</button>
                   </div>
 
