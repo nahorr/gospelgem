@@ -30,7 +30,7 @@
                     <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourse">New Course</button>
                  </h2>
                  </header>
-                 <!-- Add Category -->
+                 <!-- Add Course -->
                  <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" enctype="multipart/form-data" style="display: none;">
                    {{ csrf_field() }}
 
@@ -207,53 +207,18 @@
                          <td class="g-px-30">
                            {{$course->created_at->toFormattedDateString()}}
                          </td>
+
                          <td class="g-px-30">
-                          <div class="row">
-                            
-                                <div class="col-md-12">
-                    
-                                  <button type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15" id="editCourseCategory-{{$course->id}}">Edit</button>
-                                
-                                <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeEditCourseCategory',[$course->id]) }}" id="ajaxFormEditCourseCategory-{{$course->id}}" style="display: none;">
-                                  {{ csrf_field() }}
+                            <button type="button" class="btn btn-md u-btn-indigo" id="editCourseModalButton-{{$course->id}}">Edit</button>
 
-                                  <div class="form-group g-mb-25" >
-                                    <label for="post_title">Category Name</label>
-                                    <input type="text" class="form-control rounded-0 form-control-md" id="category_name" name="course_category_name" value="{{$course->course_name}}" required="">
-                                  </div>
-                                  <div class="form-group g-mb-25">
-                                  <label for="exampleTextarea">Please description this category</label>
-                                  <textarea class="form-control rounded-0 form-control-md"  id="category_description" name="course_category_description" required="">{{$course->course_description}}</textarea>
-                                </div>
-                                  <div class="form-group g-mb-25">
-                                   <button type="submit" class="btn btn-success" id="ajaxSubmitEditCourseCategory-{{$course->id}}">Update</button>
-                                   <button type="button" class="btn btn-danger" id="ajaxCloseEditCourseCategory-{{$course->id}}">Close</button>
-                                 </div>
-                                </form>
-                                <!-- End General Controls -->
-                               </div> 
-                                <script>
-                                   jQuery(document).ready(function(){
+                            @include('admin.courses.editcoursemodal')
 
-                                     $("#ajaxFormEditCourseCategory-{{$course->id}}").addClass("noDisplay");
-                                     
-                                     $("#ajaxSubmitEditCourseCategory-{{$course->id}}").click(function(){
-                                        $("#ajaxFormEditCourseCategory-{{$course->id}}").hide(1000);
-                                     });
-
-                                     $("#editCourseCategory-{{$course->id}}").click(function(){
-                                        $("#ajaxFormEditCourseCategory-{{$course->id}}").show(1000);
-                                     });
-
-                                     $("#ajaxCloseEditCourseCategory-{{$course->id}}").click(function(){
-                                        $("#ajaxFormEditCourseCategory-{{$course->id}}").hide(1000);
-                                     });
-                                  });
-
-                                       
-                              </script>
-                            
-                          </div>
+                            <script type="text/javascript">
+                              $('#editCourseModalButton-{{$course->id}}').on('click', function(e){
+                                 e.preventDefault();
+                                $('#editCourseModal-{{$course->id}}').modal('show');
+                              })
+                            </script>
 
                          </td>
 
@@ -261,7 +226,7 @@
                           <div class="row">
                             
                                 <div class="col-md-3">
-                                  <a href="{{url('admin/courses/deleteCourseCategory/'. $course->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
+                                  <a href="{{url('admin/courses/deleteCourse/'. $course->id)}}" class="btn btn-md u-btn-darkred" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
                                 </div>
                             
                           </div>
