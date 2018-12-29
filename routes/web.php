@@ -24,6 +24,10 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 	Route::post('/postcontact', 'HomePublic\HomeController@postContact')->name('postcontact');
 	Route::get('/coming-soon', 'HomePublic\HomeController@comingSoon')->name('comingsoon');
 
+  //Courses
+  Route::get('/courses', 'HomePublic\CoursesController@showCourses')->name('courses');
+  Route::get('/showpaymentform/{course}', 'HomePublic\CoursesController@showPaymentForm')->name('courses');
+
 	//GForum
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');
 	Route::get('gforum/category/{category}', 'HomePublic\GForum\GForumController@category')->name('category');

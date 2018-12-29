@@ -76,19 +76,19 @@
                    <table class="table u-table--v3 g-color-black">
                      <thead>
                        <tr>
-                        <th class="g-px-30">
+                        <th >
                           <div class="media">
                             <div class="d-flex align-self-center">#</div></div>
                         </th>
-                         <th class="g-px-30">
+                         <th >
                            <div class="media">
                              <div class="d-flex align-self-center">Category Name</div></div>
                          </th>
-                         <th class="g-px-30">
+                         <th >
                            <div class="media">
                              <div class="d-flex align-self-center">Category Description</div></div>
                          </th>
-                         <th class="g-px-30">
+                         <th >
                            <div class="media">
                              <div class="d-flex align-self-center">Date Added</div>
 
@@ -96,14 +96,14 @@
                            </div>
                          </th>
                          
-                         <th class="g-px-30">
+                         <th >
                             <div class="media">
                              <div class="d-flex align-self-center">Edit</div>
 
                            
                            </div>
                          </th>
-                         <th class="g-px-30">
+                         <th >
                             <div class="media">
                              <div class="d-flex align-self-center">Delete</div>
 
@@ -118,12 +118,12 @@
                       @foreach($coursecategories as $key => $category)
                       
                        <tr>
-                        <td class="g-px-30">
+                        <td >
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{$key+1}}</div>
                            </div>
                          </td>
-                         <td class="g-px-30">
+                         <td >
                            <div class="media">
                              <div class="media-body align-self-center text-left"> {{$category->course_category_name}} 
 
@@ -131,15 +131,15 @@
                             </div>
                            </div>
                          </td>
-                         <td class="g-px-30">
+                         <td >
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{$category->course_category_description}}</div>
                            </div>
                          </td>
-                         <td class="g-px-30">
+                         <td >
                            {{$category->created_at->toFormattedDateString()}}
                          </td>
-                         <td class="g-px-30">
+                         <td >
                           <div class="row">
                             
                                 <div class="col-md-12">
@@ -189,7 +189,7 @@
 
                          </td>
 
-                         <td class="g-px-30">
+                         <td >
                           <div class="row">
                             
                                 <div class="col-md-3">

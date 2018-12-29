@@ -122,6 +122,7 @@
   <script src="{{asset('unify/assets/vendor/hs-bg-video/hs-bg-video.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/hs-bg-video/vendor/player.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/circles/circles.min.js')}}"></script>
 
   <!-- JS Unify -->
   <script src="{{asset('unify/assets/js/hs.core.js')}}"></script>
@@ -138,6 +139,7 @@
   <script src="{{asset('unify/assets/js/helpers/hs.height-calc.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.popup.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.go-to.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.chart-pie.js')}}"></script>
 
   <!-- JS Revolution Slider -->
   <script src="{{asset('unify/assets/vendor/revolution-slider/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
@@ -177,6 +179,13 @@
 
 
         });
+
+
+  $(document).ready(function () {
+    // initialization of chart pies
+    $.HSCore.components.HSChartPie.init('.js-pie');
+  });
+
 
       /*$(document).on("show.bs.modal", '.modal', function (event) {
           console.log("Global show.bs.modal fire");

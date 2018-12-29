@@ -11,7 +11,7 @@
 @include('admin.includes.header')
 
 <main class="container-fluid px-0 g-pt-65">
-    <div class="row no-gutters g-pos-rel g-overflow-x-hidden">
+    <div class="row no-gutters g-pos-rel">
 
         @include('admin.includes.sidebar')
 
@@ -24,12 +24,13 @@
 
                  @include('errors.form_error')
 
-                 <header class="g-mb-20">
+
+                <header class="g-mb-20">
                    <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
                     <strong>Mentor {{$coursecategory->course_category_name}} Courses</strong>
                     <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourse">New Course</button>
-                 </h2>
-                 </header>
+                  </h2>
+                </header>
                  <!-- Add Course -->
                  <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" enctype="multipart/form-data" style="display: none;">
                    {{ csrf_field() }}
@@ -43,6 +44,10 @@
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Name</label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_name" name="course_name" required="">
+                   </div>
+                   <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Price</label>
+                     <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Course Description</label>
@@ -81,7 +86,7 @@
                  </form>
                  <!-- End General Controls -->
                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                 <script>
+                 <script type="text/javascript">
                     jQuery(document).ready(function(){
 
                       $("#ajaxFormAddCourse").addClass("noDisplay");
@@ -101,7 +106,9 @@
                       });
                    });
 
-                    </script>
+                 </script>
+
+  
 
                  <div class="table-responsive g-mb-40">
                    <table class="table u-table--v3 g-color-black">
@@ -121,7 +128,11 @@
                          </th>
                          <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Category Description</div></div>
+                             <div class="d-flex align-self-center">Price(USD)</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Course Description</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
@@ -144,7 +155,6 @@
                              <div class="d-flex align-self-center">Date Added</div>
                            </div>
                          </th>
-                         
                          <th class="g-px-30">
                             <div class="media">
                              <div class="d-flex align-self-center">Edit</div>
@@ -181,6 +191,11 @@
                          <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{$course->course_name}}</div>
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           <div class="media">
+                             <div class="media-body align-self-center text-left"><strong>&dollar;</strong>{{$course->price}}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
@@ -240,7 +255,8 @@
                      </tbody>
                    </table>
                  </div>
-               </div>
+              
+         
 
             @include('admin.includes.footer')
             

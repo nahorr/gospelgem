@@ -20,7 +20,7 @@ class PublicComposerServiceProvider extends ServiceProvider
 
             'layouts.public.includes.header',
             'public-views.welcome',
-            
+            'public-views.courses.showcourses',
             
             
 

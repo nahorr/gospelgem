@@ -5,7 +5,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title pull-left">Modal Header</h4>
+        <h4 class="modal-title pull-left">Editing Course: {{$course->course_name}}</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         
       </div>
@@ -24,6 +24,10 @@
             <div class="form-group g-mb-25 col-md-6">
               <label for="post_title">Course Name</label>
               <input type="text" class="form-control rounded-0 form-control-md" id="course_name" name="course_name" required=""  value="{{$course->course_name}}">
+            </div>
+            <div class="form-group g-mb-25 col-md-6">
+              <label for="post_title">Price(USD)</label>
+              <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" required=""  value="{{$course->price}}">
             </div>
             <div class="form-group g-mb-25 col-md-10">
              <label for="exampleTextarea">Course Description</label>

@@ -24,6 +24,7 @@ class CourseController extends Controller
             'course_category_id' => 'required',
             'course_code' => 'required|unique:courses',
             'course_name' => 'required',
+            'price' => 'required',
             'course_picture' => 'required|mimes:jpeg,jpg,png|max:10000',
             'course_description' => 'required',
             'course_moodle_link' => 'required',
@@ -47,6 +48,7 @@ class CourseController extends Controller
             'course_category_id' => $request->course_category_id,
             'course_code' => $request->course_code,
             'course_name' => $request->course_name,
+            'price' => $request->price,
             'course_picture' => $filename,
             'course_description' => $request->course_description,
             'course_moodle_link' => $request->course_moodle_link,
@@ -68,7 +70,7 @@ class CourseController extends Controller
             'course_category_id' => 'required',
             //'course_code' => 'required|unique:courses',
             'course_name' => 'required',
-            //'course_picture' => 'required|mimes:jpeg,jpg,png|max:10000',
+            'price' => 'required',
             'course_description' => 'required',
             'course_moodle_link' => 'required',
             'course_mentor' => 'required',
@@ -81,6 +83,7 @@ class CourseController extends Controller
         $edit_course->course_category_id = $request->course_category_id;
         //$edit_course->course_code = $request->course_code;
         $edit_course->course_name = $request->course_name;
+        $edit_course->price = $request->price;
         $edit_course->course_description = $request->course_description;
         $edit_course->course_moodle_link = $request->course_moodle_link;
         $edit_course->course_mentor = $request->course_mentor;
