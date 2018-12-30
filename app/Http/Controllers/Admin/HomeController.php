@@ -105,7 +105,7 @@ class HomeController extends Controller
     public function deleteUser(User $user)
 
     {
-    	User::where('id', $user->id)->delete();
+    	User::where('id', $user->id)->forceDelete();
 
     	return back();
     }
