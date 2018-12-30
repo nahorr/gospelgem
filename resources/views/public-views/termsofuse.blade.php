@@ -5,7 +5,7 @@
 	@include('layouts.public.includes.nav-header')
 
     <!-- Promo Block -->
-    <section class="container g-py-10">
+    <section class="container g-py-50">
       <div class="row">
         <div class="col-lg-6">
           <h2 class="g-color-black g-font-weight-700 g-font-size-50 g-line-height-1 mb-4">Terms &amp; Conditions</h2>
