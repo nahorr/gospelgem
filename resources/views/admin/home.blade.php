@@ -23,9 +23,17 @@
                    <table class="table u-table--v3 g-color-black">
                      <thead>
                        <tr>
+                        <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">#</div></div>
+                         </th>
                          <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">Name</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Email</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
@@ -67,6 +75,7 @@
                       @foreach($users as $key => $user)
                       @if($user->id > 1)
                        <tr>
+                        <td class="g-px-30">{{$key+1}}</td>
                          <td class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">
@@ -76,6 +85,7 @@
                              <div class="media-body align-self-center text-left">{{$user->name}}</div>
                            </div>
                          </td>
+                         <td class="g-px-30">{{$user->email}}</td>
                          <td class="g-px-30">
 
                           @If($user->is_admin == 1)
