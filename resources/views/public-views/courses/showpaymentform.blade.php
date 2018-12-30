@@ -6,7 +6,7 @@
 
 <!-- Our Pricing -->
     <section class="g-bg-secondary g-py-100">
-      <div class="container">
+      <div class="container" style="border: 10px solid #dcac10; border-radius: 10px; ">
         <header class="text-center g-width-60x--md mx-auto g-mb-60">
           <div class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
             <h2 class="h3 u-heading-v2__title g-color-gray-dark-v2 text-uppercase g-font-weight-600">{{ $course->course_name }}</h2>
@@ -21,13 +21,13 @@
               <div class="col-lg-6 g-mb-40">
                 <i class="icon-education-197 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Instructor</h4>
-                <p class="mb-0">Curabitur sit amet fringilla mi. Etiam ac massa sit amet nulla eleifend rutrum vitae non sem.</p>
+                <p class="mb-0">Course instructor: Sinach Joseph</p>
               </div>
 
               <div class="col-lg-6 g-mb-40">
                 <i class="icon-education-127 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Venue</h4>
-                <p class="mb-0">Aenean volutpat erat quis mollis accumsan. Mauris at cursus ipsum. Praesent molestie imperdiet.</p>
+                <p class="mb-0">Venue: 55 Westlynn Spur, Claresholm Alberta</p>
               </div>
             </div>
             <!-- End Row -->
@@ -37,13 +37,14 @@
               <div class="col-lg-6 g-mb-40 g-mb-0--lg">
                 <i class="icon-finance-035 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Date and Time</h4>
-                <p class="mb-0">Curabitur sit amet fringilla mi. Etiam ac massa sit amet nulla eleifend rutrum vitae non sem.</p>
+                <p class="mb-0">Start Date: {{$course->start_date->toFormattedDateString()}}</p>
+                <p class="mb-0">End Date: {{$course->end_date->toFormattedDateString()}}</p>
               </div>
 
               <div class="col-lg-6 g-mb-40 g-mb-0--lg">
                 <i class="icon-finance-114 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Cost</h4>
-                <p class="mb-0">Aenean volutpat erat quis mollis accumsan. Mauris at cursus ipsum. Praesent molestie imperdiet.</p>
+                <p class="mb-0">Cost/Participant: {{$course->price}}</p>
               </div>
             </div>
             <!-- End Row -->
