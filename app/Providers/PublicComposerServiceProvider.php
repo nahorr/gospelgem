@@ -21,7 +21,9 @@ class PublicComposerServiceProvider extends ServiceProvider
             'layouts.public.includes.header',
             'public-views.welcome',
             'public-views.courses.showcourses',
-            
+            'public-views.courses.showpaymentform',
+            'public-views.policy',
+            'public-views.termsofuse',
             
 
             ], 

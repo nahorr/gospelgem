@@ -103,7 +103,7 @@
 
                 <!-- Gosgem Live -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{url('courses')}}" target="_blank">Courses</a>
+                  <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{url('courses')}}">Courses</a>
                 </li>
                 <!-- End Gosgem live -->
 

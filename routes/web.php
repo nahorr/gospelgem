@@ -26,7 +26,7 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
   //Courses
   Route::get('/courses', 'HomePublic\CoursesController@showCourses')->name('courses');
-  Route::get('/showpaymentform/{course}', 'HomePublic\CoursesController@showPaymentForm')->name('courses');
+  Route::get('/showpaymentform/{course}', 'HomePublic\CoursesController@showPaymentForm')->name('payment');
 
 	//GForum
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');
@@ -44,6 +44,9 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
 Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
 
+//Policy and terms of use
+Route::get('/policy', 'HomePublic\PolicyAndTermsOfUseController@policy');
+Route::get('/termsofuse', 'HomePublic\PolicyAndTermsOfUseController@termsOfUse');
 
 //Private Area
 Route::group(['middleware' => 'auth'], function () {
@@ -80,6 +83,10 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('gforum/comments/editreplycomment/{reply}', 'GForum\CommentReplyController@editReplyComment');
 		Route::post('gforum/comments/storeeditreplycomment/{reply}', 'GForum\CommentReplyController@storeEditReplyComment');
 		Route::get('gforum/comments/deletereplycomment/{reply}', 'GForum\CommentReplyController@deleteReplyComment');
+
+    //course registration
+    //Route::get('/showpaymentform/{course}', 'CoursesController@showPaymentForm')->name('payment');
+    Route::get('/courses/registrations', 'CoursesController@registrations')->name('registrations');
 });
 
 

@@ -14,7 +14,7 @@
             <div class="text-center">
               <h2 class="h3 g-color-black text-uppercase mb-2">Courses</h2>
               <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
-              <p class="lead mb-0">The Mentorship Program is our flagship platform; a forum where we create a digital relationship between you, and our headlined mentor for the program in an academic structure.</p><hr>
+              <p class="lead mb-0">The Online mentorship program is one of our platform to fulfill our purpose; where we can serve a global audience of Christian artists, who wish to kickstart their musical career through quality mentorship and trainings.</p><hr>
             </div>
             <!-- End Heading -->
           </div>
@@ -35,7 +35,7 @@
                 <div class="g-mb-30">
                   <h3 class="h4 g-color-black g-font-weight-600 mb-3">
 
-                    <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="#!">{{ $course->course_name }}</a>
+                    <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="#!">{{ $course->course_name }} <span> - by {{ $course->course_category->course_category_name }}</span></a>
 
                   </h3>
                   <p>{{$course->course_description}}</p>
@@ -52,7 +52,7 @@
                     <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
                   </div>
                   <div class="d-block align-self-center ml-auto text-center">
-                    <a class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('showpaymentform/'.$course->id) }}">Register Now</a>
+                    <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showpaymentform/'.$course->id) }}">Enrol Now</a>
                   </div>
                 </div>
               </div>
@@ -71,7 +71,7 @@
           <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
           <p class="lead mb-0">The Online mentorship program is one of our platform to fulfill our purpose; where we can serve a global audience of Christian artists, who wish to kickstart their musical career through quality mentorship and trainings.</p><hr>
           <p>
-            <a href="{{url('CONTACT')}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15">CONTACT US</a>
+            <a href="{{url('contact')}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15">CONTACT US</a>
           </p>
         </div>
         <!-- End Heading -->
