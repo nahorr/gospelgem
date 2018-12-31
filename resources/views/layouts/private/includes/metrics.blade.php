@@ -60,18 +60,19 @@
           <div class="media">
             <div class="d-flex g-mr-15">
               <div class="u-header-dropdown-icon-v1 g-pos-rel g-width-60 g-height-60 g-bg-teal-v2 g-font-size-18 g-font-size-24--md g-color-white rounded-circle">
-                <i class="hs-admin-check-box g-absolute-centered"></i>
+                <i class="hs-admin-comments g-absolute-centered"></i>
               </div>
             </div>
-
+            <a href="{{url('/gforum')}}">
             <div class="media-body align-self-center">
               <div class="d-flex align-items-center g-mb-5">
-                <span class="g-font-size-24 g-line-height-1 g-color-black">You have added {{$user_posts->count()}}</span>
+                <span class="g-font-size-24 g-line-height-1 g-color-black">GForum</span>
                 
               </div>
 
-              <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Posts So Far</h6>
+              <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Forum Page</h6>
             </div>
+            </a>
           </div>
         </div>
       </div>
@@ -85,18 +86,20 @@
           <div class="media">
             <div class="d-flex g-mr-15">
               <div class="u-header-dropdown-icon-v1 g-pos-rel g-width-60 g-height-60 g-bg-darkblue-v2 g-font-size-18 g-font-size-24--md g-color-white rounded-circle">
-                <i class="hs-admin-wallet g-absolute-centered"></i>
+                <i class="hs-admin-book g-absolute-centered"></i>
               </div>
             </div>
 
+            <a href="{{url('/courses')}}">
             <div class="media-body align-self-center">
               <div class="d-flex align-items-center g-mb-5">
-                <span class="g-font-size-24 g-line-height-1 g-color-black">You have made {{$user_comments->count()}} Comments</span>
+                <span class="g-font-size-24 g-line-height-1 g-color-black">Courses</span>
                 
               </div>
 
-              <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">and replied to {{$user_replies->count()}} comments</h6>
+              <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">View Course</h6>
             </div>
+            </a>
           </div>
         </div>
       </div>
@@ -110,18 +113,18 @@
           <div class="media">
             <div class="d-flex g-mr-15">
               <div class="u-header-dropdown-icon-v1 g-pos-rel g-width-60 g-height-60 g-bg-lightred-v2 g-font-size-18 g-font-size-24--md g-color-white rounded-circle">
-                <a href="{{url('gforum')}}"><span style="color: white;"><i class="hs-admin-home g-absolute-centered"></i></span></a>
+                <a href="{{url('/')}}"><span style="color: white;"><i class="hs-admin-home g-absolute-centered"></i></span></a>
               </div>
             </div>
-            <a href="{{url('gforum')}}">
+            <a href="{{url('/')}}">
               <span style="color: darkgreen;">
               <div class="media-body align-self-center">
                 <div class="d-flex align-items-center g-mb-5">
-                  <span class="g-font-size-24 g-line-height-1 g-color-black">Visit GForum Home</span>
+                  <span class="g-font-size-24 g-line-height-1 g-color-black">Home</span>
                
                 </div>
 
-                <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">GForum {{\App\Post::count()}} posts and counting...</h6>
+                <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Gosgem Home</h6>
               </div>
               </span>
             </a>

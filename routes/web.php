@@ -26,7 +26,7 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
   //Courses
   Route::get('/courses', 'HomePublic\CoursesController@showCourses')->name('courses');
-  Route::get('/showpaymentform/{course}', 'HomePublic\CoursesController@showPaymentForm')->name('payment');
+  Route::get('/showcoursedetails/{course}', 'HomePublic\CoursesController@showCourseDetails')->name('payment');
 
 	//GForum
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');

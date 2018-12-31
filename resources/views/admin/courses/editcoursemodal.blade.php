@@ -26,30 +26,46 @@
               <input type="text" class="form-control rounded-0 form-control-md" id="course_name" name="course_name" required=""  value="{{$course->course_name}}">
             </div>
             <div class="form-group g-mb-25 col-md-6">
+              <label for="post_title">Course Mentor</label>
+              <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="" value="{{$course->course_mentor}}">
+            </div>
+            <div class="form-group g-mb-25 col-md-6">
               <label for="post_title">Price(USD)</label>
               <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" required=""  value="{{$course->price}}">
+            </div>
+            <div class="form-group g-mb-25 col-md-10">
+              <label for="paystack_link">Paystack Link</label>
+              <input type="text" class="form-control rounded-0 form-control-md" id="paystack_link" name="paystack_link" value="{{$course->paystack_link}}">
             </div>
             <div class="form-group g-mb-25 col-md-10">
              <label for="exampleTextarea">Course Description</label>
              <textarea class="form-control rounded-0 form-control-md"  id="course_description" name="course_description" required=""> {{$course->course_description}}</textarea>
            </div>
            <div class="form-group g-mb-25 col-md-10">
+              <label for="course_venue">Venue</label>
+             <textarea class="form-control rounded-0 form-control-md"  id="course_venue" name="course_venue" required=""> {{$course->course_venue}}</textarea>
+            </div>
+           <div class="form-group g-mb-25 col-md-10">
               <label for="post_title">Course Moodle Link</label>
               <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link" required="" value="{{$course->course_moodle_link}}">
             </div>
-            <div class="form-group g-mb-25 col-md-6">
-              <label for="post_title">Course Mentor</label>
-              <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="" value="{{$course->course_mentor}}">
-            </div>
+            
 
             <div class="form-group g-mb-25 col-md-6">
               <label for="post_title">Course Start Date</label>
               <input class="form-control" type="date"  name="start_date" value="{{$course->start_date->format('Y-m-d')}}">
             </div>
-
+            <div class="form-group g-mb-25 col-md-6">
+              <label for="post_title">Start Time</label>
+              <input class="form-control" type="time"  name="start_time" value="{{$course->start_time}}">
+            </div>
             <div class="form-group g-mb-25 col-md-6">
               <label for="post_title">Course End Date</label>
               <input class="form-control" type="date" name="end_date" value="{{$course->end_date->format('Y-m-d')}}">
+            </div>
+            <div class="form-group g-mb-25 col-md-6">
+              <label for="">End Time</label>
+              <input class="form-control" type="time"  name="end_time" value="{{$course->end_time}}">
             </div>
            <!-- File Input -->
              <div class="form-group g-mb-25 col-md-6">

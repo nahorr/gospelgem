@@ -49,6 +49,7 @@ class CourseController extends Controller
             'course_code' => $request->course_code,
             'course_name' => $request->course_name,
             'price' => $request->price,
+            'paystack_link' => $request->paystack_link,
             'course_picture' => $filename,
             'course_description' => $request->course_description,
             'course_venue' => $request->course_venue,
@@ -87,6 +88,7 @@ class CourseController extends Controller
         //$edit_course->course_code = $request->course_code;
         $edit_course->course_name = $request->course_name;
         $edit_course->price = $request->price;
+        $edit_course->paystack_link = $request->paystack_link;
         $edit_course->course_description = $request->course_description;
         $edit_course->course_venue = $request->course_venue;
         $edit_course->course_moodle_link = $request->course_moodle_link;

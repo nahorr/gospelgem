@@ -16,9 +16,9 @@ class CoursesController extends Controller
     	return view('public-views.courses.showcourses', compact('courses'));
     }
 
-    public function showPaymentForm(Course $course)
+    public function showCourseDetails(Course $course)
     {
 
-    	return view('public-views.courses.showpaymentform', compact('course'));
+    	return view('public-views.courses.showcoursedetails', compact('course'));
     }
 }

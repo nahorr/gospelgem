@@ -208,14 +208,14 @@
                       <span class="media-body align-self-center">Course Categories</span>
                     </a>
                   </li>
-                  <li>
+                  <!-- <li>
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/courses/showcourses')}}" >
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                        <i class="hs-admin-package"></i>
+                        <i class="hs-admin-book"></i>
                       </span>
                       <span class="media-body align-self-center">Courses</span>
                     </a>
-                  </li>
+                  </li> -->
                   
                   
               </ul>

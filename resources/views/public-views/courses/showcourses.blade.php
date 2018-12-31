@@ -35,7 +35,7 @@
                 <div class="g-mb-30">
                   <h3 class="h4 g-color-black g-font-weight-600 mb-3">
 
-                    <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="#!">{{ $course->course_name }} <span> - by {{ $course->course_category->course_category_name }}</span></a>
+                    <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="#!">{{ $course->course_name }} <span> - by {{ $course->course_mentor }}</span></a>
 
                   </h3>
                   <p>{{$course->course_description}}</p>
@@ -52,7 +52,7 @@
                     <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
                   </div>
                   <div class="d-block align-self-center ml-auto text-center">
-                    <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showpaymentform/'.$course->id) }}">Enrol Now</a>
+                    <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
                   </div>
                 </div>
               </div>

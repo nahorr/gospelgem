@@ -21,13 +21,13 @@
               <div class="col-lg-6 g-mb-40">
                 <i class="icon-education-197 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Instructor</h4>
-                <p class="mb-0">Course instructor: Sinach Joseph</p>
+                <p class="mb-0">Course instructor: {{ $course->course_name }}</p>
               </div>
 
               <div class="col-lg-6 g-mb-40">
                 <i class="icon-education-127 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Venue</h4>
-                <p class="mb-0">Venue: 55 Westlynn Spur, Claresholm Alberta</p>
+                <p class="mb-0">Venue: {{ $course->course_venue }}</p>
               </div>
             </div>
             <!-- End Row -->
@@ -37,14 +37,20 @@
               <div class="col-lg-6 g-mb-40 g-mb-0--lg">
                 <i class="icon-finance-035 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Date and Time</h4>
-                <p class="mb-0">Start Date: {{$course->start_date->toFormattedDateString()}}</p>
+                <p class="mb-0">Start Date: {{$course->start_date->toFormattedDateString()}}
+                  <span>
+                    <a class="u-tags-v1 g-color-pink g-brd-around g-brd-pink g-bg-pink--hover g-color-white--hover g-rounded-50 g-py-4 g-px-15" href="#!">
+                        <i class="fa fa-clock-o mr-1"></i>{{ date('h:i A', strtotime($course->start_time)) }}
+                      </a>
+                  </span>
+                </p>
                 <p class="mb-0">End Date: {{$course->end_date->toFormattedDateString()}}</p>
               </div>
 
               <div class="col-lg-6 g-mb-40 g-mb-0--lg">
                 <i class="icon-finance-114 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Cost</h4>
-                <p class="mb-0">Cost/Participant: {{$course->price}}</p>
+                <p class="mb-0">Cost/Participant: ${{$course->price}}</p>
               </div>
             </div>
             <!-- End Row -->
@@ -76,6 +82,14 @@
       </div>
     </section>
     <!-- End Our Pricing -->
+
+    <section class="g-brd-top g-brd-bottom g-brd-gray-light-v4">
+      <div class="container text-center g-py-50--md g-py-20">
+        <h2 class="h2 text-uppercase g-font-weight-300">Contact Us!</h2>
+        <p class="lead g-px-100--md g-mb-20">Please do contact us if you have any questions</p>
+        <a class="btn btn-md u-btn-primary rounded-0" href="{{url('contact')}}">Get in touch</a>
+      </div>
+    </section>
 
 @include('layouts.public.includes.footer')
 

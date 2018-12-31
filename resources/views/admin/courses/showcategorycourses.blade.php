@@ -53,7 +53,10 @@
                      <label for="post_title">Price</label>
                      <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" required="">
                    </div>
-
+                   <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Paystack Link</label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="paystack_link" name="paystack_link">
+                   </div>
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Course Description</label>
                     <textarea class="form-control rounded-0 form-control-md"  id="course_description" name="course_description" required=""></textarea>
@@ -136,10 +139,10 @@
                           <div class="media">
                             <div class="d-flex align-self-center">#</div></div>
                         </th>
-                        <th class="g-px-30">
+                        <!-- <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">Code</div></div>
-                         </th>
+                         </th> -->
                          <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">Name</div></div>
@@ -152,7 +155,7 @@
                            <div class="media">
                              <div class="d-flex align-self-center">Price</div></div>
                          </th>
-                         <th class="g-px-30">
+                         <!-- <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">Description</div></div>
                          </th>
@@ -167,7 +170,7 @@
                          <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">Picture</div></div>
-                         </th>
+                         </th>-->
                          <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">Start Date</div></div>
@@ -176,7 +179,7 @@
                            <div class="media">
                              <div class="d-flex align-self-center">Start Time</div></div>
                          </th>
-                         <th class="g-px-30">
+                         <!-- <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">End Date</div></div>
                          </th>
@@ -188,10 +191,10 @@
                            <div class="media">
                              <div class="d-flex align-self-center">Date Added</div>
                            </div>
-                         </th>
+                         </th>  -->
                          <th class="g-px-30">
                             <div class="media">
-                             <div class="d-flex align-self-center">Edit</div>
+                             <div class="d-flex align-self-center">View/Edit</div>
 
                            
                            </div>
@@ -216,12 +219,12 @@
                              <div class="media-body align-self-center text-left">{{$key+1}}</div>
                            </div>
                          </td>
-                         <td class="g-px-30">
+                         <!-- <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left"> {{$course->course_code}} 
                             </div>
                            </div>
-                         </td>
+                         </td> -->
                          <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{$course->course_name}}</div>
@@ -237,7 +240,7 @@
                              <div class="media-body align-self-center text-left"><strong>&dollar;</strong>{{$course->price}}</div>
                            </div>
                          </td>
-                         <td class="g-px-30">
+                         <!-- <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{$course->course_description}}</div>
                            </div>
@@ -256,14 +259,14 @@
                            <div class="media">
                              <img src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}" class="img-thumbnail" style="max-height: 100px; max-width: 100px">
                            </div>
-                         </td>
+                         </td> -->
                          <td class="g-px-30">
                            {{$course->start_date->toFormattedDateString()}}
                          </td>
                          <td class="g-px-30">
                            {{ date('h:i A', strtotime($course->start_time)) }}
                          </td>
-                         <td class="g-px-30">
+                         <!-- <td class="g-px-30">
                            {{ $course->end_date->toFormattedDateString() }}
                          </td>
                          <td class="g-px-30">
@@ -271,10 +274,10 @@
                          </td>
                          <td class="g-px-30">
                            {{$course->created_at->toFormattedDateString()}}
-                         </td>
+                         </td> -->
 
                          <td class="g-px-30">
-                            <button type="button" class="btn btn-md u-btn-indigo" id="editCourseModalButton-{{$course->id}}">Edit</button>
+                            <button type="button" class="btn btn-md u-btn-indigo" id="editCourseModalButton-{{$course->id}}">View/Edit</button>
 
                             @include('admin.courses.editcoursemodal')
 
