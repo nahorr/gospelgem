@@ -166,7 +166,7 @@
                                               
             dialogsInBody: true,
             
-            maximumImageFileSize: 500*1024, // 500 KB
+            maximumImageFileSize: 10000*1024, // 10000 KB
 
             callbacks:{ 
 

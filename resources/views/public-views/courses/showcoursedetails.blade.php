@@ -28,6 +28,13 @@
                 <i class="icon-education-127 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Venue</h4>
                 <p class="mb-0">Venue: {{ $course->course_venue }}</p>
+                @if($course->course_moodle_link != null)
+                  <p class="mb-0">
+                    <a href="{{ $course->course_moodle_link }}" class="btn btn-sm u-btn-outline-lightred u-btn-hover-v2-1 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 rounded-0 g-mr-10 g-mb-15" target="_blank">
+                      <i class="fa fa-book g-mr-3"></i>View Course
+                    </a>
+                  </p>
+                @endif
               </div>
             </div>
             <!-- End Row -->

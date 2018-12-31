@@ -47,7 +47,7 @@
             </div>
            <div class="form-group g-mb-25 col-md-10">
               <label for="post_title">Course Moodle Link</label>
-              <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link" required="" value="{{$course->course_moodle_link}}">
+              <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link" value="{{$course->course_moodle_link}}">
             </div>
             
 
