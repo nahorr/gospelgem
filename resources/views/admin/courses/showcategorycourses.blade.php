@@ -46,20 +46,27 @@
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_name" name="course_name" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Course Mentor</label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="">
+                   </div>
+                   <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Price</label>
                      <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" required="">
                    </div>
+
                    <div class="form-group g-mb-25 col-md-6">
                     <label for="exampleTextarea">Course Description</label>
                     <textarea class="form-control rounded-0 form-control-md"  id="course_description" name="course_description" required=""></textarea>
                   </div>
+
+                  <div class="form-group g-mb-25 col-md-6">
+                    <label for="course_venue">Venue</label>
+                    <textarea class="form-control rounded-0 form-control-md"  id="course_venue" name="course_venue" required=""></textarea>
+                  </div>
+
                   <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Moodle Link</label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link" required="">
-                   </div>
-                   <div class="form-group g-mb-25 col-md-3">
-                     <label for="post_title">Course Mentor</label>
-                     <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="">
                    </div>
 
                    <div class="form-group g-mb-25 col-md-3">
@@ -68,9 +75,20 @@
                    </div>
 
                    <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Start Time</label>
+                     <input class="form-control" type="time" value="13:45" name="start_time">
+                   </div>
+
+                   <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course End Date</label>
                      <input class="form-control" type="date" value="2011-08-19" name="end_date">
                    </div>
+
+                   <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">End Time</label>
+                     <input class="form-control" type="time" value="13:45" name="end_time">
+                   </div>
+
                   <!-- File Input -->
                     <div class="form-group g-mb-25 col-md-6">
                        <input type="file" name="course_picture" required="">
@@ -120,19 +138,27 @@
                         </th>
                         <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Course Code</div></div>
+                             <div class="d-flex align-self-center">Code</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Course Name</div></div>
+                             <div class="d-flex align-self-center">Name</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Price(USD)</div></div>
+                             <div class="d-flex align-self-center">Mentor</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Course Description</div></div>
+                             <div class="d-flex align-self-center">Price</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Description</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Venue</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
@@ -140,15 +166,23 @@
                          </th>
                          <th class="g-px-30">
                            <div class="media">
-                             <div class="d-flex align-self-center">Course Picture</div></div>
+                             <div class="d-flex align-self-center">Picture</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">Start Date</div></div>
                          </th>
+                          <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">Start Time</div></div>
+                         </th>
                          <th class="g-px-30">
                            <div class="media">
                              <div class="d-flex align-self-center">End Date</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
+                             <div class="d-flex align-self-center">End Time</div></div>
                          </th>
                          <th class="g-px-30">
                            <div class="media">
@@ -195,12 +229,22 @@
                          </td>
                          <td class="g-px-30">
                            <div class="media">
+                             <div class="media-body align-self-center text-left">{{$course->course_mentor}}</div>
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           <div class="media">
                              <div class="media-body align-self-center text-left"><strong>&dollar;</strong>{{$course->price}}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{$course->course_description}}</div>
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           <div class="media">
+                             <div class="media-body align-self-center text-left">{{$course->course_venue}}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
@@ -217,7 +261,13 @@
                            {{$course->start_date->toFormattedDateString()}}
                          </td>
                          <td class="g-px-30">
-                           {{$course->end_date->toFormattedDateString()}}
+                           {{ date('h:i A', strtotime($course->start_time)) }}
+                         </td>
+                         <td class="g-px-30">
+                           {{ $course->end_date->toFormattedDateString() }}
+                         </td>
+                         <td class="g-px-30">
+                           {{ date('h:i A', strtotime($course->end_time)) }}
                          </td>
                          <td class="g-px-30">
                            {{$course->created_at->toFormattedDateString()}}

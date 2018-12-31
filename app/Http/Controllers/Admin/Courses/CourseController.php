@@ -51,10 +51,13 @@ class CourseController extends Controller
             'price' => $request->price,
             'course_picture' => $filename,
             'course_description' => $request->course_description,
+            'course_venue' => $request->course_venue,
             'course_moodle_link' => $request->course_moodle_link,
             'course_mentor' => $request->course_mentor,
             'start_date' => $request->start_date,
+            'start_time' => $request->start_time,
             'end_date' => $request->end_date,
+            'end_time' => $request->end_time,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -85,10 +88,13 @@ class CourseController extends Controller
         $edit_course->course_name = $request->course_name;
         $edit_course->price = $request->price;
         $edit_course->course_description = $request->course_description;
+        $edit_course->course_venue = $request->course_venue;
         $edit_course->course_moodle_link = $request->course_moodle_link;
         $edit_course->course_mentor = $request->course_mentor;
         $edit_course->start_date = $request->start_date;
+        $edit_course->start_time = $request->start_time;
         $edit_course->end_date = $request->end_date;
+        $edit_course->end_time = $request->end_time;
         
         if($request->hasFile('course_picture')){
             $course_picture = $request->file('course_picture');
