@@ -35,7 +35,7 @@
                 <div class="g-mb-30">
                   <h3 class="h4 g-color-black g-font-weight-600 mb-3">
 
-                    <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="#!">{{ $course->course_name }} <span> - by {{ $course->course_mentor }}</span></a>
+                    <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
 
                   </h3>
                   <p>{{$course->course_description}}</p>
