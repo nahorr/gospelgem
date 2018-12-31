@@ -72,7 +72,7 @@
                     </div>
 
                     <p class="g-mb-30">Course starting soon. Order now to reserve your seat. </p>
-                    <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30" href="https://paystack.com/pay/yr9c4o6l2y">Order Now</a>
+                    <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30" href="{{ $course->paystack_link}}">Order Now</a>
                   </div>
                   <!-- End Article Content -->
                 </article>
@@ -83,13 +83,19 @@
     </section>
     <!-- End Our Pricing -->
 
-    <section class="g-brd-top g-brd-bottom g-brd-gray-light-v4">
-      <div class="container text-center g-py-50--md g-py-20">
-        <h2 class="h2 text-uppercase g-font-weight-300">Contact Us!</h2>
-        <p class="lead g-px-100--md g-mb-20">Please do contact us if you have any questions</p>
-        <a class="btn btn-md u-btn-primary rounded-0" href="{{url('contact')}}">Get in touch</a>
+     <!-- Heading -->
+     <section class="g-bg-secondary">
+        <div class="text-center">
+          <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
+          <p class="lead mb-0">Please do contact us if you have any questions. We will be happy to help you.</p><hr>
+          <p>
+            <a href="{{url('contact')}}" class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15">CONTACT US</a>
+          </p>
+        </div>
+        <!-- End Heading -->
       </div>
     </section>
+    <!-- End Icon Blocks -->
 
 @include('layouts.public.includes.footer')
 
