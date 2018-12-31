@@ -21,7 +21,7 @@
               <div class="col-lg-6 g-mb-40">
                 <i class="icon-education-197 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Instructor</h4>
-                <p class="mb-0">Course instructor: {{ $course->course_name }}</p>
+                <p class="mb-0">Course instructor: {{ $course->course_mentor }}</p>
               </div>
 
               <div class="col-lg-6 g-mb-40">
