@@ -20,7 +20,7 @@
 
                   @elseif(@$user_details->dob == null)
 
-                    <span style="color: darkred">Profile Incomplete!</span>
+                    <span style="color: darkred">Profile</span>
 
                   @else
 
@@ -37,7 +37,7 @@
 
                 @elseif(@$user_details->dob == null)
 
-                  Please Update Your Profile
+                   Incomplete!
 
                 @else
 
