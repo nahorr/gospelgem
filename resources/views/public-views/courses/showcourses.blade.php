@@ -44,7 +44,7 @@
                 <div class="d-flex justify-content-start">
                   <div class="align-self-center g-width-70 g-mr-15">
                     <!-- Chart Pie -->
-                    <div class="js-pie g-color-black" data-circles-value="{{ $course->start_date->diffInDays($today) }}" data-circles-max-value="{{ $course->created_at->diffInDays($course->start_date) }}" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
+                    <div class="js-pie g-color-black" data-circles-value="{{ $course->start_date->diffInDays($today) }}" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
                     <!-- End Chart Pie -->
                   </div>
                   <div class="align-self-center g-font-size-13 text-center">
