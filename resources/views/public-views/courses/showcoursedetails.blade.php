@@ -5,16 +5,16 @@
 @include('layouts.public.includes.nav-header')
 
 <!-- Our Pricing -->
-    <section class="g-bg-secondary g-py-100">
-      <div class="container" style="border: 10px solid #dcac10; border-radius: 10px; ">
-        <header class="text-center g-width-60x--md mx-auto g-mb-60">
+    <section class="g-bg-secondary g-py-50">
+      <div class="container" style="border: 10px solid #eee; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <header class="text-center g-width-60x--md mx-auto g-mb-30">
           <div class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
-            <h2 class="h3 u-heading-v2__title g-color-gray-dark-v2 text-uppercase g-font-weight-600">{{ $course->course_name }}</h2>
+            <h2 class="h3 u-heading-v2__title g-color-gray-dark-v2 text-uppercase g-font-weight-600" style="margin-top: 30px;">{{ $course->course_name }}</h2>
           </div>
           <p class="lead">{{ $course->course_description }}</p>
         </header>
 
-        <div class="row align-items-lg-center">
+        <div class="row align-items-lg-center" style="margin: 0 30px 30px 30px;">
           <div class="col-lg-8 col-md-7">
             <!-- Row -->
             <div class="row g-mr-20--md g-mb-30--lg">
