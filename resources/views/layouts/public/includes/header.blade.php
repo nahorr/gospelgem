@@ -119,7 +119,7 @@
                      data-paddingtop="[12,12,12,12]"
                      data-paddingright="[35,35,35,35]"
                      data-paddingbottom="[12,12,12,12]"
-                     data-paddingleft="[35,35,35,35]"><a href="{{url('register')}}">Sign Up</a>
+                     data-paddingleft="[35,35,35,35]"><a href="{{url('courses')}}">Enrol Now</a>
                 </div>
               </li>
               @endif
