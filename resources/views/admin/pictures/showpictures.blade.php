@@ -186,6 +186,11 @@
                              <div class="d-flex align-self-center">Edit</div>
                            </div>
                          </th>
+                         <th class="g-px-30">
+                            <div class="media">
+                             <div class="d-flex align-self-center">Delete</div>
+                           </div>
+                         </th>
                         
                        </tr>
                      </thead>
