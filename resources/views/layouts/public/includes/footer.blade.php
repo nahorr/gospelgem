@@ -20,28 +20,23 @@
 
             <article>
               <h3 class="h6 g-mb-2">
-            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Incredible template</a>
-          </h3>
-              <div class="small g-color-white-opacity-0_6">May 8, 2017</div>
+            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="https://gosgem.com/showcoursedetails/1">Nurturing your gift - CYPRUS ONSITE MENTORING.</a>
+            </h3>
+              <div class="small g-color-white-opacity-0_6">Jan 24, 2013</div>
             </article>
 
             <hr class="g-brd-white-opacity-0_1 g-my-10">
 
             <article>
               <h3 class="h6 g-mb-2">
-            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">New features</a>
+            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="https://gosgem.com/showcoursedetails/2">Vocal training, online Mentoring starts 1st of February 2019
+
+            </a>
           </h3>
-              <div class="small g-color-white-opacity-0_6">June 23, 2017</div>
+              <div class="small g-color-white-opacity-0_6">Feb 1st, 2019</div>
             </article>
 
-            <hr class="g-brd-white-opacity-0_1 g-my-10">
-
-            <article>
-              <h3 class="h6 g-mb-2">
-            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">New terms and conditions</a>
-          </h3>
-              <div class="small g-color-white-opacity-0_6">September 15, 2017</div>
-            </article>
+            
           </div>
           <!-- End Footer Content -->
 
@@ -65,18 +60,7 @@
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
-                <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
-                  <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('competition')}}">Competition</a>
-                <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
-              </h4>
-                </li>
-                <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
-                  <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('gallary')}}">Gallary</a>
-                <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
-              </h4>
-                </li>
+                
                 <li class="g-pos-rel g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
                 <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('contact')}}">Contact Us</a>
@@ -102,7 +86,7 @@
                 <i class="fa fa-map-marker"></i>
               </span>
             </div>
-            <p class="mb-0">Lagos, LOS 105102, Nigeria, <br> Calgary, AB T2R0N7, Canada</p>
+            <p class="mb-0">Lagos, LOS 105102, Nigeria</p>
           </div>
           <!-- End Location -->
 
@@ -113,7 +97,7 @@
                 <i class="fa fa-phone"></i>
               </span>
             </div>
-            <p class="mb-0">+23414543236 <br> +14034022387</p>
+            <p class="mb-0">+2348152739842</p>
           </div>
           <!-- End Phone -->
 
@@ -125,9 +109,9 @@
               </span>
             </div>
             <p class="mb-0">
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">info@gosgem.com</a>
+              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">gosgem@icloud.com</a>
               <br>
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">www.gosgem.com</a>
+              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="https://gosgem.com">www.gosgem.com</a>
             </p>
           </div>
           <!-- End Email and Website -->

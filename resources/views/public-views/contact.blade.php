@@ -69,13 +69,13 @@
 
         <div class="mb-4">
           <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Email us:</h2>
-          <p class="g-color-gray-dark-v4">Email: <a class="g-color-gray-dark-v2" href="#!">info@gosgem.com</a>
+          <p class="g-color-gray-dark-v4">Email: <a class="g-color-gray-dark-v2" href="#!">gosgem@icloud.com</a>
           </p>
         </div>
 
         <div class="mb-3">
           <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Call us:</h2>
-          <p class="g-color-gray-dark-v4">Call: <span class="g-color-gray-dark-v2">+23414543236</span>
+          <p class="g-color-gray-dark-v4">Call: <span class="g-color-gray-dark-v2">+2348152739842</span>
           </p>
         </div>
 
