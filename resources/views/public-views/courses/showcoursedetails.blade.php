@@ -89,7 +89,7 @@
                     </div>
 
                     <p class="g-mb-30">Course starting soon. Order now to reserve your seat. </p>
-                    @include('private-views.courses.paystack')
+                    <div class="text-center">@include('private-views.courses.paystack')</div>
                   </div>
                   <!-- End Article Content -->
                 </article>

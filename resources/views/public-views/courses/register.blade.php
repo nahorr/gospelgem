@@ -135,7 +135,7 @@
                     <p class="g-color-gray-dark-v5 mb-0">
                       <strong>Cost/Participant:</strong> 
                       @if($course->price == null)
-                      Free
+                      {{$course->currency}}
                       @else
                       ${{$course->price}}
                       @endif
