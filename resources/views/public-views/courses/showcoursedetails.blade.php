@@ -67,7 +67,7 @@
               <div class="col-lg-6 g-mb-40 g-mb-0--lg">
                 <i class="icon-finance-114 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Cost</h4>
-                <p class="mb-0">Cost/Participant: ${{$course->price}}</p>
+                <p class="mb-0">Cost/Participant: ${{$course->price}}/100</p>
               </div>
             </div>
             <!-- End Row -->
@@ -85,7 +85,7 @@
                   <!-- Article Content -->
                   <div class="g-pa-40">
                     <div class="g-mb-10">
-                     <strong class="d-block g-color-primary g-font-size-24 g-mt-5">${{ $course->price }}</strong>
+                     <strong class="d-block g-color-primary g-font-size-24 g-mt-5">${{ $course->price/100 }}</strong>
                     </div>
 
                     <p class="g-mb-30">Course starting soon. Order now to reserve your seat. </p>

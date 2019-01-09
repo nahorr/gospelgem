@@ -51,7 +51,7 @@
                     @if($course->price == null)
                     Free
                     @else
-                    <span class="g-color-black g-font-weight-700"><span>&#36;</span>{{ $course->price }}</span>
+                    <span class="g-color-black g-font-weight-700"><span>&#36;</span>{{ $course->price/100 }}</span>
                     @endif
                     <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
                   </div>
