@@ -46,6 +46,14 @@
 	                        <td>{{ $registration->created_at->toFormattedDateString() }}</td>
 	                        <td>
 	                        	<button type="button" class="btn btn-danger" id="courseDetails-{{$registration->course->course_id }}">Course Details</button>
+	                        	
+	                        	@include('private-views.courses.courseDetailsModal')
+				                <script type="text/javascript">
+				                  $('#courseDetails-{{$registration->course->course_id }}').on('click', function(e){
+				                     e.preventDefault();
+				                    $('#courseDetailsModal-{{$registration->course->course_id}}').modal('show');
+				                  })
+				                </script>
 	                        </td>
 	                      </tr>
 	                     @endforeach
