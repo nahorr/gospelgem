@@ -58,11 +58,11 @@
                           })
                         </script>
 
+                        @endif
                       @endif
-                      @endif
+                      <a href="{{ url('gforum') }}" class="btn btn-sm u-btn-bluegray g-mr-10">Back to GForum</a>
                     </h2>
                     
-                     
 
                     @include('layouts.public.includes.viewpost-stats')
                     
@@ -287,7 +287,7 @@
                       @foreach($categories as $category)
 
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-color-gray-dark-v4 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-12 g-rounded-50 g-py-4 g-px-15" href="#!">{{$category->category_name}}</a>
+                        <a class="u-tags-v1 g-color-gray-dark-v4 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-12 g-rounded-50 g-py-4 g-px-15" href="{{ url('gforum/category/'.$category->id) }}">{{$category->category_name}}</a>
                       </li>
 
                       @endforeach
