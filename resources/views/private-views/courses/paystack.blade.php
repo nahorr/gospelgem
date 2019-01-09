@@ -13,8 +13,9 @@
               });
               function payWithPaystack(data){
                 var handler = PaystackPop.setup({
-                  key: 'pk_test_d15f69a461a6e80ef256902944f1d9de40d17acb',
+                  key: "{{env('PAYSTACK_PUBLIC_ KEY')}}",
                   email: '{{ Auth::user()->email }}',
+                  currency: 'USD',
                   amount: <?php echo $course->price; ?>,
                   ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
                   metadata: {
