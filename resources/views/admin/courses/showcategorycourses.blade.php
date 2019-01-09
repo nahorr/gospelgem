@@ -50,6 +50,10 @@
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="">
                    </div>
                    <div class="form-group g-mb-25 col-md-3">
+                     <label for="post_title">Currency(<span style="color: red;">enter USD, NGN, or FREE if course is free</span>)</label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="currency" name="currency" required="">
+                   </div>
+                   <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Price</label>
                      <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price">
                    </div>
@@ -237,7 +241,15 @@
                          </td>
                          <td class="g-px-30">
                            <div class="media">
-                             <div class="media-body align-self-center text-left"><strong>&dollar;</strong>{{$course->price}}</div>
+                             <div class="media-body align-self-center text-left">
+                              @if($course->currency == 'USD')
+                                <strong>CENTS</strong>
+                              @elseif($course->currency == 'NGN')
+                                <strong>KOBO</strong>
+                              @else
+                                <strong>{{ $course->currency }}</strong>
+                              @endif
+                              {{$course->price}}</div>
                            </div>
                          </td>
                          <!-- <td class="g-px-30">

@@ -30,7 +30,11 @@
               <input type="text" class="form-control rounded-0 form-control-md" id="course_mentor" name="course_mentor" required="" value="{{$course->course_mentor}}">
             </div>
             <div class="form-group g-mb-25 col-md-6">
-              <label for="post_title">Price(USD)</label>
+              <label for="currency">Currency(<span style="color: red;">enter USD, NGN, or FREE if course is free</span>)</label>
+              <input type="text" class="form-control rounded-0 form-control-md" id="price" name="currency" value="{{$course->currency}}" required="">
+            </div>
+            <div class="form-group g-mb-25 col-md-6">
+              <label for="post_title">Price</label>
               <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" value="{{$course->price}}">
             </div>
             <div class="form-group g-mb-25 col-md-10">

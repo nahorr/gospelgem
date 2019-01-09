@@ -85,7 +85,7 @@
                   <!-- Article Content -->
                   <div class="g-pa-40">
                     <div class="g-mb-10">
-                     <strong class="d-block g-color-primary g-font-size-24 g-mt-5">${{ $course->price/100 }}</strong>
+                     <strong class="d-block g-color-primary g-font-size-24 g-mt-5"><strong>{{$course->currency}}</strong>{{ $course->price/100 }}</strong>
                     </div>
 
                     <p class="g-mb-30">Course starting soon. Order now to reserve your seat. </p>

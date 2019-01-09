@@ -49,9 +49,9 @@
                   </div>
                   <div class="align-self-center g-font-size-13 text-center">
                     @if($course->price == null)
-                    Free
+                    <strong>FREE</strong>
                     @else
-                    <span class="g-color-black g-font-weight-700"><span>&#36;</span>{{ $course->price/100 }}</span>
+                    <span class="g-color-black g-font-weight-700"><strong>{{$course->currency}}</strong>{{ $course->price/100 }}</span>
                     @endif
                     <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
                   </div>

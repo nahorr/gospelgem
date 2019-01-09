@@ -15,7 +15,7 @@
                 var handler = PaystackPop.setup({
                   key: "{{env('PAYSTACK_PUBLIC_ KEY')}}",
                   email: '{{ Auth::user()->email }}',
-                  currency: 'USD',
+                  currency: '{{ $course->currency }}',
                   amount: <?php echo $course->price; ?>,
                   ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
                   metadata: {
