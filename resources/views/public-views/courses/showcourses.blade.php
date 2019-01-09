@@ -48,11 +48,19 @@
                     <!-- End Chart Pie -->
                   </div>
                   <div class="align-self-center g-font-size-13 text-center">
+                    @if($course->price == null)
+                    Free
+                    @else
                     <span class="g-color-black g-font-weight-700"><span>&#36;</span>{{ $course->price }}</span>
+                    @endif
                     <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
                   </div>
                   <div class="d-block align-self-center ml-auto text-center">
+                    @if($course->price == null)
+                    <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('courses/register/'.$course->id) }}">Enrol Now</a>
+                    @else
                     <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
+                    @endif
                   </div>
                 </div>
               </div>

@@ -31,7 +31,7 @@
             </div>
             <div class="form-group g-mb-25 col-md-6">
               <label for="post_title">Price(USD)</label>
-              <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" required=""  value="{{$course->price}}">
+              <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" value="{{$course->price}}">
             </div>
             <div class="form-group g-mb-25 col-md-10">
               <label for="paystack_link">Paystack Link</label>

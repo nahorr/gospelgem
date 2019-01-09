@@ -26,7 +26,9 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
   //Courses
   Route::get('/courses', 'HomePublic\CoursesController@showCourses')->name('courses');
-  Route::get('/showcoursedetails/{course}', 'HomePublic\CoursesController@showCourseDetails')->name('payment');
+  Route::get('/showcoursedetails/{course}', 'HomePublic\CoursesController@showCourseDetails');
+  Route::get('/courses/register/{course}', 'HomePublic\CoursesController@register');
+  Route::post('/courses/register/{course}', 'HomePublic\CoursesController@storeRegistration');
 
 	//GForum
 	Route::get('gforum', 'HomePublic\GForum\GForumController@index')->name('gforum');
@@ -45,7 +47,7 @@ Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social'
 Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
 
 //Policy and terms of use
-Route::get('/policy', 'HomePublic\PolicyAndTermsOfUseController@policy');
+Route::get('/gosgem_policy', 'HomePublic\PolicyAndTermsOfUseController@gosgemPolicy');
 Route::get('/termsofuse', 'HomePublic\PolicyAndTermsOfUseController@termsOfUse');
 
 //Private Area
@@ -87,6 +89,8 @@ Route::group(['middleware' => 'auth'], function () {
     //course registration
     //Route::get('/showpaymentform/{course}', 'CoursesController@showPaymentForm')->name('payment');
     Route::get('/courses/registrations', 'CoursesController@registrations')->name('registrations');
+    Route::get('/showcoursedetails/{course}', 'HomePublic\CoursesController@showCourseDetails');
+     Route::post('/courses/registrations/{course}', 'CoursesController@storeCourseRegistration')->name('withpaystack');
 });
 
 

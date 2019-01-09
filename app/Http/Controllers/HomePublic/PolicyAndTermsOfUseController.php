@@ -15,9 +15,9 @@ class PolicyAndTermsOfUseController extends Controller
 {
     use CaptchaTrait;
 
-    public function policy()
+    public function gosgemPolicy()
     {
-    	return view('public-views.policy');
+    	return view('public-views.gosgem_policy');
     }
 
     public function termsOfUse()

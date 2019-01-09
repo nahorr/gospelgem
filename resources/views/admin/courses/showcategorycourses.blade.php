@@ -51,7 +51,7 @@
                    </div>
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Price</label>
-                     <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" required="">
+                     <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price">
                    </div>
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Paystack Link</label>

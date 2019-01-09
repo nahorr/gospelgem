@@ -7,6 +7,16 @@
 <!-- Our Pricing -->
     <section class="g-bg-secondary g-py-50">
       <div class="container" style="border: 10px solid #eee; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        @if (count($errors) > 0)
+                             
+         <div class="alert alert-danger">
+           <ul>
+               @foreach ($errors->all() as $error)
+                   <li>{{ $error }}</li>
+               @endforeach
+           </ul>
+         </div>
+        @endif
         <header class="text-center g-width-60x--md mx-auto g-mb-30">
           <div class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
             <h2 class="h3 u-heading-v2__title g-color-gray-dark-v2 text-uppercase g-font-weight-600" style="margin-top: 30px;">{{ $course->course_name }}</h2>
@@ -42,7 +52,7 @@
             <!-- Row -->
             <div class="row g-mr-20--md">
               <div class="col-lg-6 g-mb-40 g-mb-0--lg">
-                <i class="icon-finance-035 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
+                <i class="icon-hotel-restaurant-003 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Date and Time</h4>
                 <p class="mb-0">Start Date: {{$course->start_date->toFormattedDateString()}}
                   <span>
@@ -79,7 +89,7 @@
                     </div>
 
                     <p class="g-mb-30">Course starting soon. Order now to reserve your seat. </p>
-                    <a class="btn text-uppercase u-btn-primary g-rounded-50 g-font-size-12 g-font-weight-700 g-pa-15-30" href="{{ $course->paystack_link}}">Order Now</a>
+                    @include('private-views.courses.paystack')
                   </div>
                   <!-- End Article Content -->
                 </article>
