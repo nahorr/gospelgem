@@ -89,9 +89,9 @@
               @foreach($categories as $category)
                 
                 @if($loop->last)
-                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}.</span></a>
+                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}</span><small style="color: #fff;">({{$posts->where('category_id',$category->id)->count()}} posts)</small>.</a>
                 @else
-                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}},</span></a>
+                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}</span><small style="color: #fff;">({{$posts->where('category_id',$category->id)->count()}} posts)</small>,</a>
                @endif
                 
               @endforeach
@@ -124,7 +124,7 @@
                             
                             <span style="color: #6635b7;"><strong>{{$post->post_title}} - <span style="color: #b78f18;">{{ str_limit(strip_tags ( $post->post_body), $limit = 300, $end = '...') }}</span></strong></span> 
                             <span style="color: #6635b7;"> 
-                                - posted on {{$post->created_at->toFormattedDateString()}} - 
+                                - posted {{$post->created_at->diffForHumans()}} on {{$post->created_at->toFormattedDateString()}} - 
                                 {{ $post->post_views }} views
                             </span>
                           </div>
