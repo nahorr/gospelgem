@@ -49,7 +49,7 @@
                   </div>
                   <div class="align-self-center g-font-size-13 text-center">
                     @if($course->price == null)
-                    <strong>FREE</strong>
+                    <strong>{{ $course->currency }}</strong>
                     @else
                     <span class="g-color-black g-font-weight-700"><strong>{{$course->currency}}</strong>{{ $course->price/100 }}</span>
                     @endif

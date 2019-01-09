@@ -53,6 +53,7 @@ class CoursesController extends Controller
         ]);
        
         flash('Registration Successful!')->success();
-        return back();
+
+        return redirect()->route('registrations');
    }
 }

@@ -12,8 +12,9 @@ class CoursesController extends Controller
 {
     public function registrations()
     {
-  
-        return view('private-views.courses.registrations');
+        $registrations = CourseRegistration::where('email', Auth::user()->email)->get();
+
+        return view('private-views.courses.registrations', compact('registrations'));
     }
 
     public function storeCourseRegistration(Request $request, Course $course)
