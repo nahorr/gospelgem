@@ -33,7 +33,8 @@
                   <input type="hidden" name="show_profile_picture" value="0"><input type="checkbox" name="show_profile_picture" value="1" /><span style="color: darkred;">Include my profile picture with this comment</span>
                 </label>
               </div>
-              <input type="submit" value="Submit Your Comment" />
+              
+              <button type="submit" class="btn btn-success">Submit Your Comment</button>
             </form>
             <!-- End General Controls -->
            

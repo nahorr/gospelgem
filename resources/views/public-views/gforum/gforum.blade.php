@@ -115,7 +115,7 @@
 
                         <!--<input type="submit" value="{{ $post->post_title }}">-->
                                       
-                        <a href="javascript:{{url('gforum/viewpost'.$post->id)}}" onclick="document.getElementById( {{$post->id}} ).submit(); return false;">
+                        <a href="javascript:{{url('gforum/viewpost'.$post->id)}}" onclick="document.getElementById( {{ $post->id }} ).submit(); return false;">
                         
                         <div class="media">
                           
@@ -132,8 +132,40 @@
 
                         </a>
                         
-                           <a href="{{ url('gforum/user/'.$user->id)}}"> by <img class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}"> <span style="color: #b78f18;">{{$user->name}}</span>
+                            by 
+                            <a href="#" id="pop-{{$user->id}}-{{$post->id}}">
+                                <img id="imageresource-{{$user->id}}-{{$post->id}}" class="g-width-25 g-height-25 rounded-circle" src="{{asset('uploads/avatars/'.$user->avatar)}}" alt="{{$user->name}}">
+                            </a>
+                             <a href="{{ url('gforum/user/'.$user->id)}}"><span style="color: #b78f18;">{{$user->name}}</span>
                            </a>
+                           <!-- Creates the bootstrap modal where the image will appear -->
+                          <div class="modal fade" id="imagemodal-{{$user->id}}-{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                  <h4 class="modal-title" id="myModalLabel">{{ $user->name }}</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <img src="" id="imagepreview-{{$user->id}}-{{$post->id}}" style="width: 100%; height: 100%;" >
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <script type="text/javascript">
+                            jQuery(document).ready(function(){
+
+                                 $("#pop-{{$user->id}}-{{$post->id}}").on("click", function() {
+                                 $('#imagepreview-{{$user->id}}-{{$post->id}}').attr('src', $('#imageresource-{{$user->id}}-{{$post->id}}').attr('src')); // here asign the image to the modal when the user click the enlarge link
+                                 $('#imagemodal-{{$user->id}}-{{$post->id}}').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+                              });              
+           
+
+                            });
+                        </script>
                         
                     </form>
                       
