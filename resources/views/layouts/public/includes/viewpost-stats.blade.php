@@ -2,10 +2,39 @@
                       <li class="list-inline-item g-color-gray-dark-v4 mr-2">
                         By:
                         <span class="d-inline-block g-color-gray-dark-v4">
-                         
-                            <img class="g-g-width-50 g-height-50 rounded-circle mr-2" src="{{asset('uploads/avatars/'.$post->user->avatar)}}" alt="Image Description">
+                          <a href="#" id="pop-{{$post->user->id}}-{{$post->id}}">
+                              <img id="imageresource-{{$post->user->id}}-{{$post->id}}" class="g-g-width-50 g-height-50 rounded-circle mr-2" src="{{asset('uploads/avatars/'.$post->user->avatar)}}" alt="$post->user->name">
+                          </a>
                             {{$post->user->name}}
-                          </span>
+                        </span>
+                         <!-- Creates the bootstrap modal where the image will appear -->
+                          <div class="modal fade" id="imagemodal-{{$post->user->id}}-{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header" style="background-color: #F39C12;">
+                                  <h4 class="modal-title" id="myModalLabel"><span style="color: #FFF;">{{ $post->user->name }}</span></h4>
+                                </div>
+                                <div class="modal-body">
+                                  <img src="" id="imagepreview-{{$post->user->id}}-{{$post->id}}" style="width: 100%; height: 100%;" >
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <script type="text/javascript">
+                            jQuery(document).ready(function(){
+
+                                 $("#pop-{{$post->user->id}}-{{$post->id}}").on("click", function() {
+                                 $('#imagepreview-{{$post->user->id}}-{{$post->id}}').attr('src', $('#imageresource-{{$post->user->id}}-{{$post->id}}').attr('src')); // here asign the image to the modal when the user click the enlarge link
+                                 $('#imagemodal-{{$post->user->id}}-{{$post->id}}').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+                              });              
+                        
+
+                            });
+                        </script>
+
                       </li>
                       <li class="list-inline-item g-color-gray-dark-v4">
                         
