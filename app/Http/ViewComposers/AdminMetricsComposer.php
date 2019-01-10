@@ -29,7 +29,7 @@ Class AdminMetricsComposer {
             //get current date
             $today = Carbon::today();
 
-            $users = User::orderBy('created_at', 'desc')->paginate(1);
+            $users = User::orderBy('created_at', 'desc')->paginate(20);
             $categories = Category::orderBy('created_at', 'desc')->get();
             $pic_categories = PictureCategory::get();
             $posts = Post::orderBy('created_at', 'desc')->get();
