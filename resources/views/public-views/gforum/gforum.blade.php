@@ -89,9 +89,9 @@
               @foreach($categories as $category)
                 
                 @if($loop->last)
-                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}</span><small style="color: #fff;">({{$posts->where('category_id',$category->id)->count()}} posts)</small>.</a>
+                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}</span><small style="color: #fff;">({{$posts_all->where('category_id',$category->id)->count()}} posts)</small>.</a>
                 @else
-                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}</span><small style="color: #fff;">({{$posts->where('category_id',$category->id)->count()}} posts)</small>,</a>
+                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}</span><small style="color: #fff;">({{$posts_all->where('category_id',$category->id)->count()}} posts)</small>,</a>
                @endif
                 
               @endforeach

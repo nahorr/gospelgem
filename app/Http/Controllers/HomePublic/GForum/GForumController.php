@@ -16,6 +16,7 @@ class GForumController extends Controller
     {
 
     	$posts = Post::where('approved', 1)->orderBy('created_at', 'desc')->paginate(20);
+        $posts_all = Post::get();
 
     	$users = User::get();
 
@@ -24,7 +25,7 @@ class GForumController extends Controller
         $categories = Category::get();
        
 
-    	return view('public-views.gforum.gforum', compact('posts', 'users', 'comments', 'categories'));
+    	return view('public-views.gforum.gforum', compact('posts', 'posts_all', 'users', 'comments', 'categories'));
     }
 
     public function category(Category $category)
