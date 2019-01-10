@@ -88,7 +88,7 @@
               </article>
 
              
-                <!-- End Blog Minimal Blocks --o
+                <!-- End Blog Minimal Blocks -->
                     
                     <!-- Comments Starts-->
                     @foreach($comments as $comment)
@@ -101,7 +101,37 @@
                               
                               <h5 class="d-flex justify-content-between align-items-center h5 g-color-gray-dark-v1 mb-0">
                                 <span class="d-block g-mr-10">
-                                  <img class="u-tags-v1 g-width-50 g-height-50 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="Image Description">
+                                  <a href="#" id="pop_c-{{$comment->user_id}}-{{$comment->id}}">
+                                      <img id="imageresource_c-{{$comment->user_id}}-{{$comment->id}}" class="u-tags-v1 g-width-50 g-height-50 rounded-circle g-mt-3" src="{{asset('uploads/avatars/'.$comment->user->avatar)}}" alt="$comment->user->name">
+                                  </a>
+                                   <!-- Creates the bootstrap modal where the image will appear -->
+                                    <div class="modal fade" id="imagemodal_c-{{$comment->user_id}}-{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header" style="background-color: #F39C12;">
+                                            <h4 class="modal-title" id="myModalLabel"><span style="color: #FFF;">{{ $comment->user->name }}</span></h4>
+                                          </div>
+                                          <div class="modal-body">
+                                            <img src="" id="imagepreview_c-{{$comment->user_id}}-{{$comment->id}}" style="width: 100%; height: 100%;" >
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                      jQuery(document).ready(function(){
+
+                                           $("#pop_c-{{$comment->user_id}}-{{$comment->id}}").on("click", function() {
+                                           $('#imagepreview_c-{{$comment->user_id}}-{{$comment->id}}').attr('src', $('#imageresource_c-{{$comment->user_id}}-{{$comment->id}}').attr('src')); // here asign the image to the modal when the user click the enlarge link
+                                           $('#imagemodal_c-{{$comment->user_id}}-{{$comment->id}}').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+                                        });              
+                                  
+
+                                      });
+                                  </script>
+                                  
                                   <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15" href="#!">Comment By: {{$comment->user->name}}</a> 
                                 </span>
                                 <span class="g-color-gray-dark-v4 g-font-size-12">{{$comment->created_at->toFormattedDateString()}} at {{$comment->created_at->format('g:i A')}}</span>
