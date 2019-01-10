@@ -142,9 +142,8 @@
                           <div class="modal fade" id="imagemodal-{{$user->id}}-{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                  <h4 class="modal-title" id="myModalLabel">{{ $user->name }}</h4>
+                                <div class="modal-header" style="background-color: #F39C12;">
+                                  <h4 class="modal-title" id="myModalLabel"><span style="color: #FFF;">{{ $user->name }}</span></h4>
                                 </div>
                                 <div class="modal-body">
                                   <img src="" id="imagepreview-{{$user->id}}-{{$post->id}}" style="width: 100%; height: 100%;" >
