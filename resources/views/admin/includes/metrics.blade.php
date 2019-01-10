@@ -21,7 +21,7 @@
 
               <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">
                 
-                {{$users->count()}} users
+                {{$users_all->count()}} users
               </h6>
             </div>
           </div>
