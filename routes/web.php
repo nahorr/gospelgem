@@ -156,4 +156,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/courses/storeUpdateCourse/{course}', 'Admin\Courses\CourseController@storeUpdateCourse');
     Route::get('admin/courses/deleteCourse/{course}', 'Admin\Courses\CourseController@deleteCourse');
 
+    //Coure registrations
+    Route::get('admin/courses/showallcourses', 'Admin\Courses\CourseRegistrationsController@showAllCourses');
+    Route::get('admin/courses/showregistrations/{course}', 'Admin\Courses\CourseRegistrationsController@showRegistrations');
+
 });

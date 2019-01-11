@@ -30,7 +30,7 @@ class AdminComposerServiceProvider extends ServiceProvider
             'admin.pictures.showpictures',
             'admin.courses.categories',
             'admin.courses.showcategorycourses',
-            'private-views.courses.registrations',
+            'admin.courses.showallcourses',
 
             ], 
             

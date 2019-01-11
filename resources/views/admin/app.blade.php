@@ -85,7 +85,10 @@
   <script src="{{asset('unify/admin-assets/vendor/chartist-js/chartist.min.js')}}"></script>
   <script src="{{asset('unify/admin-assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js')}}"></script>
   <script src="{{asset('unify/admin-assets/vendor/fancybox/jquery.fancybox.min.js')}}"></script>
+  <script src="{{asset('unify/admin-assets/vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('unify/admin-assets/vendor/datatables/media/js/dataTables.select.js')}}"></script>
   <script src="{{asset('unify/admin-assets/vendor/table-edits/build/table-edits.min.js')}}"></script>
+  
 
   <!-- JS Unify -->
   <script src="{{asset('unify/assets/js/hs.core.js')}}"></script>
@@ -100,6 +103,7 @@
   <script src="{{asset('unify/admin-assets/js/components/hs.bar-chart.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.focus-state.js')}}"></script>
   <script src="{{asset('unify/admin-assets/js/components/hs.popup.js')}}"></script>
+  <script src="{{asset('unify/admin-assets/js/components/hs.datatables.js')}}"></script>
 
   <!-- JS Custom -->
   <script src="{{asset('unify/assets/js/custom.js')}}"></script>
@@ -152,6 +156,22 @@
           smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v3 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
         }
       });
+      // initialization of editable table
+      $('.js-editable-table tr').editable({
+        keyboard: true,
+        dblclick: true,
+        button: true,
+        buttonSelector: '.js-edit',
+        maintainWidth: true,
+        edit: function (values) {
+          $('.js-edit i', this).removeClass('hs-admin-pencil').addClass('hs-admin-check g-color-secondary');
+        },
+        save: function (values) {
+          $('.js-edit i', this).removeClass('hs-admin-check g-color-secondary').addClass('hs-admin-pencil');
+        }
+      });
+      // initialization of datatables
+      $.HSCore.components.HSDatatables.init('.js-datatable');
     });
   </script>
 </body>
