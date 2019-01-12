@@ -11,7 +11,7 @@
 @include('admin.includes.header')
 
 <main class="container-fluid px-0 g-pt-65">
-    <div class="row no-gutters g-pos-rel">
+    <div class="row no-gutters g-pos-rel g-overflow-x-hidden">
 
         @include('admin.includes.sidebar')
 
@@ -24,10 +24,14 @@
 
                  @include('errors.form_error')
 
-                             
                  <div class="media-md align-items-center g-mb-30">
+                  <div class="d-flex g-mb-15 g-mb-0--md">
+                    <button type="button" class="btn btn-md u-btn-orange g-mr-20 pull-right" id="addCourseCategory">Select a Course </button>
+                  </div>
                    <div class="d-flex g-mb-15 g-mb-0--md">
-                     <h3 class="g-font-weight-400 g-font-size-16 g-color-black mb-0"><a href="#" class="btn btn-md u-btn-darkpurple" ><strong>{{$courses->count()}} Courses</strong></a></h3>
+                     <h3 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
+                      <a href="#" class="btn btn-md u-btn-darkpurple" ><strong>{{$course_registrations->count()}} Students Registered</strong></a>
+                    </h3>
                    </div>
 
                    <div class="media d-md-flex align-items-center ml-auto">
@@ -90,7 +94,7 @@
                            </th>
                            <th>
                              <div class="media">
-                               <div class="d-flex align-self-center">Name</div>
+                               <div class="d-flex align-self-center">First Name</div>
 
                                <div class="d-flex align-self-center ml-auto">
                                  <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
@@ -113,7 +117,7 @@
                            </th>
                            <th>
                              <div class="media">
-                               <div class="d-flex align-self-center">Category</div>
+                               <div class="d-flex align-self-center">Last Name</div>
 
                                <div class="d-flex align-self-center ml-auto">
                                  <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
@@ -136,7 +140,7 @@
                            </th>
                            <th>
                              <div class="media">
-                               <div class="d-flex align-self-center">Registrations</div>
+                               <div class="d-flex align-self-center">Reg Date</div>
 
                                <div class="d-flex align-self-center ml-auto">
                                  <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
@@ -159,7 +163,7 @@
                            </th>
                            <th>
                              <div class="media">
-                               <div class="d-flex align-self-center">Mentor</div>
+                               <div class="d-flex align-self-center">Email</div>
 
                                <div class="d-flex align-self-center ml-auto">
                                  <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
@@ -182,7 +186,53 @@
                            </th>
                            <th>
                              <div class="media">
-                               <div class="d-flex align-self-center g-nowrap">Edit</div>
+                               <div class="d-flex align-self-center g-nowrap">Phone</div>
+
+                               <div class="d-flex align-self-center ml-auto">
+                                 <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-up"></i>
+
+                                 </a>
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-down"></i>
+
+                                 </a>
+
+                               </span>
+                               </div>
+                             </div>
+                           </th>
+                           <th>
+                             <div class="media">
+                               <div class="d-flex align-self-center g-nowrap">Tranx Ref#</div>
+
+                               <div class="d-flex align-self-center ml-auto">
+                                 <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-up"></i>
+
+                                 </a>
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-down"></i>
+
+                                 </a>
+
+                               </span>
+                               </div>
+                             </div>
+                           </th>
+                           <th>
+                             <div class="media">
+                               <div class="d-flex align-self-center g-nowrap">Agree</div>
 
                                <div class="d-flex align-self-center ml-auto">
                                  <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
@@ -230,39 +280,29 @@
                        </thead>
 
                        <tbody>
-                        @foreach($courses as $key => $course)
+                        @foreach($course_registrations as $key => $registrations)
                          <tr>
                            <td> {{ $key+1 }}</td>
-                           <td>{{ $course->course_name }}</td>
+                           <td>{{ $registrations->first_name }}</td>
+                           <td>{{ $registrations->last_name }}</td>
+                            <td>{{ $registrations->created_at->toFormatteddateString() }}</td>
                            <td>
-                             <div class="d-inline-block">
-                               <span class="d-flex align-items-center justify-content-center u-tags-v1 g-brd-around g-bg-gray-light-v8 g-bg-gray-light-v8 g-font-size-default g-color-gray-dark-v6 g-rounded-50 g-py-4 g-px-15">
-
-                               <span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8"></span>
-                                {{ $course->course_category->course_category_name }}
-                               </span>
-                             </div>
+                            {{ $registrations->email }}
                            </td>
+                           <td>{{ $registrations->phone }}</td>
+                           <td>{{ $registrations->trans_ref }}</td>
                            <td>
-                            <a href="{{url('admin/courses/showcourseregistrations/'. $course->id)}}" class="btn btn-md u-btn-orange" >{{ $course_registrations->where('course_id',$course->id)->count() }} Registrations</a>
-                           </td>
-                           <td>{{ $course->course_mentor }}</td>
+                            @if($registrations->agree == 1)
+                             YES
+                            @else
+                              NO
+                            @endif
+                          </td>
+                           
                            
                            <td class="text-center">
-                             <button type="button" class="btn btn-md u-btn-indigo" id="editCourseModalButton-{{$course->id}}">View/Edit</button>
-
-               
-
-                            <script type="text/javascript">
-                              $('#editCourseModalButton-{{$course->id}}').on('click', function(e){
-                                 e.preventDefault();
-                                $('#editCourseModal-{{$course->id}}').modal('show');
-                              })
-                            </script>
-                           </td>
-                           <td class="text-center">
                              <div class="col-md-3">
-                              <a href="{{url('admin/courses/deleteCourse/'. $course->id)}}" class="btn btn-md u-btn-darkred" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
+                              <a href="{{url('admin/courses/deleteCourse/'. $registrations->id)}}"  onclick="return confirm('Are you sure you want to Delete this record?')"><i class="fa fa-trash" style="color: red;"></i></a>
                             </div>
                            </td>
                          </tr>
@@ -279,8 +319,7 @@
 
                    <nav id="datatablePagination1" class="d-flex ml-auto" aria-label="Page Navigation"></nav>
                  </div>
-              
-         
+            </div>
 
             @include('admin.includes.footer')
             

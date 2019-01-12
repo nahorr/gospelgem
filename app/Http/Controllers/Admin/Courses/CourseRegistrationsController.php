@@ -19,4 +19,12 @@ class CourseRegistrationsController extends Controller
 
     	return view('admin.courses.showallcourses', compact('courses', 'courses_paginate', 'course_registrations'));
     }
+
+    public function showCourseRegistrations(Course $course)
+    {
+
+    	$course_registrations = CourseRegistration::where('course_id', $course->id)->get();
+
+    	return view('admin.courses.showcourseregistrations', compact('course_registrations'));
+    }
 }

@@ -158,6 +158,6 @@ Route::group(['middleware' => 'admin'], function () {
 
     //Coure registrations
     Route::get('admin/courses/showallcourses', 'Admin\Courses\CourseRegistrationsController@showAllCourses');
-    Route::get('admin/courses/showregistrations/{course}', 'Admin\Courses\CourseRegistrationsController@showRegistrations');
+    Route::get('admin/courses/showcourseregistrations/{course}', 'Admin\Courses\CourseRegistrationsController@showCourseRegistrations');
 
 });
