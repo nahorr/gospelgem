@@ -16,6 +16,7 @@ use App\User;
 use App\Post;
 use Auth;
 use App\PictureCategory;
+use App\Course;
 	
 Class AdminMetricsComposer {	
 
@@ -38,6 +39,7 @@ Class AdminMetricsComposer {
             $replies = CommentReply::orderBy('created_at', 'desc')->get();
 
             $contactFormSubmissions = ContactUs::orderBy('created_at', 'desc')->get();
+            $courses = Course::get();
             
             //put variables in views
             $view
@@ -50,7 +52,8 @@ Class AdminMetricsComposer {
             ->with('posts', $posts)
             ->with('comments', $comments)
             ->with('replies', $replies)
-            ->with('contactFormSubmissions', $contactFormSubmissions);
+            ->with('contactFormSubmissions', $contactFormSubmissions)
+            ->with('courses', $courses);
 
             
 

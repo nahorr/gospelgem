@@ -4,8 +4,8 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">Editing Course: {{$course->course_name}}</h4>
+      <div class="modal-header" style="background-color: #F39C12; color: #FFF;">
+        <h4 class="modal-title pull-left"><strong>Editing Course: {{$course->course_name}}</strong></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         
       </div>
@@ -89,6 +89,9 @@
        
 
       </div>
-
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
   </div>
+</div>
 </div>

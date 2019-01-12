@@ -244,7 +244,7 @@
                              </div>
                            </td>
                            <td>
-                            <a href="{{url('admin/courses/showcourseregistrations/'. $course->id)}}" class="btn btn-md u-btn-orange" >{{ $course_registrations->where('course_id',$course->id)->count() }} Registrations</a>
+                            <a href="{{url('admin/courses/showcourseregistrations/'. $course->id)}}" class="btn btn-md u-btn-orange" >{{ $courses_registrations->where('course_id',$course->id)->count() }} Registrations</a>
                            </td>
                            <td>{{ $course->course_mentor }}</td>
                            

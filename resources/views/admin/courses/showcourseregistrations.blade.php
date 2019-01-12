@@ -23,11 +23,31 @@
                  @include('flash::message')
 
                  @include('errors.form_error')
+                 <header class="g-mb-20">
+                   <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
+                    <strong>Course: {{$course->course_name}}</strong>
+                  </h2>
+                </header>
 
                  <div class="media-md align-items-center g-mb-30">
+                  
                   <div class="d-flex g-mb-15 g-mb-0--md">
-                    <button type="button" class="btn btn-md u-btn-orange g-mr-20 pull-right" id="addCourseCategory">Select a Course </button>
+                    
+                    <button type="button" class="btn btn-md u-btn-orange g-mr-20 pull-right" id="selectACourse-{{ $course->id }}">Select Another Course </button>
+
                   </div>
+
+                  @include('admin.courses.selectACourseModal')
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+                      
+                      $("#selectACourse-{{ $course->id }}").on('click', function(e){
+                         e.preventDefault();
+                        $('#selectACourseModal-{{ $course->id }}').modal('show');
+                      })
+                  
+                    </script>
+
                    <div class="d-flex g-mb-15 g-mb-0--md">
                      <h3 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
                       <a href="#" class="btn btn-md u-btn-darkpurple" ><strong>{{$course_registrations->count()}} Students Registered</strong></a>
@@ -290,7 +310,13 @@
                             {{ $registrations->email }}
                            </td>
                            <td>{{ $registrations->phone }}</td>
-                           <td>{{ $registrations->trans_ref }}</td>
+                           <td>
+                            @if($registrations->trans_ref == null)
+                              FREE
+                            @else
+                              {{ $registrations->trans_ref }}
+                            @endif
+                          </td>
                            <td>
                             @if($registrations->agree == 1)
                              YES
@@ -302,7 +328,7 @@
                            
                            <td class="text-center">
                              <div class="col-md-3">
-                              <a href="{{url('admin/courses/deleteCourse/'. $registrations->id)}}"  onclick="return confirm('Are you sure you want to Delete this record?')"><i class="fa fa-trash" style="color: red;"></i></a>
+                              <a href="{{url('admin/courses/deleteCourseRegistration/'. $registrations->id)}}"  onclick="return confirm('Are you sure you want to Delete this record?')"><i class="fa fa-trash" style="color: red;"></i></a>
                             </div>
                            </td>
                          </tr>
