@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Course;
 use App\CourseRegistration;
+use Notification;
+use App\Traits\CaptchaTrait;
+use App\Notifications\CourseRegistrationFormSubmitted;
+use App\User;
+
+
 
 class CoursesController extends Controller
 {
+    use CaptchaTrait;
+
     public function showCourses()
     {
     	$courses = Course::get();
@@ -31,6 +39,8 @@ class CoursesController extends Controller
 
     public function storeRegistration(Request $request , Course $course){
 
+        $request['captcha'] = $this->captchaCheck();
+
     	$this->validate(request(), [
 
             'course_id' => 'required',
@@ -39,7 +49,13 @@ class CoursesController extends Controller
             'phone' => 'required',
             'email' => 'required',
             'agree' => 'required',
-        ]);
+            'g-recaptcha-response' => 'required',
+            'captcha' => 'required|min:1',
+            ],
+            [
+             'g-recaptcha-response.required' => 'Captcha is required',
+             'captcha.min' => 'Wrong captcha, please try again.'
+            ]);
 
         CourseRegistration::insert([
             'course_id' => $request->course_id,
@@ -51,7 +67,14 @@ class CoursesController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
-       
+
+        $course_info = Course::where('id', $request->course_id)->first();
+
+        $student = CourseRegistration::where('email', $request->email)->first();
+        
+
+        $student->notify(new CourseRegistrationFormSubmitted($course_info));
+
         flash('Registration Successful!')->success();
 
         return redirect()->route('registrations');

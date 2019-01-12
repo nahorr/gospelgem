@@ -43,7 +43,7 @@
             <a href="{{url('/gforum')}}">
             <div class="media-body align-self-center">
               <div class="d-flex align-items-center g-mb-5">
-                <span class="g-font-size-24 g-line-height-1 g-color-black">GForum</span>
+                <span class="g-font-size-24 g-line-height-1 g-color-black">GosYan</span>
                 
               </div>
 

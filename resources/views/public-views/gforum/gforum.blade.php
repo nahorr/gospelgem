@@ -14,8 +14,8 @@
   <section class="g-py-100">
     <div class="container">
       <header class="text-center g-width-60x--md mx-auto g-mb-50">
-          <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Introducing GForum</h2>
-          <p class="lead">GForum is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
+          <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Introducing GosYan</h2>
+          <p class="lead">GosYan is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
         </header>
        @if(Auth::check() )
         <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostButton">Add a Post</button>

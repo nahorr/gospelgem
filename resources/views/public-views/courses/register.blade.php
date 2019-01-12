@@ -61,6 +61,11 @@
                     I accept the <a href="{{ url('termsofuse') }} " target="_blank">Terms and Conditions</a>
                   </label>
                 </div>
+
+                <div class="g-mb-20">
+                  <div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}"></div>
+                </div>
+
                 <button class="btn btn-block u-btn-primary rounded g-py-13" type="submit">Register</button>
               </form>
               <!-- End Form -->

@@ -6,7 +6,7 @@
           <div class="row flex-column flex-md-row align-items-center justify-content-md-end text-uppercase g-font-weight-600 g-color-white g-font-size-13">
             <div class="col-auto mr-md-auto g-px-15">
               <i class="icon-communication-057 u-line-icon-pro g-font-size-20 g-valign-middle g-mr-1"></i>
-              <a href="{{url('gforum')}}">GForum</a>
+              <a href="{{url('gforum')}}">GOSYAN</a>
             </div>
 
             <div class="col-auto g-px-15">
@@ -97,7 +97,7 @@
 
                 <!-- GForum -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a class="btn btn-md u-btn-outline-indigo g-mr-10 g-mb-15" href="{{url('gforum')}}">GForum</a>
+                  <a class="btn btn-md u-btn-outline-indigo g-mr-10 g-mb-15" href="{{url('gforum')}}">GosYan</a>
                 </li>
                 <!-- End GForum -->
 

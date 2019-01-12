@@ -12,7 +12,7 @@ class CoursesController extends Controller
 {
     public function registrations()
     {
-        $registrations = CourseRegistration::where('email', Auth::user()->email)->get();
+        $registrations = CourseRegistration::where('email', Auth::user()->email)->orderBy('created_at', 'desc')->get();
 
         return view('private-views.courses.registrations', compact('registrations'));
     }

@@ -60,7 +60,7 @@
 
                         @endif
                       @endif
-                      <a href="{{ url('gforum') }}" class="btn btn-sm u-btn-bluegray g-mr-10">Back to GForum</a>
+                      <a href="{{ url('gforum') }}" class="btn btn-sm u-btn-bluegray g-mr-10">Back to GosYan</a>
                     </h2>
                     
 
