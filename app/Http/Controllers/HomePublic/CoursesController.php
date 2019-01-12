@@ -54,7 +54,8 @@ class CoursesController extends Controller
             ],
             [
              'g-recaptcha-response.required' => 'Captcha is required',
-             'captcha.min' => 'Wrong captcha, please try again.'
+             'captcha.min' => 'Wrong captcha, please try again.',
+             'email.unique_with' => 'Our records show you have already registered for this course. Please do contact us if you have any questions.'
             ]);
 
         CourseRegistration::insert([
