@@ -48,7 +48,6 @@ class CourseRegistrationFormSubmitted extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Hi!')
                     ->line('Congratulations! Your registration is confirmed!')
                     ->line('You have successfully completed registration for '.$this->course_info->course_name.'.')
                     ->line('Coure Name: '.$this->course_info->course_name)
