@@ -182,6 +182,7 @@ return [
         App\Providers\UserComposerServiceProvider::class,
         App\Providers\AdminComposerServiceProvider::class,
         App\Providers\PublicComposerServiceProvider::class,
+        Felixkiss\UniqueWithValidator\ServiceProvider::class,
 
     ],
 

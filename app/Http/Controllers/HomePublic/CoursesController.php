@@ -47,7 +47,7 @@ class CoursesController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'phone' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique_with:course_registrations, course_id',
             'agree' => 'required',
             'g-recaptcha-response' => 'required',
             'captcha' => 'required|min:1',
