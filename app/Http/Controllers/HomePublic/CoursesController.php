@@ -40,7 +40,7 @@ class CoursesController extends Controller
 
     public function storeRegistration(Request $request , Course $course){
 
-        $user_geolaction_info = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+        $user_geolaction_info = geoip()->getLocation();
 
         $request['captcha'] = $this->captchaCheck();
 

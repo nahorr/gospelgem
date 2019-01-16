@@ -23,7 +23,7 @@ class CoursesController extends Controller
 		$name_first = array_shift($parts);
 		$name_last = array_pop($parts);
 	       
-        $user_geolaction_info = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+        $user_geolaction_info = geoip()->getLocation();
 
         $courseRegistration = new CourseRegistration();
 
