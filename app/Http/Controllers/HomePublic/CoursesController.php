@@ -35,9 +35,12 @@ class CoursesController extends Controller
     {
     	
     	return view('public-views.courses.register', compact('course'));
+
     }
 
     public function storeRegistration(Request $request , Course $course){
+
+        $user_geolaction_info = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
 
         $request['captcha'] = $this->captchaCheck();
 
@@ -65,6 +68,8 @@ class CoursesController extends Controller
             'phone' => $request->phone,
             'email' => $request->email,
             'agree' => $request->agree,
+            'city' => $user_geolaction_info->city,
+            'country' => $user_geolaction_info->country,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

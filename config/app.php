@@ -183,6 +183,7 @@ return [
         App\Providers\AdminComposerServiceProvider::class,
         App\Providers\PublicComposerServiceProvider::class,
         Felixkiss\UniqueWithValidator\ServiceProvider::class,
+        \Torann\GeoIP\GeoIPServiceProvider::class,
 
     ],
 
@@ -234,6 +235,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
 
     ],
 

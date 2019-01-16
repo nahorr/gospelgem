@@ -22,7 +22,8 @@ class CoursesController extends Controller
   		$parts = explode(' ', Auth::user()->name);
 		$name_first = array_shift($parts);
 		$name_last = array_pop($parts);
-	
+	       
+        $user_geolaction_info = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
 
         $courseRegistration = new CourseRegistration();
 
@@ -34,6 +35,8 @@ class CoursesController extends Controller
         $courseRegistration->email = Auth::user()->email;
         $courseRegistration->trans_ref = $request->trans_ref;
         $courseRegistration->agree = true;
+        $courseRegistration->city = $user_geolaction_info->city;
+        $courseRegistration->country = $user_geolaction_info->country;
 
         $courseRegistration->save();
 

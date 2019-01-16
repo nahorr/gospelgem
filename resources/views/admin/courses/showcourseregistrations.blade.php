@@ -275,6 +275,52 @@
                            </th>
                            <th>
                              <div class="media">
+                               <div class="d-flex align-self-center g-nowrap">City</div>
+
+                               <div class="d-flex align-self-center ml-auto">
+                                 <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-up"></i>
+
+                                 </a>
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-down"></i>
+
+                                 </a>
+
+                               </span>
+                               </div>
+                             </div>
+                           </th>
+                           <th>
+                             <div class="media">
+                               <div class="d-flex align-self-center g-nowrap">Country</div>
+
+                               <div class="d-flex align-self-center ml-auto">
+                                 <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-up"></i>
+
+                                 </a>
+
+                                 <a class="g-color-gray-light-v6 g-color-secondary--hover g-text-underline--none--hover" href="#!">
+
+                                   <i class="hs-admin-angle-down"></i>
+
+                                 </a>
+
+                               </span>
+                               </div>
+                             </div>
+                           </th>
+                           <th>
+                             <div class="media">
                                <div class="d-flex align-self-center g-nowrap">Delete</div>
 
                                <div class="d-flex align-self-center ml-auto">
@@ -324,8 +370,12 @@
                               NO
                             @endif
                           </td>
-                           
-                           
+                          <td>
+                            {{ $registrations->city }}
+                          </td>
+                          <td>
+                            {{ $registrations->country }}
+                          </td>
                            <td class="text-center">
                              <div class="col-md-3">
                               <a href="{{url('admin/courses/deleteCourseRegistration/'. $registrations->id)}}"  onclick="return confirm('Are you sure you want to Delete this record?')"><i class="fa fa-trash" style="color: red;"></i></a>

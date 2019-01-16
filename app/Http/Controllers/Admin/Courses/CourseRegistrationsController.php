@@ -14,7 +14,7 @@ class CourseRegistrationsController extends Controller
 
     	$courses_paginate = Course::orderBy('created_at', 'desc')->paginate(20);
 
-    	$courses_registrations = CourseRegistration::get();
+    	$courses_registrations = CourseRegistration::orderBy('created_at', 'desc')->get();
 
     	return view('admin.courses.showallcourses', compact('courses_paginate', 'courses_registrations'));
     }
@@ -22,10 +22,20 @@ class CourseRegistrationsController extends Controller
     public function showCourseRegistrations(Course $course)
     {
 
-    	$course_registrations = CourseRegistration::where('course_id', $course->id)->get();
+    	$course_registrations = CourseRegistration::where('course_id', $course->id)->orderBy('created_at', 'desc')->get();
 
-    	$courses_registrations = CourseRegistration::get();
+    	$courses_registrations = CourseRegistration::orderBy('created_at', 'desc')->get();
 
     	return view('admin.courses.showcourseregistrations', compact('course_registrations', 'course', 'courses_registrations'));
+    }
+
+    public function deleteCourseRegistration(CourseRegistration $courseregistration)
+
+    {
+        CourseRegistration::where('id', $courseregistration->id)->delete();
+
+        flash('Registration Deleted !')->warning();
+
+        return back();
     }
 }
