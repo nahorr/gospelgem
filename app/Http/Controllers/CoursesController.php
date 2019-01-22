@@ -43,4 +43,14 @@ class CoursesController extends Controller
         return response()->json();
     }
 
+    public function unEnroll(CourseRegistration $registration)
+
+    {
+        CourseRegistration::where('id', $registration->id)->delete();
+
+        flash('You have unEnrolled from this course Deleted! If this is a paid course please contact our support team for your refund')->warning();
+
+        return back();
+    }
+
 }

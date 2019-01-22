@@ -131,4 +131,26 @@ class HomeController extends Controller
 
     	return back();
     }
+
+    public function verify(Request $request, User $user)
+    {
+        $verify = User::where('id', $user->id)->first();
+
+        $verify->verified = $request->verified;
+
+        $verify->save();
+
+        return back();
+    }
+
+    public function unverify(Request $request, User $user)
+    {
+        $unverify = User::where('id', $user->id)->first();
+
+        $unverify->verified = $request->verified;
+
+        $unverify->save();
+
+        return back();
+    }
 }

@@ -73,7 +73,7 @@
 
                   <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Moodle Link</label>
-                     <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link" required="">
+                     <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link">
                    </div>
 
                    <div class="form-group g-mb-25 col-md-3">

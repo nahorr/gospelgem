@@ -91,6 +91,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/courses/registrations', 'CoursesController@registrations')->name('registrations');
     Route::get('/showcoursedetails/{course}', 'HomePublic\CoursesController@showCourseDetails');
      Route::post('/courses/registrations/{course}', 'CoursesController@storeCourseRegistration')->name('withpaystack');
+     Route::post('/courses/registrations/unenroll/{registration}', 'CoursesController@unEnroll');
 });
 
 
@@ -104,6 +105,8 @@ Route::group(['middleware' => 'admin'], function () {
   Route::get('admin/home/delete/{user}', 'Admin\HomeController@deleteUser')->name('deleteuser');
   Route::post('admin/home/makeAdmin/{user}', 'Admin\HomeController@makeAdmin');
   Route::post('admin/home/makeUser/{user}', 'Admin\HomeController@makeUser');
+  Route::post('admin/home/verify/{user}', 'Admin\HomeController@verify');
+  Route::post('admin/home/unverify/{user}', 'Admin\HomeController@unverify');
 
   Route::get('admin/categories', 'Admin\HomeController@categories');
   //Route::get('admin/addcategory', 'Admin\HomeController@addcategory');

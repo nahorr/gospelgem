@@ -26,7 +26,8 @@
 	                        <th>Mentor</th>
 	                        <th>Price</th>
 	                        <th>Registered</th>
-	                        <th>Actions</th>
+	                        <th>Details</th>
+	                        <!--<th>unEnroll</th>-->
 	                      </tr>
 	                    </thead>
 
@@ -55,6 +56,13 @@
 				                  })
 				                </script>
 	                        </td>
+	                        <!--
+	                        <td>
+	                        	<div class="col-md-3">
+                                  <a href="{{url('courses/registrations/unenroll'. $registration->id)}}" class="btn btn u-btn-darkpurple" onclick="return confirm('Are you sure you want to unEroll from this course?')">unEnroll</a>
+                                </div>
+	                        </td>
+	                    -->
 	                      </tr>
 	                     @endforeach
 	                    </tbody>
