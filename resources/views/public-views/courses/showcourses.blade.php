@@ -34,9 +34,11 @@
               <div class="u-shadow-v24 g-pa-30">
                 <div class="g-mb-30">
                   <h3 class="h4 g-color-black g-font-weight-600 mb-3">
-
-                    <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
-
+                    @if($course->price == null)
+                      <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('courses/register/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
+                    @else
+                      <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
+                    @endif
                   </h3>
                   <p>{{$course->course_description}}</p>
                 </div>
@@ -44,7 +46,12 @@
                 <div class="d-flex justify-content-start">
                   <div class="align-self-center g-width-70 g-mr-15">
                     <!-- Chart Pie -->
+                    @if($today > $course->start_date)
+                    <div class="js-pie g-color-black" data-circles-value="0" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
+                    @else
                     <div class="js-pie g-color-black" data-circles-value="{{ $course->start_date->diffInDays($today) }}" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
+                    @endif
+
                     <!-- End Chart Pie -->
                   </div>
                   <div class="align-self-center g-font-size-13 text-center">
