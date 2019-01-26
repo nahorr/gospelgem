@@ -23,6 +23,7 @@
         <!-- Products Block -->
         <div class="row">
           @foreach($courses as $course)
+          @if($course->end_date->addDays(2) > $today)
           <div class="col-md-6 col-lg-4 g-mb-30">
             <!-- Article -->
             <article>
@@ -47,7 +48,7 @@
                   <div class="align-self-center g-width-70 g-mr-15">
                     <!-- Chart Pie -->
                     @if($today > $course->start_date)
-                    <div class="js-pie g-color-black" data-circles-value="0" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
+                    <div class="js-pie g-color-black" data-circles-value="" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
                     @else
                     <div class="js-pie g-color-black" data-circles-value="{{ $course->start_date->diffInDays($today) }}" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
                     @endif
@@ -75,6 +76,7 @@
             </article>
             <!-- End Article -->
           </div>
+          @endif
           @endforeach
         </div>
         <!-- End Products Block -->
