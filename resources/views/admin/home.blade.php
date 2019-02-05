@@ -269,7 +269,7 @@
                        </thead>
 
                        <tbody>
-                        @foreach($users as $key => $user)
+                        @foreach($users_all as $key => $user)
                           @if($user->id > 1)
                          <tr>
                            <td> {{ $key+1 }}</td>
