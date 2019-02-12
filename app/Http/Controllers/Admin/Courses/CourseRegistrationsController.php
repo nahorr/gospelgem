@@ -43,7 +43,7 @@ class CourseRegistrationsController extends Controller
 
      public function downloadCourseRegistrationsExcel(Course $course)
     {
-        return (new CourseRegistrationsExport($course->id))->download('courseregistrations.xlsx');
+        return (new CourseRegistrationsExport($course->id))->download("$course->course_name.xlsx");
 
     }
 }
