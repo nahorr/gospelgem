@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin\Courses;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Course;
+use App\Exports\CourseRegistrationsExport;
 use App\CourseRegistration;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CourseRegistrationsController extends Controller
 {
@@ -37,5 +39,11 @@ class CourseRegistrationsController extends Controller
         flash('Registration Deleted !')->warning();
 
         return back();
+    }
+
+     public function downloadCourseRegistrationsExcel(Course $course)
+    {
+        return (new CourseRegistrationsExport($course->id))->download('courseregistrations.xlsx');
+
     }
 }

@@ -9,12 +9,13 @@ use App\UserDetail;
 use App\Category;
 use App\Comment;
 use App\Post;
+use DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-
+    
     	return view('admin.home');
     }
 

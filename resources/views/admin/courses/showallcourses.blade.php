@@ -182,7 +182,7 @@
                            </th>
                            <th>
                              <div class="media">
-                               <div class="d-flex align-self-center g-nowrap">Edit</div>
+                               <div class="d-flex align-self-center g-nowrap">Download Table</div>
 
                                <div class="d-flex align-self-center ml-auto">
                                  <span class="d-inline-block g-width-10 g-line-height-1 g-font-size-10">
@@ -249,16 +249,7 @@
                            <td>{{ $course->course_mentor }}</td>
                            
                            <td class="text-center">
-                             <button type="button" class="btn btn-md u-btn-indigo" id="editCourseModalButton-{{$course->id}}">View/Edit</button>
-
-               
-
-                            <script type="text/javascript">
-                              $('#editCourseModalButton-{{$course->id}}').on('click', function(e){
-                                 e.preventDefault();
-                                $('#editCourseModal-{{$course->id}}').modal('show');
-                              })
-                            </script>
+                             <a class="btn btn-success" href="{{ URL::to('/admin/courses/showallcourses/downloadCourseRegistrations/'.$course->id) }}" role="button">Excel Download</a>
                            </td>
                            <td class="text-center">
                              <div class="col-md-3">

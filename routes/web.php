@@ -163,5 +163,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/courses/showallcourses', 'Admin\Courses\CourseRegistrationsController@showAllCourses');
     Route::get('admin/courses/showcourseregistrations/{course}', 'Admin\Courses\CourseRegistrationsController@showCourseRegistrations');
     Route::get('admin/courses/deleteCourseRegistration/{courseregistration}', 'Admin\Courses\CourseRegistrationsController@deleteCourseRegistration');
+    //Download registration Table for each Course
+    Route::get('/admin/courses/showallcourses/downloadCourseRegistrations/{course}', 'Admin\Courses\CourseRegistrationsController@downloadCourseRegistrationsExcel');
 
 });

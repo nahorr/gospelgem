@@ -184,6 +184,7 @@ return [
         App\Providers\PublicComposerServiceProvider::class,
         Felixkiss\UniqueWithValidator\ServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -236,6 +237,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 
