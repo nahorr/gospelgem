@@ -213,7 +213,7 @@
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                         <i class="hs-admin-book"></i>
                       </span>
-                      <span class="media-body align-self-center">All Courses</span>
+                      <span class="media-body align-self-center">Registrations</span>
                     </a>
                   </li>
                   
