@@ -17,6 +17,7 @@ use App\Post;
 use Auth;
 use App\PictureCategory;
 use App\Course;
+use DB;
 	
 Class AdminMetricsComposer {	
 
@@ -31,7 +32,7 @@ Class AdminMetricsComposer {
             $today = Carbon::today();
 
             $users = User::orderBy('created_at', 'desc')->paginate(20);
-            $users_all = User::get();
+            $users_all = DB::table('users')->get();
             $categories = Category::orderBy('created_at', 'desc')->get();
             $pic_categories = PictureCategory::get();
             $posts = Post::orderBy('created_at', 'desc')->get();

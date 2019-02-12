@@ -294,7 +294,7 @@
 
                           @endif
                            </td>
-                           <td>{{ $user->created_at->toFormatteddateString() }}</td>
+                           <td>{{ date('d-M-Y', strtotime($user->created_at)) }}</td>
                            <td>
                             @If($user->verified == 1)
 
