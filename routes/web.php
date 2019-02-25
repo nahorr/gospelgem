@@ -20,8 +20,15 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 	Route::get('/about', 'HomePublic\HomeController@about')->name('about');
 	Route::get('/competition', 'HomePublic\HomeController@competition')->name('competition');
 	Route::get('/mentorship', 'HomePublic\HomeController@mentorship')->name('mentorship');
+  //contact form
 	Route::get('/contact', 'HomePublic\HomeController@contact')->name('contact');
 	Route::post('/postcontact', 'HomePublic\HomeController@postContact')->name('postcontact');
+  
+  //invite gosgem
+  Route::get('/invite_gosgem', 'HomePublic\InvitationController@invite');
+  Route::post('/post_invite_gosgem', 'HomePublic\InvitationController@postInvite');
+
+  //comming soon pages
 	Route::get('/coming-soon', 'HomePublic\HomeController@comingSoon')->name('comingsoon');
 
   //Courses

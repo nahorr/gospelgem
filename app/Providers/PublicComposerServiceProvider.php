@@ -23,6 +23,7 @@ class PublicComposerServiceProvider extends ServiceProvider
             'public-views.courses.showcourses',
             'public-views.courses.showcoursedetails',
             'public-views.courses.register',
+            'public-views.invite_gosgem',
             'public-views.gosgem_policy',
             'public-views.termsofuse',
             
