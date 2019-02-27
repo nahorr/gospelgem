@@ -139,6 +139,8 @@ Route::group(['middleware' => 'admin'], function () {
   Route::get('admin/deleteReply/{reply}', 'Admin\ReplyController@deleteReply');
 
   Route::get('admin/contactform/submissions', 'Admin\ContactController@contactFormSubmissions')->name('submissions');
+  Route::get('admin/invitationform/submissions', 'Admin\InvitationController@invitationFormSubmissions');
+  Route::get('admin/invitationform/deletesubmissions/{invitation}', 'Admin\InvitationController@deleteSubmissions');
   Route::get('admin/business/units', 'Admin\BusinessController@businessUnits')->name('businessUnits');
 
   //Manage Pictures

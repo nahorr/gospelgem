@@ -18,7 +18,7 @@ class CreateInvitationsTable extends Migration
             $table->string('organization_name');
             $table->string('country');
             $table->string('event');
-            $table->string('description');
+            $table->longText('description');
             $table->date('event_date');
             $table->string('venue');
             $table->string('contact_person');

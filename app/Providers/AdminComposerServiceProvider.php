@@ -25,6 +25,7 @@ class AdminComposerServiceProvider extends ServiceProvider
             'admin.comments',
             'admin.replies',
             'admin.contactform.submissions',
+            'admin.invitationform.submissions',
             'admin.business.units',
             'admin.pictures.categories',
             'admin.pictures.showpictures',

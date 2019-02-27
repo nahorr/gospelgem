@@ -13,54 +13,6 @@
           </li>
           <!-- End Dashboard -->
 
-          
-
-          <!-- Category-->
-          <!-- <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/categories')}}">
-              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                <i class="hs-admin-package"></i>
-              </span>
-              <span class="media-body align-self-center">Categories</span>
-            </a>
-          </li> -->
-          <!-- Category -->
-
-          <!-- Posts-->
-          <!-- <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/posts')}}">
-              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                <i class="hs-admin-check-box"></i>
-              </span>
-              <span class="media-body align-self-center">Posts</span>
-            </a>
-          </li> -->
-          <!-- Posts -->
-
-          <!-- Comments-->
-          <!-- <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/comments')}}">
-              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                <i class="hs-admin-comment-alt"></i>
-              </span>
-              <span class="media-body align-self-center">Comments</span>
-            </a>
-          </li> -->
-          <!-- Comments -->
-
-          <!-- Replies-->
-          <!-- <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/replies')}}">
-              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                <i class="hs-admin-comments"></i>
-              </span>
-              <span class="media-body align-self-center">Replies</span>
-            </a>
-          </li> -->
-          <!-- Comments -->
-
-
-
           <!-- Business Units-->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/business/units')}}">
@@ -79,6 +31,17 @@
                 <i class="hs-admin-email"></i>
               </span>
               <span class="media-body align-self-center">Contact Form</span>
+            </a>
+          </li>
+          <!-- End Contact Form -->
+
+          <!-- Contact Form-->
+          <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/invitationform/submissions')}}">
+              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                <i class="hs-admin-bookmark-alt"></i>
+              </span>
+              <span class="media-body align-self-center">Invitation Form</span>
             </a>
           </li>
           <!-- End Contact Form -->

@@ -10,6 +10,7 @@ use App\CommentReply;
 use App\UserDetail;
 use Carbon\Carbon;
 use App\ContactUs;
+use App\Invitation;
 use App\Category;
 use App\Comment;
 use App\User;
@@ -40,6 +41,7 @@ Class AdminMetricsComposer {
             $replies = CommentReply::orderBy('created_at', 'desc')->get();
 
             $contactFormSubmissions = ContactUs::orderBy('created_at', 'desc')->get();
+            $invitationFormSubmissions = Invitation::orderBy('created_at', 'desc')->get();
             $courses = Course::get();
             
             //put variables in views
@@ -54,6 +56,7 @@ Class AdminMetricsComposer {
             ->with('comments', $comments)
             ->with('replies', $replies)
             ->with('contactFormSubmissions', $contactFormSubmissions)
+            ->with('invitationFormSubmissions', $invitationFormSubmissions)
             ->with('courses', $courses);
 
             
