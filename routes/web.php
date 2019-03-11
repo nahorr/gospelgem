@@ -107,14 +107,21 @@ Route::group(['middleware' => 'auth'], function () {
 
 //Admin Area
 Route::group(['middleware' => 'admin'], function () { 
-
-  Route::get('admin/home', 'Admin\HomeController@index');
+  //dashboard home
+  Route::get('admin/home', 'Admin\HomeController@index'); 
+  //users
+  Route::get('admin/users/all-users', 'Admin\UsersController@allUsers');
   Route::get('admin/home/delete/{user}', 'Admin\HomeController@deleteUser')->name('deleteuser');
   Route::post('admin/home/makeAdmin/{user}', 'Admin\HomeController@makeAdmin');
   Route::post('admin/home/makeUser/{user}', 'Admin\HomeController@makeUser');
   Route::post('admin/home/verify/{user}', 'Admin\HomeController@verify');
   Route::post('admin/home/unverify/{user}', 'Admin\HomeController@unverify');
-
+  //Mentors
+  Route::get('admin/mentors/all-mentors', 'Admin\MentorsController@allMentors');
+  Route::post('admin/mentors/addmentor', 'Admin\MentorsController@addMentor');
+  Route::post('admin/mentors/editmentor/{mentor}', 'Admin\MentorsController@editMentor');
+  Route::get('admin/mentors/deletementor/{mentor}', 'Admin\MentorsController@deleteMentor');
+ 
   Route::get('admin/categories', 'Admin\HomeController@categories');
   //Route::get('admin/addcategory', 'Admin\HomeController@addcategory');
   Route::post('admin/storeAddCategory', 'Admin\HomeController@storeAddCategory')->name('addcategory');

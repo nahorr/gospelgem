@@ -20,6 +20,8 @@ class AdminComposerServiceProvider extends ServiceProvider
 
             'admin.include.metrics',
             'admin.home',
+            'admin.users.all-users',
+            'admin.mentors.all-mentors',
             'admin.categories',
             'admin.posts',
             'admin.comments',

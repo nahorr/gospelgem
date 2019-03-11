@@ -30,6 +30,10 @@
                          </th>
                          <th class="g-px-30">
                            <div class="media">
+                             <div class="d-flex align-self-center">Mentor</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
                              <div class="d-flex align-self-center">Organization</div></div>
                          </th>
                          <th class="g-px-30">
@@ -89,6 +93,7 @@
                       @foreach($invitationFormSubmissions as $key => $submissions)
                        <tr>
                         <td class="g-px-30">{{$key+1}}</td>
+                        <td class="g-px-30">{{$submissions->mentor}}</td>
                          <td class="g-px-30">{{$submissions->organization_name}}</td>
                          <td class="g-px-30">{{$submissions->country}}</td>
                          <td class="g-px-30">{{$submissions->event}}</td>

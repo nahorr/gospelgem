@@ -33,6 +33,18 @@
                    {{ csrf_field() }}
 
                 <div class="mb-4">
+                  <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Select the Mentor you wish to invite:</label>
+                  <select name="mentor" id="mentor" class="form-control rounded" required="">
+                    
+                        @foreach($mentors as $key => $mentor)
+                          <option value="{{ $mentor->full_name }}">
+                              {{ $mentor->full_name }}
+                          </option>
+                        @endforeach
+                  </select>
+                </div>
+
+                <div class="mb-4">
                   <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Name of Organization/Individual:</label>
                   <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" name="organization_name" required="">
                 </div>

@@ -13,16 +13,27 @@
           </li>
           <!-- End Dashboard -->
 
-          <!-- Business Units-->
+          <!-- All Users-->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/business/units')}}">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/users/all-users')}}">
               <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                <i class="hs-admin-view-list-alt"></i>
+                <i class="fa fa-users"></i>
               </span>
-              <span class="media-body align-self-center">Business Units</span>
+              <span class="media-body align-self-center">All Users</span>
             </a>
           </li>
-          <!-- End Business Units -->
+          <!-- All Users End -->
+
+          <!-- Mentors-->
+          <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('admin/mentors/all-mentors')}}">
+              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                <i class="hs-admin-blackboard"></i>
+              </span>
+              <span class="media-body align-self-center">Mentors</span>
+            </a>
+          </li>
+          <!-- Mentors End -->
 
           <!-- Contact Form-->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">

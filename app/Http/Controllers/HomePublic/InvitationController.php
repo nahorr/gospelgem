@@ -10,6 +10,7 @@ use App\Invitation;
 use Notification;
 use App\Notifications\InvitationFormSubmitted;
 use App\User;
+use App\Mentor;
 
 class InvitationController extends Controller
 {
@@ -17,7 +18,9 @@ class InvitationController extends Controller
 
     public function Invite()
     {
-  		return view('public-views.invite_gosgem');
+        $mentors = Mentor::get();
+
+  		return view('public-views.invite_gosgem', compact('mentors'));
     }
 
     public function postInvite(Request $request)
@@ -25,6 +28,7 @@ class InvitationController extends Controller
         $request['captcha'] = $this->captchaCheck();
 
         $this->validate($request, [
+            'mentor' => 'required',
 	        'organization_name' => 'required',
 	        'country' => 'required',
 	        'event' => 'required',
@@ -43,6 +47,7 @@ class InvitationController extends Controller
         ]);
 
         $invite_gosgem = Invitation::insert([
+        'mentor'=>$request->mentor,
         'organization_name'=>$request->organization_name,
         'country'=>$request->country,
         'event'=>$request->event,

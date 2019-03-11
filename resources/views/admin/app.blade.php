@@ -18,8 +18,11 @@
   <link rel="shortcut icon" href="{{asset('unify/favicon_private.png')}}">
   <!-- Google Fonts -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
+  <!-- to get bootstrap modal to work -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- CSS Global Compulsory -->
-  <link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/bootstrap/bootstrap.min.css')}}"> 
+  
   <!-- CSS Global Icons -->
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-awesome/css/font-awesome.min.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-line/css/simple-line-icons.css')}}">
