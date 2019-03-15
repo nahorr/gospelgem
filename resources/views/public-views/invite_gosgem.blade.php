@@ -2,7 +2,7 @@
 
 @section('content')
 
-	@include('layouts.public.includes.nav-header')
+@include('layouts.public.includes.nav-header')
 <div class="row">
   <div class="col-md-12">
     @include('flash::message')

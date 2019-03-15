@@ -28,6 +28,9 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
   Route::get('/invite_gosgem', 'HomePublic\InvitationController@invite');
   Route::post('/post_invite_gosgem', 'HomePublic\InvitationController@postInvite');
 
+  //Pictures
+  Route::get('/pictures', 'HomePublic\PicturesController@showPictures');
+
   //comming soon pages
 	Route::get('/coming-soon', 'HomePublic\HomeController@comingSoon')->name('comingsoon');
 
@@ -163,6 +166,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/storeEditPicture/{picture}', 'Admin\Pictures\CategoryController@storeEditPicture');
     Route::get('admin/deletepicture/{picture}', 'Admin\Pictures\CategoryController@deletePicture');
 
+    //Public Pictures Page
+    Route::get('admin/pictures_page/pictures', 'Admin\Pictures\PicturesPageController@picturesPage');
+    Route::post('admin/pictures_page/addpictures', 'Admin\Pictures\PicturesPageController@addPictures');
+    Route::post('admin/pictures_page/editpictures/{picture}', 'Admin\Pictures\PicturesPageController@editPictures');
+    Route::get('admin/delete/{picture}', 'Admin\Pictures\PicturesPageController@deletePictures');
+
     //Manage Courses and Course categories
     //Categories
     Route::get('admin/courses/categories', 'Admin\Courses\CategoryController@courseCategories');
@@ -181,5 +190,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/courses/deleteCourseRegistration/{courseregistration}', 'Admin\Courses\CourseRegistrationsController@deleteCourseRegistration');
     //Download registration Table for each Course
     Route::get('/admin/courses/showallcourses/downloadCourseRegistrations/{course}', 'Admin\Courses\CourseRegistrationsController@downloadCourseRegistrationsExcel');
+
 
 });

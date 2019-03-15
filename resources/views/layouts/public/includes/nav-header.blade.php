@@ -88,11 +88,16 @@
                   <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('mentorship')}}" aria-haspopup="true" aria-expanded="false">Mentorship</a>
                 </li>
                 <!-- End About -->
-                <!-- About -->
+                <!-- Invite US -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
                   <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('invite_gosgem')}}" aria-haspopup="true" aria-expanded="false">Invite Us</a>
                 </li>
-                <!-- End About -->            
+                <!-- End Invite Us -->
+                <!-- Invite US -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('pictures')}}" aria-haspopup="true" aria-expanded="false">Pictures</a>
+                </li>
+                <!-- End Invite Us -->          
                 <!-- About -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
                   <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('contact')}}" aria-haspopup="true" aria-expanded="false">Contact</a>

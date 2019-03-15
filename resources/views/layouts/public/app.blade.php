@@ -54,6 +54,7 @@
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/dzsparallaxer/dzsscroller/scroller.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/dzsparallaxer/advancedscroller/plugin.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/icon-material/material-icons.css')}}">
+  <link rel="stylesheet" href="{{asset('unify/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css') }}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/slick-carousel/slick/slick.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/hs-bg-video/hs-bg-video.css')}}">
@@ -78,8 +79,10 @@
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/revolution-slider/revolution/css/layers.css')}}">
   <link rel="stylesheet" href="{{asset('unify/assets/vendor/revolution-slider/revolution/css/navigation.css')}}">
 
+
   <!-- CSS Customization -->
   <link rel="stylesheet" href="{{asset('unify/assets/css/custom.css')}}">
+
   <!--<link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet">-->
 
   <!-- for google reCaptcha -->
@@ -112,7 +115,6 @@
 
   <!-- JS Implementing Plugins -->
   <script src="{{asset('unify/assets/vendor/hs-megamenu/src/hs.megamenu.js')}}"></script>
-  <script src="{{asset('unify/assets/vendor/gmaps/gmaps.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/dzsparallaxer.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/dzsscroller/scroller.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/dzsparallaxer/advancedscroller/plugin.js')}}"></script>
@@ -120,11 +122,13 @@
   <script src="{{asset('unify/assets/vendor/jquery.countdown.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/masonry/dist/masonry.pkgd.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.min.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/slick-carousel/slick/slick.js')}}"></script>
   <script src="{{asset('unify/assets/vendor/hs-bg-video/hs-bg-video.js')}}"></script>
-  <script src="{{asset('unify/assets/vendor/hs-bg-video/vendor/player.min.js')}}"></script>
-  <script src="{{asset('unify/assets/vendor/fancybox/jquery.fancybox.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/hs-bg-video/vendor/player.min.js')}}"></script> 
   <script src="{{asset('unify/assets/vendor/circles/circles.min.js')}}"></script>
+  <script src="{{asset('unify/assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js') }}"></script>
+  <script src="{{asset('unify/assets/vendor/gmaps/gmaps.min.js') }}"></script>
 
   <!-- JS Unify -->
   <script src="{{asset('unify/assets/js/hs.core.js')}}"></script>
@@ -134,12 +138,13 @@
   <script src="{{asset('unify/assets/js/components/hs.scroll-nav.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.tabs.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/gmap/hs.map.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.popup.js')}}"></script>
+  <script src="{{asset('unify/assets/js/components/hs.cubeportfolio.js') }}"></script>
   <script src="{{asset('unify/assets/js/components/hs.carousel.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.progress-bar.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.bg-video.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.onscroll-animation.js')}}"></script>
   <script src="{{asset('unify/assets/js/helpers/hs.height-calc.js')}}"></script>
-  <script src="{{asset('unify/assets/js/components/hs.popup.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.go-to.js')}}"></script>
   <script src="{{asset('unify/assets/js/components/hs.chart-pie.js')}}"></script>
 
@@ -219,14 +224,13 @@
     }
 
     $(document).ready(function () {
+      // initialization of popups
+      $.HSCore.components.HSPopup.init('.js-fancybox');
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
 
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
-
-      // initialization of popups
-      $.HSCore.components.HSPopup.init('.js-fancybox');
 
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');
@@ -248,6 +252,9 @@
 
       // initialization of header's height equal offset
       $.HSCore.helpers.HSHeightCalc.init();
+
+      // initialization of cubeportfolio
+        $.HSCore.components.HSCubeportfolio.init('.cbp');
     });
 
     $(window).on('load', function () {

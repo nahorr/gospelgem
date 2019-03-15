@@ -142,6 +142,14 @@
                   </li>
                 @endforeach
                   <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{ url('admin/pictures_page/pictures') }}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="hs-admin-camera"></i>
+                      </span>
+                      <span class="media-body align-self-center">Pictures page</span>
+                    </a>
+                  </li>
+                  <li>
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{ url('admin/pictures/categories') }}" >
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                         <i class="hs-admin-camera"></i>
