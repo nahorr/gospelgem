@@ -25,28 +25,20 @@
              <textarea class="form-control rounded-0 form-control-md"  name="description">{{$picture->description}}</textarea>
            </div>
           <!-- File Input -->
-          <p class="form-group col-md-12">{{count(json_decode($picture->filename))}} pictures added aready.</p>
-          <label class="form-group col-md-12" for="post_title"><strong>Edit/Add More Pictures: </strong><span style="color: red">You can add more than one pictures</span></label>
-          <div class="form-group input-group control-group-{{$picture->id}} increment-{{$picture->id}} g-mb-25 col-md-12" >
-            <input type="file" name="filename[]" class="form-control">
-            <div class="input-group-btn"> 
-              <button class="btn btn-success-{{$picture->id}} form-control rounded-0 form-control-md" type="button" style="background-color: #28a745;"><i class="fa fa-plus"></i> Add</button>
+         
+            <label class="form-group col-md-12" for="post_title">
+              <strong>Edit/Add More Pictures: </strong>
+              <span style="color: red">You can add more than one pictures</span>
+            </label>
+            <div class="form-group input-group control-group-{{$picture->id}} increment-{{$picture->id}} g-mb-25 col-md-12" >
+              <input type="file" name="filename[]" class="form-control" multiple>
             </div>
-          </div>
-          <div class="clone-{{$picture->id}} d-none">
-            <div class="form-group control-group-{{$picture->id}} input-group g-mb-25 col-md-12">
-              <input type="file" name="filename[]" class="form-control">
-              <div class="input-group-btn"> 
-                <button class="btn btn-danger-{{$picture->id}} form-control rounded-0 form-control-md" type="button" style="background-color: #dc3545;"><i class="fa fa-close"></i> Remove</button>
-              </div>
-            </div>
-          </div>
-          <!-- End File Input -->
+            <!-- End File Input -->
 
             <div class="form-group g-mb-25 col-md-6">
-             <button type="submit" class="btn btn-primary">Submit</button>
-             <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-           </div>
+               <button type="submit" class="btn btn-primary">Update</button>
+               <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            </div>
 
           </form>
           <!-- Add Form -->
@@ -54,20 +46,3 @@
   </div>
 </div>
 </div>
-
-<script type="text/javascript">
-
-    $(document).ready(function() {
-
-      $(".btn-success-{{$picture->id}}").click(function(){ 
-          var html = $(".clone-{{$picture->id}}").html();
-          $(".increment-{{$picture->id}}").before(html);
-      });
-
-      $("body").on("click",".btn-danger-{{$picture->id}}",function(){ 
-          $(this).parents(".control-group-{{$picture->id}}").remove();
-      });
-
-    });
-
-</script>

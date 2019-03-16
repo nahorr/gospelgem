@@ -52,7 +52,6 @@ class PicturesPageController extends Controller
 
     public function editPictures(Request $request, Picture $picture)
     {
-
         $this->validate($request, [
 
                 'title' => 'required',
@@ -60,7 +59,7 @@ class PicturesPageController extends Controller
                 //'filename' => 'required',
                 'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000'
 
-        ]);
+        ]); 
         
         if($request->hasfile('filename'))
          {
@@ -73,14 +72,13 @@ class PicturesPageController extends Controller
             }
          }
 
-
          $edit_picture=Picture::where('id', $picture->id)->first();
-
          $edit_picture->title=$request->title;
          $edit_picture->description=$request->description;
-         $edit_picture->filename=json_encode(array_merge($data, json_decode($edit_picture->filename)));
-         
-        
+         if ($request->file('filename')) {
+             $edit_picture->filename=json_encode(array_merge($data, json_decode($edit_picture->filename)));
+         } 
+
         $edit_picture->save();
 
         flash('Picture Edited successfully!')->success();
