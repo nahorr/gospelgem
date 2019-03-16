@@ -29,14 +29,14 @@
           <div class="form-group input-group control-group increment g-mb-25 col-md-12" >
             <input type="file" name="filename[]" class="form-control">
             <div class="input-group-btn"> 
-              <button class="btn btn-success form-control rounded-0 form-control-md" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+              <button class="btn btn-success form-control rounded-0 form-control-md" type="button"><i class="fa fa-plus"></i> Add</button>
             </div>
           </div>
           <div class="clone d-none">
             <div class="form-group control-group input-group g-mb-25 col-md-12">
               <input type="file" name="filename[]" class="form-control">
               <div class="input-group-btn"> 
-                <button class="btn btn-danger form-control rounded-0 form-control-md" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                <button class="btn btn-danger form-control rounded-0 form-control-md" type="button"><i class="fa fa-close"></i> Remove</button>
               </div>
             </div>
           </div>

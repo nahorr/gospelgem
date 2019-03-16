@@ -25,12 +25,12 @@
              <textarea class="form-control rounded-0 form-control-md"  name="description">{{$picture->description}}</textarea>
            </div>
           <!-- File Input -->
-          <p>({{count(json_decode($picture->filename))}})</p>
+          <p class="form-group col-md-12">{{count(json_decode($picture->filename))}} pictures added aready.</p>
           <label class="form-group col-md-12" for="post_title"><strong>Edit/Add More Pictures: </strong><span style="color: red">You can add more than one pictures</span></label>
           <div class="form-group input-group control-group-{{$picture->id}} increment-{{$picture->id}} g-mb-25 col-md-12" >
             <input type="file" name="filename[]" class="form-control">
             <div class="input-group-btn"> 
-              <button class="btn btn-success-{{$picture->id}} form-control rounded-0 form-control-md" type="button" style="background-color: #28a745;"><i class="fa fa-plus"></i>Add</button>
+              <button class="btn btn-success-{{$picture->id}} form-control rounded-0 form-control-md" type="button" style="background-color: #28a745;"><i class="fa fa-plus"></i> Add</button>
             </div>
           </div>
           <div class="clone-{{$picture->id}} d-none">

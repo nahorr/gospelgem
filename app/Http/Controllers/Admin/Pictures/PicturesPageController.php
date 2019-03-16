@@ -43,10 +43,47 @@ class PicturesPageController extends Controller
          $picture->description=$request->description;
          $picture->filename=json_encode($data);
          
-        
         $picture->save();
 
         flash('Picture(s) Added successfully!')->success();
+
+        return back();
+    }
+
+    public function editPictures(Request $request, Picture $picture)
+    {
+
+        $this->validate($request, [
+
+                'title' => 'required',
+                'description' => 'required',
+                //'filename' => 'required',
+                'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000'
+
+        ]);
+        
+        if($request->hasfile('filename'))
+         {
+
+            foreach($request->file('filename') as $image)
+            {
+                $name=preg_replace('/\s+/', '', $request->title). '-' .$image->getClientOriginalName();
+                $image->move(public_path().'/uploads/pagepictures/', $name);  
+                $data[] = $name;  
+            }
+         }
+
+
+         $edit_picture=Picture::where('id', $picture->id)->first();
+
+         $edit_picture->title=$request->title;
+         $edit_picture->description=$request->description;
+         $edit_picture->filename=json_encode(array_merge($data, json_decode($edit_picture->filename)));
+         
+        
+        $edit_picture->save();
+
+        flash('Picture Edited successfully!')->success();
 
         return back();
     }
