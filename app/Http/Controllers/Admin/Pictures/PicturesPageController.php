@@ -37,7 +37,7 @@ class PicturesPageController extends Controller
                 $data[] = $name;  
             }
          }
-         dd($data);
+         
          $picture= new Picture();
          $picture->title=$request->title;
          $picture->description=$request->description;
@@ -124,7 +124,7 @@ class PicturesPageController extends Controller
             if ($request->filename ==  json_decode($delete_picture->filename)[$i] && File::exists($file)) {
                 $data = json_decode($delete_picture->filename);
                 unset($data[$i]);
-                //unlink($file);
+                unlink($file);
             }
         }
        
