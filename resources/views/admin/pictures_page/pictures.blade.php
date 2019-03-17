@@ -108,10 +108,17 @@
                           </td>
                         <td class="g-px-30">
                            <div class="media">
-                             <div class="media-body align-self-center text-left">{{ count(json_decode($picture->filename)) }}
+                             <div class="media-body align-self-center text-left">{{ count(json_decode($picture->filename)) }} Pics
+                               <a href="#" class="btn btn-md u-btn-outline-primary g-mr-10 g-mb-15" id="deletePics-{{$picture->id}}"><i class="fa fa-edit"></i> Delete pics</a>     
                            </div>
                         </td>
-                          
+                          @include('admin.pictures_page.deletePicturesModal')
+                         <script type="text/javascript">
+                           $('#deletePics-{{$picture->id}}').on('click', function(e){
+                               e.preventDefault();
+                             $('#deletePicturesModal-{{$picture->id}}').modal('show');
+                           })
+                         </script>
                          <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{ $picture->created_at->toFormattedDateString() }}</div>

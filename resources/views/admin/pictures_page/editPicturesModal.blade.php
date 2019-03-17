@@ -27,7 +27,7 @@
           <!-- File Input -->
          
             <label class="form-group col-md-12" for="post_title">
-              <strong>Edit/Add More Pictures: </strong>
+              <strong>Add More Pictures: </strong>
               <span style="color: red">You can add more than one pictures</span>
             </label>
             <div class="form-group input-group control-group-{{$picture->id}} increment-{{$picture->id}} g-mb-25 col-md-12" >
@@ -43,6 +43,6 @@
           </form>
           <!-- Add Form -->
       </div>     
+    </div>
   </div>
-</div>
 </div>

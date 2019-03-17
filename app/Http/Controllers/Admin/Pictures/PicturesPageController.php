@@ -37,7 +37,7 @@ class PicturesPageController extends Controller
                 $data[] = $name;  
             }
          }
-
+         dd($data);
          $picture= new Picture();
          $picture->title=$request->title;
          $picture->description=$request->description;
@@ -102,6 +102,36 @@ class PicturesPageController extends Controller
 
         Picture::where('id', $picture->id)->delete();
         flash('Picture(s) Deleted')->warning();
+
+        return back();
+    }
+
+    public function deletePic(Request $request, Picture $picture)
+    {
+        $this->validate($request, [
+
+            'filename' => 'required',
+               
+        ]);  
+
+        $delete_picture=Picture::where('id', $picture->id)->first();
+
+        // Remove current image from server
+        for ($i = 0; $i < count(json_decode($delete_picture->filename)); $i++){
+
+            $file = public_path('/uploads/pagepictures/'.json_decode($delete_picture->filename)[$i]);
+
+            if ($request->filename ==  json_decode($delete_picture->filename)[$i] && File::exists($file)) {
+                $data = json_decode($delete_picture->filename);
+                unset($data[$i]);
+                //unlink($file);
+            }
+        }
+       
+        $delete_picture->filename=json_encode(array_values($data));
+        $delete_picture->save();
+
+        flash('Picture Deleted successfully!')->success();
 
         return back();
     }

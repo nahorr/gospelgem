@@ -22,7 +22,7 @@
       <section id="topWorks" class="g-py-80">
         <div class="container">
           <div class="row">
-            <div class="col-md-2 g-mb-40 g-mb-0--md">
+            <div class="col-md-3 g-mb-40 g-mb-0--md">
               <h4 class="h6 text-uppercase g-mb-30">Categories</h4>
 
               <ul id="topWorksCubePortfolioFilter" class="nav d-block text-uppercase g-line-height-1_4 g-font-weight-700 g-font-size-11">
@@ -31,15 +31,17 @@
                   <span class="nav-link p-0"><span class="g-mr-10">01.</span> All</span>
                 </li>
                 @foreach($pictures as $key=>$pic)
-                <li class="cbp-filter-item nav-item g-mb-20"
-                    data-filter=".{{preg_replace('/\s+/', '', $pic->title)}}">
-                  <span class="nav-link p-0"><span class="g-mr-10">0{{$key+1}}.</span> {{$pic->title}}</span>
-                </li>
+                  @for ($i = 0; $i < count(json_decode($pic->filename)); $i++)
+                    <li class="cbp-filter-item nav-item g-mb-20"
+                        data-filter=".{{preg_replace('/\s+/', '', $pic->title)}}">
+                      <span class="nav-link p-0"><span class="g-mr-10">0{{$key+1}}.</span> {{$pic->title}}({{count(json_decode($pic->filename))}} <i class="fa fa-file-picture-o"></i>)</span>
+                    </li>
+                  @endfor
                 @endforeach
               </ul>
             </div>
 
-            <div class="col-md-10">
+            <div class="col-md-9">
               <div id="topWorksCubePortfolio" class="cbp"
                    data-controls="#topWorksCubePortfolioFilter"
                    data-layout="grid"
@@ -58,10 +60,10 @@
                  
                   <a class="cbp-caption cbp-lightbox info-v3-2 d-block g-parent g-mb-20" 
                   href="{{asset('uploads/pagepictures/'. json_decode($pic->filename)[$i] )}}"
-                     data-title="{{$pic->title}}">
+                     data-title="{{$pic->description}}">
                   
                     <div class="cbp-caption-defaultWrap g-overflow-hidden">
-                      <img class="g-transform-scale-1_2--parent-hover g-transition-0_2 g-transition--ease-in" src="{{asset('uploads/pagepictures/'. json_decode($pic->filename)[$i] )}}" alt="Image description">
+                      <img class="g-transform-scale-1_2--parent-hover g-transition-0_2 g-transition--ease-in" src="{{asset('uploads/pagepictures/'. json_decode($pic->filename)[$i] )}}" alt="{{json_decode($pic->filename)[$i]}}">
                     </div>
 
                     <div class="cbp-caption-activeWrap g-theme-bg-blue-dark-v1-opacity-0_6">

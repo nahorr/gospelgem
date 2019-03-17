@@ -171,7 +171,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/pictures_page/addpictures', 'Admin\Pictures\PicturesPageController@addPictures');
     Route::post('admin/pictures_page/editpictures/{picture}', 'Admin\Pictures\PicturesPageController@editPictures');
     Route::get('admin/delete/{picture}', 'Admin\Pictures\PicturesPageController@deletePictures');
-
+    Route::post('admin/deletepic/{picture}', 'Admin\Pictures\PicturesPageController@deletePic');
     //Manage Courses and Course categories
     //Categories
     Route::get('admin/courses/categories', 'Admin\Courses\CategoryController@courseCategories');
