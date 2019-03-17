@@ -34,7 +34,7 @@
                   
                     <li class="cbp-filter-item nav-item g-mb-20"
                         data-filter=".{{preg_replace('/\s+/', '', $pic->title)}}">
-                      <span class="nav-link p-0"><span class="g-mr-10">0{{$key+1}}.</span> {{$pic->title}}<span style="color: #dcac10"> ({{count(json_decode($pic->filename))}} <i class="fa fa-file-picture-o"></i>)</span></span>
+                      <span class="nav-link p-0"><span class="g-mr-10">0{{$key+2}}.</span> {{$pic->title}}<span style="color: #dcac10"> ({{count(json_decode($pic->filename))}} <i class="fa fa-file-picture-o"></i>)</span></span>
                     </li>
                   
                 @endforeach
