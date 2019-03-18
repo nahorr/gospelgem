@@ -31,7 +31,7 @@
              <div class="form-group g-mb-25 col-md-12">
               <label for="post_title">Mentor Picture</label><br>
                 <input type="file" name="picture"><br><br>
-                <img src="{{asset('unify/assets/img/mentors/'.$mentor->picture)}}" alt="{{$mentor->full_name}}" class="img-thumbnail" style="max-height: 100px; max-width: 100px">
+                <img src="{{asset('uploads/mentors/'.$mentor->picture)}}" alt="{{$mentor->full_name}}" class="img-thumbnail" style="max-height: 100px; max-width: 100px">
              </div>
            
            <!-- End File Input -->

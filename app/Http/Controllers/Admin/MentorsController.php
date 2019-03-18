@@ -25,7 +25,7 @@ class MentorsController extends Controller
          if($request->hasFile('picture')){
              $mentor_picture = $request->file('picture');
              $filename = $request->full_name . '.' . $mentor_picture->getClientOriginalExtension();
-             $destinationPath = public_path().'/unify/assets/img/mentors/';
+             $destinationPath = public_path().'/uploads/mentors/';
              $mentor_picture->move($destinationPath,$filename);
              
          }
@@ -59,13 +59,13 @@ class MentorsController extends Controller
         if($request->hasFile('picture')){
             $mentor_picture = $request->file('picture');
             $filename = $request->full_name . '.' . $mentor_picture->getClientOriginalExtension();
-            $destinationPath = public_path().'/unify/assets/img/mentors/' ;
+            $destinationPath = public_path().'/uploads/mentors/' ;
 
             // Delete current image before uploading new image
-            $file = public_path('/unify/assets/img/mentor/'.$filename);
+            $file = public_path('/uploads/mentors/'.$filename);
             if (File::exists($file)) {
                     unlink($file);
-                }
+            }
 
             $mentor_picture->move($destinationPath,$filename);
             $edit_mentor->picture = $filename;
@@ -80,7 +80,12 @@ class MentorsController extends Controller
 
     public function deleteMentor(Mentor $mentor)
     {
-    	Mentor::where('id', $mentor->id)->delete();
+        // Delete current image before uploading new image
+        $file = public_path('/uploads/mentors/'.$mentor->picture);
+        if (File::exists($file)) {
+            Mentor::where('id', $mentor->id)->delete();
+            unlink($file);
+        }
     	flash('Mentor deleted!')->warning();
         return back();
     }

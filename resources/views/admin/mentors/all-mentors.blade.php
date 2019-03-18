@@ -47,7 +47,7 @@
                        <tr>
                          <td>{{ $key+1 }}</td>
                          <td>
-                            <img src="{{asset('unify/assets/img/mentors/'.$mentor->picture)}}" alt="{{$mentor->full_name}}" class="img-thumbnail" style="max-height: 50px; max-width: 50px">
+                            <img src="{{asset('uploads/mentors/'.$mentor->picture)}}" alt="{{$mentor->full_name}}" class="img-thumbnail" style="max-height: 50px; max-width: 50px">
                          </td>
                          <td>{{ $mentor->full_name }}</td>
                          <td>{{ $mentor->email }}</td>
