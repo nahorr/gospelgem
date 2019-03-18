@@ -63,7 +63,7 @@
                      data-title="{{$pic->description}}">
                   
                     <div class="cbp-caption-defaultWrap g-overflow-hidden">
-                      <img class="g-transform-scale-1_2--parent-hover g-transition-0_2 g-transition--ease-in" src="{{asset('uploads/pagepictures/'. json_decode($pic->filename)[$i] )}}" alt="{{json_decode($pic->filename)[$i]}}">
+                      <img class="g-transform-scale-1_2--parent-hover g-transition-0_2 g-transition--ease-in" src="{{asset('uploads/pagepictures/'. json_decode($pic->filename)[$i] )}}" alt="{{json_decode($pic->filename)[$i]}}" style="max-height: 130px; max-width: 170px; min-height: 130px; min-width: 170px;">
                     </div>
 
                     <div class="cbp-caption-activeWrap g-theme-bg-blue-dark-v1-opacity-0_6">

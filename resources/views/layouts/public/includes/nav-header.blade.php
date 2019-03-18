@@ -93,11 +93,20 @@
                   <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('invite_gosgem')}}" aria-haspopup="true" aria-expanded="false">Invite Us</a>
                 </li>
                 <!-- End Invite Us -->
-                <!-- Invite US -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                  <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('pictures')}}" aria-haspopup="true" aria-expanded="false">Pictures</a>
+                <!-- Gallery -->
+                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Gallery</a>
+
+                <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu--features" aria-labelledby="nav-link--features">
+                    <!-- Pictures-->
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="{{url('pictures')}}">Pictures</a>
+                    </li>
+                    <!-- End Pictures -->
+                  </ul>
                 </li>
-                <!-- End Invite Us -->          
+                <!-- End Gallery -->
+          
                 <!-- About -->
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
                   <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('contact')}}" aria-haspopup="true" aria-expanded="false">Contact</a>
