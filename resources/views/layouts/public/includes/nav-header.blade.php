@@ -84,7 +84,7 @@
                 <!-- End About -->
                 
                 <!-- About -->
-                <li class="nav-item  g-mx-10--lg g-mx-15" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
                   <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="{{url('mentorship')}}" aria-haspopup="true" aria-expanded="false">Mentorship</a>
                 </li>
                 <!-- End About -->
