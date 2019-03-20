@@ -32,7 +32,7 @@ class PicturesPageController extends Controller
 
             foreach($request->file('filename') as $image)
             {
-                $name=time(). '_' .preg_replace('/\s+/', '', $request->title). '-' .$image->getClientOriginalName();
+                $name=time().'_'.$image->getClientOriginalName();
                 $image->move(public_path().'/uploads/pagepictures/', $name);  
                 $data[] = $name;  
             }
@@ -66,7 +66,7 @@ class PicturesPageController extends Controller
 
             foreach($request->file('filename') as $image)
             {
-                $name=time(). '_' .preg_replace('/\s+/', '', $request->title). '-' .$image->getClientOriginalName();
+                $name=time().'_'.$image->getClientOriginalName();
                 $image->move(public_path().'/uploads/pagepictures/', $name);  
                 $data[] = $name;  
             }
