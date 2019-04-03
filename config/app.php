@@ -186,7 +186,7 @@ return [
         \Torann\GeoIP\GeoIPServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Approached\LaravelImageOptimizer\ServiceProvider::class,
+        
 
     ],
 
