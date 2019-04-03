@@ -30,6 +30,7 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
   //Pictures
   Route::get('/pictures', 'HomePublic\PicturesController@showPictures');
+  //Route::post('/morepictures', 'HomePublic\PicturesController@loadMorePictures');
 
   //comming soon pages
 	Route::get('/coming-soon', 'HomePublic\HomeController@comingSoon')->name('comingsoon');

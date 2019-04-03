@@ -54,7 +54,7 @@
                      {"width": 500, "cols": 3},
                      {"width": 320, "cols": 1}
                    ]'>
-                @foreach($simple_peg_pictures as $pic)
+                @foreach($pictures as $pic)
                 @for ($i = 0; $i < count(json_decode($pic->filename)); $i++)
                 <div class="cbp-item g-width-280 g-width-170--md {{preg_replace('/\s+/', '', $pic->title)}}">
                  
@@ -82,7 +82,7 @@
                 @endforeach
               </div>
               <hr>
-              <div class="pagination">{{$simple_peg_pictures->links("pagination::bootstrap-4")}}</div> 
+              {{--<div class="pagination">{{$pictures->links("pagination::bootstrap-4")}}</div>--}}
             </div>
             
           </div>

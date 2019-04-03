@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Picture;
 use File;
+use Image;
 
 class PicturesPageController extends Controller
 {
@@ -15,7 +16,7 @@ class PicturesPageController extends Controller
     	return view('admin/pictures_page/pictures', compact('pictures'));
     }
 
-    public function addPictures(Request $request)
+    public function addPictures(Request $request, Exception $exception)
     {
 
         $this->validate($request, [
@@ -26,6 +27,7 @@ class PicturesPageController extends Controller
                 'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000'
 
         ]);
+
         
         if($request->hasfile('filename'))
          {
@@ -33,7 +35,8 @@ class PicturesPageController extends Controller
             foreach($request->file('filename') as $image)
             {
                 $name=time().'_'.$image->getClientOriginalName();
-                $image->move(public_path().'/uploads/pagepictures/', $name);  
+                $imageOptimizer->optimizeUploadedImageFile($image);// optimize before saving
+                Image::make($image)->fit(800)->save( public_path('/uploads/pagepictures/' . $name ) );  
                 $data[] = $name;  
             }
          }
@@ -67,7 +70,8 @@ class PicturesPageController extends Controller
             foreach($request->file('filename') as $image)
             {
                 $name=time().'_'.$image->getClientOriginalName();
-                $image->move(public_path().'/uploads/pagepictures/', $name);  
+                $imageOptimizer->optimizeUploadedImageFile($image);// optimize before saving
+                Image::make($image)->fit(800)->save( public_path('/uploads/pagepictures/' . $name ) );
                 $data[] = $name;  
             }
          }

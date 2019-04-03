@@ -185,6 +185,8 @@ return [
         Felixkiss\UniqueWithValidator\ServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Approached\LaravelImageOptimizer\ServiceProvider::class,
 
     ],
 
@@ -238,6 +240,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

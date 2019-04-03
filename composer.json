@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "approached/laravel-image-optimizer": "^2.3",
         "doctrine/dbal": "^2.5",
         "felixkiss/uniquewith-validator": "^3.1",
         "fideloper/proxy": "~3.3",
