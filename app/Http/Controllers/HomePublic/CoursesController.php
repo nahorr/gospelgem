@@ -19,7 +19,7 @@ class CoursesController extends Controller
 
     public function showCourses()
     {
-    	$courses = Course::get();
+    	$courses = Course::orderBy('start_date', 'asc')->get();
 
 
     	return view('public-views.courses.showcourses', compact('courses'));

@@ -12,6 +12,8 @@ class PicturesController extends Controller
     {
     	$pictures = Picture::get();
 
-    	return view('public-views.pictures_page.showpictures', compact('pictures'));
+    	$simple_peg_pictures = Picture::Paginate(1);
+
+    	return view('public-views.pictures_page.showpictures', compact('pictures', 'simple_peg_pictures'));
     }
 }

@@ -23,7 +23,7 @@
         <!-- Products Block -->
         <div class="row">
           @foreach($courses as $course)
-          @if($course->end_date->addDays(2) > $today)
+          @if($course->start_date >= $today)
           <div class="col-md-6 col-lg-4 g-mb-30">
             <!-- Article -->
             <article>

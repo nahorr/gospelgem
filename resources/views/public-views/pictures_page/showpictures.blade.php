@@ -30,11 +30,11 @@
                     data-filter="*">
                   <span class="nav-link p-0"><span class="g-mr-10">01.</span> All</span>
                 </li>
-                @foreach($pictures as $key=>$pic)
+                @foreach($pictures as $key=>$picture)
                   
                     <li class="cbp-filter-item nav-item g-mb-20"
-                        data-filter=".{{preg_replace('/\s+/', '', $pic->title)}}">
-                      <span class="nav-link p-0"><span class="g-mr-10">0{{$key+2}}.</span> {{$pic->title}}<span style="color: #dcac10"> ({{count(json_decode($pic->filename))}} <i class="fa fa-file-picture-o"></i>)</span></span>
+                        data-filter=".{{preg_replace('/\s+/', '', $picture->title)}}">
+                      <span class="nav-link p-0"><span class="g-mr-10">0{{$key+2}}.</span> {{$picture->title}}<span style="color: #dcac10"> ({{count(json_decode($picture->filename))}} <i class="fa fa-file-picture-o"></i>)</span></span>
                     </li>
                   
                 @endforeach
@@ -54,7 +54,7 @@
                      {"width": 500, "cols": 3},
                      {"width": 320, "cols": 1}
                    ]'>
-                @foreach($pictures as $pic)
+                @foreach($simple_peg_pictures as $pic)
                 @for ($i = 0; $i < count(json_decode($pic->filename)); $i++)
                 <div class="cbp-item g-width-280 g-width-170--md {{preg_replace('/\s+/', '', $pic->title)}}">
                  
@@ -82,7 +82,7 @@
                 @endforeach
               </div>
               <hr>
-              
+              <div class="pagination">{{$simple_peg_pictures->links("pagination::bootstrap-4")}}</div> 
             </div>
             
           </div>
