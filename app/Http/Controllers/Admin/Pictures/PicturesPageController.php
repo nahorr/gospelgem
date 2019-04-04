@@ -16,7 +16,7 @@ class PicturesPageController extends Controller
     	return view('admin/pictures_page/pictures', compact('pictures'));
     }
 
-    public function addPictures(Request $request, Exception $exception)
+    public function addPictures(Request $request)
     {
 
         $this->validate($request, [
@@ -35,7 +35,6 @@ class PicturesPageController extends Controller
             foreach($request->file('filename') as $image)
             {
                 $name=time().'_'.$image->getClientOriginalName();
-                //$imageOptimizer->optimizeUploadedImageFile($image);// optimize before saving
                 Image::make($image)->fit(800)->save( public_path('/uploads/pagepictures/' . $name ) );  
                 $data[] = $name;  
             }
@@ -70,7 +69,6 @@ class PicturesPageController extends Controller
             foreach($request->file('filename') as $image)
             {
                 $name=time().'_'.$image->getClientOriginalName();
-                //$imageOptimizer->optimizeUploadedImageFile($image);// optimize before saving
                 Image::make($image)->fit(800)->save( public_path('/uploads/pagepictures/' . $name ) );
                 $data[] = $name;  
             }
