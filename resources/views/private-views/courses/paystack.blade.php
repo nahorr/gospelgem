@@ -1,8 +1,8 @@
             
-              <div class="col-md-4 float-md-left">
+            <div class="">
               <form class="form-group">
                 <script src="https://js.paystack.co/v1/inline.js"></script>
-                 <button type="button" class="btn btn-warning" name="pay_now" id="pay-now" title="Pay now"  onclick="payWithPaystack()">Pay With Paystack</button>
+                 <button type="button" class="btn btn-danger" name="pay_now" id="pay-now" title="Pay now"  onclick="payWithPaystack()" style="color: white;"><strong>Pay With Paystack</strong></button>
               </form>
             </div>
               <script>

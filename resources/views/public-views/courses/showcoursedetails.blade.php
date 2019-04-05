@@ -31,13 +31,13 @@
               <div class="col-lg-6 g-mb-40">
                 <i class="icon-education-197 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Instructor</h4>
-                <p class="mb-0">Course instructor: {{ $course->course_mentor }}</p>
+                <p class="mb-0">Course instructor: <strong style="color: #e81c62;">{{ $course->course_mentor }}</strong></p>
               </div>
 
               <div class="col-lg-6 g-mb-40">
                 <i class="icon-education-127 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Venue</h4>
-                <p class="mb-0">Venue: {{ $course->course_venue }}</p>
+                <p class="mb-0">Venue: <strong style="color: #e81c62;">{{ $course->course_venue }}</strong></p>
                 @if($course->course_moodle_link != null)
                   <p class="mb-0">
                     <a href="{{ $course->course_moodle_link }}" class="btn btn-sm u-btn-outline-lightred u-btn-hover-v2-1 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 rounded-0 g-mr-10 g-mb-15" target="_blank">
@@ -67,7 +67,7 @@
               <div class="col-lg-6 g-mb-40 g-mb-0--lg">
                 <i class="icon-finance-114 u-line-icon-pro d-block g-font-size-55 g-line-height-1 g-color-primary g-mb-15"></i>
                 <h4 class="h4 g-color-gray-dark-v2 g-mb-10">Cost</h4>
-                <p class="mb-0">Cost/Participant: ${{$course->price/100}}</p>
+                <p class="mb-0">Cost/Participant: <strong style="color: #e81c62;">${{$course->price/100}}</strong></p>
               </div>
             </div>
             <!-- End Row -->
@@ -85,7 +85,7 @@
                   <!-- Article Content -->
                   <div class="g-pa-40">
                     <div class="g-mb-10">
-                     <strong class="d-block g-color-primary g-font-size-24 g-mt-5"><strong>{{$course->currency}}</strong>{{ $course->price/100 }}</strong>
+                     <strong class="d-block g-font-size-20 g-mt-5"><span style="color: #e81c62;">{{$course->currency}} {{ $course->price/100 }}</strong>
                     </div>
 
                     <p class="g-mb-30">Course starting soon. Order now to reserve your seat. </p>
