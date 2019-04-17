@@ -29,8 +29,7 @@
         </div>
         <div class="row">
           @foreach($courses as $course)
-          @if($course->course_moodle_link)
-          
+          @if($course->course_moodle_link) 
             <div class="col-md-6 col-lg-4 g-mb-30">
               <!-- Article -->
               <article>
@@ -48,7 +47,7 @@
                         <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
                       @endif
                     </h3>
-                    <p>{{$course->course_description}}</p>
+                    <p>{{ str_limit($course->course_description, 100) }}</p>
                     <div class="align-self-center g-font-size-13 text-center">
                       @if($course->price == null)
                       <strong>{{ $course->currency }}</strong>
@@ -120,7 +119,7 @@
                         <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
                       @endif
                     </h3>
-                    <p>{{$course->course_description}}</p>
+                    <p>{{ str_limit($course->course_description, 100) }}</p>
                     <div class="align-self-center g-font-size-13 text-center">
                       @if($course->price == null)
                       <strong>{{ $course->currency }}</strong>
