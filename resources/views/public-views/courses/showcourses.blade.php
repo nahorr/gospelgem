@@ -20,68 +20,146 @@
           </div>
         </div>
 
-        <!-- Products Block -->
+        <!-- Online Course -->
+        <div class="text-center g-my-30">
+          <h2 class="h3 g-color-black text-uppercase mb-2">Online Courses</h2>
+          <div class="u-divider u-divider-solid u-divider-center g-brd-pink g-my-40">
+           <i class="u-divider__icon g-bg-pink g-color-white rounded-circle">{{ $courses->where('course_moodle_link', null)->count() }}</i>
+         </div>
+        </div>
         <div class="row">
           @foreach($courses as $course)
-          @if($course->start_date >= $today)
-          <div class="col-md-6 col-lg-4 g-mb-30">
-            <!-- Article -->
-            <article>
-              <!-- Article Image -->
-              <img class="w-100" src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}">
-              <!-- End Article Image -->
+          @if($course->course_moodle_link)
+          
+            <div class="col-md-6 col-lg-4 g-mb-30">
+              <!-- Article -->
+              <article>
+                <!-- Article Image -->
+                <img class="w-100" src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}">
+                <!-- End Article Image -->
 
-              <!-- Article Content -->
-              <div class="u-shadow-v24 g-pa-30">
-                <div class="g-mb-30">
-                  <h3 class="h4 g-color-black g-font-weight-600 mb-3">
-                    @if($course->price == null)
-                      <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('courses/register/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
-                    @else
-                      <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
-                    @endif
-                  </h3>
-                  <p>{{$course->course_description}}</p>
+                <!-- Article Content -->
+                <div class="u-shadow-v24 g-pa-30">
+                  <div class="g-mb-30">
+                    <h3 class="h4 g-color-black g-font-weight-600 mb-3">
+                      @if($course->price == null)
+                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('courses/register/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
+                      @else
+                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
+                      @endif
+                    </h3>
+                    <p>{{$course->course_description}}</p>
+                    <div class="align-self-center g-font-size-13 text-center">
+                      @if($course->price == null)
+                      <strong>{{ $course->currency }}</strong>
+                      @else
+                      <span class="g-color-black g-font-weight-700"><strong>{{$course->currency}}</strong>{{ $course->price/100 }}</span>
+                      @endif
+                      <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-start">
+                    <div class="align-self-center g-width-70 g-mr-15">
+                      <!-- Chart Pie -->
+                      @if($course->course_moodle_link)
+                      <a class="btn btn-md btn-danger g-font-weight-600 g-font-size-11 text-uppercase data-toggle="tooltip" data-placement="top" title="click the button to begin or continue this course" href="{{$course->course_moodle_link }}">Go to Course</a>
+                      @else
+                      <a class="btn btn-md btn-light g-font-weight-600 g-font-size-11 text-uppercase data-toggle="tooltip" data-placement="top" title="{{ $course->course_venue }}" href="#"><i class="fa fa-map-pin"></i> Venue Info</a>
+                      @endif
+
+                      <!-- End Chart Pie -->
+                    </div>
+                    
+                    <div class="d-block align-self-center ml-auto text-center">
+                      @if($course->price == null)
+                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('courses/register/'.$course->id) }}">Enrol Now</a>
+                      @else
+                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
+                      @endif
+                    </div>
+                  </div>
                 </div>
-
-                <div class="d-flex justify-content-start">
-                  <div class="align-self-center g-width-70 g-mr-15">
-                    <!-- Chart Pie -->
-                    @if($today > $course->start_date)
-                    <div class="js-pie g-color-black" data-circles-value="" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
-                    @else
-                    <div class="js-pie g-color-black" data-circles-value="{{ $course->start_date->diffInDays($today) }}" data-circles-max-value="50" data-circles-bg-color="#dedede" data-circles-fg-color="#72c02c" data-circles-radius="40" data-circles-stroke-width="4" data-circles-font-size="12" data-circles-font-weight="500" data-circles-additional-text=" days left" data-circles-duration="2000" data-circles-scroll-animate="true"></div>
-                    @endif
-
-                    <!-- End Chart Pie -->
-                  </div>
-                  <div class="align-self-center g-font-size-13 text-center">
-                    @if($course->price == null)
-                    <strong>{{ $course->currency }}</strong>
-                    @else
-                    <span class="g-color-black g-font-weight-700"><strong>{{$course->currency}}</strong>{{ $course->price/100 }}</span>
-                    @endif
-                    <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
-                  </div>
-                  <div class="d-block align-self-center ml-auto text-center">
-                    @if($course->price == null)
-                    <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('courses/register/'.$course->id) }}">Enrol Now</a>
-                    @else
-                    <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
-                    @endif
-                  </div>
-                </div>
-              </div>
-              <!-- End Article Content -->
-            </article>
-            <!-- End Article -->
-          </div>
+                <!-- End Article Content -->
+              </article>
+              <!-- End Article -->
+            </div>
           @endif
           @endforeach
         </div>
-        <!-- End Products Block -->
+        <!-- End Online Courses -->
+       
 
        
+        
+        <!-- OnSite Course -->
+        <div class="text-center g-my-30">
+         <h2 class="h3 g-color-black text-uppercase mb-2">Onsite Courses</h2>
+         <div class="u-divider u-divider-solid u-divider-center g-brd-cyan g-my-40">
+          <i class="u-divider__icon g-bg-cyan g-color-white rounded-circle">{{ $courses->where('course_moodle_link', !null)->count() }}</i>
+        </div>
+       </div>
+        <div class="row">
+          @foreach($courses as $course)
+          @if(!$course->course_moodle_link)
+          
+            <div class="col-md-6 col-lg-4 g-mb-30">
+              <!-- Article -->
+              <article>
+                <!-- Article Image -->
+                <img class="w-100" src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}">
+                <!-- End Article Image -->
+
+                <!-- Article Content -->
+                <div class="u-shadow-v24 g-pa-30">
+                  <div class="g-mb-30">
+                    <h3 class="h4 g-color-black g-font-weight-600 mb-3">
+                      @if($course->price == null)
+                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('courses/register/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
+                      @else
+                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
+                      @endif
+                    </h3>
+                    <p>{{$course->course_description}}</p>
+                    <div class="align-self-center g-font-size-13 text-center">
+                      @if($course->price == null)
+                      <strong>{{ $course->currency }}</strong>
+                      @else
+                      <span class="g-color-black g-font-weight-700"><strong>{{$course->currency}}</strong>{{ $course->price/100 }}</span>
+                      @endif
+                      <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-start">
+                    <div class="align-self-center g-width-70 g-mr-15">
+                      <!-- Chart Pie -->
+                      @if($course->course_moodle_link)
+                      <a class="btn btn-md btn-danger g-font-weight-600 g-font-size-11 text-uppercase data-toggle="tooltip" data-placement="top" title="click the button to begin or continue this course" href="{{$course->course_moodle_link }}">Go to Course</a>
+                      @else
+                      <a class="btn btn-md btn-light g-font-weight-600 g-font-size-11 text-uppercase data-toggle="tooltip" data-placement="top" title="{{ $course->course_venue }}" href="#"><i class="fa fa-map-pin"></i> Venue Info</a>
+                      @endif
+
+                      <!-- End Chart Pie -->
+                    </div>
+                    
+                    <div class="d-block align-self-center ml-auto text-center">
+                      @if($course->price == null)
+                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('courses/register/'.$course->id) }}">Enrol Now</a>
+                      @else
+                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+                <!-- End Article Content -->
+              </article>
+              <!-- End Article -->
+            </div>
+          @endif
+          @endforeach
+        </div>
+        <!-- End OnStie Courses -->
 
         <!-- Heading -->
         <div class="text-center">

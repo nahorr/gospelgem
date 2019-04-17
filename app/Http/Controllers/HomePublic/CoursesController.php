@@ -21,7 +21,6 @@ class CoursesController extends Controller
     {
     	$courses = Course::orderBy('start_date', 'asc')->get();
 
-
     	return view('public-views.courses.showcourses', compact('courses'));
     }
 

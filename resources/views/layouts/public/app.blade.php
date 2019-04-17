@@ -165,6 +165,10 @@
 
   <!-- JS Plugins Init. -->
   <script>
+    //Bootstrap tooltip
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
 
     //summernote editor
 
