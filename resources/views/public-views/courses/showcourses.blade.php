@@ -47,7 +47,7 @@
                         <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
                       @endif
                     </h3>
-                    <p>{{ str_limit($course->course_description, 85) }}</p>
+                    <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_description }}">{{ str_limit($course->course_description, 75) }}</p>
                     <div class="align-self-center g-font-size-13 text-center">
                       @if($course->price == null)
                       <strong>{{ $course->currency }}</strong>
@@ -116,7 +116,7 @@
                         <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ $course->course_name }} <p> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ $course->course_mentor }}</span></p></a>
                       @endif
                     </h3>
-                    <p>{{ str_limit($course->course_description, 85) }}</p>
+                    <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_description }}">{{ str_limit($course->course_description, 75) }}</p>
                     <div class="align-self-center g-font-size-13 text-center">
                       @if($course->price == null)
                       <strong>{{ $course->currency }}</strong>
