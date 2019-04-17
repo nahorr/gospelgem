@@ -24,7 +24,7 @@
         <div class="text-center g-my-30">
           <h2 class="h3 g-color-black text-uppercase mb-2">Online Courses</h2>
           <div class="u-divider u-divider-solid u-divider-center g-brd-pink g-my-40">
-           <i class="u-divider__icon g-bg-pink g-color-white rounded-circle">{{ $courses->where('course_moodle_link', null)->count() }}</i>
+           <i class="u-divider__icon g-bg-pink g-color-white rounded-circle">{{ $courses->where('course_moodle_link', !null)->count() }}</i>
          </div>
         </div>
         <div class="row">
@@ -96,7 +96,7 @@
         <div class="text-center g-my-30">
          <h2 class="h3 g-color-black text-uppercase mb-2">Onsite Courses</h2>
          <div class="u-divider u-divider-solid u-divider-center g-brd-cyan g-my-40">
-          <i class="u-divider__icon g-bg-cyan g-color-white rounded-circle">{{ $courses->where('course_moodle_link', !null)->count() }}</i>
+          <i class="u-divider__icon g-bg-cyan g-color-white rounded-circle">{{ $courses->where('course_moodle_link', null)->count() }}</i>
         </div>
        </div>
         <div class="row">
