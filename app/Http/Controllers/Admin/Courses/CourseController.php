@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\CourseCategory;
 use App\Course;
 use File;
+use Image;
 
 class CourseController extends Controller
 {
@@ -36,11 +37,7 @@ class CourseController extends Controller
         if($request->hasFile('course_picture')){
             $course_picture = $request->file('course_picture');
             $filename = time() . '.' . $course_picture->getClientOriginalExtension();
-            //$filename = $request->picture_name . '.' . $site_picture->getClientOriginalExtension();
-            $destinationPath = public_path().'/unify/assets/img/coursepictures/';
-
-            $course_picture->move($destinationPath,$filename);
-            
+            Image::make($course_picture)->fit(352,209)->save( public_path('/unify/assets/img/coursepictures/' . $filename ) );
         }
 
 
@@ -103,7 +100,7 @@ class CourseController extends Controller
         if($request->hasFile('course_picture')){
             $course_picture = $request->file('course_picture');
             $filename = time() . '.' . $course_picture->getClientOriginalExtension();
-            $destinationPath = public_path().'/unify/assets/img/coursepictures/';
+            //$destinationPath = public_path().'/unify/assets/img/coursepictures/';
 
             // Delete current image before uploading new image
             $file = public_path('/unify/assets/img/coursepictures/'.$filename);
@@ -111,7 +108,7 @@ class CourseController extends Controller
                     unlink($file);
                 }          
 
-            $course_picture->move($destinationPath,$filename);
+            Image::make($course_picture)->fit(352,209)->save( public_path('/unify/assets/img/coursepictures/' . $filename ) );
             $edit_course->course_picture = $filename;
             
         }     

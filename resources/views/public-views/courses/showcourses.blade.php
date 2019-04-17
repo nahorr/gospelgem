@@ -34,7 +34,7 @@
               <!-- Article -->
               <article>
                 <!-- Article Image -->
-                <img class="w-100" src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}">
+                <img class="w-100 h-10" src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}">
                 <!-- End Article Image -->
 
                 <!-- Article Content -->
