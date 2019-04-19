@@ -40,7 +40,8 @@ class CoursesController extends Controller
 
         $courseRegistration->save();
 
-        return response()->json();
+        #return response()->json();
+        return redirect()->route('registrations');
     }
 
     public function unEnroll(CourseRegistration $registration)

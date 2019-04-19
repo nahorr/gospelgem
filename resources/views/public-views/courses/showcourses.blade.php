@@ -71,19 +71,16 @@
                     </div>
                   </div>
 
-                  <div class="d-flex justify-content-start">
-                    <div class="align-self-center g-width-70 g-mr-15">
-                      <!-- Online Courses -->
-                      <a class="btn btn-md btn-danger g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="click the button to begin or continue this course" href="{{$course->course_moodle_link }}">Go to Course
-                      </a>
-                      <!-- End Online Courses -->
-                    </div>
-                    
-                    <div class="d-block align-self-center ml-auto text-center">
-                      @if($course->price == null)
-                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('courses/register/'.$course->id) }}">Enrol Now</a>
+                  <div class="">
+                    <div class="align-self-center">
+                      @if(\Auth::check() && $course_registrations->where('email',\Auth::user()->email)->where('course_id', $course->id)->count() == !null)
+                          <!-- Online Courses -->
+                          <a class="btn btn-md btn-danger btn-block g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="click the button to begin or continue this course" href="{{$course->course_moodle_link }}">Go to Course
+                          </a>
+                          
+                          <!-- End Online Courses -->
                       @else
-                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
+                        <a class="btn btn-md btn-success btn-block g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
                       @endif
                     </div>
                   </div>
@@ -143,21 +140,19 @@
                     </div>
                   </div>
 
-                  <div class="d-flex justify-content-start">
-                    <div class="align-self-center g-width-70 g-mr-15">
-                      <!-- Venue Info -->
-                      <a class="btn btn-md btn-light g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="{{ $course->course_venue }}" href="#">
-                        <i class="fa fa-map-pin"></i> Venue Info
-                      </a>
+                  <div class="">
+                    <div class="align-self-center">
+                      @if(\Auth::check() && $course_registrations->where('email',\Auth::user()->email)->where('course_id', $course->id)->count() == !null)
+                        <!-- Venue Info -->
+                        <a class="btn btn-md btn-primary btn-block g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="{{ $course->course_venue }}" href="#">
+                          <i class="fa fa-map-pin"></i> Venue Info
+                        </a>
                       <!-- End Venue Info -->
-                    </div> 
-                    <div class="d-block align-self-center ml-auto text-center">
-                      @if($course->price == null)
-                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('courses/register/'.$course->id) }}">Enrol Now</a>
                       @else
-                      <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
+                        <a class="btn btn-md btn-success btn-block g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('/showcoursedetails/'.$course->id) }}">Enrol Now</a>
                       @endif
-                    </div>
+                    </div> 
+
                   </div>
                 </div>
                 <!-- End Article Content -->

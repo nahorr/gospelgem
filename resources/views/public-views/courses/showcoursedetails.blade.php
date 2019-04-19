@@ -85,11 +85,38 @@
                   <!-- Article Content -->
                   <div class="g-pa-40">
                     <div class="g-mb-10">
-                     <strong class="d-block g-font-size-20 g-mt-5"><span style="color: #e81c62;">{{$course->currency}} {{ $course->price/100 }}</strong>
+                     <strong class="d-block g-font-size-20 g-mt-5"><span style="color: #e81c62;">
+                      @if($course->price == null)
+                        {{$course->currency}}
+                      @else
+                        {{$course->currency}} {{ $course->price/100 }}
+                      @endif
+                     </strong>
                     </div>
 
-                    <p class="g-mb-30">Course starting soon. Order now to reserve your seat. </p>
-                    <div class="text-center">@include('private-views.courses.paystack')</div>
+                    <p class="g-mb-30">Course starting soon. Register now to reserve your seat. </p>
+                   @if(\Auth::check())
+                      @if($student_course_registration)
+                        <script>window.location = "{{url('/courses/registrations')}}";</script>
+                      @else
+                        @if($course->price == null)
+                        <form class="g-py-15" method="POST" action="{{ url('/courses/registrations/'.$course->id) }}">
+                          {{ csrf_field() }}
+
+                          <button class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15" type="submit">Register Now</button>
+                        </form>
+                        <!-- End Form -->
+                        @else
+                          <div class="text-center">@include('private-views.courses.paystack')</div>
+                          <div class="text-center">
+                            <button class="btn btn-sm u-btn-light g-mb-15" style="background-color: #f8f9fa;">OR</button>
+                          </div>
+                          <div class="text-center">
+                            <button class="btn btn-md u-btn-deeporange" id="bankTransferInfoButton">Bank Transfer</button>
+                          </div>
+                        @endif
+                      @endif
+                    @endif
                   </div>
                   <!-- End Article Content -->
                 </article>
@@ -114,6 +141,15 @@
     </section>
     <!-- End Icon Blocks -->
 
-@include('layouts.public.includes.footer')
+
+ @include('public-views.courses.bankTransferInfoModal')
+    <script type="text/javascript">
+      
+      $("#bankTransferInfoButton").on('click', function(e){
+         e.preventDefault();
+        $('#bankTransferInfoModal').modal('show');
+      })
+    
+    </script>
 
 @endsection

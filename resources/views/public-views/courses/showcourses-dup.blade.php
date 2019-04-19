@@ -41,7 +41,7 @@
                 <div class="u-shadow-v24 g-pa-30">
                   <div class="g-mb-30">
                     <h3 class="h4 g-color-black g-font-weight-600 mb-3">
-                      @if($course->price == null)
+                     
                         <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" data-toggle="tooltip" data-placement="top" title="{{ $course->course_name}}" href="{{ url('courses/register/'.$course->id) }}">
                           {{ str_limit($course->course_name, 20) }}
                         </a>
@@ -49,17 +49,11 @@
                           <span style="color: #C70039">Mentor:</span>
                           <span style="color: #F39C12">{{ str_limit($course->course_mentor, 20) }}</span>
                         </p>
-                      @else
-                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" data-toggle="tooltip" data-placement="top" title="{{ $course->course_name }}" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ str_limit($course->course_name, 20) }}</a>
-                        <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_mentor}}"> 
-                          <span style="color: #C70039">Mentor:</span> 
-                          <span style="color: #F39C12">{{ str_limit($course->course_mentor, 20) }}</span>
-                        </p>
-                      @endif
+                      
                     </h3>
                     <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_description }}">
                       @if(strlen($course->course_description) < 43)
-                        {{ $course->course_description }} {{ str_repeat("&nbsp;", 42) }}
+                        {{ $course->course_description }}&nbsp;{{ str_repeat("&nbsp;", 42) }}
                       @else
                         {{ str_limit($course->course_description, 75) }}
                       @endif
@@ -79,14 +73,10 @@
 
                   <div class="d-flex justify-content-start">
                     <div class="align-self-center g-width-70 g-mr-15">
-                      <!-- Chart Pie -->
-                      @if($course->course_moodle_link)
-                      <a class="btn btn-md btn-danger g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="click the button to begin or continue this course" href="{{$course->course_moodle_link }}">Go to Course</a>
-                      @else
-                      <a class="btn btn-md btn-light g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="{{ $course->course_venue }}" href="#"><i class="fa fa-map-pin"></i> Venue Info</a>
-                      @endif
-
-                      <!-- End Chart Pie -->
+                      <!-- Online Courses -->
+                      <a class="btn btn-md btn-danger g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="click the button to begin or continue this course" href="{{$course->course_moodle_link }}">Go to Course
+                      </a>
+                      <!-- End Online Courses -->
                     </div>
                     
                     <div class="d-block align-self-center ml-auto text-center">
@@ -124,22 +114,21 @@
                 <!-- Article Image -->
                 <img class="w-100" src="{{asset('unify/assets/img/coursepictures/'.$course->course_picture)}}" alt="{{$course->course_name}}">
                 <!-- End Article Image -->
-
                 <!-- Article Content -->
                 <div class="u-shadow-v24 g-pa-30">
                   <div class="g-mb-30">
                     <h3 class="h4 g-color-black g-font-weight-600 mb-3">
-                      @if($course->price == null)
-                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" data-toggle="tooltip" data-placement="top" title="{{ $course->course_name }}" href="{{ url('courses/register/'.$course->id) }}">{{ str_limit($course->course_name, 20) }} </a>
-                        <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_mentor}}"> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ str_limit($course->course_mentor, 20) }}</span></p>
-                      @else
-                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" data-toggle="tooltip" data-placement="top" title="{{ $course->course_name }}" href="{{ url('/showcoursedetails/'.$course->id) }}">{{ str_limit($course->course_name, 20) }}</a>
-                        <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_mentor}}"> <span style="color: #C70039">Mentor:</span> <span style="color: #F39C12">{{ str_limit($course->course_mentor, 20) }}</span></p>
-                      @endif
+                     
+                        <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" data-toggle="tooltip" data-placement="top" title="{{ $course->course_name }}" href="{{ url('courses/register/'.$course->id) }}">{{ str_limit($course->course_name, 20) }}
+                        </a>
+                        <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_mentor}}">
+                          <span style="color: #C70039">Mentor:</span>
+                          <span style="color: #F39C12">{{ str_limit($course->course_mentor, 20) }}</span>
+                        </p>                    
                     </h3>
                     <p data-toggle="tooltip" data-placement="top" title="{{ $course->course_description }}">
                       @if(strlen($course->course_description) < 43)
-                        {{ $course->course_description }} {{ str_repeat("&nbsp;", 42)}}
+                        {{ $course->course_description }}&nbsp;{{ str_repeat("&nbsp;", 42)}}
                       @else
                         {{ str_limit($course->course_description, 75) }}
                       @endif
@@ -156,16 +145,12 @@
 
                   <div class="d-flex justify-content-start">
                     <div class="align-self-center g-width-70 g-mr-15">
-                      <!-- Chart Pie -->
-                      @if($course->course_moodle_link)
-                      <a class="btn btn-md btn-danger g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="click the button to begin or continue this course" href="{{$course->course_moodle_link }}">Go to Course</a>
-                      @else
-                      <a class="btn btn-md btn-light g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="{{ $course->course_venue }}" href="#"><i class="fa fa-map-pin"></i> Venue Info</a>
-                      @endif
-
-                      <!-- End Chart Pie -->
-                    </div>
-                    
+                      <!-- Venue Info -->
+                      <a class="btn btn-md btn-light g-font-weight-600 g-font-size-11 text-uppercase" data-toggle="tooltip" data-placement="top" title="{{ $course->course_venue }}" href="#">
+                        <i class="fa fa-map-pin"></i> Venue Info
+                      </a>
+                      <!-- End Venue Info -->
+                    </div> 
                     <div class="d-block align-self-center ml-auto text-center">
                       @if($course->price == null)
                       <a class="btn btn-md btn-success g-font-weight-600 g-font-size-11 text-uppercase" href="{{ url('courses/register/'.$course->id) }}">Enrol Now</a>
@@ -183,7 +168,6 @@
           @endforeach
         </div>
         <!-- End OnStie Courses -->
-
         <!-- Heading -->
         <div class="text-center">
           <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>

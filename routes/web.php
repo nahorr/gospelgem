@@ -103,8 +103,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Route::get('/showpaymentform/{course}', 'CoursesController@showPaymentForm')->name('payment');
     Route::get('/courses/registrations', 'CoursesController@registrations')->name('registrations');
     Route::get('/showcoursedetails/{course}', 'HomePublic\CoursesController@showCourseDetails');
-     Route::post('/courses/registrations/{course}', 'CoursesController@storeCourseRegistration')->name('withpaystack');
-     Route::post('/courses/registrations/unenroll/{registration}', 'CoursesController@unEnroll');
+    Route::post('/courses/registrations/{course}', 'CoursesController@storeCourseRegistration')->name('withpaystack');
+    Route::post('/courses/registrations/unenroll/{registration}', 'CoursesController@unEnroll');
 });
 
 

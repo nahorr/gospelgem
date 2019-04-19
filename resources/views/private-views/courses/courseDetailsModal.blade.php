@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="courseDetailsModal-{{$registration->course->course_id}}" class="modal fade" role="dialog">
+<div id="courseDetailsModal-{{$registration->id}}{{$registration->course->course_id}}" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -30,6 +30,9 @@
        
 
       </div>
-
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
   </div>
 </div>

@@ -21,13 +21,16 @@ class CoursesController extends Controller
     {
     	$courses = Course::orderBy('start_date', 'asc')->get();
 
-    	return view('public-views.courses.showcourses', compact('courses'));
+        $course_registrations = CourseRegistration::get();
+        
+    	return view('public-views.courses.showcourses', compact('courses', 'course_registrations'));
     }
 
     public function showCourseDetails(Course $course)
     {
+        $student_course_registration = CourseRegistration::where('course_id', $course->id)->where('email', \Auth::user()->email)->first();
 
-    	return view('public-views.courses.showcoursedetails', compact('course'));
+    	return view('public-views.courses.showcoursedetails', compact('course', 'student_course_registration'));
     }
 
     public function register(Course $course)

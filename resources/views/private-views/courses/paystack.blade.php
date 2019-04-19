@@ -51,5 +51,7 @@
                    url:"{{ url('/courses/registrations/'.$course->id) }}",
                    data: { trans_ref : response.reference },
                 });
+
+                window.location.href = "{{url('/courses/registrations')}}";
               }
             </script>
