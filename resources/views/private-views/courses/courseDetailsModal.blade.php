@@ -24,11 +24,8 @@
             <li class="list-group-item"><strong>Start Date:</strong> {{$registration->course->start_date->toFormattedDateString()}}</li>
             <li class="list-group-item"><strong>Start Time:</strong> {{ date('h:i A', strtotime($registration->course->start_time)) }}</li>
             <li class="list-group-item"><strong>End Date:</strong> {{$registration->course->end_date->toFormattedDateString()}}</li>
-            <li class="list-group-item"><strong>End Time:</strong> {{ date('h:i A', strtotime($registration->course->end_time)) }}</li>
-            
+            <li class="list-group-item"><strong>End Time:</strong> {{ date('h:i A', strtotime($registration->course->end_time)) }}</li>S   
           </ul>
-       
-
       </div>
       <div class="modal-footer">
         

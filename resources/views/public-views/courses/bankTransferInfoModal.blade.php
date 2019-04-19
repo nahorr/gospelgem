@@ -18,17 +18,6 @@
 
         <div class="card">
           <div class="card-header">
-            <h4 style="color: #FF5733; font-weight: bold;">Naira Account:</h4>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"><span style="color: #FF5733">Account Name:</span> Gosgem Concepts</h5>
-            <h5 class="card-title"><span style="color: #FF5733">Account No:</span> 0027931067</h5>
-            <h5 class="card-title"><span style="color: #FF5733">Bank:</span> Stanbic IBTC</h5>
-          </div>
-        </div>
-        <hr>
-        <div class="card">
-          <div class="card-header">
             <h4 style="color: #FF5733; font-weight: bold;">USD payments:</h4>
           </div>
           <div class="card-body">
@@ -37,7 +26,7 @@
             <h5 class="card-title">New York NY</h5>
             <h5 class="card-title"><span style="color: #FF5733">SWIFT Code:</span> BKTRUS33</h5>
             <h5 class="card-title">ABA 021001033 </h5>
-            <h5 class="card-title"><span style="color: #FF5733">To:</span><br> Stanbic IBTC Bank</h5>
+            <h5 class="card-title"><span style="color: #FF5733">To:</span><br> Stanbic IBTC Bank, Lagos Nigeria</h5>
             <h5 class="card-title"><span style="color: #FF5733">Account no:</span> 04433866</h5>
             <h5 class="card-title"><span style="color: #FF5733">SWIFT Code:</span> SBICNGLX</h5>
             <h5 class="card-title"><span style="color: #FF5733">For final credit to:</span></h5>
