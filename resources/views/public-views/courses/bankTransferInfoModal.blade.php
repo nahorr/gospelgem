@@ -26,7 +26,7 @@
             <h5 class="card-title">New York NY</h5>
             <h5 class="card-title"><span style="color: #FF5733">SWIFT Code:</span> BKTRUS33</h5>
             <h5 class="card-title">ABA 021001033 </h5>
-            <h5 class="card-title"><span style="color: #FF5733">To:</span><br> Stanbic IBTC Bank, Lagos Nigeria</h5>
+            <h5 class="card-title"><span style="color: #FF5733">To:</span><br> Stanbic IBTC Bank<br>Lagos Nigeria</h5>
             <h5 class="card-title"><span style="color: #FF5733">Account no:</span> 04433866</h5>
             <h5 class="card-title"><span style="color: #FF5733">SWIFT Code:</span> SBICNGLX</h5>
             <h5 class="card-title"><span style="color: #FF5733">For final credit to:</span></h5>
