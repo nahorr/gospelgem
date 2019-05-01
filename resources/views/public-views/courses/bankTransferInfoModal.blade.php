@@ -14,25 +14,26 @@
       </div>
       <div class="modal-body">
         
-        <h4>Please see our bank details below if you wish to pay through bank transfer:</h4>
+        <h4>FUNDS TRANSFER INSTRUCTION:</h4>
 
         <div class="card">
           <div class="card-header">
-            <h4 style="color: #FF5733; font-weight: bold;">USD payments:</h4>
+            <h4 style="color: #FF5733; font-weight: bold;">FOR TRANSFER OF USD  INTO DOMICILLIARY ACCOUNT THROUGH CITIBANK NEW YORK:</h4>
           </div>
           <div class="card-body">
-            <h5 class="card-title"><span style="color: #FF5733">Correspondent bank:</span></h5>
-            <h5 class="card-title">Deutsche Bank Trust Company Americas</h5>
-            <h5 class="card-title">New York NY</h5>
-            <h5 class="card-title"><span style="color: #FF5733">SWIFT Code:</span> BKTRUS33</h5>
-            <h5 class="card-title">ABA 021001033 </h5>
-            <h5 class="card-title"><span style="color: #FF5733">To:</span><br> Stanbic IBTC Bank<br>Lagos Nigeria</h5>
-            <h5 class="card-title"><span style="color: #FF5733">Account no:</span> 04433866</h5>
-            <h5 class="card-title"><span style="color: #FF5733">SWIFT Code:</span> SBICNGLX</h5>
-            <h5 class="card-title"><span style="color: #FF5733">For final credit to:</span></h5>
+            <h5 class="card-title"><span style="color: #FF5733">CORRESPONDENT BANK:</span> CITIBANK, NEW YORK</h5>
+            <h5 class="card-title"><span style="color: #FF5733">SWIFT CODE:</span> CITIUS33</h5>
+            <h5 class="card-title"><span style="color: #FF5733">ABA NO:</span> 021000089</h5><br>
+            <h5 class="card-title"><span style="color: #FF5733">FOR CREDIT OF:</span> GUARANTY TRUST BANK PLC, LAGOS NIGERIA</h5>
+            <h5 class="card-title"><span style="color: #FF5733">SWIFT CODE:</span> GTBINGLA</h5>
+            <h5 class="card-title"><span style="color: #FF5733">ACCOUNT NUMBER:</span> 36129295</h5><br>
+            <h5 class="card-title"><span style="color: #FF5733">FOR FINAL CREDIT OF:</span> (Beneficiary's Name)</h5>
+            <h5 class="card-title"><span style="color: #FF5733">BENEFICIARY'S details:</span></h5>
             <h5 class="card-title"><span style="color: #FF5733">Account Name:</span> Gosgem Concepts</h5>
-            <h5 class="card-title"><span style="color: #FF5733">Account No: </span> 0027931067</h5>
-            <h5 class="card-title"><span style="color: #FF5733">Bank:</span> Stanbic IBTC</h5>      
+            <h5 class="card-title"><span style="color: #FF5733">Account Number: </span> 0451549850</h5>
+            <h5 class="card-title"><span style="color: #FF5733">Bank:</span> Guaranty Trust Bank</h5> 
+            <br>    
+            <h5 class="card-title"><span style="color: #FF5733">ANY OTHER DETAIL:</span> (e.g. Sender's Name, Reference e.t.c)</h5> 
           </div>
         </div>
 
