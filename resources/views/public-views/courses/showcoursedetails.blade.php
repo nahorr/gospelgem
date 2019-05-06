@@ -112,7 +112,13 @@
                             <button class="btn btn-sm u-btn-light g-mb-15" style="background-color: #f8f9fa;">OR</button>
                           </div>
                           <div class="text-center">
-                            <button class="btn btn-md u-btn-deeporange" id="bankTransferInfoButton">Bank Transfer</button>
+                            <button class="btn btn-md u-btn-deeporange g-mb-15" id="bankTransferInfoButton">Bank Transfer</button>
+                          </div>
+                          <div class="text-center">
+                            <button class="btn btn-sm u-btn-light g-mb-15" style="background-color: #f8f9fa;">OR</button>
+                          </div>
+                          <div class="text-center">
+                            @include('private-views.courses.paypal')
                           </div>
                         @endif
                       @endif
