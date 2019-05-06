@@ -18,7 +18,7 @@
             <li class="list-group-item"><strong>Mentor:</strong> {{$registration->course->course_mentor}}</li>
             <li class="list-group-item"><strong>Code:</strong> {{$registration->course->course_code}}</li>
             <li class="list-group-item"><strong>Name:</strong> {{$registration->course->course_name}}</li>
-            <li class="list-group-item"><strong>Price:</strong> {{$registration->course->currency}}{{$registration->course->price}}</li>
+            <li class="list-group-item"><strong>Price:</strong> {{$registration->course->currency}}{{$registration->course->price/100}}</li>
             <li class="list-group-item"><strong>Description:</strong> {{$registration->course->course_description}}</li>
             <li class="list-group-item"><strong>Venue:</strong> {{$registration->course->course_venue}}</li>
             <li class="list-group-item"><strong>Start Date:</strong> {{$registration->course->start_date->toFormattedDateString()}}</li>
