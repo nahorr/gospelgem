@@ -175,6 +175,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/pictures_page/editpictures/{picture}', 'Admin\Pictures\PicturesPageController@editPictures');
     Route::get('admin/delete/{picture}', 'Admin\Pictures\PicturesPageController@deletePictures');
     Route::post('admin/deletepic/{picture}', 'Admin\Pictures\PicturesPageController@deletePic');
+
+    //Manage Videos
+    Route::get('admin/videos/manage-videos', 'Admin\Videos\VideosController@manageVideos');
+    Route::post('admin/videos/addvideo', 'Admin\Videos\VideosController@addVideo');
+    Route::post('admin/videos/editvideo/{video}', 'Admin\Videos\VideosController@editVideo');
+
     //Manage Courses and Course categories
     //Categories
     Route::get('admin/courses/categories', 'Admin\Courses\CategoryController@courseCategories');

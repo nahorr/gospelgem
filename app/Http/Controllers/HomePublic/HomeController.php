@@ -11,6 +11,7 @@ use Notification;
 use App\Notifications\ContactFormSubmitted;
 use App\User;
 use App\ManagePicture;
+use App\Video;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,9 @@ class HomeController extends Controller
 
     public function index()
     {
-    	return view('public-views.welcome');
+        $video = Video::where('video_page', 'welcome')->first();
+        
+    	return view('public-views.welcome', compact('video'));
     }
     public function about()
     {
