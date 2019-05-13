@@ -26,7 +26,7 @@
 	                        <th>Mentor</th>
 	                        <th>Price</th>
 	                        <th>Registered</th>
-	                        <th>Course Details</th>
+	                        <th>Details & <span style="color: #186A3B"><strong>Enrolment key</strong></span></th>
 	                        <th>Online/Offline</th>
 	                        <!--<th>unEnroll</th>-->
 	                      </tr>
@@ -47,8 +47,12 @@
 	                        </td>
 	                        <td>{{ $registration->created_at->toFormattedDateString() }}</td>
 	                        <td>
-	                        	<button type="button" class="btn btn-light" id="courseDetails-{{$registration->id}}{{$registration->course->course_id }}"><i class="fa fa-eye"></i> View Details</button>
 	                        	
+	                        	<button type="button" class="btn btn-light" id="courseDetails-{{$registration->id}}{{$registration->course->course_id }}"><i class="fa fa-eye"></i> View Details 
+	                        		@if($registration->course->enrolment_key)
+	                        			& <span style="color: #186A3B"><strong>get Enrolment key</span></strong>
+	                        		@endif
+	                        	</button>
 	                        	@include('private-views.courses.courseDetailsModal')
 				                <script type="text/javascript">
 				                  $('#courseDetails-{{$registration->id}}{{$registration->course->course_id }}').on('click', function(e){

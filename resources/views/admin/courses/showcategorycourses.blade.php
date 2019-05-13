@@ -71,9 +71,13 @@
                     <textarea class="form-control rounded-0 form-control-md"  id="course_venue" name="course_venue" required=""></textarea>
                   </div>
 
-                  <div class="form-group g-mb-25 col-md-3">
+                  <div class="form-group g-mb-25 col-md-6">
                      <label for="post_title">Course Moodle Link</label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link">
+                   </div>
+                   <div class="form-group g-mb-25 col-md-6">
+                     <label for="post_title">Enrolment Key<span style="color: red"> :Leave blank if no enrollment key<br> Go to course.gosgem.com and add this elrolment key to the course</span></label>
+                     <input type="text" class="form-control rounded-0 form-control-md" id="enrolment_key" name="enrolment_key">
                    </div>
 
                    <div class="form-group g-mb-25 col-md-3">
