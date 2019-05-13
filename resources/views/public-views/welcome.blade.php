@@ -50,12 +50,8 @@
         <div class="col-lg-9">
           <!-- Article -->
           <article class="u-shadow-v21 g-bg-size-cover g-bg-pos-bottom-center text-center">
-            
-<<<<<<< HEAD
-              <iframe width="100%" height="500" src="https://www.youtube.com/embed/0fohTiyURYY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-=======
+
               <iframe width="100%" height="500" src="{{ $video->video_link }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
->>>>>>> gosb1
            
           </article>
           <!-- End Article -->
