@@ -38,7 +38,7 @@
         <div class="col-lg-7">
           <!-- Heading -->
           <div class="text-center g-mb-60">
-            <h2 class="h3 g-color-black text-uppercase mb-2">GOSGEM MENTORING INTRO</h2>
+            <h2 class="h3 g-color-black text-uppercase mb-2">{{ $video->video_title }}</h2>
             <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
             <!--<p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>-->
           </div>
@@ -51,7 +51,11 @@
           <!-- Article -->
           <article class="u-shadow-v21 g-bg-size-cover g-bg-pos-bottom-center text-center">
             
+<<<<<<< HEAD
               <iframe width="100%" height="500" src="https://www.youtube.com/embed/0fohTiyURYY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+=======
+              <iframe width="100%" height="500" src="{{ $video->video_link }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+>>>>>>> gosb1
            
           </article>
           <!-- End Article -->

@@ -18,6 +18,20 @@
             <li class="list-group-item"><strong>Mentor:</strong> {{$registration->course->course_mentor}}</li>
             <li class="list-group-item"><strong>Code:</strong> {{$registration->course->course_code}}</li>
             <li class="list-group-item"><strong>Name:</strong> {{$registration->course->course_name}}</li>
+           
+            <li class="list-group-item"><strong><span style="color: #186A3B"><strong>Enrolment Key:</strong></span></strong> 
+              @if($registration->course->enrolment_key)
+                {{$registration->course->enrolment_key}}
+              @else
+                No Enrolment Key needed for this course
+              @endif
+              @if($registration->course->course_moodle_link == null)
+                <a href="" class="btn btn-sm u-btn-darkpurple g-mr-10 g-mb-15 pull-right"  data-toggle="tooltip" data-placement="top" title="Venue: {{$registration->course->course_venue}}"><strong><i class="icon-education-074 u-line-icon-pro"></i> ONSITE</strong></a>
+              @else
+                <a href="{{$registration->course->course_moodle_link}}" class="btn btn-sm u-btn-pink g-mr-10 g-mb-15 pull-right" data-toggle="tooltip" data-placement="top" title="Click to start or continue course. Please use your Gosgem email and password to login to our course management system when prompted"><strong><i class="icon-education-030 u-line-icon-pro"></i> ONLINE</strong></a>
+              @endif
+            </li>
+            
             <li class="list-group-item"><strong>Price:</strong> {{$registration->course->currency}}{{$registration->course->price/100}}</li>
             <li class="list-group-item"><strong>Description:</strong> {{$registration->course->course_description}}</li>
             <li class="list-group-item"><strong>Venue:</strong> {{$registration->course->course_venue}}</li>

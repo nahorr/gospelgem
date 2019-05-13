@@ -32,6 +32,7 @@ class AdminComposerServiceProvider extends ServiceProvider
             'admin.pictures.categories',
             'admin.pictures.showpictures',
             'admin.pictures_page.pictures',
+            'admin.videos.manage-videos',
             'admin.courses.categories',
             'admin.courses.showcategorycourses',
             'admin.courses.showallcourses',

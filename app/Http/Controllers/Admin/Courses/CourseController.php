@@ -52,6 +52,7 @@ class CourseController extends Controller
             'course_description' => $request->course_description,
             'course_venue' => $request->course_venue,
             'course_moodle_link' => $request->course_moodle_link,
+            'enrolment_key' => $request->enrolment_key,
             'course_mentor' => $request->course_mentor,
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
@@ -91,6 +92,7 @@ class CourseController extends Controller
         $edit_course->course_description = $request->course_description;
         $edit_course->course_venue = $request->course_venue;
         $edit_course->course_moodle_link = $request->course_moodle_link;
+        $edit_course->enrolment_key = $request->enrolment_key;
         $edit_course->course_mentor = $request->course_mentor;
         $edit_course->start_date = $request->start_date;
         $edit_course->start_time = $request->start_time;
