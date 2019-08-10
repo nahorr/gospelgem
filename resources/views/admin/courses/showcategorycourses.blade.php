@@ -34,17 +34,20 @@
                  <!-- Add Course -->
                  <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" enctype="multipart/form-data" style="display: none;">
                    {{ csrf_field() }}
+                   <div class="alert alert-primary" role="alert">
+                    <span style="color: red;">Please note that you are adding a course to <span style="color: black;"><strong>{{$coursecategory->course_category_name}}</strong></span> category</span>
+                  </div>
+                  
+                   <input type="hidden" name="course_category_id" value="{{$coursecategory->id}}" required="">
 
-                   <!-- <input type="hidden" name="course_category_id" value="{{$coursecategory->id}}" required=""> -->
-
-                   <div class="form-group g-mb-25 col-md-3">
+                   <!-- <div class="form-group g-mb-25 col-md-3">
                      <select class="form-control" name="course_category_id" id="course_category_id">
                        <option selected disabled>Please select a course category</option>
                        @foreach($course_categories as $key=>$course_category)                    
                          <option value="{{ $course_category->id }}">{{$course_category->course_category_name}}</option>
                        @endforeach
                      </select>
-                   </div>
+                   </div> -->
 
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Code</label>
