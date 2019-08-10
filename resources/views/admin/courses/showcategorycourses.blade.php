@@ -37,7 +37,7 @@
                    <div class="alert alert-primary" role="alert">
                     <span style="color: red;">Please note that you are adding a course to <span style="color: black;"><strong>{{$coursecategory->course_category_name}}</strong></span> category</span>
                   </div>
-                  
+
                    <input type="hidden" name="course_category_id" value="{{$coursecategory->id}}" required="">
 
                    <!-- <div class="form-group g-mb-25 col-md-3">
@@ -69,7 +69,7 @@
                      <label for="post_title">Price</label>
                      <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price">
                    </div>
-                   <div class="form-group g-mb-25 col-md-3">
+                   <div class="form-group g-mb-25 col-md-6">
                      <label for="post_title">Paystack Link <span style="color: red"> :Leave blank if no Paystack Link</span></label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="paystack_link" name="paystack_link">
                    </div>
