@@ -15,7 +15,9 @@ class CourseController extends Controller
 
     	$categorycourses = Course::where('course_category_id', $coursecategory->id)->get();
 
-    	return view('admin.courses.showcategorycourses', compact('coursecategory', 'categorycourses'));
+        $course_categories = CourseCategory::get();
+
+    	return view('admin.courses.showcategorycourses', compact('coursecategory', 'categorycourses', 'course_categories'));
     }
 
     public function storeAddCourse(Request $request , CourseCategory $coursecategory){

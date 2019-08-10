@@ -4,7 +4,6 @@ namespace App\Http\Controllers\HomePublic;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\CourseCategory;
 use App\Course;
 use App\CourseRegistration;
 use Notification;
@@ -20,8 +19,7 @@ class CoursesController extends Controller
 
     public function showCourses()
     {
-
-        $courses = Course::all()->groupBy('course_category_id');
+    	$courses = Course::orderBy('start_date', 'asc')->get();
 
         $course_registrations = CourseRegistration::get();
         
