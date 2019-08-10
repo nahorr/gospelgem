@@ -27,15 +27,24 @@
 
                 <header class="g-mb-20">
                    <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
-                    <strong>Mentor {{$coursecategory->course_category_name}} Courses</strong>
-                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourse">New Course</button>
+                    <strong>Course Category: <span style="color: red">{{$coursecategory->course_category_name}}</span></strong>
+                    <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addCourse">Add New Course</button>
                   </h2>
                 </header>
                  <!-- Add Course -->
                  <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/courses/storeAddCourse') }}" id="ajaxFormAddCourse" enctype="multipart/form-data" style="display: none;">
                    {{ csrf_field() }}
 
-                   <input type="hidden" name="course_category_id" value="{{$coursecategory->id}}" required="">
+                   <!-- <input type="hidden" name="course_category_id" value="{{$coursecategory->id}}" required=""> -->
+
+                   <div class="form-group g-mb-25 col-md-3">
+                     <select class="form-control" name="course_category_id" id="course_category_id">
+                       <option selected disabled>Please select a course category</option>
+                       @foreach($course_categories as $key=>$course_category)                    
+                         <option value="{{ $course_category->id }}">{{$course_category->course_category_name}}</option>
+                       @endforeach
+                     </select>
+                   </div>
 
                    <div class="form-group g-mb-25 col-md-3">
                      <label for="post_title">Course Code</label>
@@ -58,7 +67,7 @@
                      <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price">
                    </div>
                    <div class="form-group g-mb-25 col-md-3">
-                     <label for="post_title">Paystack Link</label>
+                     <label for="post_title">Paystack Link <span style="color: red"> :Leave blank if no Paystack Link</span></label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="paystack_link" name="paystack_link">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">
@@ -72,7 +81,7 @@
                   </div>
 
                   <div class="form-group g-mb-25 col-md-6">
-                     <label for="post_title">Course Moodle Link</label>
+                     <label for="post_title">Course Moodle Link <span style="color: red"> :Leave blank if no Course Moodle Link<br> if this course is on the Moodel site, go to the course on course.gosgem.com and copy the course url. Then paste it here</span></label>
                      <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link">
                    </div>
                    <div class="form-group g-mb-25 col-md-6">

@@ -47,7 +47,7 @@
               <input type="number" class="form-control rounded-0 form-control-md" id="price" name="price" value="{{$course->price}}">
             </div>
             <div class="form-group g-mb-25 col-md-10">
-              <label for="paystack_link">Paystack Link</label>
+              <label for="paystack_link">Paystack Link<span style="color: red"> :Leave blank if no Paystack Link</span></label>
               <input type="text" class="form-control rounded-0 form-control-md" id="paystack_link" name="paystack_link" value="{{$course->paystack_link}}">
             </div>
             <div class="form-group g-mb-25 col-md-10">
@@ -59,7 +59,7 @@
              <textarea class="form-control rounded-0 form-control-md"  id="course_venue" name="course_venue" required=""> {{$course->course_venue}}</textarea>
             </div>
            <div class="form-group g-mb-25 col-md-10">
-              <label for="post_title">Course Moodle Link</label>
+              <label for="post_title">Course Moodle Link <span style="color: red"> :Leave blank if no Course Moodle Link<br> if this course is on the Moodel site, go to the course on course.gosgem.com and copy the course url. Then paste it here</span></label>
               <input type="text" class="form-control rounded-0 form-control-md" id="course_moodle_link" name="course_moodle_link" value="{{$course->course_moodle_link}}">
             </div>
             <div class="form-group g-mb-25 col-md-10">
