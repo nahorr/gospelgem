@@ -37,6 +37,8 @@ class AdminComposerServiceProvider extends ServiceProvider
             'admin.courses.showcategorycourses',
             'admin.courses.showallcourses',
             'admin.courses.showcourseregistrations',
+            'admin.posts.groups.show',
+            'admin.posts.groups.members',
 
             ], 
             

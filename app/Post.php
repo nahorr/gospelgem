@@ -24,4 +24,9 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+    public function group()
+    {
+        return $this->belongsTo('App\Group');
+    }
 }

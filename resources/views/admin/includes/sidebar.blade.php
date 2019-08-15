@@ -1,4 +1,4 @@
-      <!-- Sidebar Nav -->
+<!-- Sidebar Nav -->
       <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--dark">
         <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
          
@@ -82,6 +82,14 @@
                     </a>
                   </li>
                   
+                  <li>
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/posts/groups/show')}}" >
+                      <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                        <i class="fa fa-users"></i>
+                      </span>
+                      <span class="media-body align-self-center">Groups</span>
+                    </a>
+                  </li>
                   <li>
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12 active" href="{{url('admin/posts')}}" >
                       <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">

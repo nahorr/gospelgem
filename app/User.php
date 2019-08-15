@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\CommentReply');
     }
+
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
+    }
 }

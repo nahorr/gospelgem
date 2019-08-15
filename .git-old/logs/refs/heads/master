@@ -1,0 +1,63 @@
+0000000000000000000000000000000000000000 288507a8c135df1c184e0b0cf77b8dce8e792da3 Nnamdi <nnamdi@nnamdi.(none)> 1548125720 -0700	clone: from https://github.com/nahorr/gospelgem.git
+288507a8c135df1c184e0b0cf77b8dce8e792da3 7c69af1e752dee7edfe531f1b6fab3a753cf3002 Nnamdi Okeke <nahorr@gmail.com> 1548135638 -0700	commit: manual user verification added
+7c69af1e752dee7edfe531f1b6fab3a753cf3002 de7e61c383e7f59c574db800aac245f5da28da45 Nnamdi Okeke <nahorr@gmail.com> 1548516030 -0700	commit: fix course start date js-pie
+de7e61c383e7f59c574db800aac245f5da28da45 b54c0f8df91538fabcaf26b8c1d7b8c3bf98ba56 Nnamdi Okeke <nahorr@gmail.com> 1548519997 -0700	commit: courses - start and end date
+b54c0f8df91538fabcaf26b8c1d7b8c3bf98ba56 d848cac3b0a3ec0174e81ecbeb32a2816733e902 Nnamdi Okeke <nahorr@gmail.com> 1549383289 -0700	commit: change welcome video, fix admin users table pagination
+d848cac3b0a3ec0174e81ecbeb32a2816733e902 2aa35253f01d2f008078dd302dd9e2b4b05fcbbd Nnamdi Okeke <nahorr@gmail.com> 1549388535 -0700	commit: remove login and register with facebook
+2aa35253f01d2f008078dd302dd9e2b4b05fcbbd 02c5125db0ffb4372f13f2206251a6347cc812b2 Nnamdi Okeke <nahorr@gmail.com> 1549988118 -0700	commit: use DB to get large user data
+02c5125db0ffb4372f13f2206251a6347cc812b2 a8ab99b4ac55aed03c1b0df6194af34a5bb3a9b0 Nnamdi Okeke <nahorr@gmail.com> 1549997240 -0700	commit: implement table download - course registrations
+a8ab99b4ac55aed03c1b0df6194af34a5bb3a9b0 e381f27cdca14079bba9740d4b491a8ec8c23294 Nnamdi Okeke <nahorr@gmail.com> 1549997597 -0700	commit: implement table download - course registrations
+e381f27cdca14079bba9740d4b491a8ec8c23294 10a96cf61464253157ff5fcf7b91cbbf6f96e2df Nnamdi Okeke <nahorr@gmail.com> 1549998062 -0700	commit: implement table download - course registrations
+10a96cf61464253157ff5fcf7b91cbbf6f96e2df 1d17722162e2c02f41432f4e194a075ab773c142 Nnamdi Okeke <nahorr@gmail.com> 1550183357 -0700	commit: order users table
+1d17722162e2c02f41432f4e194a075ab773c142 2a33202d48b70c3f7b2fb00a177ad4fd6c972b2c Nnamdi Okeke <nahorr@gmail.com> 1551117321 -0700	commit: invite gosgem
+2a33202d48b70c3f7b2fb00a177ad4fd6c972b2c a75bd04a56000afe15ee7252df461e000018989f Nnamdi Okeke <nahorr@gmail.com> 1551231574 -0700	commit: invite gosgem to your city
+a75bd04a56000afe15ee7252df461e000018989f 21ad5f031323152c3b797ebb593f2f13a2afb9b9 Nnamdi Okeke <nahorr@gmail.com> 1551292300 -0700	commit: update contact notification email
+21ad5f031323152c3b797ebb593f2f13a2afb9b9 45fc22c51350e80b3997632ea06643f85f69d09c Nnamdi Okeke <nahorr@gmail.com> 1551711418 -0700	commit: nav edit
+45fc22c51350e80b3997632ea06643f85f69d09c ec155e9f5af60338321c2900a71a1e8885cd8f32 Nnamdi Okeke <nahorr@gmail.com> 1552314504 -0600	commit: implemenet mentors, move admin users table, modify invite form
+ec155e9f5af60338321c2900a71a1e8885cd8f32 6dd3c84a114bfa6f651ba0b86d2a2be0c00ea2b5 Nnamdi Okeke <nahorr@gmail.com> 1552662171 -0600	commit: pictures - admin and public views
+6dd3c84a114bfa6f651ba0b86d2a2be0c00ea2b5 33330269a5377b16079d6068e661454fdabae3d0 Nnamdi Okeke <nahorr@gmail.com> 1552705446 -0600	commit: still on pictures
+33330269a5377b16079d6068e661454fdabae3d0 9c631f655777a5eadc462bd4650decb4b16b47b7 Nnamdi Okeke <nahorr@gmail.com> 1552772356 -0600	commit: still on pictures
+9c631f655777a5eadc462bd4650decb4b16b47b7 12294d1f420e3f1bac100be8a8cac449c2c01d72 Nnamdi Okeke <nahorr@gmail.com> 1552796893 -0600	commit: delete pictures
+12294d1f420e3f1bac100be8a8cac449c2c01d72 8f4e9e0144e3dc198b4069c28792dc64857a41ae Nnamdi Okeke <nahorr@gmail.com> 1552829980 -0600	commit: finish pictures page
+8f4e9e0144e3dc198b4069c28792dc64857a41ae 567cf6b39e0cab53be0035d252458bbf44ad77e6 Nnamdi Okeke <nahorr@gmail.com> 1552832137 -0600	commit: add time stamp to saved pictures
+567cf6b39e0cab53be0035d252458bbf44ad77e6 10ee3979b55753b7d24864f727086853c61a66a3 Nnamdi Okeke <nahorr@gmail.com> 1552842789 -0600	commit: add time stamp to saved pictures
+10ee3979b55753b7d24864f727086853c61a66a3 1c2d0f2fc3ea57d3ff79117017226d01a9ffa4b9 Nnamdi Okeke <nahorr@gmail.com> 1552924261 -0600	commit: fix header issue
+1c2d0f2fc3ea57d3ff79117017226d01a9ffa4b9 f26a938417f9edf9927ac7ad5b3d91950f125549 Nnamdi Okeke <nahorr@gmail.com> 1552924424 -0600	commit: fix header issue
+f26a938417f9edf9927ac7ad5b3d91950f125549 8e7f17ce6f8b5dd92cb987546b9cf9b421eaa6f9 Nnamdi Okeke <nahorr@gmail.com> 1552936177 -0600	commit: change mentors pics location and modify delete method
+8e7f17ce6f8b5dd92cb987546b9cf9b421eaa6f9 12cc49da043fdcef61737bd856afadd260b08ab2 Nnamdi Okeke <nahorr@gmail.com> 1552942848 -0600	commit: nav, pictures
+12cc49da043fdcef61737bd856afadd260b08ab2 b17cb5a12de6578217377863cfdafcbd9186f279 Nnamdi Okeke <nahorr@gmail.com> 1552942931 -0600	commit: nav, crop pictures
+b17cb5a12de6578217377863cfdafcbd9186f279 dab4a60dfd7528b379220ff7fef46b10b3fff08d Nnamdi Okeke <nahorr@gmail.com> 1553009174 -0600	commit: fix responsive pic size
+dab4a60dfd7528b379220ff7fef46b10b3fff08d b470d57c8b2d54a7ddafd2f4e8ffbb9ce2bb7611 Nnamdi Okeke <nahorr@gmail.com> 1553009256 -0600	commit: nav, crop pictures
+b470d57c8b2d54a7ddafd2f4e8ffbb9ce2bb7611 04775c267d527b9e6894faae68f6ca904307c18e Nnamdi Okeke <nahorr@gmail.com> 1553091204 -0600	commit: saved pictures name change
+04775c267d527b9e6894faae68f6ca904307c18e b9c71f6c0ae7334744e359c2f0a98f4d26783c6c Nnamdi Okeke <nahorr@gmail.com> 1554305636 -0600	commit: add paginate to pictures page
+b9c71f6c0ae7334744e359c2f0a98f4d26783c6c d161dbcd8c915dd51d4f20660cb17c1e192f0f51 Nnamdi Okeke <nahorr@gmail.com> 1554305676 -0600	commit: add paginate to pictures page
+d161dbcd8c915dd51d4f20660cb17c1e192f0f51 283efdaa58bea9db9536bb0e7afeaf095b0c1da1 Nnamdi Okeke <nahorr@gmail.com> 1554329672 -0600	commit: pictures
+283efdaa58bea9db9536bb0e7afeaf095b0c1da1 8b79f0b217ff190f2790863ecdbdecd2ed6585b4 Nnamdi Okeke <nahorr@gmail.com> 1554330165 -0600	commit: remove image optimizer
+8b79f0b217ff190f2790863ecdbdecd2ed6585b4 c724dbf212503d81fbdad09ae4da3753ff14e9f2 Nnamdi Okeke <nahorr@gmail.com> 1554332498 -0600	commit: composer json
+c724dbf212503d81fbdad09ae4da3753ff14e9f2 1f856bb7418052f481283e8e94f4207924c44261 Nnamdi Okeke <nahorr@gmail.com> 1554339927 -0600	commit: fix exception issue
+1f856bb7418052f481283e8e94f4207924c44261 df31fc2eddcc9148396ea5602a85b2ee26bbe795 Nnamdi Okeke <nahorr@gmail.com> 1554341204 -0600	commit: ajax https
+df31fc2eddcc9148396ea5602a85b2ee26bbe795 0b7cf289024b0ceab8a463652ce7035692e82648 Nnamdi Okeke <nahorr@gmail.com> 1554341232 -0600	commit: ajax https
+0b7cf289024b0ceab8a463652ce7035692e82648 198a29a78b37a5ffec508d053dc9a6bbc1c71c32 Nnamdi Okeke <nahorr@gmail.com> 1554497584 -0600	commit: fix cent issue
+198a29a78b37a5ffec508d053dc9a6bbc1c71c32 55c0ede2cfda581ffe84d2882083161bcc9142da Nnamdi Okeke <nahorr@gmail.com> 1554499231 -0600	commit: fix cent issue
+55c0ede2cfda581ffe84d2882083161bcc9142da ae55fd20ffc0d671ee027c8e4c85323fe6b6e386 Nnamdi Okeke <nahorr@gmail.com> 1555529850 -0600	commit: courses - add link to course on moodle and sort by online or onsite
+ae55fd20ffc0d671ee027c8e4c85323fe6b6e386 8ecc9d015ef833d23341589542c210c4ef4f0553 Nnamdi Okeke <nahorr@gmail.com> 1555530021 -0600	commit: courses - add link to course on moodle and sort by online or onsite
+8ecc9d015ef833d23341589542c210c4ef4f0553 52575e8ad3143d62cd5fc7c99fafcddf2a4ee73d Nnamdi Okeke <nahorr@gmail.com> 1555532709 -0600	commit: courses - add link to course on moodle and sort by online or onsite
+52575e8ad3143d62cd5fc7c99fafcddf2a4ee73d 9b9b84e582260c0b69a7f54114cf2db8ebc9122e Nnamdi Okeke <nahorr@gmail.com> 1555532806 -0600	commit: courses - add link to course on moodle and sort by online or onsite
+9b9b84e582260c0b69a7f54114cf2db8ebc9122e 60359dfda6ce250e090c9334440faa3b5aace71b Nnamdi Okeke <nahorr@gmail.com> 1555533054 -0600	commit: courses - add link to course on moodle and sort by online or onsite
+60359dfda6ce250e090c9334440faa3b5aace71b 196cf23994892b7516a2972fff03eb5ccc9dfaa5 Nnamdi Okeke <nahorr@gmail.com> 1555534521 -0600	commit: courses - add link to course on moodle and sort by online or onsite
+196cf23994892b7516a2972fff03eb5ccc9dfaa5 989082ecd7b747d581b82a4e865316b020638e1d Nnamdi Okeke <nahorr@gmail.com> 1555542522 -0600	commit: courses - add link to course on moodle and sort by online or onsite
+989082ecd7b747d581b82a4e865316b020638e1d c8e9abb9dced77f60b4f6000c352d918f7a2d73a Nnamdi Okeke <nahorr@gmail.com> 1555708068 -0600	commit: rework how users register for courses and list courses after registration
+c8e9abb9dced77f60b4f6000c352d918f7a2d73a 8f010f8bb386039321325d0085fccff575f0d463 Nnamdi Okeke <nahorr@gmail.com> 1555713467 -0600	commit: b details
+8f010f8bb386039321325d0085fccff575f0d463 302305d3f3df1dfd08e9a6068dd709b8b32112dc Nnamdi Okeke <nahorr@gmail.com> 1555772888 -0600	commit: bank info edit
+302305d3f3df1dfd08e9a6068dd709b8b32112dc 2683d6d6962d78f6bfa8b48d9d6c7e679ef13dfa Nnamdi Okeke <nahorr@gmail.com> 1555787289 -0600	merge gosb1: Fast-forward
+2683d6d6962d78f6bfa8b48d9d6c7e679ef13dfa 8a08a2c098b0f7862a884b2952a1ab0e704149ce Nnamdi Okeke <nahorr@gmail.com> 1556032032 -0600	commit: add new welcome page video
+8a08a2c098b0f7862a884b2952a1ab0e704149ce 2aa3539910e4b0d492a69c008e5dc727f710c3a7 Nnamdi Okeke <nahorr@gmail.com> 1556720673 -0600	commit: change bank transfer info
+2aa3539910e4b0d492a69c008e5dc727f710c3a7 488ddf41a4c1c3e5e739df2e44a29e7bc94d5187 Nnamdi Okeke <nahorr@gmail.com> 1557114930 -0600	merge gosb1: Merge made by the 'recursive' strategy.
+488ddf41a4c1c3e5e739df2e44a29e7bc94d5187 64fb12f475069248a111c93f88ab4e87960cab9a Nnamdi Okeke <nahorr@gmail.com> 1557117329 -0600	commit: add meta crsf to header
+64fb12f475069248a111c93f88ab4e87960cab9a 400c36e7bfcba8e38c78827557858784bf7203a7 Nnamdi Okeke <nahorr@gmail.com> 1557584336 -0600	commit: replace welcome page vidoe
+400c36e7bfcba8e38c78827557858784bf7203a7 2db0fbb2521a18a6a1a6cab044f7627c5d5f200a Nnamdi Okeke <nahorr@gmail.com> 1557753367 -0600	commit (merge): enrolent key and home video
+2db0fbb2521a18a6a1a6cab044f7627c5d5f200a 9b5db15bf2e650a8a1ea52ea01702fefb0474d6f Nnamdi Okeke <nahorr@gmail.com> 1557754022 -0600	commit: welcome page
+9b5db15bf2e650a8a1ea52ea01702fefb0474d6f 5f1d8f2ecc9d931b5aeeafc5020605ac8a1b71a2 Nnamdi Okeke <nahorr@gmail.com> 1565459445 -0600	commit: course categories
+5f1d8f2ecc9d931b5aeeafc5020605ac8a1b71a2 722df6fb0aa1f9cdb0b91bd3fe869825d6b707f7 Nnamdi Okeke <nahorr@gmail.com> 1565463355 -0600	commit: course categories
+722df6fb0aa1f9cdb0b91bd3fe869825d6b707f7 c520d4df693dc1a9db4429e060da07db175ce773 Nnamdi Okeke <nahorr@gmail.com> 1565463865 -0600	commit: course categories
+c520d4df693dc1a9db4429e060da07db175ce773 d5fe59631f4df349e77dabad2b5282f7ee30f232 Nnamdi Okeke <nahorr@gmail.com> 1565469957 -0600	commit: course category rework
