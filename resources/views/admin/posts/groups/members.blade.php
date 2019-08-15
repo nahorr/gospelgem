@@ -105,7 +105,7 @@
                           <div class="row">
                             <div class="col-md-3">
                               @if($member->pivot->approved == true)
-                                <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-success g-mr-10">YES</a>
+                                <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-orange g-mr-10">YES</a>
                               @else
                                 <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-darkred g-mr-10">NO</a>
                               @endif

@@ -20,7 +20,7 @@ class GroupMembersController extends Controller
              
         ]);
 	   	$group = Group::find($request->group_id);
-		$group->users()->attach($request->user_id);
+		$group->users()->attach($request->user_id, ['approved' => true]);
 	   	
         flash('Member added successfully!')->success();
    		return back();
