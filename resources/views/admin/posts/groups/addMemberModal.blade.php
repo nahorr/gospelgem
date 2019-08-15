@@ -12,24 +12,16 @@
       <div class="modal-body">
         
           <!-- Add Course -->
-          <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/videos/addvideo') }}">
+          <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/posts/groups/addmembers/'.$group->id) }}">
             {{ csrf_field() }}
 
             <div class="form-group g-mb-25 col-md-12">
-              <label for="post_title">Video Title</label>
-              <input type="text" class="form-control rounded-0 form-control-md" id="video_title" name="video_title" required="">
-            </div>
-            <div class="form-group g-mb-25 col-md-12">
-              <label for="post_title">Video Description</label>
-              <textarea class="form-control rounded-0 form-control-md"  id="video_description" name="video_description"></textarea>
-            </div>
-            <div class="form-group g-mb-25 col-md-12">
-              <label for="post_title">Video link/url</label>
-              <input type="text" class="form-control rounded-0 form-control-md" id="video_link" name="video_link" required="">
-            </div>
-            <div class="form-group g-mb-25 col-md-12">
-              <label for="post_title">Video Page</label>
-              <input type="text" class="form-control rounded-0 form-control-md" id="video_page" name="video_page" required="">
+              <select class="form-control" name="user_id" id="user_id">
+                 <option selected disabled>Please select a user</option>
+                 @foreach($users as $key=>$member)                    
+                   <option value="{{ $member->id }}">{{$member->name}} - {{$member->email}}</option>
+                 @endforeach
+               </select>
             </div>
             <div class="form-group g-mb-25 col-md-6">
              <button type="submit" class="btn btn-success">Submit</button>

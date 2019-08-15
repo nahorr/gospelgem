@@ -8,12 +8,14 @@ class GroupMembersController extends Controller
 {
     public function groupMembers(Group $group)
     {
-    	return view('admin.posts.groups.members', compact('group'));
+        $users = User::get();
+
+    	return view('admin.posts.groups.members', compact('group', 'users'));
     }
     public function addGroupMembers(Request $request, Group $group)
     {
     	$this->validate($request, [
-	        'user_id' => 'required',    
+	        'user_id' => 'required|unique_with:group_user,group_id',    
         ]);
 	   	$group = Group::find($group->id);
 		$group->users()->attach($request->user_id);

@@ -19,6 +19,15 @@
           <div class="g-pa-20">
            @include('admin.includes.metrics')
            @include('flash::message')
+           @if (count($errors) > 0) 
+              <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+              </div>
+            @endif
 
              <header class="g-mb-20">
                <h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
