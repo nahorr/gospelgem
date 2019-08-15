@@ -14,6 +14,7 @@
           <!-- Add Course -->
           <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/posts/groups/addmembers/'.$group->id) }}">
             {{ csrf_field() }}
+            <input type="hidden" name="group_id" value="{{$group->id}}">
 
             <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 g-mb-25 col-md-12">
               <select class="js-select u-select--v3-select u-sibling w-100" title="Select a user" style="display: none;" data-live-search="true" name="user_id">

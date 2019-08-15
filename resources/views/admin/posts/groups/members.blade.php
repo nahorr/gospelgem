@@ -129,7 +129,7 @@
                          <td class="g-px-30">
                           <div class="row">
                             <div class="col-md-3">
-                                <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
+                                <a href="{{url('admin/posts/groups/deletemember/'. $group->id)}}/{{$member->id}}" class="btn btn-md u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to Delete this record?')">Delete</a>
                               </div>
                             </div>
                           </td>
