@@ -39,6 +39,9 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
   Route::get('gforum/user/{user}', 'HomePublic\GForum\GForumController@userPosts')->name('userPosts');
   //Search Gosyan Forum Posts
   //Route::any('/search_forum_posts', 'HomePublic\GForum\GForumController@searchForumPosts')->name('searchforumposts');
+
+  //GForum groups
+  Route::get('groups/show', 'HomePublic\Groups\GroupsController@show')->middleware('auth');
   
   Route::post('gforum/countpostviews/{post}', 'HomePublic\GForum\GForumController@countPostViews');
   Route::get('gforum/viewpost/{post}', 'HomePublic\GForum\GForumController@viewPost')->name('viewpostpublic');

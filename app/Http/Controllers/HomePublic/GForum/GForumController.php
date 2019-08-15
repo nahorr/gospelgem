@@ -8,6 +8,7 @@ use App\Comment;
 use App\Category;
 use App\Post;
 use App\User;
+use App\Group;
 use App\CommentReply;
 
 class GForumController extends Controller
@@ -23,9 +24,11 @@ class GForumController extends Controller
         $comments = Comment::get();
 
         $categories = Category::get();
+
+        $groups = Group::get();
        
 
-    	return view('public-views.gforum.gforum', compact('posts', 'posts_all', 'users', 'comments', 'categories'));
+    	return view('public-views.gforum.gforum', compact('posts', 'posts_all', 'users', 'comments', 'categories', 'groups'));
     }
 
     public function category(Category $category)
