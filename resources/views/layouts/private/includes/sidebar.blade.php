@@ -46,16 +46,27 @@
           </li>
           <!-- End User Profile -->
 
-          <!-- User Profile-->
+          <!-- User Courses-->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('courses/registrations')}}">
               <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                 <i class="hs-admin-book"></i>
               </span>
-              <span class="media-body align-self-center">My Course</span>
+              <span class="media-body align-self-center">My Courses</span>
             </a>
           </li>
-          <!-- End User Profile -->
+          <!-- End User Courses -->
+
+          <!-- User groups-->
+          <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="{{url('groups/mygroups')}}">
+              <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="media-body align-self-center">My Groups</span>
+            </a>
+          </li>
+          <!-- End User Courses -->
 
           <!-- Logout -->
           <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">

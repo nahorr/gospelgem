@@ -29,7 +29,7 @@
              <!-- Add group -->
              <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ url('/admin/posts/groups/create') }}" id="ajaxFormAddgroup" style="display: none;">
                {{ csrf_field() }}
-
+               <input type="hidden" id="group_admin" name="group_admin" value="{{Auth::user()->id}}" required="">
                <div class="form-group g-mb-25 col-md-3">
                  <label for="post_title">Group Name</label>
                  <input type="text" class="form-control rounded-0 form-control-md" id="name" name="name" required="">
@@ -88,6 +88,10 @@
                          </th>
                          <th class="g-px-30">
                            <div class="media">
+                             <div class="d-flex align-self-center">Group Admin</div></div>
+                         </th>
+                         <th class="g-px-30">
+                           <div class="media">
                              <div class="d-flex align-self-center">Description</div></div>
                          </th>
                          <th class="g-px-30">
@@ -132,6 +136,11 @@
                          <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">{{$group->name}}</div>
+                           </div>
+                         </td>
+                         <td class="g-px-30">
+                           <div class="media">
+                             <div class="media-body align-self-center text-left">{{\App\User::where('id', $group->group_admin)->first()->name}}</div>
                            </div>
                          </td>
                          <td class="g-px-30">
