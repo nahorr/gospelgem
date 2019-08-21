@@ -26,43 +26,34 @@
 	                        <th>Group Admin</th>
 	                        <th>Memmber</th>
 	                        <th>Description</th>
-	                        <th>Exit Group</th>
 	                        <th>Action</th>
 	                      </tr>
 	                    </thead>
 
 	                    <tbody>
-	                    @foreach($groups as $key=>$mygroup)
-	                    @if($mygroup->group_admin == Auth::user()->id)
+	                    @foreach(Auth::user()->groups as $key=>$mygroup)
+	                    
 	                      <tr>
 	                        <td>{{ $key+1 }}</td>
 	                        <td>{{ $mygroup->name }}</td>
-	                        <td>{{ $mygroup->name }}</td>
-	                        <td>{{ $mygroup->description }}</td>
 	                        <td>
-	                        	$mygroup
-	                        	<button type="button" class="btn btn-light" id="courseDetails-{{$mygroup->id}}{{$mygroup->course->course_id }}"><i class="fa fa-eye"></i> View Details 
-	                        		@if($mygroup->course->enrolment_key)
-	                        			& <span style="color: #186A3B"><strong>get Enrolment key</span></strong>
-	                        		@endif
-	                        	</button>
-	                        	@include('private-views.courses.courseDetailsModal')
-				                <script type="text/javascript">
-				                  $('#courseDetails-{{$mygroup->id}}{{$mygroup->course->course_id }}').on('click', function(e){
-				                     e.preventDefault();
-				                    $('#courseDetailsModal-{{$mygroup->id}}{{$mygroup->course->course_id}}').modal('show');
-				                  })
-				                </script>
+	                        	@if($mygroup->group_admin == Auth::user()->id)
+	                        		{{Auth::user()->name}}
+	                        	@endif
+	                        </td>
+	                        <td>{{ $mygroup->users()->count()}}
+	                        <td>
+	                        	{{ $mygroup->description}}
 	                        </td>
 	                        <td>
-	                        	@if($mygroup->course->course_moodle_link == null)
-	                        		<a href="" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Venue: {{$mygroup->course->course_venue}}"><strong><i class="icon-education-074 u-line-icon-pro"></i> ONSITE</strong></a>
+	                        	@if($mygroup->group_admin == Auth::user()->id)
+	                        		<a href="" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="You are the group admin. Deleting this group with delete all data associated with the group."><strong><i class="icon-media-066 u-line-icon-pro"></i> Delete Group</strong></a>
 	                        	@else
-	                        		<a href="{{$mygroup->course->course_moodle_link}}" class="btn btn-md u-btn-pink g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Click to start or continue course. Please use your Gosgem email and password to login on our course management system when prompted"><strong><i class="icon-education-030 u-line-icon-pro"></i> ONLINE</strong></a>
+	                        		<a href="" class="btn btn-md u-btn-pink g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Exit this group if no longer wish to be a member of the group"><strong><i class="icon-education-030 u-line-icon-pro"></i> Exit Group</strong></a>
 	                        	@endif
 	                        </td>
 	                      </tr>
-	                     @endif
+	                    
 	                     @endforeach
 	                    </tbody>
 	                  </table>

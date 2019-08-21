@@ -24,7 +24,11 @@ class GroupsController extends Controller
       $newGroup->description = $request->description;
 	   	
 	   	$newGroup->save();
-        flash('New Group created successfully!')->success();
+
+      $group = Group::find($newGroup->id);
+      $group->users()->attach($request->group_admin, ['approved' => true]);
+      
+      flash('New Group created successfully!')->success();
    		return back();
    }
    public function editGroup(Request $request, Group $group){
