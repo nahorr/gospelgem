@@ -21,12 +21,12 @@
 	                  <table class="table u-table--v3--bordered g-color-black">
 	                    <thead>
 	                      <tr>
-	                        <th>#</th>
-	                        <th>Group Name</th>
-	                        <th>Group Admin</th>
-	                        <th>Memmber</th>
-	                        <th>Description</th>
-	                        <th>Action</th>
+	                        <th><strong>#</strong></th>
+	                        <th><strong>Group Name</strong></th>
+	                        <th><strong>Group Admin</strong></th>
+	                        <th><strong>Members</strong></th>
+	                        <th><strong>Description</strong></th>
+	                        <th><strong>Action</strong></th>
 	                      </tr>
 	                    </thead>
 
@@ -41,15 +41,22 @@
 	                        		{{Auth::user()->name}}
 	                        	@endif
 	                        </td>
-	                        <td>{{ $mygroup->users()->count()}}
+	                        <td>
+	                        	<button type="button" class="btn btn-light"><i class="fa fa-group"></i> 
+	                        	@if($mygroup->users()->count() <= 1)                      	
+	                        		{{ $mygroup->users()->count()}} member    	
+	                        	@else
+	                        		{{ $mygroup->users()->count()}} members
+	                        	@endif
+	                        	</button>
 	                        <td>
 	                        	{{ $mygroup->description}}
 	                        </td>
 	                        <td>
 	                        	@if($mygroup->group_admin == Auth::user()->id)
-	                        		<a href="" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="You are the group admin. Deleting this group with delete all data associated with the group."><strong><i class="icon-media-066 u-line-icon-pro"></i> Delete Group</strong></a>
+	                        		<a href="" class="btn btn-md u-btn-lightred g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="You are the group admin. Deleting this group with delete all data associated with the group."><strong><i class="icon-media-066 u-line-icon-pro"></i> Delete</strong></a>
 	                        	@else
-	                        		<a href="" class="btn btn-md u-btn-pink g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Exit this group if no longer wish to be a member of the group"><strong><i class="icon-education-030 u-line-icon-pro"></i> Exit Group</strong></a>
+	                        		<a href="" class="btn btn-md u-btn-darkred g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Exit from this group if no longer wish to be a member of the group"><strong><i class="icon-education-030 u-line-icon-pro"></i> Exit</strong></a>
 	                        	@endif
 	                        </td>
 	                      </tr>
