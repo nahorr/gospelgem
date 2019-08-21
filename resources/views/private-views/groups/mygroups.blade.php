@@ -14,7 +14,15 @@
             <div class="g-pa-20">
                 @include('layouts.private.includes.metrics')
 
-            		<a href="{{url('/courses')}}" class="btn btn-md u-btn-orange g-mr-10 g-mb-15">Create New Group</a>
+            		<button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15 pull-right" id="addNewGroup-{{Auth::user()->id}}">Create new Group</button>
+            		           
+		             @include('private-views.groups.newGroupModal')
+		             <script type="text/javascript">
+		               $('#addNewGroup-{{Auth::user()->id}}').on('click', function(e){
+		                   e.preventDefault();
+		                 $('#newGroupModal-{{Auth::user()->id}}').modal('show');
+		               })
+		             </script>
 
                     <div class="table-responsive g-mb-40">
                     
@@ -42,7 +50,7 @@
 	                        	@endif
 	                        </td>
 	                        <td>
-	                        	<button type="button" class="btn btn-light"><i class="fa fa-group"></i> 
+	                        	<button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="View group members"><i class="fa fa-group"></i> 
 	                        	@if($mygroup->users()->count() <= 1)                      	
 	                        		{{ $mygroup->users()->count()}} member    	
 	                        	@else
