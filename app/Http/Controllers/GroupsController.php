@@ -10,6 +10,8 @@ class GroupsController extends Controller
 {
     public function userGroups()
     {
-    	return view('private-views.groups.mygroups');
+    	$groups = Group::get();
+
+    	return view('private-views.groups.mygroups', compact('groups'));
     }
 }
