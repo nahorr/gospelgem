@@ -27,6 +27,7 @@ class PublicComposerServiceProvider extends ServiceProvider
             'public-views.invite_gosgem',
             'public-views.gosgem_policy',
             'public-views.termsofuse',
+            'public-view.groups.showgroupposts',
             
 
             ], 

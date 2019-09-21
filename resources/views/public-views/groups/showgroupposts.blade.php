@@ -9,13 +9,13 @@
   </style>
 
   @include('layouts.public.includes.nav-header')
-
+  
   <!--Basic Table-->
   <section class="g-py-100">
     <div class="container">
       <header class="text-center g-width-60x--md mx-auto g-mb-50">
-          <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Introducing GosYan</h2>
-          <p class="lead">GosYan is a Good News Forum. It is a place to share beautiful, inspiring, and uplifting stories with gems around the world. </p>
+          <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">{{$group->name}} Group</h2>
+          <p class="lead">{{$group->description}} </p>
         </header>
        @if(Auth::check() )
         <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostButton">Add a Post</button>
@@ -86,7 +86,7 @@
         <thead class="thead-dark text-uppercase g-letter-spacing-1">
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
-            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Most Recent Posts<small>({{$posts->total()}} posts)</small> -
+            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Most Recent Posts<small>({{$posts->count()}} posts)</small> -
               @foreach($categories as $category)
                 
                 @if($loop->last)

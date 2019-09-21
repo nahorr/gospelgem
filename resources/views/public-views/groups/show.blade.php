@@ -4,12 +4,14 @@
   
   @include('layouts.public.includes.nav-header')
 
+
   <!-- Popular Jobs -->
       <section class="g-py-100">
         <div class="container">
           <header class="text-center g-width-60x--md mx-auto g-mb-50">
             <h2 class="h1 g-color-gray-dark-v1 g-font-weight-300">Gosyan Groups({{$groups->count()}})</h2>
             <p class="lead">Please contact group admin or send a join request to the admin if you wish to join the group.</p>
+            @include('flash::message')
           </header>
 
           <div class="row g-mb-30">
