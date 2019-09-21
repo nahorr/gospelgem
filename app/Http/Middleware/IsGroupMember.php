@@ -23,7 +23,7 @@ class IsGroupMember
         if (in_array($request->group->id, $allusergroups)) {
             return $next($request);
         }else{
-            flash('You are not a memeber of this group!. Please request to join the group by clicking on "join".')->warning();
+            flash('You are not a memeber of this group!. Please request to join a group by clicking on "join".')->error();
             return back(); 
         }
         
