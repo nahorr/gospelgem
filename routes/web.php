@@ -95,6 +95,9 @@ Route::group(['middleware' => 'auth'], function () {
     //User groups
     Route::get('/groups/mygroups', 'GroupsController@userGroups');
     Route::get('/groups/mygroupmembers/{group}', 'GroupsController@myGroupMembers');
+    Route::post('/groups/mygroupmembers/joingrouprequest/{user}/{group}', 'GroupsController@joinGroupRequest');
+    Route::post('/groups/mygroupmembers/approve/{user}/{group}', 'GroupsController@approveGroupMember');
+    Route::post('/groups/mygroupmembers/suspend/{user}/{group}', 'GroupsController@suspendGroupMember');
 });
 //Route::get('home', 'HomeController@index')->name('home');
 //Route::get('private-views.user.profile', 'User\ProfileController@profile');

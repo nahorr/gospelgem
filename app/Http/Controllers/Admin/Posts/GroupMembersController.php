@@ -20,6 +20,7 @@ class GroupMembersController extends Controller
              
         ]);
 	   	$group = Group::find($request->group_id);
+        //Add group member manually by admin. Note that user is approved if added manually by admin
 		$group->users()->attach($request->user_id, ['approved' => true]);
 	   	
         flash('Member added successfully!')->success();

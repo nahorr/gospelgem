@@ -62,9 +62,33 @@
 	                        	{{ $groupmember->pivot->created_at->toFormattedDateString() }}
 	                        </td>
 	                  		<td>
-	                        	<a href="" class="btn btn-md u-btn-lightred g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="You are the group admin. Deleting this group with delete all data associated with the group."><strong><i class="icon-media-066 u-line-icon-pro"></i> Suspend</strong>
-	                        	</a>
-	                        	<a href="" class="btn btn-md u-btn-primary g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="You are the group admin. Deleting this group with delete all data associated with the group."><strong><i class="icon-media-066 u-line-icon-pro"></i> Approve</strong></a>
+	                  			@if($group->group_admin != $groupmember->pivot->user_id)
+		                  			@If($groupmember->pivot->approved == 0)
+	                                  <form class="form-group" action="{{ url('/groups/mygroupmembers/approve', [$groupmember->pivot->user_id, $groupmember->pivot->group_id])}}" method="POST">
+	                                    {{ csrf_field() }}
+	                                      
+	                                      <input name="user_id" type="hidden" value="{{Auth::user()->id}}">
+	                                      <button class="btn btn-sm u-btn-blue g-mr-10" onclick="return confirm('Are you sure you want to approve this user?')"> Approve
+	                                      </button>
+	                                  </form>
+	                                @elseif($groupmember->pivot->suspended == 1)
+	                                <form class="form-group" action="{{ url('/groups/mygroupmembers/suspend', [$groupmember->pivot->user_id, $groupmember->pivot->group_id])}}" method="POST">
+	                                    {{ csrf_field() }}
+	                                 
+	                                      <input name="user_id" type="hidden" value="{{Auth::user()->id}}">
+	                                      <button class="btn btn-sm u-btn-blue g-mr-10" onclick="return confirm('Are you sure you want to approve this user?')"> Approve
+	                                      </button>
+	                                  </form>
+	                                 @else
+	                                  <form class="form-group" action="{{ url('/groups/mygroupmembers/suspend', [$groupmember->pivot->user_id, $groupmember->pivot->group_id])}}" method="POST">
+	                                    {{ csrf_field() }}
+	                                      
+	                                      <input name="user_id" type="hidden" value="{{Auth::user()->id}}">
+	                                      <button class="btn btn-sm u-btn-darkred g-mr-10" onclick="return confirm('Are you sure you want to approve this user?')"> Suspend
+	                                      </button>
+	                                  </form>
+	                                @endif
+	                               @endif
 	                        </td>
 	                      </tr>
 	                    	
