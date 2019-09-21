@@ -21,7 +21,7 @@
                     <img class="g-width-40 g-height-40" src="{{asset('unify/assets/img-temp/logos/img1.png')}}" alt="Image Description">
                   </div>
                   <div class="media-body">
-                    <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="">{{$group->name}}</a>
+                    <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="{{url('/groups/showgroupposts/'.$group->id)}}">{{$group->name}}</a>
                     <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
                         <i class="icon-people g-pos-rel g-top-1 mr-1"></i> {{$group->users()->count()}} Members
                       </span>

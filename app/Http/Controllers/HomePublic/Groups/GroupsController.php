@@ -14,4 +14,10 @@ class GroupsController extends Controller
 
     	return view('public-views.groups.show', compact('groups'));
     }
+
+    public function showGroupPosts(Group $group)
+    {
+
+    	return view('public-views.groups.showgroupposts', compact('group'));
+    }
 }
