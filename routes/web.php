@@ -94,6 +94,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //User groups
     Route::get('/groups/mygroups', 'GroupsController@userGroups');
+    Route::get('/groups/mygroupmembers/{group}', 'GroupsController@myGroupMembers');
 });
 //Route::get('home', 'HomeController@index')->name('home');
 //Route::get('private-views.user.profile', 'User\ProfileController@profile');

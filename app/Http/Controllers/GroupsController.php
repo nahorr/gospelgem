@@ -14,4 +14,10 @@ class GroupsController extends Controller
 
     	return view('private-views.groups.mygroups', compact('groups'));
     }
+
+    public function myGroupMembers(Group $group)
+    {
+    	
+    	return view('private-views.groups.mygroupmembers', compact('group'));
+    }
 }

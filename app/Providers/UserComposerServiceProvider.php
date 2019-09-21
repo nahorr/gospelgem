@@ -26,6 +26,7 @@ class UserComposerServiceProvider extends ServiceProvider
             'private-views.courses.registrations',
             'private-views.courses.details',
             'private-views.groups.mygroups',
+            'private-views.groups.mygroupmembers',
             
             
 
