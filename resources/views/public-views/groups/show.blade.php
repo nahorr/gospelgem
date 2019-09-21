@@ -28,12 +28,20 @@
                     <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="{{url('/groups/showgroupposts/'.$group->id)}}">{{$group->name}}</a>
                     <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
                         <i class="icon-people g-pos-rel g-top-1 mr-1"></i> {{$group->users()->count()}} Members
+                    </span>
+                    @if( in_array(\Auth::user()->id, $group->users->pluck('id')->toArray()))
+                      <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
+                        <a href="" style="text-decoration: none">
+                          <i class="icon-plus g-pos-rel g-top-1 mr-1"></i> View Posts <strong>({{\App\Post::where('group_id',$group->id)->count()}})</strong>
+                        </a>
                       </span>
-                    <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                      <a href="" style="text-decoration: none">
-                        <i class="icon-plus g-pos-rel g-top-1 mr-1"></i> <strong>Join Group</strong>
-                      </a>
+                    @else
+                      <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
+                        <a href="" style="text-decoration: none">
+                          <i class="icon-plus g-pos-rel g-top-1 mr-1"></i> <strong>Join Group</strong>
+                        </a>
                       </span>
+                    @endif
                   </div>
                 </li>
               </ul>

@@ -21,18 +21,21 @@ class GroupsController extends Controller
     	return view('private-views.groups.mygroupmembers', compact('group'));
     }
 
-    public function joinGroupRequest(Request $request)
+    public function joinGroupRequest(Request $request, User $user, Group $group)
     {
         $this->validate($request, [
             'group_id' => 'required|unique_with:group_user,user_id',
             'user_id' => 'required',
              
         ]);
+
         $group = Group::find($request->group_id);
-        //Add group member manually by admin. Note that user is approved if added manually by admin
-        $group->users()->attach($request->user_id, ['approved' => true]);
         
-        flash('Member added successfully!')->success();
+        //Join group request by users
+        $group->users()->attach($request->user_id);
+        
+        flash('You request was sent successfully!')->success();
+
         return back();
     }
 
