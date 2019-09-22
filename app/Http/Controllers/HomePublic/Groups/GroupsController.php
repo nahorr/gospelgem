@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Group;
 use App\Post;
 use App\Category;
+use App\User;
 
 class GroupsController extends Controller
 {
@@ -15,6 +16,18 @@ class GroupsController extends Controller
     	$groups = Group::get();
 
     	return view('public-views.groups.show', compact('groups'));
+    }
+
+    public function joinRequest(Request $request, User $user, Group $group)
+    {
+        $group = Group::find($group->id);
+        
+        //Join group request by users
+        $group->users()->attach($user->id);
+        
+        flash('You request was sent successfully!')->success();
+
+        return back();
     }
 
     public function showGroupPosts(Group $group)

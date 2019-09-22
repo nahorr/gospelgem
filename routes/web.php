@@ -42,8 +42,10 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
   //GForum groups
   Route::get('groups/show', 'HomePublic\Groups\GroupsController@show')->middleware('auth');
+  Route::post('groups/joinrequest/{user}/{group}', 'HomePublic\Groups\GroupsController@joinRequest')->middleware('auth');
   Route::get('groups/showgroupposts/{group}', 'HomePublic\Groups\GroupsController@showGroupPosts')->middleware('auth','group.member');
   
+  //gforum posts  
   Route::post('gforum/countpostviews/{post}', 'HomePublic\GForum\GForumController@countPostViews');
   Route::get('gforum/viewpost/{post}', 'HomePublic\GForum\GForumController@viewPost')->name('viewpostpublic');
   Route::post('gforum/countpostlikes/{post}', 'HomePublic\GForum\GForumController@countPostLikes');
