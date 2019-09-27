@@ -62,9 +62,26 @@
 	                        </td>
 	                        <td>
 	                        	@if($mygroup->group_admin == Auth::user()->id)
-	                        		<a href="" class="btn btn-md u-btn-lightred g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="You are the group admin. Deleting this group with delete all data associated with the group."><strong><i class="icon-media-066 u-line-icon-pro"></i> Delete</strong></a>
+	                        	<div class="btn-group">
+	                        		<a href="" id="editGroup-{{$mygroup->id}}" class="btn btn-md u-btn-teal g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Edit group info"><i class="fa fa-pencil"></i></a>
+	                        		<a href="" id="deleteGroup-{{$mygroup->id}}" class="btn btn-md u-btn-lightred g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="You are the group admin. Deleting this group will delete all data associated with the group."><i class="fa fa-trash"></i></a>	
+	                        	</div>
+	                        	@include('private-views.groups.editGroupModal')
+					             <script type="text/javascript">
+					               $('#editGroup-{{$mygroup->id}}').on('click', function(e){
+					                   e.preventDefault();
+					                 $('#editGroupModal-{{$mygroup->id}}').modal('show');
+					               })
+					             </script>
+					             @include('private-views.groups.deleteGroupModal')
+					             <script type="text/javascript">
+					               $('#deleteGroup-{{$mygroup->id}}').on('click', function(e){
+					                   e.preventDefault();
+					                 $('#deleteGroupModal-{{$mygroup->id}}').modal('show');
+					               })
+					             </script>
 	                        	@else
-	                        		<a href="" class="btn btn-md u-btn-darkred g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Exit from this group if no longer wish to be a member of the group"><strong><i class="icon-education-030 u-line-icon-pro"></i> Exit</strong></a>
+	                        		<a href="" class="btn btn-md u-btn-black g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="Leave this group if you no longer wish to be a member of the group"><i class="fa fa-close"></i></a>
 	                        	@endif
 	                        </td>
 	                      </tr>

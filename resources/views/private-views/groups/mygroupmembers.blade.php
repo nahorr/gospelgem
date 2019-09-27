@@ -34,7 +34,9 @@
 	                        <th><strong>First Name</strong></th>
 	                        <th><strong>Last Name</strong></th>
 	                        <th><strong>Join Date</strong></th>
+	                        @if($group->group_admin == Auth::user()->id)
 	                        <th><strong>Action</strong></th>
+	                        @endif
 	                      </tr>
 	                    </thead>
 
@@ -61,6 +63,7 @@
 	                        <td>
 	                        	{{ $groupmember->pivot->created_at->toFormattedDateString() }}
 	                        </td>
+	                        @if($group->group_admin == Auth::user()->id)
 	                  		<td>
 	                  			@if($group->group_admin != $groupmember->pivot->user_id)
 		                  			@If($groupmember->pivot->approved == 0)
@@ -90,6 +93,7 @@
 	                                @endif
 	                               @endif
 	                        </td>
+	                        @endif
 	                      </tr>
 	                    	
 	                     @endforeach

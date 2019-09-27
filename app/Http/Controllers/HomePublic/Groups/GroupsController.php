@@ -18,6 +18,13 @@ class GroupsController extends Controller
     	return view('public-views.groups.show', compact('groups'));
     }
 
+    public function showMyGroups(User $user)
+    {
+        $groups = Group::get();
+
+        return view('public-views.groups.showmygroups', compact('user', 'groups'));
+    }
+
     public function joinRequest(Request $request, User $user, Group $group)
     {
         $group = Group::find($group->id);

@@ -13,7 +13,9 @@
             <p class="lead">Please contact group admin or send a join request to the admin if you wish to join the group.</p>
             @include('flash::message')
           </header>
-
+          <div class="row col-md-12">
+            <a href="{{url('groups/showmygroups/'.Auth::user()->id)}}" class="btn btn-md u-btn-deeporange g-mb-15 pull-right" id="groupsButton"><i class="fa fa-user"></i> My Groups</a>
+          </div>
           <div class="row g-mb-30">
             @foreach($groups as $group)
             <div class="col-lg-4 g-mb-40 g-mb-0--lg">
@@ -27,25 +29,30 @@
                   <div class="media-body">
                     <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="{{url('/groups/showgroupposts/'.$group->id)}}">{{$group->name}}</a>
                     <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">                     
-                        <i class="icon-people g-pos-rel g-top-1 mr-1"></i> 
-                            {{$group->users->count()}} Members 
+                        <i class="icon-people g-pos-rel g-top-1 mr-1"></i>
+                        @foreach($group->users as $key => $user)
+                          @if($loop->last)
+                              {{$user->pivot->where('group_id',$group->id)->where('approved',1)->count()}} Members 
+                          @endif
+                        @endforeach 
                     </span>
-                    @if( in_array(\Auth::user()->id, $group->users->pluck('id')->toArray()))
-                      <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                        <a href="" style="text-decoration: none">
-                          <i class="icon-communication-057 u-line-icon-pro g-pos-rel g-top-1 mr-1"></i> View Posts ({{\App\Post::where('group_id',$group->id)->count()}})
-                        </a>
-                      </span>
-                    @else
-                      <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                        <form class="form-group" action="{{ url('/groups/joinrequest', [\Auth::user()->id,$group->id])}}" method="POST">
-                          {{ csrf_field() }}
-                            <button class="btn btn-sm u-btn-deeporange g-mr-10" onclick="return confirm('Are you sure you want to send a request to join this group?')"><strong>Join Group</strong>
-                            </button>
-                        </form>
-                      </span>
-                      
-                    @endif
+                   
+                      @if( in_array(\Auth::user()->id, $group->users->pluck('id')->toArray()) )
+                        <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
+                          <a href="{{url('/groups/showgroupposts/'.$group->id)}}" style="text-decoration: none">
+                            <i class="icon-communication-057 u-line-icon-pro g-pos-rel g-top-1 mr-1"></i> View Posts ({{\App\Post::where('group_id',$group->id)->count()}})
+                          </a>
+                        </span>
+                      @else
+                        <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15 btn-group">
+                          <form class="form-group" action="{{ url('/groups/joinrequest', [\Auth::user()->id,$group->id])}}" method="POST">
+                            {{ csrf_field() }}
+                              <button class="btn btn-sm u-btn-darkpurple g-mr-10" onclick="return confirm('Are you sure you want to send a request to join this group?')"><strong>Join Group</strong>
+                              </button>
+                          </form>
+                        </span>
+                      @endif
+                    
                   </div>
                 </li>
               </ul>
