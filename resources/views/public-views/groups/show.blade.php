@@ -22,12 +22,28 @@
               <ul class="list-unstyled mb-0">
                 <li class="media u-shadow-v11 rounded g-pa-20 g-mb-10">
                   <div class="d-flex align-self-center g-mt-3 g-mr-15">
-                    <a href="{{url('/groups/showgroupposts/'.$group->id)}}">
-                      <img class="g-width-40 g-height-40" src="{{asset('unify/assets/img-temp/logos/img1.png')}}" alt="{{$group->name}}">
-                    </a>
+                    @foreach($group->users as $key => $user)
+                      @if($user->pivot->approved == 1 && $user->pivot->suspended == 0 && $loop->last)
+                      <a href="{{url('/groups/showgroupposts/'.$group->id)}}">
+                        <img class="g-width-40 g-height-40" src="{{asset('unify/assets/img-temp/logos/img1.png')}}" alt="{{$group->name}}">
+                      </a>
+                      @elseif($loop->last)
+                        <a href="" onclick="return confirm('Your request to join this group is yet to be approved by the group admin')">
+                        <img class="g-width-40 g-height-40" src="{{asset('unify/assets/img-temp/logos/img1.png')}}" alt="{{$group->name}}">
+                      </a> 
+                      @endif
+                    @endforeach
+                    
                   </div>
                   <div class="media-body">
-                    <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="{{url('/groups/showgroupposts/'.$group->id)}}">{{$group->name}}</a>
+                    @foreach($group->users as $key => $user)
+                      @if($user->pivot->approved == 1 && $user->pivot->suspended == 0 && $loop->last)
+                        <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="{{url('/groups/showgroupposts/'.$group->id)}}">{{$group->name}}</a>
+                      @elseif($loop->last)
+                        <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="" onclick="return confirm('Your request to join this group is yet to be approved by the group admin')">{{$group->name}}</a>
+                      </a> 
+                      @endif
+                    @endforeach
                     <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">                     
                         <i class="icon-people g-pos-rel g-top-1 mr-1"></i>
                         @foreach($group->users as $key => $user)
@@ -39,20 +55,28 @@
                    
                       @if( in_array(\Auth::user()->id, $group->users->pluck('id')->toArray()) )
                         <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
-                          <a href="{{url('/groups/showgroupposts/'.$group->id)}}" style="text-decoration: none">
+                        @foreach($group->users as $key => $user)
+                          @if(Auth::user()->id == $user->pivot->user_id && $group->id == $user->pivot->group_id && $user->pivot->approved == 1 && $user->pivot->suspended == 0)
+                          <a href="{{url('/groups/showgroupposts/'.$group->id)}}"  class="btn btn-sm u-btn-darkpurple g-mr-10" style="text-decoration: none">
                             <i class="icon-communication-057 u-line-icon-pro g-pos-rel g-top-1 mr-1"></i> View Posts ({{\App\Post::where('group_id',$group->id)->count()}})
                           </a>
+                          @elseif($loop->last && Auth::user()->id == $user->pivot->user_id)
+                          <a href=""  class="btn btn-sm u-btn-darkpurple g-mr-10" style="text-decoration: none" onclick="return confirm('Your request to join this group is yet to be approved by the group admin')">
+                            <i class="icon-communication-057 u-line-icon-pro g-pos-rel g-top-1 mr-1"></i> Pending...  ({{\App\Post::where('group_id',$group->id)->count()}})
+                          </a> 
+                          @endif
+                        @endforeach
                         </span>
                       @else
                         <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15 btn-group">
                           <form class="form-group" action="{{ url('/groups/joinrequest', [\Auth::user()->id,$group->id])}}" method="POST">
                             {{ csrf_field() }}
-                              <button class="btn btn-sm u-btn-darkpurple g-mr-10" onclick="return confirm('Are you sure you want to send a request to join this group?')"><strong>Join Group</strong>
-                              </button>
+                              <a href="" class="btn btn-sm u-btn-primary g-mr-10" onclick="return confirm('Are you sure you want to send a request to join this group?')" style="text-decoration: none">Join Group
+                              </a>
                           </form>
                         </span>
                       @endif
-                    
+                     
                   </div>
                 </li>
               </ul>
