@@ -71,7 +71,7 @@
                         <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15 btn-group">
                           <form class="form-group" action="{{ url('/groups/joinrequest', [\Auth::user()->id,$group->id])}}" method="POST">
                             {{ csrf_field() }}
-                              <a href="" class="btn btn-sm u-btn-primary g-mr-10" onclick="return confirm('Are you sure you want to send a request to join this group?')" style="text-decoration: none">Join Group
+                              <button type="submit" class="btn btn-success" onclick="return confirm('Are you sure you want to send a request to join this group?')">Join Group
                               </a>
                           </form>
                         </span>

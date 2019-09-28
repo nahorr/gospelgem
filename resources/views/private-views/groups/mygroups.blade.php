@@ -33,7 +33,8 @@
 	                        <th><strong>Group Name</strong></th>
 	                        <th><strong>Group Admin</strong></th>
 	                        <th><strong>Members</strong></th>
-	                        <th><strong>Description</strong></th>
+	                        <th><strong>Approved</strong></th>
+	                        <th><strong>Suspended</strong></th>
 	                        <th><strong>Action</strong></th>
 	                      </tr>
 	                    </thead>
@@ -50,13 +51,36 @@
 	                        	@endif
 	                        </td>
 	                        <td>
-	                        	<a href="{{url('/groups/mygroupmembers/'.$mygroup->id)}}" class="btn btn-md u-btn-purple g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="View group members"><i class="fa fa-group"></i> 
+	                        	<a href="{{url('/groups/mygroupmembers/'.$mygroup->id)}}" class="btn btn-sm u-btn-purple g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="View group members"><i class="fa fa-group"></i> 
 	                        	@if($mygroup->users()->count() <= 1)                      	
 	                        		{{ $mygroup->users()->count()}} member    	
 	                        	@else
 	                        		{{ $mygroup->users()->count()}} members
 	                        	@endif
 	                        	</a>
+	                        </td>
+	                        <td>
+	                        	
+	                     		@foreach($mygroup->users as $user)
+	                     		@if($loop->last)
+	                     		<div class="btn-group">
+	                     			 <button type="submit" class="btn btn-sm btn-success">{{$user->pivot->where('approved',1)->where('group_id',$mygroup->id)->count()}} approved</button>
+	                     			 <button type="submit" class="btn btn-sm btn-warning">
+	                     				{{$user->pivot->where('approved',0)->where('group_id',$mygroup->id)->count()}} pending</button>
+	                     		</div>
+	                     		@endif
+	                     		@endforeach
+	                     		
+	                        </td>
+	                        <td>
+	                     		@foreach($mygroup->users as $user)
+	                     		@if($loop->last)
+	                     		<div class="btn-group">
+	                     			 <button type="submit" class="btn btn-sm btn-danger">{{$user->pivot->where('suspended',1)->where('group_id',$mygroup->id)->count()}} Suspended</button>
+	                     		</div>
+	                     		@endif
+	                     		@endforeach
+	                        </td>
 	                        <td>
 	                        	{{ $mygroup->description}}
 	                        </td>
