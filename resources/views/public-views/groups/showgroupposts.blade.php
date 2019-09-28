@@ -19,7 +19,7 @@
         </header>
        @if(Auth::check() )
         <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostButton">Add a Post</button>
-        <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> Groups({{$group->count()}})</a>
+        <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> All Groups({{$group->count()}})</a>
         <!-- General Controls -->
         <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="/gforum/storeaddpost" id="addPostForm" style="display: none;">
           {{ csrf_field() }}
