@@ -151,8 +151,8 @@
                          <td class="g-px-30">
                            <div class="media">
                              <div class="media-body align-self-center text-left">
-                              {{$group->users->count()}}
-                              <a href="{{url('admin/posts/groups/members/'. $group->id)}}" class="btn btn-sm u-btn-orange">View/add/edit</a>
+                              
+                              <a href="{{url('admin/posts/groups/members/'. $group->id)}}" class="btn btn-sm u-btn-orange">{{$group->users->count()}} <i class="fa fa-users"></i> | View/add/edit</a>
                             </div>
                            </div>
                          </td>

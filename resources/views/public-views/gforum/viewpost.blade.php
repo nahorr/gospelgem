@@ -60,7 +60,11 @@
 
                         @endif
                       @endif
-                      <a href="{{ url('gforum') }}" class="btn btn-sm u-btn-bluegray g-mr-10">Back to GosYan</a>
+                      @if($post->group_id == NULL)
+                       <a href="{{ url('gforum') }}" class="btn btn-sm u-btn-bluegray g-mr-10">Back to GosYan</a>
+                      @else
+                        <a href="{{ url('groups/show') }}" class="btn btn-sm u-btn-bluegray g-mr-10">Back to Groups</a>
+                      @endif
                     </h2>
                     
 
@@ -317,7 +321,15 @@
                       @foreach($categories as $category)
 
                       <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-color-gray-dark-v4 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-12 g-rounded-50 g-py-4 g-px-15" href="{{ url('gforum/category/'.$category->id) }}">{{$category->category_name}}</a>
+                        @if($category->category_name != 'Group Posts')
+                          <a class="u-tags-v1 g-color-gray-dark-v4 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-12 g-rounded-50 g-py-4 g-px-15" href="{{ url('gforum/category/'.$category->id) }}">
+                          {{$category->category_name}}
+                        </a>
+                        @else
+                            <a class="u-tags-v1 g-color-gray-dark-v4 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-12 g-rounded-50 g-py-4 g-px-15" href="{{url('groups/show')}}">
+                            {{$category->category_name}}
+                          </a>
+                        @endif
                       </li>
 
                       @endforeach

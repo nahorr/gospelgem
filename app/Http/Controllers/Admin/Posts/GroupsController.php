@@ -8,7 +8,7 @@ class GroupsController extends Controller
 {
     public function showPostsGroups()
     {
-    	$groups = Group::get();
+    	$groups = Group::orderBY('created_at','desc')->get();
       $users = User::get();
     	return view('admin.posts.groups.show', compact('groups', 'users'));
     }

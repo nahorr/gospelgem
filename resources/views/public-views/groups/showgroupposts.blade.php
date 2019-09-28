@@ -86,16 +86,7 @@
         <thead class="thead-dark text-uppercase g-letter-spacing-1">
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
-            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Most Recent Posts<small>({{$posts->where('group_id',$group->id)->count()}} posts)</small> -
-              @foreach($categories->where('category_name','Group Posts') as $category)
-                
-                @if($loop->last)
-                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$group->name}} {{$category->category_name}}</span><small style="color: #fff;">({{$posts_all->where('category_id',$category->id)->where('group_id',$group->id)->count()}} posts)</small>.</a>
-                @else
-                   <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$group->name}} {{$category->category_name}}</span><small style="color: #fff;">({{$posts_all->where('category_id',$category->id)->where('group_id',$group->id)->count()}} posts)</small>,</a>
-               @endif
-                
-              @endforeach
+            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>{{$group->name}} Group Posts<small>({{$posts->where('group_id',$group->id)->count()}} posts)</small> 
             </strong></span></th>
             <!--<th class="g-font-weight-300 g-color-black g-min-width-200">Post Title and Information</th>-->
             <!--<th class="g-font-weight-300 g-color-black text-center">Stats</th>-->

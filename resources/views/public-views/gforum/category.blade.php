@@ -13,6 +13,7 @@
         </header>
        @if(Auth::check() )
         <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostModal">Add a Post</button>
+        <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> Group Posts</a>
         @include('private-views.gforum.addpost')
         <script type="text/javascript">
           $('#addPostModal').on('click', function(e){
@@ -22,6 +23,7 @@
         </script>
         @else
           <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
+          <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> Group Posts</a>
         @endif
         
     <div class="table-responsive">
@@ -30,8 +32,8 @@
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
             <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Your are viewing Posts in {{$category->category_name}} Category<small>({{$posts_category->total()}} posts)</small><br>
-              (<a href="{{url('gforum')}}""><span style="color: #b78f18;">Recent,</span></a>
-              @foreach($categories as $category)
+              (<a href="{{url('gforum')}}"><span style="color: #b78f18;">Recent,</span></a>
+              @foreach($categories->where('category_name', '!=', 'Group Posts') as $category)
                 
                 @if($loop->last)
                    <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}.</span></a>

@@ -56,7 +56,7 @@ class GForumController extends Controller
         return view('private-views.gforum.editpost', compact('post'));
     }
 
-    public function storeEditPost(UploadRequest $request, Post $post)
+    public function storeEditPost(Request $request, Post $post)
     {
         $this->validate(request(), [
 
