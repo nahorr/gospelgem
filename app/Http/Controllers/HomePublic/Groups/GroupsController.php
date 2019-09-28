@@ -21,9 +21,9 @@ class GroupsController extends Controller
     public function showMyGroups(User $user)
     {
         $groups = Group::get();
-        $users = User::get();
+        
 
-        return view('public-views.groups.showmygroups', compact('user', 'groups', 'users'));
+        return view('public-views.groups.showmygroups', compact('user', 'groups'));
     }
 
     public function joinRequest(Request $request, User $user, Group $group)
@@ -40,13 +40,13 @@ class GroupsController extends Controller
 
     public function showGroupPosts(Group $group)
     {
-    
+        $users = User::get();
     	$categories = Category::get();
 
     	$posts_all = Post::get();
 
     	$posts = Post::where('group_id', $group->id)->where('approved', 1)->orderBy('created_at', 'desc')->paginate(20);
 
-    	return view('public-views.groups.showgroupposts', compact('group', 'categories', 'posts_all', 'posts'));
+    	return view('public-views.groups.showgroupposts', compact('users', 'group', 'categories', 'posts_all', 'posts'));
     }
 }

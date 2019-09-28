@@ -104,7 +104,7 @@
         </thead>
 
         <tbody>
-          @foreach($posts as $key => $post)
+          @foreach($posts->where('group_id',NULL) as $key => $post)
             @foreach($users as $user)
              @if($post->user_id == $user->id)
                 <tr>

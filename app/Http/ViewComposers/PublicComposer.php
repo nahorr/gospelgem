@@ -12,6 +12,7 @@ use App\PictureCategory;
 use App\ManagePicture;
 use Image;
 use File;
+use App\User;
 	
 Class PublicComposer {	
 
@@ -26,7 +27,7 @@ Class PublicComposer {
             $today = Carbon::today();
 
             $site_pictures = ManagePicture::get();
-            $users = Users::get();
+            $users = User::get();
 
             
             //put variables in views
