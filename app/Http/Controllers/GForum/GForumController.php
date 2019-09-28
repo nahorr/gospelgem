@@ -39,6 +39,7 @@ class GForumController extends Controller
         Post::insert([
                     'user_id'=>$request->user_id,
                     'category_id'=>$request->category_id,
+                    'group_id'=>$request->group_id,
                     'post_title'=>$request->post_title,
                     'post_body'=>$request->post_body,
                     'show_profile_picture' => $request->show_profile_picture,

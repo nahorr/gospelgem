@@ -19,20 +19,20 @@
         </header>
        @if(Auth::check() )
         <button type="button" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15" id="addPostButton">Add a Post</button>
-        <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> Groups({{$groups->count()}})</a>
+        <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> Group Posts</a>
         <!-- General Controls -->
         <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" enctype="multipart/form-data" method="post" action="/gforum/storeaddpost" id="addPostForm" style="display: none;">
           {{ csrf_field() }}
 
            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
-
+           
            <div class="row">
              <div class="form-group col-md-6 g-mb-25">
               <label for="post_title"><strong>Select a category</strong></label><br>
               
                 <select class="form-control form-control-md form-control-lg rounded-0 g-mb-25" name="category_id" id="category_id">
                     <option selected disabled>Please select one category</option>
-                          @foreach($categories as $key => $category)
+                          @foreach($categories->where('category_name','!=','Group Posts') as $key => $category)
 
                               <option value="{{ $category->id }}" >
                                   {{ $category->category_name }}
@@ -65,7 +65,7 @@
        
         @else
           <a href="{{url('login')}}" class="btn btn-md u-btn-darkpurple g-mr-10 g-mb-15">Add a Post</a>
-          <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> Groups({{$groups->count()}})</a>
+          <a href="{{url('groups/show')}}" class="btn btn-md u-btn-deeporange g-mr-10 g-mb-15 pull-right" id="groupsButton"><i class="fa fa-users"></i> Group Posts</a>
         @endif
 
       <!-- End General Controls -->
@@ -86,8 +86,8 @@
         <thead class="thead-dark text-uppercase g-letter-spacing-1">
           <tr>
             <!--<th class="g-font-weight-300 g-color-black">#</th>-->
-            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Most Recent Posts<small>({{$posts->total()}} posts)</small> -
-              @foreach($categories as $category)
+            <th class="g-font-weight-600 g-color-black text-center"><span style="color: #fff;"><strong>Most Recent Posts<small>({{$posts->where('group_id',NULL)->count()}} posts)</small> -
+              @foreach($categories->where('category_name','!=','Group Posts') as $category)
                 
                 @if($loop->last)
                    <a href="{{url('gforum/category/'.$category->id)}}"><span style="color: #b78f18;">{{$category->category_name}}</span><small style="color: #fff;">({{$posts_all->where('category_id',$category->id)->count()}} posts)</small>.</a>

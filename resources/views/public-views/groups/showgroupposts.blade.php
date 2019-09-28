@@ -25,7 +25,7 @@
           {{ csrf_field() }}
 
            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
-
+           <input type="hidden" name="group_id" value="{{ $group->id }}" >
            <div class="row">
              <div class="form-group col-md-6 g-mb-25">
               <label for="post_title"><strong>Select a category</strong></label><br>
@@ -35,7 +35,7 @@
                           @foreach($categories->where('category_name','Group Posts') as $key => $category)
 
                               <option value="{{ $category->id }}" >
-                                  {{ $category->category_name }}
+                                 {{$group->name}} {{ $category->category_name }}
                               </option>
 
                           @endforeach
@@ -175,7 +175,6 @@
               @endif
             @endforeach
           @endforeach
-
         </tbody>
       </table>
       

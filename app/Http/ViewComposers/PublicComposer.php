@@ -26,15 +26,15 @@ Class PublicComposer {
             $today = Carbon::today();
 
             $site_pictures = ManagePicture::get();
-            
-            //dd($slider1);
+            $users = Users::get();
 
             
             //put variables in views
             $view
             ->with('number_init', $number_init )
             ->with('today', $today)
-            ->with('site_pictures', $site_pictures);
+            ->with('site_pictures', $site_pictures)
+            ->with('users', $users);
 
             
 

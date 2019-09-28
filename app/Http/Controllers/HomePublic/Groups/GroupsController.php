@@ -21,8 +21,9 @@ class GroupsController extends Controller
     public function showMyGroups(User $user)
     {
         $groups = Group::get();
+        $users = User::get();
 
-        return view('public-views.groups.showmygroups', compact('user', 'groups'));
+        return view('public-views.groups.showmygroups', compact('user', 'groups', 'users'));
     }
 
     public function joinRequest(Request $request, User $user, Group $group)
