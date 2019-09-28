@@ -30,7 +30,11 @@
                     <a class="d-block u-link-v5 g-color-main g-color-primary--hover g-font-weight-600 g-mb-3" href="{{url('/groups/showgroupposts/'.$group->id)}}">{{$group->name}}</a>
                     <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">                     
                         <i class="icon-people g-pos-rel g-top-1 mr-1"></i> 
-                            {{$group->users->count()}} Members 
+                        @foreach($group->users as $user)
+                          @if($loop->last)
+                            {{$user->pivot->where('group_id',$group->id)->where('approved',1)->where('suspended',0)->count()}} Members 
+                          @endif
+                        @endforeach
                     </span>
                     @if( in_array(\Auth::user()->id, $group->users->pluck('id')->toArray()))
                       <span class="g-font-size-13 g-color-gray-dark-v4 g-mr-15">
