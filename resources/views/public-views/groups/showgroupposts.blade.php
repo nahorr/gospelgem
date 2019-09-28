@@ -31,8 +31,8 @@
               <label for="post_title"><strong>Select a category</strong></label><br>
               
                 <select class="form-control form-control-md form-control-lg rounded-0 g-mb-25" name="category_id" id="category_id">
-                    <option selected disabled>Please select one category</option>
-                          @foreach($categories as $key => $category)
+                    <option selected disabled>Please select Group Posts Category</option>
+                          @foreach($categories->where('category_name','Group Posts') as $key => $category)
 
                               <option value="{{ $category->id }}" >
                                   {{ $category->category_name }}
