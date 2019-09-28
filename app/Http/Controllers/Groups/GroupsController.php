@@ -34,7 +34,7 @@ class GroupsController extends Controller
       $group->users()->attach($request->group_admin, ['approved' => true]);
       
       flash('New Group created successfully!')->success();
-      return back();
+      return redirect()->route('mygroups');;
    }
 
    public function editGroup(Request $request, Group $group){
@@ -71,11 +71,11 @@ class GroupsController extends Controller
         $group = Group::find($group->id);
 
         //$group->users()->attach($user->id, ['approved' => true]);
-        $group->users()->updateExistingPivot(['approved' => true]);
+        $group->users()->updateExistingPivot($user->id, ['approved' => true]);
 
         flash('User added to your group successfully')->success();
 
-        return route('mygroups');
+        return back();
     }
 
 }

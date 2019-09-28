@@ -35,6 +35,7 @@
 	                        <th><strong>Members</strong></th>
 	                        <th><strong>Approved</strong></th>
 	                        <th><strong>Suspended</strong></th>
+	                        <th><strong>Description</strong></th>
 	                        <th><strong>Action</strong></th>
 	                      </tr>
 	                    </thead>
@@ -51,7 +52,7 @@
 	                        	@endif
 	                        </td>
 	                        <td>
-	                        	<a href="{{url('/groups/mygroupmembers/'.$mygroup->id)}}" class="btn btn-sm u-btn-purple g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="View group members"><i class="fa fa-group"></i> 
+	                        	<a href="{{url('/groups/mygroupmembers/'.$mygroup->id)}}" class="btn btn-sm u-btn-purple g-mr-10" data-toggle="tooltip" data-placement="top" title="View group members"><i class="fa fa-group"></i> 
 	                        	@if($mygroup->users()->count() <= 1)                      	
 	                        		{{ $mygroup->users()->count()}} member    	
 	                        	@else
