@@ -71,9 +71,21 @@ class GroupsController extends Controller
         $group = Group::find($group->id);
 
         //$group->users()->attach($user->id, ['approved' => true]);
-        $group->users()->updateExistingPivot($user->id, ['approved' => true]);
+        $group->users()->updateExistingPivot($user->id, ['approved' => true, 'suspended' => false]);
 
-        flash('User added to your group successfully')->success();
+        flash('User Approved')->success();
+
+        return back();
+    }
+
+    public function suspendGroupMember(Request $request, User $user, Group $group)
+    {
+        $group = Group::find($group->id);
+
+        //$group->users()->attach($user->id, ['approved' => true]);
+        $group->users()->updateExistingPivot($user->id, ['suspended' => true, 'approved' => false]);
+
+        flash('User Suspended')->success();
 
         return back();
     }
