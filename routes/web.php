@@ -144,6 +144,7 @@ Route::group(['middleware' => 'admin'], function () {
   Route::get('admin/posts/groups/members/{group}', 'Admin\Posts\GroupMembersController@groupMembers');
   Route::post('admin/posts/groups/addmembers/{group}', 'Admin\Posts\GroupMembersController@addGroupMembers');
   Route::get('admin/posts/groups/deletemember/{group}/{user}', 'Admin\Posts\GroupMembersController@deleteGroupMember');
+  Route::post('admin/posts/groups/member/approve/{group}/{member}', 'Admin\Posts\GroupMembersController@approveGroupMembers');
   
   //Mentors
   Route::get('admin/mentors/all-mentors', 'Admin\MentorsController@allMentors');

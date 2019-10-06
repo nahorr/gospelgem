@@ -105,9 +105,9 @@
                           <div class="row">
                             <div class="col-md-3">
                               @if($member->pivot->approved == true)
-                                <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-orange g-mr-10">YES</a>
+                                <a href="{{url('admin/posts/groups/member/suspend/'. $member->id)}}" class="btn btn-md u-btn-orange g-mr-10" data-toggle="tooltip" data-placement="top" title="toggle to approve or suspend member">YES</a>
                               @else
-                                <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-darkred g-mr-10">NO</a>
+                                <a href="{{url('admin/posts/groups/member/approve/'. $member->id)}}" class="btn btn-md u-btn-darkred g-mr-10" data-toggle="tooltip" data-placement="top" title="toggle to approve or suspend member">NO</a>
                               @endif
                               </div>
                             </div>
@@ -116,9 +116,9 @@
                           <div class="row">
                             <div class="col-md-3">
                               @if($member->pivot->suspended == true)
-                                <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-success g-mr-10">YES</a>
+                                <a href="{{url('admin/posts/groups/member/unsuspend/'. $member->id)}}" class="btn btn-md u-btn-success g-mr-10" data-toggle="tooltip" data-placement="top" title="toggle to unsuspend or suspend member">YES</a>
                               @else
-                                <a href="{{url('admin/posts/groups/member/delete/'. $member->id)}}" class="btn btn-md u-btn-darkred g-mr-10">NO</a>
+                                <a href="{{url('admin/posts/groups/member/suspend/'. $member->id)}}" class="btn btn-md u-btn-darkred g-mr-10" data-toggle="tooltip" data-placement="top" title="toggle to unsuspend or suspend member">NO</a>
                               @endif
                               </div>
                             </div>
