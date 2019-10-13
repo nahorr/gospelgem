@@ -69,7 +69,7 @@
                           {{ $course->price/100 }}
                         </span>
                       @endif
-                      <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M') }}</em>
+                      <em class="d-block g-font-style-normal">Starts {{ $course->start_date->format('d M Y') }}</em>
                     </div>
                   </div>
 

@@ -21,7 +21,8 @@ class CoursesController extends Controller
     public function showCourses()
     {
 
-        $courses = Course::all()->groupBy('course_category_id');
+        $courses = Course::orderBy('start_date','asc')->get()->groupBy('course_category_id');
+        //$courses = Course::all()->groupBy('course_category_id');
 
         $course_registrations = CourseRegistration::get();
         
