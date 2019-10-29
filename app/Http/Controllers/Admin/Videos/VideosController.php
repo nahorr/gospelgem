@@ -61,4 +61,15 @@ class VideosController extends Controller
         return back();
 
      }
+
+     public function deleteVideo(Video $video)
+
+    {
+        Video::where('id', $video->id)->delete();
+
+        flash('video deleted!')->warning();
+
+        return back();
+    }
+
 }

@@ -200,6 +200,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/videos/manage-videos', 'Admin\Videos\VideosController@manageVideos');
     Route::post('admin/videos/addvideo', 'Admin\Videos\VideosController@addVideo');
     Route::post('admin/videos/editvideo/{video}', 'Admin\Videos\VideosController@editVideo');
+    Route::get('admin/videos/deletevideo/{video}', 'Admin\Videos\VideosController@deleteVideo');
     
     //Manage Courses and Course categories
     //Categories

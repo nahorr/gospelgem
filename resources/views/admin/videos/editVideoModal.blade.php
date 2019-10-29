@@ -1,11 +1,11 @@
 <!-- Modal -->
-<div id="editVideoModal" class="modal fade" role="dialog">
+<div id="editVideoModal-{{$video->id}}" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header" style="background-color: #222e44; color: #FFF;">
-        <h4 class="modal-title pull-left"><strong>Edit Video Link</strong></h4>
+        <h4 class="modal-title pull-left"><strong>Edit Video Link-{{$video->id}}</strong></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button> 
       </div>
       <div class="modal-body">

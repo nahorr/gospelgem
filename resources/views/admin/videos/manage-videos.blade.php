@@ -56,7 +56,9 @@
                   <th>Description</th>
                   <th>Link/url</th>
                   <th>Page</th>
-                  <th>Actions</th>
+                  <th>Added</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
 
@@ -72,20 +74,25 @@
                     </a>                   
                   </td>
                   <td>{{$video->video_page}}</td>
+                  <td>{{$video->created_at->toFormattedDateString()}}</td>
                   <td>
-                    <button type="button" class="btn btn-md u-btn-pink g-mr-10 g-mb-15 pull-left" id="editVideo">Edit Video</button>
+                    <button id="editVideo-{{$video->id}}" type="button" class="btn btn-md u-btn-indigo g-mr-10 g-mb-15 pull-right">Edit Video</button>
+                    @include('admin.videos.editVideoModal')
+                    <script type="text/javascript">
+                      $('#editVideo-{{$video->id}}').on('click', function(e){
+                          e.preventDefault();
+                        $('#editVideoModal-{{$video->id}}').modal('show');
+                      })
+                    </script>
+                  </td>
+                  <td>
+                    <a href="{{url('admin/videos/deletevideo/'.$video->id)}}" class="btn btn-md u-btn-darkred g-mr-10 g-mb-15" onclick="return confirm('Are you sure you want to delete this video?')">Delete</a>
                   </td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
-            @include('admin.videos.editVideoModal')
-            <script type="text/javascript">
-              $('#editVideo').on('click', function(e){
-                  e.preventDefault();
-                $('#editVideoModal').modal('show');
-              })
-            </script>
+            
           </div>
             
         </div>

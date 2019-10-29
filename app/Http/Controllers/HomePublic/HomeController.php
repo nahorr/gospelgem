@@ -19,9 +19,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        $video = Video::where('video_page', 'welcome')->first();
+        //$video = Video::where('video_page', 'welcome')->first();
+
+        $videos = Video::where('video_page', 'welcome')->get();
         
-    	return view('public-views.welcome', compact('video'));
+    	return view('public-views.welcome', compact('videos'));
     }
     public function about()
     {

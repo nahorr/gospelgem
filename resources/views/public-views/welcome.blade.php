@@ -34,32 +34,36 @@
     <!-- End Icon Blocks -->
 
     <section class="container g-py-100">
-      <div class="row justify-content-center">
-        <div class="col-lg-7">
-          <!-- Heading -->
-          <div class="text-center g-mb-60">
-            <h2 class="h3 g-color-black text-uppercase mb-2">{{ $video->video_title }}</h2>
-            <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
-            <!--<p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art. Somewhere between sophistication and simplicity.</p>-->
-          </div>
-          <!-- End Heading -->
-        </div>
-      </div>
+      <!-- Recent Videos -->
+       <div class="u-heading-v3-1 g-mb-30">
+         <h2 class="h5 u-heading-v3__title g-font-primary g-font-weight-700 g-color-gray-dark-v1 text-uppercase g-brd-primary">Featured Videos</h2>
+       </div>
 
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <!-- Article -->
-          <article class="u-shadow-v21 g-bg-size-cover g-bg-pos-bottom-center text-center">
+       <div class="row">
+        @foreach($videos as $video)
+         <!-- Article Video -->
+         <div class="col-lg-6 col-sm-6 g-mb-30">
+           <article>
+             <figure class="u-shadow-v25 g-pos-rel g-mb-20">
+               <iframe width="100%" height="400" src="{{ $video->video_link }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-              <iframe width="100%" height="500" src="{{ $video->video_link }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-           
-          </article>
-          <!-- End Article -->
-        </div>
-      </div>
-    </section>
+               <figcaption class="g-pos-abs g-top-10 g-left-10">
+                 <a class="btn btn-xs u-btn-primary text-uppercase rounded-0" href="#">{{ $video->video_title }}</a>
+               </figcaption>
+             </figure>
 
-    <hr class="g-brd-gray-light-v4 my-0">
+             <h3 class="g-font-size-16 g-mb-10">
+               <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">{{ $video->video_title }}</a>
+             </h3>
+           </article>
+         </div>
+         <!-- End Article Video -->
+        @endforeach                  
+       </div>
+       <!-- End Recent Videos -->
+  </section>
+
+  <hr class="g-brd-gray-light-v4 my-0">
 
 
 
