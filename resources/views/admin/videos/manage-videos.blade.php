@@ -32,7 +32,7 @@
 
           @endif
           <div class="alert alert-danger" role="alert">
-            Please click the "Edit Video" button to edit the welcome page video. It is not necessary to add a new video.<br>
+           You can add more than one video to the welcome page.<br>
             <span style="color: #5D6D7E">The "Video Title" will be displayed on the 'welcome page'</span>
           </div>
           <header class="g-mb-20">
