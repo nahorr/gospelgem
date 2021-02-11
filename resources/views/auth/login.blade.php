@@ -54,6 +54,16 @@
                       </span>
                   @endif
                 </div>
+
+                <div class="g-mb-35">
+                  <div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}"></div>
+                  @if ($errors->has('g-recaptcha-response'))
+                      <span class="invalid-feedback" style="display: block;">
+                          <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                      </span>
+                  @endif
+                </div>
+
                 <div class="row justify-content-between">
                   <div class="col align-self-center">
                     <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-12 g-pl-25 mb-0">

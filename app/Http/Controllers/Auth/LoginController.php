@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Socialite;
-use App\User;
 use Auth;
 use Session;
+use App\Traits\CaptchaTrait;
 
 class LoginController extends Controller
 {
+    use CaptchaTrait;
+
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -53,103 +54,79 @@ class LoginController extends Controller
         }
         return redirect()->intended($this->redirectPath());
     }
-
-    /* Handle Social login request
  
+    /**
+    * Overrides method in class 'AuthenticatesUsers'
     *
- 
-    * @return response
- 
+    * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
     */
- 
-   public function socialLogin($social)
- 
-   {
- 
-       return Socialite::driver($social)->redirect();
- 
-   }
- 
-   /**
- 
-    * Obtain the user information from Social Logged in.
- 
-    * @param $social
- 
-    * @return Response
- 
+    public function showLoginForm()
+    {
+        $view = property_exists($this, 'loginView')
+            ? $this->loginView : 'auth.authenticate';
+        if (view()->exists($view)) {
+            return view($view);
+        }
+        /**
+        * seve the previous page in the session
+        */
+        $previous_url = Session::get('_previous.url');
+        $ref = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        $ref = rtrim($ref, '/');
+        if ($previous_url != url('login')) {
+            Session::put('referrer', $ref);
+            if ($previous_url == $ref) {
+                Session::put('url.intended', $ref);
+            }
+        }
+        /**
+        * seve the previous page in the session
+        * end
+        */
+        return view('auth.login');
+    }
+    /**
+    * Overrides method in class 'AuthenticatesUsers'
+    *
+    * @param Request $request
+    * @param $throttles
+    *
+    * @return \Illuminate\Http\RedirectResponse
     */
- 
-   public function handleProviderCallback($social)
- 
-   {
- 
-       $userSocial = Socialite::driver($social)->stateless()->user();
- 
-       $user = User::where(['email' => $userSocial->getEmail()])->first();
- 
-       if($user){
- 
-           Auth::login($user);
- 
-           return redirect()->action('HomeController@index');
- 
-       }else{
- 
-           return view('auth.register',['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
- 
-       }
- 
-   }
+    protected function handleUserWasAuthenticated(Request $request, $throttles)
+    {
+        if ($throttles) {
+            $this->clearLoginAttempts($request);
+        }
+        if (method_exists($this, 'authenticated')) {
+            return $this->authenticated($request, Auth::guard($this->getGuard())->user());
+        }
+        /*return to the previous page*/
+        return redirect()->intended(Session::pull('referrer'));
+        //return redirect()->intended($this->redirectPath()); /*Larevel default*/
+    }
 
     /**
-        * Overrides method in class 'AuthenticatesUsers'
-        *
-        * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-        */
-       public function showLoginForm()
-       {
-           $view = property_exists($this, 'loginView')
-               ? $this->loginView : 'auth.authenticate';
-           if (view()->exists($view)) {
-               return view($view);
-           }
-           /**
-            * seve the previous page in the session
-            */
-           $previous_url = Session::get('_previous.url');
-           $ref = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-           $ref = rtrim($ref, '/');
-           if ($previous_url != url('login')) {
-               Session::put('referrer', $ref);
-               if ($previous_url == $ref) {
-                   Session::put('url.intended', $ref);
-               }
-           }
-           /**
-            * seve the previous page in the session
-            * end
-            */
-           return view('auth.login');
-       }
-       /**
-        * Overrides method in class 'AuthenticatesUsers'
-        *
-        * @param Request $request
-        * @param $throttles
-        *
-        * @return \Illuminate\Http\RedirectResponse
-        */
-       protected function handleUserWasAuthenticated(Request $request, $throttles)
-       {
-           if ($throttles) {
-               $this->clearLoginAttempts($request);
-           }
-           if (method_exists($this, 'authenticated')) {
-               return $this->authenticated($request, Auth::guard($this->getGuard())->user());
-           }
-           /*return to the previous page*/
-           return redirect()->intended(Session::pull('referrer'));
-   //        return redirect()->intended($this->redirectPath()); /*Larevel default*/
-       }
+     * Validate the user login request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     *
+     * @throws \Illuminate\Validation\ValidationException
+    */
+    protected function validateLogin(Request $request)
+    {
+        $request['captcha'] = $this->captchaCheck();
+
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+            'g-recaptcha-response' => 'required',
+            'captcha' => 'required|min:1',
+        ],
+        [
+            'g-recaptcha-response.required' => 'Captcha is required',
+            'captcha.min' => 'Wrong captcha, please try again.'
+        ]);
+    }
 }
